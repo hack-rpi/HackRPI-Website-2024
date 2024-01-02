@@ -6,9 +6,19 @@ on:
     # The branches below must be a subset of the branches above
     branches: [ "main", "develop" ]
 jobs:
-  Prettier-Formatter:
-    uses: creyD/prettier_action@31355f8eef017f8aeba2e0bc09d8502b13dbbad1
-    with:
-      # Options for the `prettier` command
-      prettier_options: "--write ." # optional, default is --write **/*.js
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          # Make sure the actual branch is checked out when running on pull requests
+          ref: ${{ github.head_ref }}
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.3
+        with:
+          # This part is also where you can pass other options, for example:
+          prettier_options: --write .
   
