@@ -1,0 +1,14 @@
+name: "Prettier Formatter"
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "main", "develop" ]
+jobs:
+  Prettier-Formatter:
+    uses: creyD/prettier_action@31355f8eef017f8aeba2e0bc09d8502b13dbbad1
+    with:
+      # Options for the `prettier` command
+      prettier_options: "--write ." # optional, default is --write **/*.js
+  
