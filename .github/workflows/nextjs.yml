@@ -2,9 +2,9 @@ name: Build NextJS Site
 
 on:
   push:
-    branches: ["main", "develop"]
+    branches: ["main"]
   pull_request:
-    branches: ["main", "develop"]
+    branches: ["develop"]
     
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
