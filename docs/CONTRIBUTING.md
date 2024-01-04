@@ -93,7 +93,7 @@ Ideas flourish when people of all backgrounds contribute. Have a great idea but 
 
 In your Pull Requests please make a general description of what you have changed. No need to be to detailed but also don't just leave the description body blank or with "changing stuff."
  
-If you can include screenshots to make it easier for use to review. 😊
+If you can include screenshots to make it easier for us to review. 😊
 
 ## License 
 
