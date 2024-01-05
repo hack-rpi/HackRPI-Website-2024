@@ -6,7 +6,7 @@ The HackRPI Website [hackrpi.com](https://hackrpi.com) for our 2024 Hackathon at
 
 A simple, front-end only website with NextJS, React, TailwindCSS, and TypeScript.
 
-## Getting Started 
+## Getting Started
 
 1.  Clone the repository with Git
 1.  Install the dependencies with npm

@@ -3,6 +3,7 @@
 Thank you for considering contributing to our project! We appreciate your time and effort. To ensure a smooth collaboration, please follow these guidelines:
 
 ## Table of Contents
+
 - [Getting Started](#getting-started)
 - [How to Contribute](#how-to-contribute)
 - [Code Style](#code-style)
@@ -10,7 +11,6 @@ Thank you for considering contributing to our project! We appreciate your time a
 - [Feature Requests](#feature-requests)
 - [Pull Requests](#pull-requests)
 - [License](#license)
-
 
 ## Getting Started
 
@@ -36,12 +36,12 @@ Thank you for taking the time to contribute to our website! To contribute please
 
 ## How to Contribute
 
-Take a look at our open issues on our [issues page](https://github.com/hack-rpi/HackRPI-Website-2024/issues) to find something to do. 
+Take a look at our open issues on our [issues page](https://github.com/hack-rpi/HackRPI-Website-2024/issues) to find something to do.
 
-### Branches 
+### Branches
 
 > [!IMPORTANT]
-> We use a modified version of the "GitFlow" method of working with branches. You can learn more about GitFlow [here.](https://datasift.github.io/gitflow/IntroducingGitFlow.html) 
+> We use a modified version of the "GitFlow" method of working with branches. You can learn more about GitFlow [here.](https://datasift.github.io/gitflow/IntroducingGitFlow.html)
 >
 > The only change we make to GitFlow is that we do not have release branches, only the develop and master branch.
 
@@ -57,24 +57,23 @@ Once you are satisfied with your feature and are ready to merge your changes int
 1. Test your code thoroughly to ensure it looks and works well on mobile and on desktop.
 1. Open a pull request into the **develop** branch to get your code reviewed and merged
 
-
 ## Code Style
 
 There are a few code style things to mention:
 
 1. Please use Typescript
-    1. For most pages there will be little to no JS functionality required for them and many will be purely HTML and CSS. But still please use TypeScript by using `.tsx` files instead of `.jsx`
+   1. For most pages there will be little to no JS functionality required for them and many will be purely HTML and CSS. But still please use TypeScript by using `.tsx` files instead of `.jsx`
 1. Please use TailwindCSS
-    1. Tailwind can take a little while to get used to, and often it is great to have their [docs](https://tailwindcss.com/docs/installation) pinned / bookmarked. It does become very intuitive after a little while.
-    1. If you are annoyed by the long class names Tailwind adds to the HTML then I would recommend the [Inline Fold Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=moalamri.inline-fold).
+   1. Tailwind can take a little while to get used to, and often it is great to have their [docs](https://tailwindcss.com/docs/installation) pinned / bookmarked. It does become very intuitive after a little while.
+   1. If you are annoyed by the long class names Tailwind adds to the HTML then I would recommend the [Inline Fold Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=moalamri.inline-fold).
 1. Don't Repeat Yourself
-    1. If you find that you are duplicating classes or elements, consider breaking them out into their own component so that they can be reused more easily.
-    1. If you find yourself repeating code then try to refactor it out into another function.
+   1. If you find that you are duplicating classes or elements, consider breaking them out into their own component so that they can be reused more easily.
+   1. If you find yourself repeating code then try to refactor it out into another function.
 1. Stick with the Provided Formatting
-    1. ESLint (Linter) and Prettier (Formatter) will help you with sticking with the provided formatting.
-    1. You can run eslint with `npx eslint .eslintrc.js`
-    1. You can run prettier to format the repository with `npx prettier --write .`
-    1. Both of these will run automatically when you make your pull request but its good to stick with the formatting throughout development.
+   1. ESLint (Linter) and Prettier (Formatter) will help you with sticking with the provided formatting.
+   1. You can run eslint with `npx eslint .eslintrc.js`
+   1. You can run prettier to format the repository with `npx prettier --write .`
+   1. Both of these will run automatically when you make your pull request but its good to stick with the formatting throughout development.
 
 ## Bug Reports
 
@@ -92,14 +91,14 @@ Ideas flourish when people of all backgrounds contribute. Have a great idea but 
 ## Pull Requests
 
 In your Pull Requests please make a general description of what you have changed. No need to be to detailed but also don't just leave the description body blank or with "changing stuff."
- 
+
 If you can include screenshots to make it easier for us to review. 😊
 
-## License 
+## License
 
 This project is licensed under the MIT Open Source License which means that you are free to see our source code, copy it, redistribute it, and use it for commercial purposes **without** a warranty.
 
------
+---
 
 MIT License
 
@@ -122,5 +121,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
