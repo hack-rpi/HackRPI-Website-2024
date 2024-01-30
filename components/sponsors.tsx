@@ -6,24 +6,8 @@ const SponsorPage = () => {
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          justifyContent: 'start',
-          alignItems: 'center',
-          background: `linear-gradient(var(--black), #600000 20%, #600000, var(--black))`,
-        }}
-      >
-        <h2
-          style={{
-            fontFamily: 'Mokoto',
-            color: '#FFFFFF',
-            textAlign: 'center',
-          }}
-          className="my-5"
-        >
+      <div className="flex flex-col w-full justify-start items-center bg-gradient-to-b from-black via-hackrpi-primary-blue to-black">
+        <h2 className="my-5 text-white font-helvetica text-center text-2xl">
           Thank you to our sponsors that make HackRPI possible!
         </h2>
 
@@ -37,11 +21,12 @@ const SponsorPage = () => {
           ];
           return (
             <div className="container" key={'sponsorGroup' + indx}>
-              <h3 className="mokoto tierHeader" style={{ margin: '20px 0' }}>
+            <h3 className="font-helvetica text-xl tierHeader mb-5 border-b-2 border-white pb-2 relative cursor-pointer group">
+            <span className="transition-all duration-250 group-hover:font-bold group-hover:text-light-blue-500">
                 {tierList[indx]}
-              </h3>{' '}
-              {/* Add margin to tier name */}
-              <div className="d-flex justify-content-center flex-wrap">
+            </span>
+            </h3>
+              <div className="flex justify-center flex-wrap">
                 {tierList[indx] === 'Obsidian'
                   ? sponsorGroup
                       .slice()
@@ -49,14 +34,12 @@ const SponsorPage = () => {
                       .map((sponsor, innerIndx) => {
                         let img;
                         if (sponsor.webpack_bundled === true) {
-                          img = require(
-                            `../../HackRPI-Website-2024/public/sponsors/sponsor_logos/${sponsor.logoPath}`,
-                          );
+                          img = require(`../../HackRPI-Website-2024/public/sponsors/sponsor_logos/${sponsor.logoPath}`);
                         }
 
                         return (
                           <div
-                            className="sponsor col-md-3 d-flex mb-5"
+                            className="sponsor col-md-3 flex mb-5"
                             key={'sponsorGroup' + indx + 'sponsor' + innerIndx}
                           >
                             <a
@@ -65,17 +48,15 @@ const SponsorPage = () => {
                               className="rounded px-3"
                             >
                               <div
-                                className="d-flex flex-column align-items-center justify-content-center innerSponsor"
-                                style={{ margin: '10px' }}
+                                className="flex flex-col items-center justify-center innerSponsor m-10"
                               >
-                                {/* Add margin to companies */}
                                 <img
                                   src={
                                     sponsor.webpack_bundled === true
                                       ? img
                                       : sponsor.logoPath
                                   }
-                                  className="img-fluid rounded mw-100 mh-100"
+                                  className="img-fluid rounded w-32 h-auto"
                                   alt={sponsor.name}
                                 />
                               </div>
@@ -86,14 +67,12 @@ const SponsorPage = () => {
                   : sponsorGroup.map((sponsor, innerIndx) => {
                       let img;
                       if (sponsor.webpack_bundled === true) {
-                        img = require(
-                          `../../HackRPI-Website-2024/public/sponsors/sponsor_logos/${sponsor.logoPath}`,
-                        );
+                        img = require(`../../HackRPI-Website-2024/public/sponsors/sponsor_logos/${sponsor.logoPath}`);
                       }
 
                       return (
                         <div
-                          className="sponsor col-md-3 d-flex mb-5"
+                          className="sponsor col-md-3 flex mb-5"
                           key={'sponsorGroup' + indx + 'sponsor' + innerIndx}
                         >
                           <a
@@ -102,17 +81,15 @@ const SponsorPage = () => {
                             className="rounded px-3"
                           >
                             <div
-                              className="d-flex flex-column align-items-center justify-content-center innerSponsor"
-                              style={{ margin: '10px' }}
+                              className="flex flex-col items-center justify-center innerSponsor m-10"
                             >
-                              {/* Add margin to companies */}
                               <img
                                 src={
-																	sponsor.webpack_bundled === true
-																		? img
-																		: sponsor.logoPath
-																}
-                                className="img-fluid rounded mw-100 mh-100"
+                                  sponsor.webpack_bundled === true
+                                    ? img
+                                    : sponsor.logoPath
+                                }
+                                className="img-fluid rounded w-32 h-auto"
                                 alt={sponsor.name}
                               />
                             </div>
