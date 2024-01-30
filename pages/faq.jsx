@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
-import AccordionItem from 'react-bootstrap/esm/AccordionItem';
-import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
-import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+const { Item: AccordionItem, Header: AccordionHeader, Body: AccordionBody } = Accordion;
 
 // need to re-write these asap
 const faqs = [

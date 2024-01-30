@@ -1,7 +1,5 @@
-import "../app/globals.css";
-import Link from "../components/link";
-import FAQPage from './Pages/FAQPage/FAQPage.jsx';
-
+import Link from 'next/link';
+// import { useRouter } from 'next/router';
 
 export default function Home() {
 	return (
@@ -12,6 +10,11 @@ export default function Home() {
 				more information.
 			</p>
 			<Link href="/sponsor-us">Sponsor Us</Link>
+			<br />
+			<Link href="/faq">faqPage</Link>
 		</div>
 	);
 }
+
+// In Next.js, you don't need to manually create a router. 
+// Each file inside the 'pages' directory becomes a route automatically.
