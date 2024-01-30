@@ -20,7 +20,7 @@ const faqs = [
     'Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you can get!',
   },
   { title: 'How do I apply?',
-    content: 'Click the link above to apply!',
+    content: 'Click the link above to apply!', //fix this or provide the direct link
   },
   { title: 'Who can participate?',
     content:
@@ -40,30 +40,25 @@ const faqs = [
 ];
 
 
-
 // ... your faqs array and other code ...
 
 const FAQPage = () => {
-  const [currentActiveKey, setCurrentActiveKey] = useState(null);
-
-  const toggleActiveKey = (key) => {
-    setCurrentActiveKey(currentActiveKey === key ? null : key);
-  };
-
   return (
-    <div className="h-auto mb-8 flex items-center text-white" id="faq">
+    <div className="h-auto mb-8 flex flex-col items-center text-white" id="faq">
       <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
         FAQs
       </h1>
       <div className="font-poppins w-3/4 m-auto">
         {faqs.map((faq, index) => (
-          <div key={index}>
-            <h2>{faq.title}</h2>
-            <p>{faq.content}</p>
-          </div>
+          <details key={index} className="bg-blue-200 p-4 border-l-4 border-blue-500 mb-4 text-black">
+            <summary className="outline-none cursor-pointer text-center list-none">
+              <span>{faq.title}</span>
+            </summary>
+            <p className="pt-2">{faq.content}</p>
+          </details>
         ))}
       </div>
-      <h2 className="font-poppins text-lg text-center pt-20">
+      <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
         Feel free to contact us with any other questions at{' '}
         <a href='mailto:hackrpi@rpi.edu' className="text-red-500">hackrpi@rpi.edu!</a>
       </h2>
