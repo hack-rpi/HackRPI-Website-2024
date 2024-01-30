@@ -3,7 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 const { Item: AccordionItem, Header: AccordionHeader, Body: AccordionBody } = Accordion;
 
-// need to re-write these asap
+
+
+// Need to rewrite for 2024
 const faqs = [
   { title: 'What is HackRPI?',
     content:
@@ -37,6 +39,10 @@ const faqs = [
 
 ];
 
+
+
+// ... your faqs array and other code ...
+
 const FAQPage = () => {
   const [currentActiveKey, setCurrentActiveKey] = useState(null);
 
@@ -45,55 +51,23 @@ const FAQPage = () => {
   };
 
   return (
-    <Container fluid
-      style={{
-        height: 'fit-content',
-        marginBottom:'2rem',
-        alignItems: 'center',
-        color: "white"
-      }}
-      id="faq"
-    >
-      <h1
-        style={{
-          fontFamily: 'Mokoto',
-          fontWeight: '400',
-          color: 'white',
-          textAlign: 'center',
-          fontSize: '3rem',
-          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-
-          paddingBottom: 10,
-        }}
-      >
+    <div className="h-auto mb-8 flex items-center text-white" id="faq">
+      <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
         FAQs
       </h1>
-      <Accordion style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }} >
+      <div className="font-poppins w-3/4 m-auto">
         {faqs.map((faq, index) => (
-          <Accordion.Item eventKey={index} key={index}>
-            <Accordion.Header> {faq.title} </Accordion.Header>
-            <Accordion.Body> {faq.content} </Accordion.Body>
-          </Accordion.Item>
+          <div key={index}>
+            <h2>{faq.title}</h2>
+            <p>{faq.content}</p>
+          </div>
         ))}
-
-        <AccordionItem eventKey="1">
-          <AccordionHeader>Where is it happening?</AccordionHeader>
-          <AccordionBody>HackRPI will take place in the Darrin Communications Center (DCC) on the RPI Campus in Troy, NY. Exact directions can be found <a href="https://www.google.com/maps/place/Darrin+Communications+Center/@42.7293552,-73.6821407,17z/data=!3m1!4b1!4m6!3m5!1s0x89de0f0a7e6fd845:0xb802c916a2bdf3c3!8m2!3d42.7293552!4d-73.6795658!16s%2Fg%2F1tg7s_yx">here</a>.</AccordionBody>
-        </AccordionItem>
-
-        <AccordionItem eventKey='2'>
-          <AccordionHeader>What could I win?</AccordionHeader>
-          <AccordionBody>Our prizes are to be determined! There will be overall winners, and specific prize categories you can compete in! Have ideas for prizes you’d want to see? Let us know in our <a href='https://discord.gg/QHhRQ8CTcP'>discord</a>.</AccordionBody>
-        </AccordionItem>
-
-      </Accordion>
-      {/* I added id=sponsors here so that when you click the sponsors 
-      link at the top of the site, the sponsors segment isn't cut off 
-      by the nav bar */}
-      <h2 id='sponsors' style ={{ fontFamily: 'Poppins Light', fontSize: 20, textAlign: "center", paddingTop: 20}}
-      >Feel free to contact us with any other questions at <a href='mailto:hackrpi@rpi.edu' style ={{color: "#db4941"}}>hackrpi@rpi.edu!</a></h2>
-      
-    </Container>
+      </div>
+      <h2 className="font-poppins text-lg text-center pt-20">
+        Feel free to contact us with any other questions at{' '}
+        <a href='mailto:hackrpi@rpi.edu' className="text-red-500">hackrpi@rpi.edu!</a>
+      </h2>
+    </div>
   );
 };
 
