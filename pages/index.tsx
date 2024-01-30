@@ -1,5 +1,7 @@
 import "../app/globals.css";
 import Link from "../components/link";
+import FAQPage from './Pages/FAQPage/FAQPage.jsx';
+
 
 export default function Home() {
 	return (
