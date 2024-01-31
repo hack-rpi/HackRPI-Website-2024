@@ -1,6 +1,6 @@
 import NextImg from "next/image";
 
-export default function SubwayMap() {
+export default function DesktopSubwayMap() {
 	return (
 		<div className="width-full height-full absolute top-0 bottom-0 left-0 right-0 bg-base-100 -z-10">
 			{/* Circles */}
