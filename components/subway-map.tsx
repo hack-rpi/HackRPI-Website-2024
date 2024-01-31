@@ -21,7 +21,7 @@ export default function SubwayMap() {
             <div className="absolute top-[540px] right-[35px] w-3 h-[1000px] bg-hackrpi-primary-light-green "></div>
             {/* bottom Blue */}
             <div className="absolute top-[520px] right-[250px] w-[400px] h-3 bg-hackrpi-primary-blue -rotate-45"></div>
-            <div className="absolute top-[660px] left-[0px] w-[59.5%] h-3 bg-hackrpi-primary-blue "></div>
+            <div className="absolute top-[660px] left-[0px] w-[calc(100vw-580px)] h-3 bg-hackrpi-primary-blue "></div>
 
 		</div>
 	);
