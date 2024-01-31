@@ -2,6 +2,7 @@ import NavBar from "@/components/nav-bar";
 import "../app/globals.css";
 import Link from "../components/link";
 import SubwayMap from "@/components/desktop-subway-map";
+import Timer from "@/components/timer";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 				<p className="md:text-4xl xl:text-5xl"> xx/xx/xx </p>
 				<p className="md:text-2xl lg:text-3xl"> Darrin Communications Center, <br /> Rensselaer Polytechnic Institute </p>
 			</div>
+			<Timer></Timer>
 			<SubwayMap></SubwayMap>
 		</div>
 		
