@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<div className="">
 			<NavBar></NavBar>
-			<div className="absolute  top-[25%] left-0 w-[calc(100vw-450px)] lg:w-[calc(100vw-550px)] font-sans font-bold text-right flex items-end justify-center flex-col">
+			<div className="absolute  top-[20%] left-0 w-[calc(100vw-450px)] lg:w-[calc(100vw-550px)] font-sans font-bold text-right flex items-end justify-center flex-col">
 				<h1 className="md:text-7xl lg:text-8xl xl:text-9xl">
 					HackRPI 11
 				</h1>

@@ -1,4 +1,5 @@
 import NextImg from "next/image";
+import SubwayStop from "./subway-stop";
 
 export default function DesktopSubwayMap() {
 	return (
@@ -22,6 +23,9 @@ export default function DesktopSubwayMap() {
             {/* bottom Blue */}
             <div className="absolute top-[520px] right-[250px] w-[400px] h-3 bg-hackrpi-primary-blue -rotate-45"></div>
             <div className="absolute top-[660px] left-[0px] w-[calc(100vw-580px)] h-3 bg-hackrpi-primary-blue "></div>
+
+			{/* Subway Stops */}
+			{/* <SubwayStop color="hackrpi-secondary-yellow" top="100px" left="75%"></SubwayStop> */}
 
 		</div>
 	);
