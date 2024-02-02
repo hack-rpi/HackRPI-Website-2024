@@ -21,7 +21,7 @@ export default function DesktopSubwayMap() {
 			{/* top Yellow */}
 			<div className="relative -top-[150%] right-[75%] w-[21rem] h-3 bg-hackrpi-secondary-yellow rotate-45 -z-[5]"></div>
 			{/* right Green */}
-			<div className="relative -top-[1vw] -right-[1vw] w-[15vw] h-3 bg-hackrpi-primary-light-green rotate-45"></div>
+			<div className="relative -top-[20%] -right-[75%] w-[45%] h-3 bg-hackrpi-primary-light-green rotate-45"></div>
 			<div className="relative top-[20%] left-[121%] w-3 h-[1000px] bg-hackrpi-primary-light-green "></div>
 			{/* bottom Blue */}
 			{/* <div className="relative top-[520px] right-[250px] w-[400px] h-3 bg-hackrpi-primary-blue -rotate-45"></div>
