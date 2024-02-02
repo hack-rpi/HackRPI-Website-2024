@@ -27,7 +27,15 @@ export default function DesktopSubwayMap() {
 			<div className="relative bottom-[390%] right-[60%] w-[100%] h-3 bg-hackrpi-primary-blue -rotate-45"></div>
 			<div className="relative -top-[350%] right-[315%] w-[270%] h-3 bg-hackrpi-primary-blue "></div>
 			{/* Subway Stops */}
-			{/* <SubwayStop color="hackrpi-secondary-yellow" top="100px" left="75%"></SubwayStop> */}
+			<div className="relative bottom-[542%] right-[10%] w-fit">
+				<SubwayStop color="hackrpi-secondary-yellow"></SubwayStop>
+			</div>
+			<div className="relative bottom-[382%] right-[52%] w-fit">
+				<SubwayStop color="hackrpi-primary-blue"></SubwayStop>
+			</div>
+			<div className="relative bottom-[450%] -right-[104.5%] w-fit">
+				<SubwayStop color="hackrpi-primary-light-green"></SubwayStop>
+			</div>
 		</div>
 	);
 }
