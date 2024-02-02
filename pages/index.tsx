@@ -22,10 +22,10 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="">
+		<div className="h-full">
 			<NavBar />
 
-			<Timer />
+			{/* <Timer /> */}
 			{/* render desktop subway map if window width > 860px */}
 			{windowWidth > 860 ? (
 				<>
