@@ -1,9 +1,11 @@
+import DesktopSubwayMap from "./desktop-subway-map";
 import TitleText from "./title-text";
 
 export default function DesktopTitleComponent() {
 	return (
-		<div className="absolute  top-[25%] lg:top-[20%] left-0 w-[calc(100vw-450px)] lg:w-[calc(100vw-550px)]">
+		<div className="flex w-full h-fit my-8 lg:my-36 justify-around items-center">
 			<TitleText />
+			<DesktopSubwayMap />
 		</div>
 	);
 }

@@ -25,16 +25,14 @@ export default function Home() {
 		<div className="">
 			<NavBar />
 
-			<Timer/>
+			<Timer />
 			{/* render desktop subway map if window width > 860px */}
 			{windowWidth > 860 ? (
 				<>
-					<DesktopSubwayMap />
 					<DesktopTitleComponent />
 				</>
 			) : (
 				<>
-					<MobileSubwayMap />
 					<MobileTitleComponent />
 				</>
 			)}
