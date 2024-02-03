@@ -1,11 +1,11 @@
-import NavBar from "@/components/nav-bar";
+import NavBar from "@/components/nav-bar/nav-bar";
 import "../app/globals.css";
-import DesktopSubwayMap from "@/components/desktop-subway-map";
-import Timer from "@/components/timer";
-import MobileSubwayMap from "@/components/mobile-subway-map";
-import DesktopTitleComponent from "@/components/desktop-title";
+import DesktopSubwayMap from "@/components/title-components/desktop-subway-map";
+import Timer from "@/components/title-components/timer";
+import MobileSubwayMap from "@/components/title-components/mobile-subway-map";
+import DesktopTitleComponent from "@/components/title-components/desktop-title";
 import { useEffect, useState } from "react";
-import MobileTitleComponent from "@/components/mobile-title";
+import MobileTitleComponent from "@/components/title-components/mobile-title";
 
 export default function Home() {
 	const [windowWidth, setWindowWidth] = useState(0);
