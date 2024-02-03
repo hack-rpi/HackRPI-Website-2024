@@ -1,4 +1,4 @@
-import DesktopSubwayMap from "./desktop-subway-map";
+import DesktopSubwayMap from "./subway-map/desktop-subway-map";
 import TitleText from "./title-text";
 
 export default function DesktopTitleComponent() {
