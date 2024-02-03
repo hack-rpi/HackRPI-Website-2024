@@ -11,18 +11,18 @@ export default function DesktopSubwayMap() {
 			<div className="relative -top-[120%] right-[75%] w-[21rem] h-3 bg-hackrpi-secondary-yellow rotate-45 -z-[5]"></div>
 			{/* right Green */}
 			<div className="relative -top-[15%] -right-[75%] w-[45%] h-3 bg-hackrpi-primary-light-green rotate-45"></div>
-			<div className="relative -top-[5%] left-[110%] w-3 h-[1000px] bg-hackrpi-primary-light-green "></div>
+			<div className="relative top-[500%] -left-[386%] w-[1000%] h-3 bg-hackrpi-primary-light-green rotate-90"></div>
 			{/* bottom Blue */}
-			<div className="relative bottom-[315%] right-[60%] w-[100%] h-3 bg-hackrpi-primary-blue -rotate-45"></div>
-			<div className="relative bottom-[285%] right-[315%] w-[270%] h-3 bg-hackrpi-primary-blue "></div>
+			<div className="relative bottom-[7%] right-[60%] w-[100%] h-3 bg-hackrpi-primary-blue -rotate-45"></div>
+			<div className="absolute -bottom-[40%] -left-[1050%] w-[1000%] h-3 bg-hackrpi-primary-blue "></div>
 			{/* Subway Stops */}
-			<div className="relative bottom-[430%] right-[7%] w-fit">
+			<div className="relative bottom-[118%] right-[7%] w-fit">
 				<SubwayStop color="hackrpi-secondary-yellow"></SubwayStop>
 			</div>
-			<div className="relative bottom-[309%] right-[52%] w-fit">
+			<div className="relative bottom-[0%] right-[52%] w-fit">
 				<SubwayStop color="hackrpi-primary-blue"></SubwayStop>
 			</div>
-			<div className="relative bottom-[362%] -right-[104.5%] w-fit">
+			<div className="relative bottom-[46%] -right-[106.5%] w-fit">
 				<SubwayStop color="hackrpi-primary-light-green"></SubwayStop>
 			</div>
 		</div>
