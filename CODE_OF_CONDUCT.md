@@ -12,7 +12,6 @@ This Code of Conduct applies to all HackRPI-affiliated activity online and offli
 - Do not engage in any [unacceptable behaviors](#unacceptable-behaviors).
 - At any point, you may [report CoC violations](#reporting-incidents) to our Coordinators and Faculty Advisors.
 - [Project maintainers](#project-maintainer-responsibilities) should be mindful of the Code of Conduct.
-- Summarize any [project-specific guidelines](#[your-project]-specific-guidelines) (if any) here.
 
 ## Guidelines
 
