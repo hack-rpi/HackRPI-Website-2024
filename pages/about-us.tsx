@@ -1,143 +1,77 @@
 import React, { useState } from 'react';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import Tab from 'react-bootstrap/Tab';
-import Button from 'react-bootstrap/Button';
 
-const AboutPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>('one'); // 'one' represents the default active tab.
+const AboutPage = () => {
+  const [activeTab, setActiveTab] = useState('one');
 
-  const handleTabClick = (tabKey: string) => {
+  const handleTabClick = (tabKey: React.SetStateAction<string>) => {
     setActiveTab(tabKey);
   };
 
   return (
-    <div id="about" className="AboutPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
-      <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 55, height: 55 }}>
-        HackRPI 11
-      </h1>
-      <Tab.Container defaultActiveKey="one" font-style={{ paddingBottom: 50 }}>
-        <Col>
-          <Row>
-            <Nav
-              variant="pills-primary"
-              className="flex-row justify-content-center"
-              style={{ height: 50 }}
-            >
-              <Nav.Item>
-                <Nav.Link
-                  className="nav-link-custom"
-                  eventKey="one"
-                  onClick={() => handleTabClick('one')}
-                >
-                  {/* TODO: Make this use an active class instead of this styling method */}
-                  <Button
-                    variant="outline"
-                    className="button"
-                    style={{
-                      backgroundColor: activeTab === 'one' ? 'white' : '#910307',
-                      color: activeTab === 'one' ? 'black' : 'white',
-                    }}
-                    onClick={() => handleTabClick('one')}
-                  >
-                    the event
-                  </Button>
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  className="nav-link-custom"
-                  eventKey="two"
-                  onClick={() => handleTabClick('two')}
-                >
-                  {/* TODO: Make this use an active class instead of this styling method */}
-                  <Button
-                    variant="outline"
-                    className="button"
-                    style={{
-                      backgroundColor: activeTab === 'two' ? 'white' : '#910307',
-                      color: activeTab === 'two' ? 'black' : 'white',
-                    }}
-                    onClick={() => handleTabClick('two')}
-                  >
-                    the team
-                  </Button>
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Row>
+    <div id="about" className="text-center w-80 mx-auto">
+      <h1 className="font- text-5xl mt-8 mb-4">HackRPI 11</h1>
+      <div className="p-4">
+        <button
+          className={`button ${activeTab === 'one' ? '#74b7ef #264e33' : 'bg-red-700 text-white'}`}
+          onClick={() => handleTabClick('one')}
+        >
+          the event
+        </button>
+        <button
+          className={`button ${activeTab === 'two' ? 'bg-white text-black' : 'bg-red-700 text-white'}`}
+          onClick={() => handleTabClick('two')}
+        >
+          the team
+        </button>
+      </div>
 
-          <Tab.Content className="myClass">
-            <Tab.Pane eventKey="one">
-              HackRPI X is the 10th annual intercollegiate hackathon hosted by
-              RPI for students not only from RPI but also from all around the
-              world. Get swag and free food as you compete for exciting prizes!
-              With a broad range of workshops and mentors on-site, there’s no
-              experience necessary to attend. Hackers will also have the
-              opportunity to network with our fantastic sponsors from the
-              companies that make our event possible. This year's theme,{' '}
-              <span style={{ fontFamily: 'Poppins', fontWeight: 'bold', color: 'white' }}>
-                Change the World
-              </span>{' '}
-              is an ode to a decade inspiring students and HackRPI!
-              <br />
-              <br />Come join us this coming November 4-5, 2023, to hack,
-              learn, and meet other people!{' '}
-            </Tab.Pane>
-            <Tab.Pane eventKey="two">
-              We are a motivated team of RPI students who share a passion for
-              exploring the bounds of computer science and a commitment to
-              organizing a fantastic event. Our team of students from every
-              grade level works together to plan the hackathon and find sponsors
-              to bring the event together. <br />
-              <br />
-              We believe that HackRPI is a vital part of our school. Our goal is
-              to inspire and challenge innovators, creators, developers, and
-              entrepreneurs in New York’s Tech Valley and beyond. We help
-              attendees develop their skills, explore new technologies, and turn
-              their interests and visions into opportunities. Staying true to
-              our slogan “Why Not Code the World?"
-            </Tab.Pane>
-          </Tab.Content>
-        </Col>
-      </Tab.Container>
+      <div className="text-left">
+        {activeTab === 'one' ? (
+          <p>
+            HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but also from all around the
+            world. Get swag and free food as you compete for exciting prizes! With a broad range of workshops and mentors on-site, there’s no
+            experience necessary to attend. Hackers will also have the opportunity to network with our fantastic sponsors from the
+            companies that make our event possible. This year's theme,{' '}
+            <span className="font-bold text-white">Urban Planning</span> is an ode to a decade inspiring students and HackRPI!
+            <br /><br />Come join us this coming TBD to hack, learn, and meet other people!
+          </p>
+        ) : (
+          <p>
+            We are a motivated team of RPI students who share a passion for exploring the bounds of computer science and a commitment to
+            organizing a fantastic event. Our team of students from every grade level works together to plan the hackathon and find sponsors
+            to bring the event together.
+            <br /><br />
+            We believe that HackRPI is a vital part of our school. Our goal is to inspire and challenge innovators, creators, developers, and
+            entrepreneurs in New York’s Tech Valley and beyond. We help attendees develop their skills, explore new technologies, and turn
+            their interests and visions into opportunities. Staying true to our slogan “Why Not Code the World?"
+          </p>
+        )}
+      </div>
 
-      <div
-        style={{
-          display: 'flex',
-          textAlign: 'left',
-          paddingBottom: 125,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
+      <div className="flex justify-center items-center mt-8">
         <div className="circle"></div>
         <div className="about-info">
           <h2>DATE</h2>
-          <p>November 4-5, 2023</p>
+          <p>TBD</p>
         </div>
 
         <div className="circle"></div>
         <div className="about-info">
           <h2>LOCATION</h2>
           <p>
-            {' '}
             Rensselear Polytechnic Institute (RPI), NY <br />
             Darrin Communications Center
           </p>
         </div>
 
         <div>
-          <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
-            <Button
-              variant="outline"
-              className="button"
-              style={{ backgroundColor: '#910307', color: 'white' }}
+          <a href="https://organize.mlh.io/participants/events/9892-hackrpi">
+            <button
+              className="button bg-red-700 text-white"
             >
               Register Now!
-            </Button>
-          </Nav.Link>
+            </button>
+          </a>
         </div>
       </div>
     </div>
