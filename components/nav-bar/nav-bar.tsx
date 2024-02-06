@@ -1,4 +1,3 @@
-import NextLink from "next/link";
 import NavBarLink from "./nav-bar-link";
 
 export default function NavBar() {
@@ -7,6 +6,7 @@ export default function NavBar() {
 			<div className="flex justify-start items-center h-full">
 				<NavBarLink href="/">
 					<div className="flex justify-around items-center">
+						{/* This logo should change, miranda has one with a different yellow arrow */}
 						<img src="HackRPI_Logo_Outlined.png" className="h-14" />
 						<h1 className="text-black text-2xl font-bold ml-2">HackRPI 11</h1>
 					</div>
