@@ -1,8 +1,5 @@
-import NavBar from "@/components/nav-bar/nav-bar";
+import NavBar from "@/components/nav-bar/nav-bar-desktop";
 import "../app/globals.css";
-import DesktopSubwayMap from "@/components/title-components/subway-map/desktop-subway-map";
-import Timer from "@/components/title-components/timer";
-import MobileSubwayMap from "@/components/title-components/subway-map/mobile-subway-map";
 import DesktopTitleComponent from "@/components/title-components/desktop-title";
 import { useEffect, useState } from "react";
 import MobileTitleComponent from "@/components/title-components/mobile-title";
