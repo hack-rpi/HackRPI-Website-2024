@@ -12,6 +12,8 @@ export default function Home() {
 			<Link href="/sponsor-us">Sponsor Us</Link>
 			<br />
 			<Link href="/faq">faqPage</Link>
+			<br />
+			<Link href="/daisyUI">TemporaryDaisyUIPage</Link>
 		</div>
 	);
 }

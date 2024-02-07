@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Accordion from 'react-bootstrap/Accordion';
-const { Item: AccordionItem, Header: AccordionHeader, Body: AccordionBody } = Accordion;
 
-
-
-// Need to rewrite for 2024
 const faqs = [
   { title: 'What is HackRPI?',
     content:
       'HackRPI is a 24 hour coding event where hackers will work in teams of 1 to 4 people to create projects based around the theme to win epic prizes thanks to our sponsors!',
   },
   { title: 'When is HackRPI X?',
-  content:
-    "November 4th-5th 2023, is the date for our 10th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
+    content:
+      "November 4th-5th 2023, is the date for our 10th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
   },
   { title: 'Is it free to attend?',
-  content:
-    'Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you can get!',
+    content:
+      'Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you can get!',
   },
   { title: 'How do I apply?',
     content: 'Click the link above to apply!', //fix this or provide the direct link
@@ -36,26 +30,37 @@ const faqs = [
   { title: 'Does HackRPI provide travel reimbursement?',
     content: 'We are unable to provide travel reimbursement at this time, but are happy to offer advice for nearby and affordable transportation options.',
   },
-
 ];
 
-
-// ... your faqs array and other code ...
-
+//const faqs = []
 const FAQPage = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleClick = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null);
+    } else {
+      setOpenIndex(index);
+    }
+  };
+
   return (
     <div className="h-auto mb-8 flex flex-col items-center text-white" id="faq">
       <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
         FAQs
       </h1>
-      <div className="font-poppins w-3/4 m-auto">
+      <div className="collapse w-full">
         {faqs.map((faq, index) => (
-          <details key={index} className="bg-blue-200 p-4 border-l-4 border-blue-500 mb-4 text-black">
-            <summary className="outline-none cursor-pointer text-center list-none">
-              <span>{faq.title}</span>
-            </summary>
-            <p className="pt-2">{faq.content}</p>
-          </details>
+          <div 
+            key={index} 
+            className={`collapse-title ${openIndex === index ? 'collapse-open' : ''}`}
+            onClick={() => handleClick(index)}
+          >
+            {faq.title}
+            <div className="collapse-content">
+              {faq.content}
+            </div>
+          </div>
         ))}
       </div>
       <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
