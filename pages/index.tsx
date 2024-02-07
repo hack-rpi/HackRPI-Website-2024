@@ -13,7 +13,7 @@ export default function Home() {
 			<br />
 			<Link href="/faq">faqPage</Link>
 			<br />
-			<Link href="/daisyUI">TemporaryDaisyUIPage</Link>
+			<Link href="/daisyUI">Accordion</Link>
 		</div>
 	);
 }
