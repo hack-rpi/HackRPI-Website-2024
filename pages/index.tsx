@@ -1,4 +1,5 @@
-import NavBar from "@/components/nav-bar/nav-bar-desktop";
+import DesktopNavBar from "@/components/nav-bar/nav-bar-desktop";
+import MobileNavBar from "@/components/nav-bar/nav-bar-mobile";
 import "../app/globals.css";
 import DesktopTitleComponent from "@/components/title-components/desktop-title";
 import { useEffect, useState } from "react";
@@ -20,7 +21,12 @@ export default function Home() {
 
 	return (
 		<div className="h-screen overflow-x-hidden overflow-y-visible">
-			<NavBar />
+			{/* render desktop nav bar if window width > 860px */}
+			{windowWidth > 860 ? (
+				<DesktopNavBar />
+			) : (
+				<MobileNavBar />
+			)}
 
 			{/* <Timer /> */}
 			{/* render desktop subway map if window width > 860px */}
