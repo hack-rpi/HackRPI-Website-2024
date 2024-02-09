@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import '../app/globals.css';
 
 const faqs = [
-  { title: 'What is HackRPI?',
+  { title: 'What is HackRPI?', 
     content:
       'HackRPI is a 24 hour coding event where hackers will work in teams of 1 to 4 people to create projects based around the theme to win epic prizes thanks to our sponsors!',
   },
@@ -32,18 +33,7 @@ const faqs = [
   },
 ];
 
-//const faqs = []
 const FAQPage = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const handleClick = (index) => {
-    if (openIndex === index) {
-      setOpenIndex(null);
-    } else {
-      setOpenIndex(index);
-    }
-  };
-
   return (
     <div className="h-auto mb-8 flex flex-col items-center text-white" id="faq">
       <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
@@ -51,12 +41,10 @@ const FAQPage = () => {
       </h1>
       <div className="collapse w-full">
         {faqs.map((faq, index) => (
-          <div 
-            key={index} 
-            className={`collapse-title ${openIndex === index ? 'collapse-open' : ''}`}
-            onClick={() => handleClick(index)}
-          >
-            {faq.title}
+          <div key={index} className="collapse collapse-arrow">
+            <div className="collapse-title">
+              {faq.title}
+            </div>
             <div className="collapse-content">
               {faq.content}
             </div>
@@ -72,3 +60,4 @@ const FAQPage = () => {
 };
 
 export default FAQPage;
+
