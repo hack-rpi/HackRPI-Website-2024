@@ -1,4 +1,3 @@
-import NextImg from "next/image";
 import SubwayStop from "./subway-stop";
 import SubwayCircles from "./subway-circles";
 

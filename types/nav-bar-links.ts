@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
 export interface NavBarLinkType {
-    href: string;
-    children: React.ReactNode;
+	href: string;
+	children: React.ReactNode;
 }
