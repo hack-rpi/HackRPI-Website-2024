@@ -1,7 +1,8 @@
+import { NavBarLinkType } from "@/types/nav-bar-links";
 import NavBarLink from "./nav-bar-link";
 import { useState, useEffect, use } from "react";
 
-export default function NavBarMobile() {
+export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
 	useEffect(() => {
 		document.onkeydown = (e) => {
@@ -18,25 +19,28 @@ export default function NavBarMobile() {
 				onClick={() => setNavMenuOpen(false)}
 			></div>
 			<div
-				className={`absolute w-72 h-full bg-hackrpi-secondary-yellow z-20 ${
-					navMenuOpen ? "left-0" : "-left-72"
-				} transition-all`}
+				className={`absolute w-80 h-full bg-hackrpi-secondary-yellow z-20 ${
+					navMenuOpen ? "left-0" : "-left-80"
+				} transition-all duration-300`}
 			>
 				<div className="flex flex-col justify-start items-center w-full h-full my-1">
-					<div className="flex w-full items-center justify-center sticky">
+					<div className="flex w-full items-center justify-center">
 						<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="h-10 w-10">
 							<img src="menu-icon.svg" />
 						</button>
 						<NavBarLink href="/">
 							<div className="flex justify-around items-center">
 								<img src="HackRPI_Logo_Outlined.png" className="h-14 ml-1" />
-								<h1 className="text-black text-2xl font-bold ml-2">HackRPI 11</h1>
+								<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 							</div>
 						</NavBarLink>
 					</div>
-					<NavBarLink href="/sponsor-us">
-						<h1 className="text-black text-2xl font-bold">Sponsor Us</h1>
-					</NavBarLink>
+					<hr className="w-full border-black mb-2" />
+					{links.map((link) => (
+						<NavBarLink key={link.href} href={link.href}>
+							{link.children}
+						</NavBarLink>
+					))}
 				</div>
 			</div>
 			<div className="bg-hackrpi-secondary-yellow w-full h-16 sticky top-0">
@@ -47,7 +51,7 @@ export default function NavBarMobile() {
 					<NavBarLink href="/">
 						<div className="flex justify-around items-center">
 							<img src="HackRPI_Logo_Outlined.png" className="h-14 ml-1" />
-							<h1 className="text-black text-2xl font-bold ml-2">HackRPI 11</h1>
+							<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 						</div>
 					</NavBarLink>
 				</div>

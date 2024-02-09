@@ -1,16 +1,21 @@
+import { NavBarLinkType } from "@/types/nav-bar-links";
 import NavBarLink from "./nav-bar-link";
 
-export default function NavBarDesktop() {
+export default function DesktopNavBar({links}: {links: NavBarLinkType[]}) {
 	return (
 		<div className="bg-hackrpi-secondary-yellow w-full h-16">
 			<div className="flex justify-start items-center h-full">
 				<NavBarLink href="/">
 					<div className="flex justify-around items-center">
 						<img src="HackRPI_Logo_Outlined.png" className="h-14" />
-						<h1 className="text-black text-2xl font-bold ml-2">HackRPI 11</h1>
+						<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 					</div>
 				</NavBarLink>
-				<NavBarLink href="/sponsor-us">Sponsor Us</NavBarLink>
+				{links.map((link) => (
+					<NavBarLink key={link.href} href={link.href}>
+						{link.children}
+					</NavBarLink>
+				))}
 			</div>
 		</div>
 	);

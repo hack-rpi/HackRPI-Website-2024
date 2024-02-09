@@ -1,9 +1,8 @@
-import "../app/globals.css";
 import { useEffect, useState } from "react";
-import NavBar from "@/components/nav-bar/nav-bar";
-import TitleComponent from "@/components/title-components/title";
+import DesktopTitleComponent from "./desktop-title";
+import MobileTitleComponent from "./mobile-title";
 
-export default function Home() {
+export default function TitleComponent() {
 	const [windowWidth, setWindowWidth] = useState(0);
 
 	useEffect(() => {
@@ -17,10 +16,5 @@ export default function Home() {
 		};
 	}, []);
 
-	return (
-		<div className="h-screen overflow-x-hidden overflow-y-visible">
-			<NavBar />
-			<TitleComponent />
-		</div>
-	);
+	return windowWidth > 860 ? <DesktopTitleComponent /> : <MobileTitleComponent />;
 }
