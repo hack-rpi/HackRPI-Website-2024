@@ -34,29 +34,30 @@ const faqs = [
 ];
 
 const FAQPage = () => {
-  return (
-    <div className="h-auto mb-8 flex flex-col items-center text-white" id="faq">
-      <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
-        FAQs
-      </h1>
-      <div className="collapse w-full">
-        {faqs.map((faq, index) => (
-          <div key={index} className="collapse collapse-arrow">
-            <div className="collapse-title">
-              {faq.title}
+    return (
+        <div className="h-auto mb-8 flex flex-col items-center text-white" id="faq">
+            <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
+                FAQs
+            </h1>
+            <div className="collapse w-full">
+                {faqs.map((faq, index) => (
+                    <div key={index} className="collapse bg-base-200">
+                        <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
+                        <div className="collapse-title text-xl font-medium">
+                            {faq.title}
+                        </div>
+                        <div className="collapse-content"> 
+                            <p>{faq.content}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div className="collapse-content">
-              {faq.content}
-            </div>
-          </div>
-        ))}
-      </div>
-      <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
-        Feel free to contact us with any other questions at{' '}
-        <a href='mailto:hackrpi@rpi.edu' className="text-red-500">hackrpi@rpi.edu!</a>
-      </h2>
-    </div>
-  );
+            <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
+                Feel free to contact us with any other questions at{' '}
+                <a href='mailto:hackrpi@rpi.edu' className="text-red-500">hackrpi@rpi.edu!</a>
+            </h2>
+        </div>
+    );
 };
 
 export default FAQPage;
