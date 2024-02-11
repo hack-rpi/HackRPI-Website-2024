@@ -21,7 +21,7 @@ const SponsorPage = () => {
           ];
           return (
             <div className="container" key={'sponsorGroup' + indx}>
-              <h3 className="font-helvetica text-xl tierHeader mb-5 border-b-2 border-white pb-2 relative cursor-pointer group">
+              <h3 className="font-helvetica text-2xl tierHeader mb-5 border-b-2 border-white pb-2 relative cursor-pointer group">
                 <span className="transition-all duration-250 group-hover:font-bold group-hover:text-light-blue-500">
                   {tierList[indx]}
                 </span>
@@ -57,9 +57,13 @@ const SponsorPage = () => {
                                       ? img
                                       : sponsor.logoPath
                                   }
-                                  className="img-fluid rounded w-32 h-auto"
+                                  className="img-fluid rounded"
+                                  style={{
+                                    width: '200px', // Adjust the width as desired
+                                    height: 'auto', // Maintain aspect ratio
+                                    transition: 'transform 0.3s ease', // Add transition
+                                  }}
                                   alt={sponsor.name}
-                                  style={{ transition: 'transform 0.3s ease' }} // Add transition
                                   onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'} // Apply hover effect
                                   onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} // Remove hover effect
                                 />
@@ -94,9 +98,13 @@ const SponsorPage = () => {
                                     ? img
                                     : sponsor.logoPath
                                 }
-                                className="img-fluid rounded w-32 h-auto"
+                                className="img-fluid rounded"
+                                style={{
+                                  width: '200px', // Adjust the width as desired
+                                  height: 'auto', // Maintain aspect ratio
+                                  transition: 'transform 0.3s ease', // Add transition
+                                }}
                                 alt={sponsor.name}
-                                style={{ transition: 'transform 0.3s ease' }} // Add transition
                                 onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'} // Apply hover effect
                                 onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} // Remove hover effect
                               />
