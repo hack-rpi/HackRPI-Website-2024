@@ -1,6 +1,7 @@
 import NextImg from "next/image";
 import { NavBarLinkType } from "@/types/nav-bar-links";
 import NavBarLink from "./nav-bar-link";
+import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 
 export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
 	return (
@@ -8,8 +9,8 @@ export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
 			<div className="flex justify-start items-center h-full">
 				<NavBarLink href="/">
 					<div className="flex justify-around items-center">
-						<NextImg alt="HackRPI Logo" src="/HackRPI_Logo_Outlined.png" className="h-14" height="100" width="100" />
-						<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
+						<NextImg alt="HackRPI Logo" src={hackrpi_logo} className="w-14 h-14" />
+						<h1 className="text-black text-2xl font-bold ml-2">Home</h1>
 					</div>
 				</NavBarLink>
 				{links.map((link) => (

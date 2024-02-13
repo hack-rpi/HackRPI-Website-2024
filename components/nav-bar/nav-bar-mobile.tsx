@@ -2,6 +2,7 @@ import { NavBarLinkType } from "@/types/nav-bar-links";
 import NavBarLink from "./nav-bar-link";
 import { useState, useEffect } from "react";
 import NextImg from "next/image";
+import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 
 export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
@@ -27,17 +28,11 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 				<div className="flex flex-col justify-start items-center w-full h-full my-1">
 					<div className="flex w-full items-center justify-center">
 						<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="h-10 w-10">
-							<NextImg alt="Navigation Menu" src="menu-icon.svg" width="100" height="100" />
+							<NextImg alt="Navigation Menu" src="menu-icon.svg" width="70" height="50" />
 						</button>
 						<NavBarLink href="/">
-							<div className="flex justify-around items-center">
-								<NextImg
-									alt="HackRPI"
-									src="/HackRPI_Logo_Outlined.png"
-									className="h-14 ml-1"
-									width="100"
-									height="100"
-								/>
+							<div className="flex justify-around items-center h-full">
+								<NextImg alt="HackRPI" src={hackrpi_logo} className="ml-1 w-14" />
 								<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 							</div>
 						</NavBarLink>
@@ -57,7 +52,7 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 					</button>
 					<NavBarLink href="/">
 						<div className="flex justify-around items-center">
-							<NextImg alt="HackRPI" src="/HackRPI_Logo_Outlined.png" className="h-14 ml-1" height="100" width="100" />
+							<NextImg alt="HackRPI" src={hackrpi_logo} className="w-14 h-14 ml-1" />
 							<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 						</div>
 					</NavBarLink>
