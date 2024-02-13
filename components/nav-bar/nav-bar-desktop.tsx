@@ -8,7 +8,7 @@ export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
 			<div className="flex justify-start items-center h-full">
 				<NavBarLink href="/">
 					<div className="flex justify-around items-center">
-						<NextImg alt="HackRPI Logo" src="/HackRPI_Logo_Outlined.png" className="h-14" height="100" width="100"/>
+						<NextImg alt="HackRPI Logo" src="/HackRPI_Logo_Outlined.png" className="h-14" height="100" width="100" />
 						<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 					</div>
 				</NavBarLink>

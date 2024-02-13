@@ -31,7 +31,13 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 						</button>
 						<NavBarLink href="/">
 							<div className="flex justify-around items-center">
-								<NextImg alt="HackRPI" src="/HackRPI_Logo_Outlined.png" className="h-14 ml-1" width="100" height="100" />
+								<NextImg
+									alt="HackRPI"
+									src="/HackRPI_Logo_Outlined.png"
+									className="h-14 ml-1"
+									width="100"
+									height="100"
+								/>
 								<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
 							</div>
 						</NavBarLink>
