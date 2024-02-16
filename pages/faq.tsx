@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../app/globals.css';
+import '../app/globals.css'; // Global styles location for tailwind css
 
 const faqs = [
   { title: 'What is HackRPI?', 
@@ -8,7 +8,7 @@ const faqs = [
   },
   { title: 'When is HackRPI X?',
     content:
-      "November 4th-5th 2023, is the date for our 10th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
+      "November 4th-5th 2024, is the date for our 11th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
   },
   { title: 'Is it free to attend?',
     content:
@@ -42,7 +42,7 @@ const FAQPage = () => {
             <div className="w-full md:w-1/2 lg:w-1/3 mx-auto"> 
                 {faqs.map((faq, index) => (
 
-                    // controls the accordion size p-4 controls the padding while mb-4 creates space between each accordion
+                    // controls the accordion size p-4 controls the padding while mb-4 creates space between each accordion 
                     <div key={index} className="collapse bg-base-200 p-4 mb-4">
                         <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
                         <div className="collapse-title text-xl font-medium">
@@ -56,7 +56,7 @@ const FAQPage = () => {
             </div>
             <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
                 Feel free to contact us with any other questions at{' '}
-                <a href='mailto:hackrpi@rpi.edu' className="text-red-500">hackrpi@rpi.edu!</a>
+                <a href='mailto:hackrpi@rpi.edu' className="text-blue-500">hackrpi@rpi.edu!</a>
             </h2>
         </div>
     );
