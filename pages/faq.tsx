@@ -34,33 +34,30 @@ const faqs = [
 ];
 
 const FAQPage = () => {
-    return (
-        <div className="h-auto mb-8 flex flex-col items-center text-white bg-gradient-to-r from-[#74b7ef] to-[#264e33]" id="faq"> 
-            <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
-                FAQs
-            </h1>
-            <div className="w-full md:w-1/2 lg:w-1/3 mx-auto"> 
-                {faqs.map((faq, index) => (
-
-                    // controls the accordion size p-4 controls the padding while mb-4 creates space between each accordion 
-                    <div key={index} className="collapse bg-base-200 p-4 mb-4">
-                        <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
-                        <div className="collapse-title text-xl font-medium">
-                            {faq.title}
-                        </div>
-                        <div className="collapse-content"> 
-                            <p>{faq.content}</p>
-                        </div>
-                    </div>
-                ))}
+  return (
+    <div className="h-auto mb-8 flex flex-col items-center text-white bg-gradient-to-r from-hackrpi-primary-blue to-hackrpi-primary-dark-green" id="faq">         
+      <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
+        FAQs
+      </h1>
+      <div className="w-full md:w-1/2 lg:w-1/3 mx-auto"> 
+        {faqs.map((faq, index) => (
+          <div key={index} className="collapse collapse-arrow bg-base-200 p-4 mb-4">
+            <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
+            <div className="collapse-title text-xl font-medium">
+              {faq.title}
             </div>
-            <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
-                Feel free to contact us with any other questions at{' '}
-                <a href='mailto:hackrpi@rpi.edu' className="text-blue-500">hackrpi@rpi.edu!</a>
-            </h2>
-        </div>
-    );
+            <div className="collapse-content"> 
+              <p>{faq.content}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <h2 id='sponsors' className="font-poppins text-lg text-center pt-20">
+        Feel free to contact us with any other questions at{' '}
+        <a href='mailto:hackrpi@rpi.edu' className="text-hackrpi-secondary-light-green">hackrpi@rpi.edu!</a>
+      </h2>
+    </div>
+  );
 };
 
 export default FAQPage;
-
