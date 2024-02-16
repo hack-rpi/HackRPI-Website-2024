@@ -35,13 +35,15 @@ const faqs = [
 
 const FAQPage = () => {
     return (
-        <div className="h-auto mb-8 flex flex-col items-center text-white" id="faq">
+        <div className="h-auto mb-8 flex flex-col items-center text-white bg-gradient-to-r from-[#74b7ef] to-[#264e33]" id="faq"> 
             <h1 className="font-mokoto font-normal text-white text-center text-3xl text-shadow-md pb-10">
                 FAQs
             </h1>
-            <div className="collapse w-full">
+            <div className="w-full md:w-1/2 lg:w-1/3 mx-auto"> 
                 {faqs.map((faq, index) => (
-                    <div key={index} className="collapse bg-base-200">
+
+                    // controls the accordion size p-4 controls the padding while mb-4 creates space between each accordion
+                    <div key={index} className="collapse bg-base-200 p-4 mb-4">
                         <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
                         <div className="collapse-title text-xl font-medium">
                             {faq.title}
