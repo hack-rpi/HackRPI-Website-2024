@@ -10,6 +10,7 @@ export default function Home() {
 				more information.
 			</p>
 			<Link href="/sponsor-us">Sponsor Us</Link>
+			<Link href="/MeetTheTeamPage">Meet The Team</Link>
 		</div>
 	);
 }
