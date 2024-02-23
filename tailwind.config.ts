@@ -7,6 +7,9 @@ const config: Config = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		fontFamily: {
+			sans: ["Helvetica", "Arial", "sans-serif"],
+		},
 		extend: {
 			colors: {
 				"hackrpi-primary-blue": "#74b7ef",
