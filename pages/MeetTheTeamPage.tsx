@@ -1,4 +1,5 @@
 import React from 'react';
+import 'daisyui/dist/full.css'; // Import Daisy UI CSS
 import maryellenImage from './../public/TeamPics/mel image.jpeg';
 import ravenImage from './../public/TeamPics/raven image.jpg';
 import xeniaImage from './../public/TeamPics/xenia image.jpg';
@@ -20,180 +21,131 @@ import amandaImage from './../public/TeamPics/amanda image.jpeg';
 import cooperImage from './../public/TeamPics/cooper image.jpg';
 
 const MeetTheTeamPage = () => {
-    const teamMembersFirstRow = [
-      {
-        name: 'Maryellen Marino',
-        role: 'President',
-        image: maryellenImage,
-        avatar: maryellenAvatar,
-      },
-      {
-        name: 'Raven Levitt',
-        role: 'Vice President',
-        image: ravenImage,
-        avatar: ravenAvatar,
-      },
-      {
-        name: 'John Kloepfer',
-        role: 'Director of Technology',
-        image: johnImage,
-        avatar: johnAvatar,
-      },
-    ];
-  
-    const teamMembersSecondRow = [
-      {
-        name: 'Xenia Khusid',
-        role: 'Director of Logistics',
-        image: xeniaImage,
-        avatar: xeniaAvatar,
-      },
-      {
-        name: 'Adwait Naware',
-        role: 'Director of Finance',
-        image: adwaitImage,
-        avatar: adwaitAvatar,
-      },
-      {
-        name: 'Sanay Tralshawala',
-        role: 'Director of Sponsorship',
-        image: sanayImage,
-        avatar: sanayAvatar,
-      },
-      {
-        name: 'Miranda Zheng',
-        role: 'Director of Marketing',
-        image: mirandaImage,
-        avatar: mirandaAvatar,
-      },
-    ];
-  
-    const jrTeamMembersFirstRow = [
-      {
-        name: 'CJ Marino',
-        role: 'Junior Director of Logistics',
-        image: cjImage,
-      },
-      {
-        name: 'Grace Hui',
-        role: 'Junior Director of Finance',
-        image: graceImage,
-      },
-    ];
-  
-    const jrTeamMembersSecondRow = [
-      {
-        name: 'Heman Kolla',
-        role: 'Junior Director of Sponsorship',
-        image: hemanImage,
-      },
-      {
-        name: 'Amanda Ruan',
-        role: 'Junior Director of Marketing',
-        image: amandaImage,
-      },
-      {
-        name: 'Cooper Werner',
-        role: 'Junior Director of Technology',
-        image: cooperImage,
-      },
-    ];
-  
-    return (
-      <div id="members" className="MeetTheTeamPage centeredText">
-        <h1 id="meet-our-team-header" className="font-Mokoto text-5xl mb-10">
-          Meet Our Team!
-        </h1>
-  
-        <div className="team-members w-1100 mx-auto">
-          <h1 className="director-jrDirector-header font-Mokoto text-3xl mb-8">
-            Meet The Directors
-            <p className="text-sm italic">Avatars by Lilu Kaufman</p>
-          </h1>
-  
-          <div className="grid grid-cols-3 gap-4">
-            {/* Directors */}
-            {teamMembersFirstRow.map((member, index) => (
-              <div key={index} className="director-div">
-                <div className="flex justify-center items-center">
-                  <img className="director-img" src={member.image} alt={member.name}/>
-                  <img className="director-avatar" src={member.avatar} alt={member.name}/>
-                </div>
-                <div className="director-name-div">
-                  <h2 className="name">{member.name}</h2>
-                  <p className="position">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-  
-          <div className="grid grid-cols-3 gap-4">
-            {/* Directors */}
-            {teamMembersSecondRow.map((member, index) => (
-              <div key={index} className="director-div">
-                <div className="flex justify-center items-center">
-                  <img className="director-img" src={member.image} alt={member.name}/>
-                  <img className="director-avatar" src={member.avatar} alt={member.name}/>
-                </div>
-                <div className="director-name-div">
-                  <h2 className="name">{member.name}</h2>
-                  <p className="position">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-  
-          {/* Jr Directors */}
-          <h1 className="director-jrDirector-header mt-10 font-Mokoto text-2xl">
-            Meet the Junior Directors
-          </h1>
-  
-          <div className="grid grid-cols-2 gap-4">
-            {/* Jr Directors */}
-            {jrTeamMembersFirstRow.map((member, index) => (
-              <div key={index} className="director-div">
-                <div className="flex justify-center items-center">
-                  <img className="director-img" src={member.image} alt={member.name}/>
-                </div>
-                <div className="director-name-div">
-                  <h2 className="name">{member.name}</h2>
-                  <p className="position junior">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-  
-          <div className="grid grid-cols-3 gap-4">
-            {/* Jr Directors */}
-            {jrTeamMembersSecondRow.map((member, index) => (
-              <div key={index} className="director-div">
-                <div className="flex justify-center items-center">
-                  <img className="director-img" src={member.image} alt={member.name}/>
-                </div>
-                <div className="director-name-div">
-                  <h2 className="name">{member.name}</h2>
-                  <p className="position junior">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-  
-          {/* Tab content and buttons */}
-          <p className="text-2xl font-bold mt-8 mb-4">
-            Want to Help?
-          </p>
-  
-          <div className="flex justify-center">
-            <a href="https://forms.gle/VY1vXF1mPMgx82wdA" className="btn btn-outline btn-primary mr-4">
-              Mentor Application
-            </a>
-            <a href="https://forms.gle/kEpdKKKrFsSUQztR6" className="btn btn-outline btn-primary">
-              Volunteer Application
-            </a>
-          </div>
-        </div>
+  const teamMembersFirstRow = [
+    {
+      name: 'Maryellen Marino',
+      role: 'President',
+      image: maryellenImage.src,
+      avatar: maryellenAvatar.src,
+    },
+    {
+      name: 'Raven Levitt',
+      role: 'Vice President',
+      image: ravenImage.src,
+      avatar: ravenAvatar.src,
+    },
+    {
+      name: 'John Kloepfer',
+      role: 'Director of Technology',
+      image: johnImage.src,
+      avatar: johnAvatar.src,
+    },
+  ];
+
+  const teamMembersSecondRow = [
+    {
+      name: 'Xenia Khusid',
+      role: 'Director of Logistics',
+      image: xeniaImage.src,
+      avatar: xeniaAvatar.src,
+    },
+    {
+      name: 'Adwait Naware',
+      role: 'Director of Finance',
+      image: adwaitImage.src,
+      avatar: adwaitAvatar.src,
+    },
+    {
+      name: 'Sanay Tralshawala',
+      role: 'Director of Sponsorship',
+      image: sanayImage.src,
+      avatar: sanayAvatar.src,
+    },
+    {
+      name: 'Miranda Zheng',
+      role: 'Director of Marketing',
+      image: mirandaImage.src,
+      avatar: mirandaAvatar.src,
+    },
+  ];
+
+  const jrTeamMembersFirstRow = [
+    {
+      name: 'CJ Marino',
+      role: 'Junior Director of Logistics',
+      image: cjImage.src,
+    },
+    {
+      name: 'Grace Hui',
+      role: 'Junior Director of Finance',
+      image: graceImage.src,
+    },
+  ];
+
+  const jrTeamMembersSecondRow = [
+    {
+      name: 'Heman Kolla',
+      role: 'Junior Director of Sponsorship',
+      image: hemanImage.src,
+    },
+    {
+      name: 'Amanda Ruan',
+      role: 'Junior Director of Marketing',
+      image: amandaImage.src,
+    },
+    {
+      name: 'Cooper Werner',
+      role: 'Junior Director of Technology',
+      image: cooperImage.src,
+    },
+  ];
+  return (
+    <div className="p-8">
+  <h2 className="text-2xl font-bold mb-4">Team Members First Row</h2>
+  <div className="flex flex-row">
+    {teamMembersFirstRow.map((member, index) => (
+      <div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
+        <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px' }} />
+        <h3 className="text-lg font-semibold">{member.name}</h3>
+        <p className="text-gray-500">{member.role}</p>
       </div>
-    );
-  };
+    ))}
+  </div>
   
-  export default MeetTheTeamPage;
+      <h2 className="text-2xl font-bold mt-8 mb-4">Team Members Second Row</h2>
+      <div className="flex flex-wrap justify-start">
+        {teamMembersSecondRow.map((member, index) => (
+          <div key={index} className="px-4 mb-8 text-center">
+            <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
+            <h3 className="text-lg font-semibold">{member.name}</h3>
+            <p className="text-gray-500">{member.role}</p>
+          </div>
+        ))}
+      </div>
+  
+      <h2 className="text-2xl font-bold mt-8 mb-4">Junior Team Members First Row</h2>
+      <div className="flex flex-wrap justify-start">
+        {jrTeamMembersFirstRow.map((member, index) => (
+          <div key={index} className="px-4 mb-8 text-center">
+            <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
+            <h3 className="text-lg font-semibold">{member.name}</h3>
+            <p className="text-gray-500">{member.role}</p>
+          </div>
+        ))}
+      </div>
+  
+      <h2 className="text-2xl font-bold mt-8 mb-4">Junior Team Members Second Row</h2>
+      <div className="flex flex-wrap justify-start">
+        {jrTeamMembersSecondRow.map((member, index) => (
+          <div key={index} className="px-4 mb-8 text-center">
+            <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
+            <h3 className="text-lg font-semibold">{member.name}</h3>
+            <p className="text-gray-500">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MeetTheTeamPage;
