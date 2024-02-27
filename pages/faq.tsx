@@ -45,7 +45,7 @@ const faqs = [
 const FAQPage = () => {
 	return (
 		<div className="h-auto mb-8 flex flex-col items-start text-white bg-base-100" id="faq">
-			<div className="w-full md:w-1/2 lg:w-1/3 mx-auto">
+			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
 				<h1 className="font-mokoto font-normal text-white text-left text-3xl text-shadow-md pb-10">FAQs</h1>
 			</div>
 			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
@@ -62,10 +62,10 @@ const FAQPage = () => {
 					</div>
 				))}
 			</div>
-			<div className="w-full md:w-1/2 lg:w-1/3 mx-auto">
+			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
 				<h2 id="sponsors" className="font-poppins text-lg text-center pt-20">
 					Feel free to contact us with any other questions at{" "}
-					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-secondary-light-green">
+					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">
 						hackrpi@rpi.edu!
 					</a>
 				</h2>
