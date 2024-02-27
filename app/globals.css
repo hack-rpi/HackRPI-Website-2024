@@ -1,3 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* attempt to modify caret size */
+.custom-arrow .collapse-title::before {
+    font-size: 4rem; /* Adjust as needed */
+}

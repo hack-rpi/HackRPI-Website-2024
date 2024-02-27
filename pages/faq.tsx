@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../app/globals.css'; // Global styles location for tailwind css
 
+
 const faqs = [
   { title: 'What is HackRPI?', 
     content:
@@ -43,9 +44,9 @@ const FAQPage = () => {
       </div>
       <div className="w-full md:w-1/2 lg:w-1/3 mx-auto">
         {faqs.map((faq, index) => (
-          <div key={index} className="collapse collapse-arrow bg-base-200 p-4 border-2 border-blue-500 rounded-none">
+          <div key={index} className="collapse collapse-arrow custom-arrow bg-base-200 p-4 border-t-2 border-b-2 text-2xl border-hackrpi-primary-blue rounded-none">
             <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
-            <div className="collapse-title text-xl font-medium">
+            <div className="collapse-title font-medium text-4xl text-hackrpi-primary-blue">
               {faq.title}
             </div>
             <div className="collapse-content"> 
