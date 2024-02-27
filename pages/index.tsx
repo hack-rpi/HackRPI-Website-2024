@@ -1,5 +1,5 @@
 import React from "react";
-import Sponsors from '@/components/sponsors';
+import Sponsors from "@/components/sponsors";
 
 import "../app/globals.css";
 import NavBar from "@/components/nav-bar/nav-bar";
@@ -10,7 +10,7 @@ export default function Home() {
 		<div className="h-screen overflow-x-hidden overflow-y-visible">
 			<NavBar />
 			<TitleComponent />
-      <Sponsors />
+			<Sponsors />
 		</div>
 	);
 }

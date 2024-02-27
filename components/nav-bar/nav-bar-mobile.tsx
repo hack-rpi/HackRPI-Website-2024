@@ -45,7 +45,7 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 					))}
 				</div>
 			</div>
-			<div className="bg-hackrpi-secondary-yellow w-full h-16 sticky top-0">
+			<div className="bg-hackrpi-secondary-yellow w-full h-16 sticky top-0 z-10">
 				<div className="flex justify-start items-center h-full">
 					<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="h-10 w-10 ml-2">
 						<NextImg alt="Navigation Menu" src="menu-icon.svg" width="100" height="100" />
