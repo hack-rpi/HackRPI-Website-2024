@@ -43,7 +43,7 @@ const FAQPage = () => {
       </div>
       <div className="w-full md:w-1/2 lg:w-1/3 mx-auto">
         {faqs.map((faq, index) => (
-          <div key={index} className="collapse collapse-arrow bg-base-200 p-4 mb-4 border-2 border-blue-500">
+          <div key={index} className="collapse collapse-arrow bg-base-200 p-4 border-2 border-blue-500 rounded-none">
             <input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
             <div className="collapse-title text-xl font-medium">
               {faq.title}
