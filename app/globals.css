@@ -4,5 +4,5 @@
 
 /* attempt to modify caret size */
 .custom-arrow .collapse-title::before {
-    font-size: 4rem; /* Adjust as needed */
+	font-size: 4rem; /* Adjust as needed */
 }

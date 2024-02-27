@@ -11,5 +11,5 @@ export default function Home() {
 	);
 }
 
-// In Next.js, you don't need to manually create a router. 
+// In Next.js, you don't need to manually create a router.
 // Each file inside the 'pages' directory becomes a route automatically.
