@@ -100,49 +100,51 @@ const MeetTheTeamPage = () => {
     },
   ];
   return (
-    <div className="p-8">
-  <h2 className="text-2xl font-bold mb-4">Team Members First Row</h2>
-  <div className="flex flex-row">
-    {teamMembersFirstRow.map((member, index) => (
-      <div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
-        <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px' }} />
-        <h3 className="text-lg font-semibold">{member.name}</h3>
-        <p className="text-gray-500">{member.role}</p>
-      </div>
-    ))}
-  </div>
-  
-      <h2 className="text-2xl font-bold mt-8 mb-4">Team Members Second Row</h2>
-      <div className="flex flex-wrap justify-start">
-        {teamMembersSecondRow.map((member, index) => (
-          <div key={index} className="px-4 mb-8 text-center">
-            <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
-            <h3 className="text-lg font-semibold">{member.name}</h3>
-            <p className="text-gray-500">{member.role}</p>
-          </div>
-        ))}
-      </div>
-  
-      <h2 className="text-2xl font-bold mt-8 mb-4">Junior Team Members First Row</h2>
-      <div className="flex flex-wrap justify-start">
-        {jrTeamMembersFirstRow.map((member, index) => (
-          <div key={index} className="px-4 mb-8 text-center">
-            <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
-            <h3 className="text-lg font-semibold">{member.name}</h3>
-            <p className="text-gray-500">{member.role}</p>
-          </div>
-        ))}
-      </div>
-  
-      <h2 className="text-2xl font-bold mt-8 mb-4">Junior Team Members Second Row</h2>
-      <div className="flex flex-wrap justify-start">
-        {jrTeamMembersSecondRow.map((member, index) => (
-          <div key={index} className="px-4 mb-8 text-center">
-            <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
-            <h3 className="text-lg font-semibold">{member.name}</h3>
-            <p className="text-gray-500">{member.role}</p>
-          </div>
-        ))}
+    <div className="flex flex-col w-full justify-start items-center bg-gradient-to-b from-black via-hackrpi-primary-blue to-black min-h-screen">
+      <div className="p-8">
+        <h2 className="my-5 text-white font-helvetica text-center text-2xl">Team Members First Row</h2>
+        <div className="flex flex-row justify-center"> {/* Wrapped with justify-center */}
+          {teamMembersFirstRow.map((member, index) => (
+            <div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
+              <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px' }} />
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+            </div>
+          ))}
+        </div>
+        
+        <h2 className="text-2xl font-bold mt-8 mb-4">Team Members Second Row</h2>
+        <div className="flex flex-wrap justify-center"> {/* Wrapped with justify-center */}
+          {teamMembersSecondRow.map((member, index) => (
+            <div key={index} className="px-4 mb-8 text-center">
+              <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      
+        <h2 className="text-2xl font-bold mt-8 mb-4">Junior Team Members First Row</h2>
+        <div className="flex flex-wrap justify-center"> {/* Wrapped with justify-center */}
+          {jrTeamMembersFirstRow.map((member, index) => (
+            <div key={index} className="px-4 mb-8 text-center">
+              <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      
+        <h2 className="text-2xl font-bold mt-8 mb-4">Junior Team Members Second Row</h2>
+        <div className="flex flex-wrap justify-center"> {/* Wrapped with justify-center */}
+          {jrTeamMembersSecondRow.map((member, index) => (
+            <div key={index} className="px-4 mb-8 text-center">
+              <img src={member.image} alt={member.name} className="w-16 h-16 object-cover rounded-full" style={{ borderRadius: '50%', width: '150px', height: '150px', marginBottom: '8px' }} />
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-500">{member.role}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
