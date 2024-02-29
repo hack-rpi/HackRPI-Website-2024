@@ -9,32 +9,39 @@ const SponsorPage = () => {
 
 	return (
 		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b from-hackrpi-secondary-dark-blue via-hackrpi-primary-blue to-hackrpi-secondary-dark-blue">
-			<h2 className="my-5 text-white font-helvetica text-center text-2xl">
-				Thank you to our sponsors that make HackRPI possible!
-			</h2>
+			<div className="w-3/4">
+				<h2 className="pb-10 text-white font-sans font-bold text-center text-4xl">
+					Thank you to our sponsors that make HackRPI possible!
+				</h2>
 
-			{tierList.map((tier) => {
-				return (
-					<div className="w-11/12">
-						<h3 className="text-white font-sans font-semibold text-left text-2xl">{tier}</h3>
-						<hr className="bg-white h-[1.5px]"></hr>
-						<div className="flex flex-row flex-wrap justify-center items-center">
-							{sponsors[tier].map((sponsor) => {
-								return (
-									<a href={sponsor.url} target="_blank" rel="noreferrer">
-										<NextImage
-											src={`/sponsors/sponsor_logos${sponsor.logoPath}`}
-											alt={sponsor.name}
-											width={200}
-											height={200}
-										/>
-									</a>
-								);
-							})}
+				{tierList.map((tier) => {
+					return (
+						<div className="w-11/12">
+							<h3 className="text-white font-sans font-semibold text-left text-4xl">{tier}</h3>
+							<hr className="bg-white h-[1.5px]"></hr>
+							<div className="flex flex-row flex-wrap justify-around items-center">
+								{sponsors[tier].map((sponsor) => {
+									return (
+										<div
+											key={sponsor.name}
+											className="w-fit h-fit p-4 m-10 hover:scale-110 bg-black bg-opacity-0 hover:bg-opacity-15 rounded-md transition-all flex items-center justify-center mx-4"
+										>
+											<a href={sponsor.url} target="_blank" rel="noreferrer">
+												<NextImage
+													src={`/sponsors/sponsor_logos${sponsor.logoPath}`}
+													alt={sponsor.name}
+													width={250}
+													height={250}
+												/>
+											</a>
+										</div>
+									);
+								})}
+							</div>
 						</div>
-					</div>
-				);
-			})}
+					);
+				})}
+			</div>
 		</div>
 	);
 };
