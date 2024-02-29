@@ -16,7 +16,7 @@ const SponsorPage = () => {
 
 				{tierList.map((tier) => {
 					return (
-						<div className="w-11/12">
+						<div className="w-11/12" key={tier}>
 							<h3 className="text-white font-sans font-semibold text-left text-4xl">{tier}</h3>
 							<hr className="bg-white h-[1.5px]"></hr>
 							<div className="flex flex-row flex-wrap justify-around items-center">
