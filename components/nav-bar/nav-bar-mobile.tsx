@@ -19,6 +19,7 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 			<div
 				className={`absolute w-screen h-full bg-black bg-opacity-25 z-10 ${navMenuOpen ? "visible" : "invisible"}`}
 				onClick={() => setNavMenuOpen(false)}
+				id="home"
 			></div>
 			<div
 				className={`absolute w-80 h-full bg-hackrpi-secondary-yellow z-20 ${
