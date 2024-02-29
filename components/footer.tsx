@@ -50,15 +50,14 @@ export default function Footer() {
 	return (
 		<div className="bg-hackrpi-secondary-light-blue w-full min-h-64 h-fit absolute bottom-0">
 			<div className="flex flex-col justify-between items-center p-2 min-h-64 h-fit">
-				<div className="w-full flex items-center justify-center">
-					<div className="w-1/4"></div>
-					<div className="w-1/2 flex items-center justify-center">
-						<h1 className="text-4xl font-bold w-full">
+				<div className="w-full flex items-center justify-around flex-col sm:flex-row">
+					<div className="w-3/4 sm:w-1/2 mb-4  min-w-80 flex items-center justify-center">
+						<h1 className="text-4xl font-bold w-full text-center ">
 							Join us this coming November 9-10, 2024 to learn, hack, and make our cities better!
 						</h1>
 					</div>
-					<div className="w-1/4 flex items-center justify-around">
-						<a href="#home" className="text-xl font-bold flex items-center justify-center">
+					<div className="w-full sm:w-1/4 flex items-center justify-around flex-wrap">
+						<a href="#home" className="text-xl font-bold flex items-center justify-center w-64 p-2">
 							Return to top <NextImage src="/caret.svg" alt="Arrow Up" width={40} height={40} />
 						</a>
 						<a href="https://mlh.io" className="btn btn-secondary text-xl" target="_blank">
@@ -66,7 +65,7 @@ export default function Footer() {
 						</a>
 					</div>
 				</div>
-				<div className="flex justify-around items-center w-fit px-4 m-2">
+				<div className="flex justify-around items-center w-fit">
 					{links.map((link) => (
 						<Card {...link} key={link.name} />
 					))}
