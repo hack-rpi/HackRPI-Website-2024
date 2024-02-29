@@ -1,92 +1,41 @@
 import React, { useState } from "react";
 import sponsorsJson from "../../HackRPI-Website-2024/public/sponsors/sponsors.json";
+import { SponsorsJSON, sponsorTiers } from "@/types/sponsorsType";
+import NextImage from "next/image";
 
 const SponsorPage = () => {
-	const [sponsorGroups] = useState(sponsorsJson);
+	const tierList: sponsorTiers[] = ["Obsidian", "Gold", "Silver", "Bronze", "Collaborators"];
+	const [sponsors] = useState<SponsorsJSON>(sponsorsJson);
 
 	return (
-			<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b from-hackrpi-secondary-dark-blue via-hackrpi-primary-blue to-hackrpi-secondary-dark-blue">
-				<h2 className="my-5 text-white font-helvetica text-center text-2xl">
-					Thank you to our sponsors that make HackRPI possible!
-				</h2>
+		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b from-hackrpi-secondary-dark-blue via-hackrpi-primary-blue to-hackrpi-secondary-dark-blue">
+			<h2 className="my-5 text-white font-helvetica text-center text-2xl">
+				Thank you to our sponsors that make HackRPI possible!
+			</h2>
 
-				{sponsorGroups.sponsorGroups.map((sponsorGroup, indx) => {
-					const tierList = ["Obsidian", "Gold", "Silver", "Bronze", "Collaborators"];
-					return (
-						<div className="z-0" key={"sponsorGroup" + indx}>
-							<h3 className="font-helvetica text-2xl tierHeader mb-5 border-b-2 border-white pb-2 relative cursor-pointer group">
-								<span className="transition-all duration-250 group-hover:font-bold group-hover:text-light-blue-500">
-									{tierList[indx]}
-								</span>
-							</h3>
-							<div className="flex justify-center flex-wrap">
-								{tierList[indx] === "Obsidian"
-									? sponsorGroup
-											.slice()
-											.reverse()
-											.map((sponsor, innerIndx) => {
-												return (
-													<div
-														className="sponsor col-md-3 flex mb-5"
-														key={"sponsorGroup" + indx + "sponsor" + innerIndx}
-													>
-														<a href={sponsor.url} target="_blank" className="rounded px-3">
-															<div
-																className="flex flex-col items-center justify-center innerSponsor m-10"
-																style={{ cursor: "pointer" }} // Add cursor pointer
-															>
-																<img
-																	src={`${sponsor.webpack_bundled ? "/" : ""}${sponsor.logoPath}`}
-																	className="img-fluid rounded"
-																	style={{
-																		width: "200px", // Adjust the width as desired
-																		height: "auto", // Maintain aspect ratio
-																		transition: "transform 0.3s ease", // Add transition
-																	}}
-																	alt={sponsor.name}
-																	onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")} // Apply hover effect
-																	onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")} // Remove hover effect
-																/>
-															</div>
-														</a>
-													</div>
-												);
-											})
-									: sponsorGroup.map((sponsor, innerIndx) => {
-											let img;
-											if (sponsor.webpack_bundled === true) {
-												img = require(`../../HackRPI-Website-2024/public/sponsors/sponsor_logos/${sponsor.logoPath}`);
-											}
-
-											return (
-												<div className="sponsor col-md-3 flex mb-5" key={"sponsorGroup" + indx + "sponsor" + innerIndx}>
-													<a href={sponsor.url} target="_blank" className="rounded px-3">
-														<div
-															className="flex flex-col items-center justify-center innerSponsor m-10"
-															style={{ cursor: "pointer" }} // Add cursor pointer
-														>
-															<img
-																src={sponsor.webpack_bundled === true ? img : sponsor.logoPath}
-																className="img-fluid rounded"
-																style={{
-																	width: "200px", // Adjust the width as desired
-																	height: "auto", // Maintain aspect ratio
-																	transition: "transform 0.3s ease", // Add transition
-																}}
-																alt={sponsor.name}
-																onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")} // Apply hover effect
-																onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")} // Remove hover effect
-															/>
-														</div>
-													</a>
-												</div>
-											);
-									  })}
-							</div>
+			{tierList.map((tier) => {
+				return (
+					<div className="w-11/12">
+						<h3 className="text-white font-sans font-semibold text-left text-2xl">{tier}</h3>
+						<hr className="bg-white h-[1.5px]"></hr>
+						<div className="flex flex-row flex-wrap justify-center items-center">
+							{sponsors[tier].map((sponsor) => {
+								return (
+									<a href={sponsor.url} target="_blank" rel="noreferrer">
+										<NextImage
+											src={`/sponsors/sponsor_logos${sponsor.logoPath}`}
+											alt={sponsor.name}
+											width={200}
+											height={200}
+										/>
+									</a>
+								);
+							})}
 						</div>
-					);
-				})}
-			</div>
+					</div>
+				);
+			})}
+		</div>
 	);
 };
 
