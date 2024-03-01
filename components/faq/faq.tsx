@@ -45,14 +45,16 @@ const faqs = [
 const FAQPage = () => {
 	return (
 		<div className="h-auto mb-8 flex flex-col items-start text-white bg-base-100" id="faq">
-			<div className="w-full md:w-1/2 lg:w-1/2 mx-auto">
+			<div className="w-11/12 sm:w-1/2 mx-auto">
 				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
 			</div>
-			<div className="w-full md:w-1/2 lg:w-1/2 mx-auto">
+			<div className="w-11/12 sm:w-1/2 mx-auto">
 				{faqs.map((faq, index) => (
 					<div
 						key={index}
-						className={`collapse collapse-arrow custom-arrow bg-base-200 p-4 text-2xl border-t-2 ${index === faqs.length - 1 ? "border-b-2" : ""} border-hackrpi-primary-blue rounded-none`}
+						className={`collapse collapse-arrow custom-arrow bg-base-200 p-4 text-2xl border-t-2 ${
+							index === faqs.length - 1 ? "border-b-2" : ""
+						} border-hackrpi-primary-blue rounded-none`}
 					>
 						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} />
 						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
@@ -62,7 +64,7 @@ const FAQPage = () => {
 					</div>
 				))}
 			</div>
-			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
+			<div className="w-11/12 sm:w-1/2 mx-auto">
 				<h2 id="sponsors" className="font-poppins text-2xl text-center pt-10">
 					Feel free to contact us with any other questions at{" "}
 					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">
