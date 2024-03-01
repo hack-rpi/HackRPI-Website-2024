@@ -30,7 +30,7 @@ const config: Config = {
 			{
 				hackrpi: {
 					primary: "#74b7ef",
-					secondary: "#264e33",
+					secondary: "#88b63a",
 					accent: "#edd559",
 					neutral: "#efefef",
 					"base-100": "#27303b",

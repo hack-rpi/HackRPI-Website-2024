@@ -1,12 +1,29 @@
+import { useState, useEffect } from "react";
+import RegistrationButton from "../registration-button";
+
 export default function TitleText() {
+	const [year, setYear] = useState(1824);
+
+	// This kinda works, we may want to add a delay before this starts counting
+	// We may also want to make the count ease in and out
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setYear((prev) => {
+				return prev + 1 > 2024 ? 2024 : prev + 1;
+			});
+		}, 10);
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
-		<div className="w-fit h-full font-sans font-bold text-right flex items-end justify-center flex-col">
-			<h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl">HackRPI 2024</h1>
-			<h2 className="text-2xl sm:text-5xl lg:text-5xl xl:text-6xl">Urban Upgrades</h2>
-			<p className="text-xl sm:text-3xl"> xx/xx/xx </p>
-			<p className="text-xl sm:text-3xl">
-				Darrin Communications Center, <br /> Rensselaer Polytechnic Institute
+		<div className="w-fit font-sans  text-left flex items-start justify-center flex-col">
+			<h1 className="w-full text-8xl font-bold">HACKRPI</h1>
+			<h2 className="w-full text-[4rem] mb-8">Urban Upgrades</h2>
+			<p className="w-full text-4xl mb-8">
+				November 9-10, <span onMouseEnter={() => setYear(1824)}>{year}</span>
 			</p>
+
+			<RegistrationButton />
 		</div>
 	);
 }

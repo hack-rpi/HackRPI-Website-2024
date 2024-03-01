@@ -1,11 +1,9 @@
-import "../app/globals.css";
-import NavBar from "@/components/nav-bar/nav-bar";
 import TitleComponent from "@/components/title-components/title";
+import "../app/globals.css";
 
 export default function Home() {
 	return (
-		<div className="h-screen overflow-x-hidden overflow-y-visible">
-			<NavBar />
+		<div className="flex flex-col h-fit items-center justify-start">
 			<TitleComponent />
 		</div>
 	);
