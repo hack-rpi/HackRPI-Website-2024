@@ -19,19 +19,19 @@ export default function Timer() {
 				</Circle>
 			</div>
 			<div className="flex items-center justify-between w-full">
-				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
-					M
-				</Circle>
-				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
-					D
-				</Circle>
-				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
-					H
-				</Circle>
 				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
 					M
 				</Circle>
+				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
+					D
+				</Circle>
+				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
+					H
+				</Circle>
 				<Circle bgColor="bg-[#0058a9]" textColor="text-white">
+					M
+				</Circle>
+				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
 					S
 				</Circle>
 			</div>
