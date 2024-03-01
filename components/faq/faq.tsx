@@ -50,15 +50,13 @@ const FAQPage = () => {
 			</div>
 			<div className="w-full md:w-1/2 lg:w-1/2 mx-auto">
 				{faqs.map((faq, index) => (
-					<div 
-						key={index} 
-						className={`collapse collapse-arrow custom-arrow bg-base-200 p-4 text-2xl border-t-2 ${index === faqs.length - 1 ? 'border-b-2' : ''} border-hackrpi-primary-blue rounded-none`}
+					<div
+						key={index}
+						className={`collapse collapse-arrow custom-arrow bg-base-200 p-4 text-2xl border-t-2 ${index === faqs.length - 1 ? "border-b-2" : ""} border-hackrpi-primary-blue rounded-none`}
 					>
-						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} /> 
-						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">
-							{faq.title}
-						</div>
-						<div className="collapse-content"> 
+						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} />
+						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
+						<div className="collapse-content">
 							<p>{faq.content}</p>
 						</div>
 					</div>
