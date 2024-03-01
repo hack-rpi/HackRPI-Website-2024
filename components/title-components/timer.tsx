@@ -2,36 +2,36 @@ export default function Timer() {
 	return (
 		<div className="w-full h-fit flex flex-col items-center justify-center pl-12">
 			<div className="flex items-center justify-between w-full mb-4">
-				<Circle bgColor="bg-hackrpi-primary-light-green" textColor="text-black">
+				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
 					1
 				</Circle>
-				<Circle bgColor="bg-hackrpi-secondary-yellow" textColor="text-black">
+				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
 					2
 				</Circle>
-				<Circle bgColor="bg-hackrpi-primary-dark-green" textColor="text-white">
+				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
 					3
 				</Circle>
-				<Circle bgColor="bg-hackrpi-primary-blue" textColor="text-black">
+				<Circle bgColor="bg-[#0058a9]" textColor="text-white">
 					4
 				</Circle>
-				<Circle bgColor="bg-hackrpi-secondary-light-blue" textColor="text-white">
+				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
 					5
 				</Circle>
 			</div>
 			<div className="flex items-center justify-between w-full">
-				<Circle bgColor="bg-hackrpi-secondary-yellow" textColor="text-black">
+				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
 					M
 				</Circle>
-				<Circle bgColor="bg-hackrpi-primary-blue" textColor="text-black">
+				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
 					D
 				</Circle>
-				<Circle bgColor="bg-hackrpi-secondary-light-blue" textColor="text-white">
+				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
 					H
 				</Circle>
-				<Circle bgColor="bg-hackrpi-primary-dark-green" textColor="text-white">
+				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
 					M
 				</Circle>
-				<Circle bgColor="bg-hackrpi-primary-light-green" textColor="text-black">
+				<Circle bgColor="bg-[#0058a9]" textColor="text-white">
 					S
 				</Circle>
 			</div>
