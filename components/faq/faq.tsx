@@ -1,4 +1,4 @@
-import "../app/globals.css"; // Global styles location for tailwind css
+import "../../app/globals.css"; // Global styles location for tailwind css
 
 const faqs = [
 	{
@@ -9,7 +9,7 @@ const faqs = [
 	{
 		title: "When is HackRPI X?",
 		content:
-			"November 4th-5th 2024, is the date for our 11th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
+			"November 9th-10th 2024, is the date for our 11th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
 	},
 	{
 		title: "Is it free to attend?",
@@ -46,7 +46,7 @@ const FAQPage = () => {
 	return (
 		<div className="h-auto mb-8 flex flex-col items-start text-white bg-base-100" id="faq">
 			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
-				<h1 className="font-mokoto font-normal text-white text-left text-3xl text-shadow-md pb-10">FAQs</h1>
+				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
 			</div>
 			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
 				{faqs.map((faq, index) => (
@@ -55,7 +55,7 @@ const FAQPage = () => {
 						className="collapse collapse-arrow custom-arrow bg-base-200 p-4 border-t-2 border-b-2 text-2xl border-hackrpi-primary-blue rounded-none"
 					>
 						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} />
-						<div className="collapse-title font-medium text-4xl text-hackrpi-primary-blue">{faq.title}</div>
+						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
 						<div className="collapse-content">
 							<p>{faq.content}</p>
 						</div>
@@ -63,7 +63,7 @@ const FAQPage = () => {
 				))}
 			</div>
 			<div className="w-full md:w-3/4 lg:w-3/4 mx-auto">
-				<h2 id="sponsors" className="font-poppins text-lg text-center pt-20">
+				<h2 id="sponsors" className="font-poppins text-2xl text-center pt-10">
 					Feel free to contact us with any other questions at{" "}
 					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">
 						hackrpi@rpi.edu!
