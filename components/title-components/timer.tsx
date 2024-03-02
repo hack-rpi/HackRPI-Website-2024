@@ -1,21 +1,40 @@
+import { useState, useEffect } from "react";
+
 export default function Timer() {
+	const [currentTime, setCurrentTime] = useState<Date>(new Date());
+	const hackathonStart = new Date(2024, 10, 9, 12, 0, 0);
+
+	useEffect(() => {
+		setCurrentTime(new Date());
+		const interval = setInterval(() => {
+			setCurrentTime(new Date());
+		}, 1000);
+		return () => clearInterval(interval);
+	}, []);
+
+	let secondDelta = hackathonStart.getSeconds() - currentTime.getSeconds() + 59;
+	let minuteDelta = hackathonStart.getMinutes() - currentTime.getMinutes() + 59;
+	let hourDelta = hackathonStart.getHours() - currentTime.getHours() + 23;
+	let dayDelta = hackathonStart.getDate() - currentTime.getDate();
+	let monthDelta = hackathonStart.getMonth() - currentTime.getMonth();
+
 	return (
 		<div className="w-full h-fit flex flex-col items-center justify-center pl-12">
 			<div className="flex items-center justify-between w-full mb-4">
 				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
-					99
+					{monthDelta > 9 ? monthDelta : "0" + monthDelta}
 				</Circle>
 				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
-					99
+					{dayDelta > 9 ? dayDelta : "0" + dayDelta}
 				</Circle>
 				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
-					99
+					{hourDelta > 9 ? hourDelta : "0" + hourDelta}
 				</Circle>
 				<Circle bgColor="bg-[#0058a9]" textColor="text-white">
-					99
+					{minuteDelta > 9 ? minuteDelta : "0" + minuteDelta}
 				</Circle>
 				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
-					99
+					{secondDelta > 9 ? secondDelta : "0" + secondDelta}
 				</Circle>
 			</div>
 			<div className="flex items-center justify-between w-full">
