@@ -1,17 +1,18 @@
 import TitleComponent from "@/components/title-components/title";
 import FAQPage from "@/components/faq/faq";
 import NavBar from "@/components/nav-bar/nav-bar";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 	const [showNav, setShowNav] = useState(false);
 
 	// Sets the scroll threshold to the viewport height
 	var scrollThreshold = 1080;
+	const navHeight = 64;
 
 	// Add event listener to the window to update the scrollY state
 	useEffect(() => {
-		scrollThreshold = window.innerHeight - 64;
+		scrollThreshold = window.innerHeight - navHeight;
 		const handleScroll = () => {
 			setShowNav(window.scrollY > scrollThreshold);
 		};
