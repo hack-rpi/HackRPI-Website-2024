@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RegistrationButton from "../registration-button";
+import RegistrationButton from "./registration-button";
 
 export default function TitleText() {
 	const [year, setYear] = useState(1824);

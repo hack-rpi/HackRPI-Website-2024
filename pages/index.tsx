@@ -25,7 +25,7 @@ export default function Home() {
 			<div className={`${showNav ? "top-0" : "-top-16"} fixed transition-all w-full z-10`}>
 				<NavBar />
 			</div>
-			<div className="flex flex-col h-fit items-start justify-start w-screen px-8">
+			<div className="flex flex-col h-fit items-center justify-start w-screen px-8">
 				<TitleComponent />
 				<FAQPage />
 			</div>
