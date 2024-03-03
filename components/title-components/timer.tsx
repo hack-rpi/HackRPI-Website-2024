@@ -38,7 +38,7 @@ export default function Timer() {
 	}
 
 	return (
-		<div className="w-full h-fit flex flex-col items-start justify-center pl-12">
+		<div className="w-full h-fit flex flex-col items-start justify-center">
 			{hackathonStarted && !hackathonEnded ? <h1 className="text-4xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
 			{hackathonEnded ? <h1 className="text-4xl font-bold mb-2">THANKS FOR JOINING US! </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">

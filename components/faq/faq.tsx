@@ -44,11 +44,11 @@ const faqs = [
 
 const FAQPage = () => {
 	return (
-		<div className="h-auto mb-8 flex flex-col items-start text-white bg-base-100" id="faq">
-			<div className="w-11/12 sm:w-1/2 mx-auto">
+		<div className="h-auto mb-8 flex flex-col items-start text-white bg-base-100 " id="faq">
+			<div className="w-full desktop:w-5/6">
 				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
 			</div>
-			<div className="w-11/12 sm:w-1/2 mx-auto">
+			<div className="w-full desktop:w-5/6">
 				{faqs.map((faq, index) => (
 					<div
 						key={index}
@@ -64,7 +64,7 @@ const FAQPage = () => {
 					</div>
 				))}
 			</div>
-			<div className="w-11/12 sm:w-1/2 mx-auto">
+			<div className="w-full desktop:w-5/6 ">
 				<h2 id="sponsors" className="font-poppins text-2xl text-center pt-10">
 					Feel free to contact us with any other questions at{" "}
 					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">

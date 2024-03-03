@@ -16,7 +16,7 @@ export default function TitleText() {
 	}, []);
 
 	return (
-		<div className="w-full font-sans  text-left flex items-start justify-center flex-col pl-12">
+		<div className="w-full font-sans  text-left flex items-start justify-center flex-col">
 			<h1 className="w-full text-8xl font-bold">HACKRPI</h1>
 			<h2 className="w-full text-[4rem] mb-8 h-20 whitespace-nowrap">Urban Upgrades</h2>
 			<p className="w-full text-4xl mb-8">
