@@ -16,10 +16,10 @@ export default function TitleText() {
 	}, []);
 
 	return (
-		<div className="w-full font-sans  text-left flex items-start justify-center flex-col">
-			<h1 className="w-full text-8xl font-bold">HACKRPI</h1>
-			<h2 className="w-full text-[4rem] mb-8 h-20 whitespace-nowrap">Urban Upgrades</h2>
-			<p className="w-full text-4xl mb-8">
+		<div className="w-full font-sans  text-left flex items-start justify-center flex-col mb-8">
+			<h1 className="w-full text-7xl sm:text-8xl font-bold">HACKRPI</h1>
+			<h2 className="w-full text-5xl sm:text-[4rem] mb-4 sm:mb-8 sm:h-20 whitespace-nowrap">Urban Upgrades</h2>
+			<p className="w-full text-3xl sm:text-4xl mb-8">
 				November 9-10, <span onMouseEnter={() => setYear(1824)}>{year}</span>
 			</p>
 

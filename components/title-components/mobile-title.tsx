@@ -3,11 +3,10 @@ import TitleText from "./title-text";
 
 export default function MobileTitleComponent() {
 	return (
-		<div className="w-full h-fit flex items-center justify-center">
-			<div className="w-fit mt-24">
-				<TitleText />
-				<Timer />
-			</div>
+		<div className="w-full h-fit flex flex-col items-center justify-start mb-8">
+			<div className="h-28 w-full"></div>
+			<TitleText />
+			<Timer />
 		</div>
 	);
 }
