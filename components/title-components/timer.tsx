@@ -14,23 +14,33 @@ export default function Timer() {
 	}, []);
 
 	let hackathonStarted = currentTime.getTime() > hackathonStart.getTime();
+	let hackathonEnded = currentTime.getTime() > hackathonEnd.getTime();
 	let secondDelta = hackathonStart.getSeconds() - currentTime.getSeconds() + 59;
 	let minuteDelta = hackathonStart.getMinutes() - currentTime.getMinutes() + 59;
 	let hourDelta = hackathonStart.getHours() - currentTime.getHours() + 23;
-	let dayDelta = hackathonStart.getDate() - currentTime.getDate();
+	let dayDelta = hackathonStart.getDate() - currentTime.getDate() - 1;
 	let monthDelta = hackathonStart.getMonth() - currentTime.getMonth();
 
 	if (hackathonStarted) {
 		secondDelta = hackathonEnd.getSeconds() - currentTime.getSeconds() + 59;
 		minuteDelta = hackathonEnd.getMinutes() - currentTime.getMinutes() + 59;
-		hourDelta = hackathonEnd.getHours() - currentTime.getHours() + 23;
+		hourDelta = hackathonEnd.getHours() - currentTime.getHours() - 1;
 		dayDelta = hackathonEnd.getDate() - currentTime.getDate();
 		monthDelta = hackathonEnd.getMonth() - currentTime.getMonth();
 	}
 
+	if (hackathonEnded) {
+		secondDelta = 0;
+		minuteDelta = 0;
+		hourDelta = 0;
+		dayDelta = 0;
+		monthDelta = 0;
+	}
+
 	return (
-		<div className="w-full h-fit flex flex-col items-center justify-center pl-12">
-			{hackathonStarted ? <h1 className="text-6xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
+		<div className="w-full h-fit flex flex-col items-start justify-center pl-12">
+			{hackathonStarted && !hackathonEnded ? <h1 className="text-4xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
+			{hackathonEnded ? <h1 className="text-4xl font-bold mb-2">THANKS FOR JOINING US! </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">
 				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
 					{monthDelta > 9 ? monthDelta : "0" + monthDelta}
