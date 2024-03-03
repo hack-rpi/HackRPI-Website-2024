@@ -8,7 +8,7 @@ export default function Home() {
 
 	// Sets the scroll threshold to the viewport height
 	var scrollThreshold = 1080;
-	const navHeight = 64;
+	const navHeight = 96;
 
 	// Add event listener to the window to update the scrollY state
 	useEffect(() => {
@@ -22,7 +22,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className={`${showNav ? "top-0" : "-top-16"} fixed transition-all w-full z-10`}>
+			<div className={`${showNav ? "top-0" : "-top-24"} fixed transition-all w-full z-10`}>
 				<NavBar />
 			</div>
 			<div className="flex flex-col h-fit items-center justify-start w-screen px-8">

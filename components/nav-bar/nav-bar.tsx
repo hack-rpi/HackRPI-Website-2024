@@ -4,7 +4,10 @@ import MobileNavBar from "./nav-bar-mobile";
 import { NavBarLinkType } from "@/types/nav-bar-links";
 
 export default function NavBar() {
-	const links: NavBarLinkType[] = [{ href: "/sponsor-us", children: "Sponsor Us" }];
+	const links: NavBarLinkType[] = [
+		{ href: "/", children: "Home" },
+		{ href: "/sponsor-us", children: "Sponsor Us" },
+	];
 
 	const [windowWidth, setWindowWidth] = useState(0);
 
