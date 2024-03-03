@@ -18,8 +18,8 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 		<>
 			<div className="w-full h-24 flex items-center justify-center fixed top-0 bg-hackrpi-secondary-dark-blue z-20">
 				<div className="flex items-center justify-start w-1/3">
-					<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="text-white text-4xl pl-12">
-						<NextImg alt="Hamburger Menu" src="/menu-icon.svg" className="w-12 image-full" width={48} height={48} />
+					<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="text-white text-4xl pl-8">
+						<NextImg alt="Hamburger Menu" src="/menu-icon.svg" className="w-10 image-full" width={40} height={40} />
 					</button>
 				</div>
 				<div className="flex items-center justify-center w-1/3">
