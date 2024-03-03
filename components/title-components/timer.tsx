@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export default function Timer() {
 	const [currentTime, setCurrentTime] = useState<Date>(new Date());
 	const hackathonStart = new Date(2024, 10, 9, 12, 0, 0);
+	const hackathonEnd = new Date(2024, 10, 10, 12, 0, 0);
 
 	useEffect(() => {
 		setCurrentTime(new Date());
@@ -12,14 +13,24 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, []);
 
+	let hackathonStarted = currentTime.getTime() > hackathonStart.getTime();
 	let secondDelta = hackathonStart.getSeconds() - currentTime.getSeconds() + 59;
 	let minuteDelta = hackathonStart.getMinutes() - currentTime.getMinutes() + 59;
 	let hourDelta = hackathonStart.getHours() - currentTime.getHours() + 23;
 	let dayDelta = hackathonStart.getDate() - currentTime.getDate();
 	let monthDelta = hackathonStart.getMonth() - currentTime.getMonth();
 
+	if (hackathonStarted) {
+		secondDelta = hackathonEnd.getSeconds() - currentTime.getSeconds() + 59;
+		minuteDelta = hackathonEnd.getMinutes() - currentTime.getMinutes() + 59;
+		hourDelta = hackathonEnd.getHours() - currentTime.getHours() + 23;
+		dayDelta = hackathonEnd.getDate() - currentTime.getDate();
+		monthDelta = hackathonEnd.getMonth() - currentTime.getMonth();
+	}
+
 	return (
 		<div className="w-full h-fit flex flex-col items-center justify-center pl-12">
+			{hackathonStarted ? <h1 className="text-6xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">
 				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
 					{monthDelta > 9 ? monthDelta : "0" + monthDelta}
