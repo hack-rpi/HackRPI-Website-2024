@@ -60,7 +60,6 @@ const faqs: FAQ[] = [
 ];
 
 const FAQPage = () => {
-
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
 
 	useEffect(() => {
@@ -71,6 +70,8 @@ const FAQPage = () => {
 		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
 			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
+			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
 		};
 
 		// Update the faqStart and faqEnd when the user resizes the window
@@ -92,7 +93,9 @@ const FAQPage = () => {
 				<div>
 					<div
 						className={`${
-							highlightFAQ ? "fixed top-32 bg-white right-4" : `absolute bg-hackrpi-secondary-dark-blue right-3.5`
+							highlightFAQ
+								? "fixed top-32 bg-white right-[32px] xs:right-3.5 desktop:right-3.5"
+								: `absolute bg-hackrpi-secondary-dark-blue right-3.5`
 						} w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue 
 							transition-colors duration-300 z-[5]`}
 					></div>
@@ -108,9 +111,7 @@ const FAQPage = () => {
 					>
 						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} />
 						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
-						<div className="collapse-content">
-							{faq.content}
-						</div>
+						<div className="collapse-content">{faq.content}</div>
 					</div>
 				))}
 			</div>
