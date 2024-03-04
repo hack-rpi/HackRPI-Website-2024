@@ -61,11 +61,16 @@ const faqs: FAQ[] = [
 
 const FAQPage = () => {
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
+	const [isPhone, setIsPhone] = useState(false);
 
 	useEffect(() => {
 		// Highlight the FAQ section in the navbar when the user scrolls to it
 		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+
+		// detect if user is on a phone using the userAgent
+		// This is needed to fix the position of the highlighter on mobile
+		setIsPhone(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 
 		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
@@ -94,7 +99,7 @@ const FAQPage = () => {
 					<div
 						className={`${
 							highlightFAQ
-								? "fixed top-32 bg-white right-[32px] xs:right-3.5 desktop:right-3.5"
+								? `fixed top-32 bg-white ${isPhone ? "right-[32px]" : "right-3.5"} desktop:right-3.5`
 								: `absolute bg-hackrpi-secondary-dark-blue right-3.5`
 						} w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue 
 							transition-colors duration-300 z-[5]`}
