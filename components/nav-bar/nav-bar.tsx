@@ -12,7 +12,7 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 	const [showNav, setShowNav] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
 	const navHeight = 96;
-	
+
 	// Add event listener to the window to update the scrollY state
 	useEffect(() => {
 		const scrollThreshold = window.innerHeight - navHeight;
