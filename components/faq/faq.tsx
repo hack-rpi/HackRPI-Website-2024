@@ -1,5 +1,12 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../app/globals.css"; // Global styles location for tailwind css
+import RegistrationButton from "../nav-bar/registration-button";
+import { title } from "process";
+
+type FAQ = {
+	title: string;
+	content: React.ReactNode;
+};
 
 const faqs = [
 	{
@@ -8,9 +15,14 @@ const faqs = [
 			"HackRPI is a 24 hour coding event where hackers will work in teams of 1 to 4 people to create projects based around the theme to win epic prizes thanks to our sponsors!",
 	},
 	{
-		title: "When is HackRPI X?",
+		title: "When is HackRPI?",
 		content:
-			"November 9th-10th 2024, is the date for our 11th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
+			"November 9th-10th 2024, is the date for our 11th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 10th. We're really excited to celebrate the 11th year of our incredible event with YOU! Save the date!",
+	},
+	{
+		title: "Where is HackRPI?",
+		content:
+			"HackRPI is held at the RPI campus in Troy, New York. The event will take place in the Darrin Communications Center (DCC).",
 	},
 	{
 		title: "Is it free to attend?",
@@ -18,8 +30,13 @@ const faqs = [
 			"Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you can get!",
 	},
 	{
-		title: "How do I apply?",
-		content: "Click the link above to apply!", //fix this or provide the direct link
+		title: "How do I register?",
+		content: (
+			<div className="flex items-center justify-start">
+				<p className="pr-2">Click here to register:</p>
+				<RegistrationButton />
+			</div>
+		),
 	},
 	{
 		title: "Who can participate?",
