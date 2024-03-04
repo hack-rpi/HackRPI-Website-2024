@@ -1,7 +1,7 @@
 import NextImg from "next/image";
 import { NavBarLinkType } from "@/types/nav-bar-links";
 import NavBarLink from "./nav-bar-link";
-import hackrpi_logo from "@/public/HackRPI-Logo-Blue.png";
+import logo from "@/public/HackRPI-logo-blue.png";
 import RegistrationButton from "./registration-button";
 
 export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
@@ -10,7 +10,7 @@ export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
 			<div className="flex justify-start items-center h-full">
 				<div className="w-[12.5%] flex items-center justify-center">
 					<NavBarLink href="/">
-						<NextImg alt="HackRPI Logo" aria-label="Home Page" src={hackrpi_logo} className="w-14 image-full" />
+						<NextImg alt="HackRPI Logo" aria-label="Home Page" src={logo} className="w-14 image-full" />
 					</NavBarLink>
 				</div>
 				<div className="w-1/2">

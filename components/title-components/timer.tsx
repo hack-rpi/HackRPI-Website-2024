@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 export default function Timer() {
@@ -82,7 +84,8 @@ export default function Timer() {
 function Circle({ bgColor, textColor, children }: { bgColor: string; textColor: string; children: React.ReactNode }) {
 	return (
 		<div
-			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold shadow-lg`}
+			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-4xl sm:text-6xl desktop:text-5xl lg:text-6xl xl:text-7xl font-bold shadow-lg`}
+			suppressHydrationWarning
 		>
 			{children}
 		</div>
