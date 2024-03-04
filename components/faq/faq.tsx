@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "../../app/globals.css"; // Global styles location for tailwind css
 
 const faqs = [
@@ -43,10 +44,44 @@ const faqs = [
 ];
 
 const FAQPage = () => {
+	let faqStart: number = 532;
+	let faqEnd: number = 532;
+	const [highlightFAQ, setHighlightFAQ] = useState(false);
+
+	useEffect(() => {
+		// Highlight the FAQ section in the navbar when the user scrolls to it
+		faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+		faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+
+		// Update whether the faq should be highlighted when the user scrolls
+		const handleScroll = () => {
+			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
+		};
+
+		// Update the faqStart and faqEnd when the user resizes the window
+		const handleResize = () => {
+			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+		};
+		window.addEventListener("resize", handleResize);
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
 		<div className="h-auto mb-8 flex flex-col items-center text-white bg-base-100 " id="faq">
-			<div className="w-full desktop:w-2/3">
-				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
+			<div className="flex w-full desktop:w-2/3">
+				<h1 className=" font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
+				<div>
+					<div
+						className={`${
+							highlightFAQ ? "fixed top-32 bg-white right-4" : `absolute bg-hackrpi-secondary-dark-blue right-3.5`
+						} w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue 
+							transition-colors duration-300 z-[5]`}
+					></div>
+				</div>
 			</div>
 			<div className="w-full desktop:w-2/3">
 				{faqs.map((faq, index) => (
