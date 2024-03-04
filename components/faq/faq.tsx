@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../../app/globals.css"; // Global styles location for tailwind css
 import RegistrationButton from "../nav-bar/registration-button";
-import { title } from "process";
 
 type FAQ = {
 	title: string;
 	content: React.ReactNode;
 };
 
-const faqs = [
+const faqs: FAQ[] = [
 	{
 		title: "What is HackRPI?",
 		content:
@@ -61,14 +60,13 @@ const faqs = [
 ];
 
 const FAQPage = () => {
-	let faqStart: number = 532;
-	let faqEnd: number = 532;
+
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
 
 	useEffect(() => {
 		// Highlight the FAQ section in the navbar when the user scrolls to it
-		faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-		faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
 
 		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
@@ -111,7 +109,7 @@ const FAQPage = () => {
 						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} />
 						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
 						<div className="collapse-content">
-							<p>{faq.content}</p>
+							{faq.content}
 						</div>
 					</div>
 				))}

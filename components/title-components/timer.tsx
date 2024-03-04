@@ -15,8 +15,8 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, []);
 
-	let hackathonStarted = currentTime.getTime() > hackathonStart.getTime();
-	let hackathonEnded = currentTime.getTime() > hackathonEnd.getTime();
+	const hackathonStarted = currentTime.getTime() > hackathonStart.getTime();
+	const hackathonEnded = currentTime.getTime() > hackathonEnd.getTime();
 	let secondDelta = hackathonStart.getSeconds() - currentTime.getSeconds() + 59;
 	let minuteDelta = hackathonStart.getMinutes() - currentTime.getMinutes() + 59;
 	let hourDelta = hackathonStart.getHours() - currentTime.getHours() + 23;

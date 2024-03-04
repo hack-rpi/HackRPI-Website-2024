@@ -2,7 +2,6 @@ import TitleComponent from "@/components/title-components/title";
 import FAQPage from "@/components/faq/faq";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MlhBanner from "@/components/mlh-banner/mlh-banner";
-import { useEffect, useState } from "react";
 
 export default function Home() {
 	return (
