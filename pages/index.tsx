@@ -12,10 +12,8 @@ export default function Home() {
 	useEffect(() => {
 		faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 		faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-		console.log(faqStart, faqEnd);
 		const handleScroll = () => {
 			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
-			console.log(window.scrollY > faqStart && window.scrollY < faqEnd);
 		};
 		window.addEventListener("scroll", handleScroll);
 		return () => {
