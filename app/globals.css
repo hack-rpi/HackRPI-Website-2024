@@ -6,9 +6,3 @@
 .custom-arrow .collapse-title::before {
 	font-size: 4rem; /* Adjust as needed */
 }
-
-html,
-body {
-	overflow-x: hidden;
-	overflow-y: auto;
-}
