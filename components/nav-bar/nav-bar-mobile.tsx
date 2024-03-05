@@ -36,6 +36,7 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 					navMenuOpen ? "left-0" : "-left-full"
 				} z-10 transition-all duration-300`}
 				onClick={() => setNavMenuOpen(false)}
+				id="home"
 			></div>
 			<div
 				className={`fixed top-24 ${
