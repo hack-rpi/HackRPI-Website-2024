@@ -4,6 +4,7 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import MlhBanner from "@/components/mlh-banner/mlh-banner";
 import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
+import "../app/globals.css";
 
 export default function Home() {
 	return (
@@ -15,7 +16,7 @@ export default function Home() {
 					content="HackRPI is RPI's annual intercollegiate hackathon hosted by students for students. Get swag and free food as you compete for exciting prizes! With a broad range of workshops and mentors on-site, there’s no experience necessary to attend."
 				/>
 			</Head>
-			<div className="flex flex-col items-start  desktop:items-center justify-start overflow-x-hidden overflow-y-auto">
+			<div className="flex flex-col items-start desktop:items-center justify-start">
 				<MlhBanner />
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
@@ -25,7 +26,12 @@ export default function Home() {
 				<Footer />
 
 				<div className="absolute w-3 top-[500px] desktop:top-[100vh] right-8 h-[1300px] desktop:h-[1000px] bg-hackrpi-primary-blue"></div>
-				<div className="w-3 h-[75px] rotate-45 absolute top-[440px] right-2 desktop:hidden bg-hackrpi-primary-blue"></div>
+				<div
+					className={`absolute bg-hackrpi-secondary-dark-blue top-[460px] w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
+				></div>
+				<div
+					className={`absolute bg-hackrpi-secondary-dark-blue top-[1760px] w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
+				></div>
 			</div>
 		</>
 	);
