@@ -95,7 +95,7 @@ const FAQPage = () => {
 						className={`${
 							highlightFAQ ? `fixed top-32 bg-white` : `absolute bg-hackrpi-secondary-dark-blue`
 						} w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue 
-							transition-colors duration-300 z-[5] right-3.5`}
+							transition-colors duration-300 z-[5] right-1.5 2xs:right-3.5`}
 					></div>
 				</div>
 			</div>

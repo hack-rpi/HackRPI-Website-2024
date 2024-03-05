@@ -25,6 +25,7 @@ const config: Config = {
 			screens: {
 				desktop: "860px",
 				xs: "475px",
+				"2xs": "375px",
 			},
 		},
 	},
