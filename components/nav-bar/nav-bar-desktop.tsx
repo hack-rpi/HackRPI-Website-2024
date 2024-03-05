@@ -5,7 +5,7 @@ import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 
 export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
 	return (
-		<div className="bg-hackrpi-secondary-yellow w-full h-16">
+		<div className="bg-hackrpi-secondary-yellow w-full h-16" id="home">
 			<div className="flex justify-start items-center h-full">
 				<NavBarLink href="/">
 					<div className="flex justify-around items-center">
