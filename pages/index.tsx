@@ -27,7 +27,7 @@ export default function Home() {
 
 				<div className="absolute w-3 top-[500px] desktop:top-[100vh] right-8 h-[1300px] desktop:h-[1000px] bg-hackrpi-primary-blue"></div>
 				<div
-					className={`absolute bg-hackrpi-secondary-dark-blue top-[460px] w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
+					className={`absolute bg-hackrpi-secondary-dark-blue top-[460px] desktop:top-[100vh] w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
 				></div>
 				<div
 					className={`absolute bg-hackrpi-secondary-dark-blue top-[1760px] w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
