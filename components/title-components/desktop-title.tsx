@@ -8,9 +8,7 @@ export default function DesktopTitleComponent() {
 				<TitleText />
 				<Timer />
 			</div>
-			<div className="flex items center justify-center w-1/2">
-				{/* Interactive Map Goes Here */}
-			</div>
+			<div className="flex items center justify-center w-1/2">{/* Interactive Map Goes Here */}</div>
 		</div>
 	);
 }
