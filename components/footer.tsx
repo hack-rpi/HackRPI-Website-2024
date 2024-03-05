@@ -48,24 +48,23 @@ const links: CardProps[] = [
 
 export default function Footer() {
 	return (
-		<div className="bg-hackrpi-secondary-light-blue w-full min-h-64 h-fit absolute bottom-0">
+		<div className="bg-hackrpi-secondary-light-blue w-full min-h-64 h-fit ">
 			<div className="flex flex-col justify-between items-center p-2 min-h-64 h-fit">
-				<div className="w-full flex items-center justify-around flex-col sm:flex-row">
-					<div className="w-3/4 sm:w-1/2 mb-4  min-w-80 flex items-center justify-center">
-						<h1 className="text-4xl font-bold w-full text-center ">
-							Join us this coming November 9-10, 2024 to learn, hack, and make our cities better!
-						</h1>
-					</div>
-					<div className="w-full sm:w-1/4 flex items-center justify-around flex-wrap">
-						<a href="#home" className="text-xl font-bold flex items-center justify-center w-64 p-2">
-							Return to top <NextImage src="/caret.svg" alt="Arrow Up" width={40} height={40} />
-						</a>
-						<a href="https://mlh.io" className="btn btn-secondary text-xl" target="_blank">
-							Register Now
-						</a>
-					</div>
+				<div className="w-3/4 sm:w-1/2 mb-4  min-w-80 flex items-center justify-center">
+					<h1 className="text-4xl font-bold w-full text-center ">
+						Join us this coming November 9-10, 2024 to learn, hack, and make our cities better!
+					</h1>
 				</div>
-				<div className="flex justify-around items-center w-fit">
+				<div className="w-5/6 sm:w-1/4 flex items-center justify-around flex-wrap">
+					<a
+						href="https://mlh.io"
+						className="btn btn-secondary text-xl font-bold rounded-full min-w-fit w-full"
+						target="_blank"
+					>
+						REGISTER
+					</a>
+				</div>
+				<div className="flex justify-between items-center w-5/6 max-w-96 my-6">
 					{links.map((link) => (
 						<Card {...link} key={link.name} />
 					))}
@@ -82,13 +81,13 @@ function Card(props: CardProps) {
 		<a
 			href={props.link}
 			aria-label={props.name}
-			className={`w-fit h-fit
-			 m-4 bg-opacity-100 bg-transparent hover:bg-gradient-to-tr  
+			className={`w-1/6 aspect-square max-w-20
+			bg-opacity-100 bg-transparent hover:bg-gradient-to-tr flex items-center justify-center
 			 ${props.bgGradientFrom} ${props.bgGradientTo}
 			  rounded-full p-2 hover:bg-opacity-0 transition-all duration-300 ease-[cubic-bezier(.43,-0.72,.47,1.8)]
 				motion-safe:hover:scale-150 motion-reduce:scale-0`}
 		>
-			<NextImage src={props.svgPath} alt={props.name} height={35} width={35} />
+			<NextImage src={props.svgPath} alt={props.name} height={45} width={45} />
 		</a>
 	);
 }
