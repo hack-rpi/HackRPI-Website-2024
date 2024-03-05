@@ -3,6 +3,7 @@ import FAQPage from "@/components/faq/faq";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MlhBanner from "@/components/mlh-banner/mlh-banner";
 import Head from "next/head";
+import TitleComponent from "@/components/title-components/title";
 
 export default function Home() {
 	return (
@@ -21,6 +22,7 @@ export default function Home() {
 					<TitleComponent />
 					<FAQPage />
 				</div>
+				<Footer />
 
 				<div className="absolute w-3 top-[500px] desktop:top-[100vh] right-8 h-[1300px] desktop:h-[1000px] bg-hackrpi-primary-blue"></div>
 				<div className="w-3 h-[75px] rotate-45 absolute top-[440px] right-2 desktop:hidden bg-hackrpi-primary-blue"></div>
