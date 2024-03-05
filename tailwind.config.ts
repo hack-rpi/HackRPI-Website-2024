@@ -22,6 +22,11 @@ const config: Config = {
 				"hackrpi-secondary-light-green": "#6d8740",
 				"hackrpi-secondary-yellow": "#edd559",
 			},
+			screens: {
+				desktop: "860px",
+				xs: "475px",
+				"2xs": "375px",
+			},
 		},
 	},
 	daisyui: {

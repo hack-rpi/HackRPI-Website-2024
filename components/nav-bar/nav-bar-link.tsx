@@ -4,7 +4,7 @@ import React from "react";
 export default function NavBarLink({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
 		<NextLink
-			className="w-fit px-1 mx-3 bg-black bg-opacity-0 hover:bg-opacity-15 text-black text-2xl hover:scale-110 transition-all font-bold rounded-md"
+			className="w-fit px-1 mx-1 bg-opacity-0 bg-black hover:bg-opacity-15 text-white text-2xl transition-all rounded-md"
 			href={href}
 		>
 			{children}
