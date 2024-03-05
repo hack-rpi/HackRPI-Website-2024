@@ -61,7 +61,6 @@ const faqs: FAQ[] = [
 
 const FAQPage = () => {
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
-	const [isPhone, setIsPhone] = useState(false);
 
 	useEffect(() => {
 		// Highlight the FAQ section in the navbar when the user scrolls to it
