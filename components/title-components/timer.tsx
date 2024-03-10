@@ -15,13 +15,23 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, []);
 
+	const dayOfMonthPassed = currentTime.getDate() > hackathonStart.getDate();
+	const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+	let dayOffset = -1;
+	let monthOffset = 0;
+	if (dayOfMonthPassed) {
+		dayOffset += daysInMonths[currentTime.getMonth()];
+		monthOffset = -1;
+	}
+
 	const hackathonStarted = currentTime.getTime() > hackathonStart.getTime();
 	const hackathonEnded = currentTime.getTime() > hackathonEnd.getTime();
 	let secondDelta = hackathonStart.getSeconds() - currentTime.getSeconds() + 59;
 	let minuteDelta = hackathonStart.getMinutes() - currentTime.getMinutes() + 59;
 	let hourDelta = hackathonStart.getHours() - currentTime.getHours() + 23;
-	let dayDelta = hackathonStart.getDate() - currentTime.getDate() - 1;
-	let monthDelta = hackathonStart.getMonth() - currentTime.getMonth();
+	let dayDelta = hackathonStart.getDate() - currentTime.getDate() + dayOffset;
+	let monthDelta = hackathonStart.getMonth() - currentTime.getMonth() + monthOffset;
 
 	if (hackathonStarted) {
 		secondDelta = hackathonEnd.getSeconds() - currentTime.getSeconds() + 59;
