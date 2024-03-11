@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import DesktopNavBar from "./nav-bar-desktop";
 import MobileNavBar from "./nav-bar-mobile";
-import { NavBarLinkType } from "@/types/nav-bar-links";
+import { links } from "@/types/nav-bar-links";
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
-	const links: NavBarLinkType[] = [
-		{ href: "/", children: "Home" },
-		{ href: "/sponsor-us", children: "Sponsor Us" },
-	];
+	
 
 	const [showNav, setShowNav] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
