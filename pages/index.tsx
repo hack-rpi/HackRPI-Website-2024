@@ -5,6 +5,7 @@ import MlhBanner from "@/components/mlh-banner/mlh-banner";
 import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
+import Sponsors from "@/components/sponsors";
 
 export default function Home() {
 	return (
@@ -16,12 +17,13 @@ export default function Home() {
 					content="HackRPI is RPI's annual intercollegiate hackathon hosted by students for students. Get swag and free food as you compete for exciting prizes! With a broad range of workshops and mentors on-site, there’s no experience necessary to attend."
 				/>
 			</Head>
-			<div className="flex flex-col items-start desktop:items-center justify-start">
+			<div className="flex flex-col items-center desktop:items-center justify-start">
 				<MlhBanner />
 				<NavBar showOnScroll={true} />
-				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
+				<div className="w-full ">
 					<TitleComponent />
 					<FAQPage />
+					<Sponsors />
 				</div>
 				<Footer />
 
