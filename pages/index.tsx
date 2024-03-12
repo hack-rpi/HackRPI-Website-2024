@@ -1,5 +1,6 @@
 import "../app/globals.css";
 import Link from "../components/link";
+import AboutSection from './about-us';
 
 export default function Home() {
 	return (
@@ -10,9 +11,9 @@ export default function Home() {
 				more information.
 			</p>
 			<Link href="/sponsor-us">Sponsor Us</Link>
-			<p>
-			<Link href="/about-us">About Us</Link>
-			</p>
+			<div>
+      			<AboutSection />
+    		</div>
 		</div>
 	);
 }
