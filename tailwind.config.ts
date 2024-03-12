@@ -22,15 +22,19 @@ const config: Config = {
 				"hackrpi-secondary-light-green": "#6d8740",
 				"hackrpi-secondary-yellow": "#edd559",
 			},
+			screens: {
+				desktop: "860px",
+				xs: "475px",
+				"2xs": "375px",
+			},
 		},
 	},
-	plugins: [require("daisyui")],
 	daisyui: {
 		themes: [
 			{
 				hackrpi: {
 					primary: "#74b7ef",
-					secondary: "#264e33",
+					secondary: "#88b63a",
 					accent: "#edd559",
 					neutral: "#efefef",
 					"base-100": "#27303b",
@@ -38,5 +42,7 @@ const config: Config = {
 			},
 		],
 	},
+	plugins: [require("daisyui")],
 };
+
 export default config;

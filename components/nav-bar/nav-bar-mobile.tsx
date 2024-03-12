@@ -1,61 +1,54 @@
 import { NavBarLinkType } from "@/types/nav-bar-links";
-import NavBarLink from "./nav-bar-link";
 import { useState, useEffect } from "react";
 import NextImg from "next/image";
-import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
+import hackrpi_logo from "@/public/HackRPI-logo-blue.png";
+import NavBarLink from "./nav-bar-link";
 
 export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
+
 	useEffect(() => {
 		document.onkeydown = (e) => {
 			if (e.key === "Escape") {
 				setNavMenuOpen(false);
 			}
 		};
+		return () => {
+			document.onkeydown = null;
+		};
 	}, []);
 
 	return (
 		<>
+			<div className="w-full h-24 flex items-center justify-center fixed top-0 bg-hackrpi-secondary-dark-blue z-20">
+				<div className="flex items-center justify-start w-1/3">
+					<button onClick={() => setNavMenuOpen((prev) => !prev)} className="text-white text-4xl ml-8 ">
+						<NextImg alt="Hamburger Menu" src="/menu-icon.svg" width={40} height={40} priority={true} />
+					</button>
+				</div>
+				<div className="flex items-center justify-center w-1/3">
+					<NextImg alt="HackRPI Logo" src={hackrpi_logo} className="w-14 image-full" priority={true} />
+				</div>
+				<div className="flex items-center justify-center w-1/3"></div>
+			</div>
 			<div
-				className={`absolute w-screen h-full bg-black bg-opacity-25 z-10 ${navMenuOpen ? "visible" : "invisible"}`}
+				className={`fixed top-0 bottom-0 w-full bg-black bg-opacity-40 ${
+					navMenuOpen ? "left-0" : "-left-full"
+				} z-10 transition-all duration-300`}
 				onClick={() => setNavMenuOpen(false)}
+				id="home"
 			></div>
 			<div
-				className={`absolute w-80 h-full bg-hackrpi-secondary-yellow z-20 ${
-					navMenuOpen ? "left-0" : "-left-80"
-				} transition-all duration-300`}
+				className={`fixed top-24 ${
+					navMenuOpen ? "left-0" : "-left-60"
+				} h-full bg-hackrpi-secondary-dark-blue w-48 z-10 transition-all`}
 			>
-				<div className="flex flex-col justify-start items-center w-full h-full my-1">
-					<div className="flex w-full items-center justify-center">
-						<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="h-10 w-10">
-							<NextImg alt="Navigation Menu" src="menu-icon.svg" width="70" height="50" />
-						</button>
-						<NavBarLink href="/">
-							<div className="flex justify-around items-center h-full">
-								<NextImg alt="HackRPI" src={hackrpi_logo} className="ml-1 w-14" />
-								<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
-							</div>
-						</NavBarLink>
-					</div>
-					<hr className="w-full border-black mb-2" />
+				<div className="flex flex-col items-center justify-start h-full">
 					{links.map((link) => (
 						<NavBarLink key={link.href} href={link.href}>
 							{link.children}
 						</NavBarLink>
 					))}
-				</div>
-			</div>
-			<div className="bg-hackrpi-secondary-yellow w-full h-16 sticky top-0 z-10">
-				<div className="flex justify-start items-center h-full">
-					<button onClick={() => setNavMenuOpen(!navMenuOpen)} className="h-10 w-10 ml-2">
-						<NextImg alt="Navigation Menu" src="menu-icon.svg" width="100" height="100" />
-					</button>
-					<NavBarLink href="/">
-						<div className="flex justify-around items-center">
-							<NextImg alt="HackRPI" src={hackrpi_logo} className="w-14 h-14 ml-1" />
-							<h1 className="text-black text-2xl font-bold ml-2">HackRPI 2024</h1>
-						</div>
-					</NavBarLink>
 				</div>
 			</div>
 		</>
