@@ -2,7 +2,7 @@ import Footer from "@/components/footer";
 import FAQPage from "@/components/faq/faq";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MlhBanner from "@/components/mlh-banner/mlh-banner";
-import Head from "next/head";
+import Head from "next/head";	
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
 

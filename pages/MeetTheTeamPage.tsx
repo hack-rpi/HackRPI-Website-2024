@@ -19,6 +19,9 @@ import graceImage from "./../public/TeamPics/grace image.jpg";
 import hemanImage from "./../public/TeamPics/heman image.jpg";
 import amandaImage from "./../public/TeamPics/amanda image.jpeg";
 import cooperImage from "./../public/TeamPics/cooper image.jpg";
+import Footer from "@/components/footer";
+import NavBar from "@/components/nav-bar/nav-bar";
+import { Nav } from "@/node_modules/react-bootstrap/esm/index";
 
 const MeetTheTeamPage = () => {
 	const teamMembersFirstRow = [
@@ -100,8 +103,11 @@ const MeetTheTeamPage = () => {
 		},
 	];
 	return (
-		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b from-black via-blue-400 to-black min-h-screen">
-
+		
+		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b">
+			<NavBar showOnScroll={false} />
+			<br></br>
+			<br></br>
 		  <div className="p-8">
 		  <h1 className="my-5 text-white font-helvetica text-center text-4xl font-bold">Meet The Team!</h1> 
 			<h2 className="my-5 text-white font-helvetica text-center text-2xl">MEET THE DIRECTORS</h2>
@@ -166,6 +172,7 @@ const MeetTheTeamPage = () => {
 			  ))}
 			</div>
 		  </div>
+		  <Footer />
 		</div>
 	  );
 	  
