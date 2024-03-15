@@ -103,79 +103,77 @@ const MeetTheTeamPage = () => {
 		},
 	];
 	return (
-		
 		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b">
 			<NavBar showOnScroll={false} />
 			<br></br>
 			<br></br>
-		  <div className="p-8">
-		  <h1 className="my-5 text-white font-helvetica text-center text-4xl font-bold">Meet The Team!</h1> 
-			<h2 className="my-5 text-white font-helvetica text-center text-2xl">MEET THE DIRECTORS</h2>
-			<div className="flex flex-row justify-center">
-			  {teamMembersFirstRow.map((member, index) => (
-				<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
-				  <img
-					src={member.image}
-					alt={member.name}
-					className="w-16 h-16 object-cover rounded-full"
-					style={{ borderRadius: "50%", width: "150px", height: "150px" }}
-				  />
-				  <h3 className="text-lg text-white font-semibold">{member.name}</h3>
-				  <p className="font-bold text-green-400">{member.role}</p>
+			<div className="p-8">
+				<h1 className="my-5 text-white font-helvetica text-center text-4xl font-bold">Meet The Team!</h1>
+				<h2 className="my-5 text-white font-helvetica text-center text-2xl">MEET THE DIRECTORS</h2>
+				<div className="flex flex-row justify-center">
+					{teamMembersFirstRow.map((member, index) => (
+						<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
+							<img
+								src={member.image}
+								alt={member.name}
+								className="w-16 h-16 object-cover rounded-full"
+								style={{ borderRadius: "50%", width: "150px", height: "150px" }}
+							/>
+							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
+							<p className="font-bold text-green-400">{member.role}</p>
+						</div>
+					))}
 				</div>
-			  ))}
-			</div>
-	  
-			<div className="flex flex-wrap justify-center">
-			  {teamMembersSecondRow.map((member, index) => (
-				<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
-				  <img
-					src={member.image}
-					alt={member.name}
-					className="w-16 h-16 object-cover rounded-full"
-					style={{ borderRadius: "50%", width: "150px", height: "150px" }}
-				  />
-				  <h3 className="text-lg text-white font-semibold">{member.name}</h3>
-				  <p className="font-bold text-green-400">{member.role}</p>
+
+				<div className="flex flex-wrap justify-center">
+					{teamMembersSecondRow.map((member, index) => (
+						<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
+							<img
+								src={member.image}
+								alt={member.name}
+								className="w-16 h-16 object-cover rounded-full"
+								style={{ borderRadius: "50%", width: "150px", height: "150px" }}
+							/>
+							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
+							<p className="font-bold text-green-400">{member.role}</p>
+						</div>
+					))}
 				</div>
-			  ))}
-			</div>
-	  
-			<h2 className="my-5 text-white font-helvetica text-center text-2xl">MEET THE JUNIOR DIRECTORS</h2>
-			<div className="flex flex-wrap justify-center">
-			  {jrTeamMembersFirstRow.map((member, index) => (
-				<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
-				  <img
-					src={member.image}
-					alt={member.name}
-					className="w-16 h-16 object-cover rounded-full"
-					style={{ borderRadius: "50%", width: "150px", height: "150px" }}
-				  />
-				  <h3 className="text-lg text-white font-semibold">{member.name}</h3>
-				  <p className="font-bold text-green-400">{member.role}</p>
+
+				<h2 className="my-5 text-white font-helvetica text-center text-2xl">MEET THE JUNIOR DIRECTORS</h2>
+				<div className="flex flex-wrap justify-center">
+					{jrTeamMembersFirstRow.map((member, index) => (
+						<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
+							<img
+								src={member.image}
+								alt={member.name}
+								className="w-16 h-16 object-cover rounded-full"
+								style={{ borderRadius: "50%", width: "150px", height: "150px" }}
+							/>
+							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
+							<p className="font-bold text-green-400">{member.role}</p>
+						</div>
+					))}
 				</div>
-			  ))}
-			</div>
-	  
-			<div className="flex flex-wrap justify-center">
-			  {jrTeamMembersSecondRow.map((member, index) => (
-				<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
-				  <img
-					src={member.image}
-					alt={member.name}
-					className="w-16 h-16 object-cover rounded-full"
-					style={{ borderRadius: "50%", width: "150px", height: "150px" }}
-				  />
-				  <h3 className="text-lg text-white font-semibold">{member.name}</h3>
-				  <p className="font-bold text-green-500">{member.role}</p>
+
+				<div className="flex flex-wrap justify-center">
+					{jrTeamMembersSecondRow.map((member, index) => (
+						<div key={index} className="flex flex-col items-center justify-center text-center mx-4 mb-4">
+							<img
+								src={member.image}
+								alt={member.name}
+								className="w-16 h-16 object-cover rounded-full"
+								style={{ borderRadius: "50%", width: "150px", height: "150px" }}
+							/>
+							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
+							<p className="font-bold text-green-500">{member.role}</p>
+						</div>
+					))}
 				</div>
-			  ))}
 			</div>
-		  </div>
-		  <Footer />
+			<Footer />
 		</div>
-	  );
-	  
+	);
 };
 
 export default MeetTheTeamPage;
