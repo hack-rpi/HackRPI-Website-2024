@@ -5,7 +5,7 @@ import MlhBanner from "@/components/mlh-banner/mlh-banner";
 import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
-import AboutSection from './about-us';
+import AboutSection from "./about-us";
 
 export default function Home() {
 	return (
@@ -25,8 +25,8 @@ export default function Home() {
 					<FAQPage />
 				</div>
 				<div>
-      				<AboutSection />
-    			</div>
+					<AboutSection />
+				</div>
 				<Footer />
 
 				<div className="absolute w-3 top-[500px] desktop:top-[100vh] right-6 2xs:right-8 h-[1500px] desktop:h-[1000px] bg-hackrpi-primary-blue"></div>
