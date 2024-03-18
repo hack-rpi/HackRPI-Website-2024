@@ -4,6 +4,7 @@ import LOW from './maps_img/LOW.png';
 import NavBar from "@/components/nav-bar/nav-bar";
 import Head from "next/head";
 import Footer from "@/components/footer";
+import MlhBanner from "@/components/mlh-banner/mlh-banner";
 
 const MapsPage = () => {
   const [showDCC, setShowDCC] = useState(true);
@@ -24,16 +25,25 @@ const MapsPage = () => {
       <Head>
         <title>Maps Page</title>
       </Head>
-      <NavBar showOnScroll={true} />
+      <MlhBanner />
+      <NavBar showOnScroll={false} />
+      <div>
+      <h1 className="title font-Mokoto text-5xl py-10"></h1>
+      </div>
       <div id="about" className="MapsPage text-center mx-auto w-2/3">
-        <h1 className="title font-Mokoto text-5xl py-8">MAPS</h1>
+        <h1 className="title font-bold font-sans-helvetica text-hackrpi-secondary-grey text-5xl py-6">MAPS</h1>
 
-        <div className="flex flex-col items-center space-y-8">
-          <div className="w-full">
-            <button onClick={handleShowDCC} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full mb-4">
-              Darrin Communications Center
-            </button>
-          </div>
+        <div className="flex flex-col items-center space-y-1">
+          <button onClick={handleShowDCC} className={`bg-hackrpi-secondary-light-blue hover:bg-hackrpi-primary-light-green text-hackrpi-secondary-grey font-bold py-4 px-8 rounded-full mb-2 ${showDCC ? 'bg-hackrpi-primary-dark-green border-hackrpi-secondary-grey border-4' : ''}`}>
+            Darrin Communications Center
+          </button>
+
+          <button onClick={handleShowLOW} className={`bg-hackrpi-secondary-light-blue hover:bg-hackrpi-primary-light-green text-hackrpi-secondary-grey font-bold py-4 px-8 rounded-full mb-2 ${showLOW ? 'bg-hackrpi-primary-dark-green border-hackrpi-secondary-grey border-4' : ''}`}>
+            Low Center for Industrial Innovation
+          </button>
+        </div>
+
+        <div className="maps-container mt-4 mb-8">
           {showDCC && (
             <img
               src={DCC.src}
@@ -43,11 +53,6 @@ const MapsPage = () => {
             />
           )}
 
-          <div className="w-full">
-            <button onClick={handleShowLOW} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full mb-4">
-              Low Center for Industrial Innovation
-            </button>
-          </div>
           {showLOW && (
             <img
               src={LOW.src}
