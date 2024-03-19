@@ -5,7 +5,7 @@ import MlhBanner from "@/components/mlh-banner/mlh-banner";
 import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
-import AboutSection from "./about-us";
+import AboutSection from "../components/about-us";
 
 export default function Home() {
 	return (
@@ -22,10 +22,8 @@ export default function Home() {
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
 					<TitleComponent />
-					<FAQPage />
-				</div>
-				<div>
 					<AboutSection />
+					<FAQPage />
 				</div>
 				<Footer />
 

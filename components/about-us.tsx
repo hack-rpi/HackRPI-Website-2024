@@ -1,22 +1,16 @@
-import React, { useState } from "react";
 import calendarImage from "../pages/about-us_images/calendar.png";
 import locationImage from "../pages/about-us_images/location.png";
 
 const AboutSection: React.FC = () => {
-	const [activeTab, setActiveTab] = useState<string>("one");
-
-	const handleTabClick = (tabKey: string) => {
-		setActiveTab(tabKey);
-	};
-
 	return (
 		<div id="about" className="text-center w-90 mx-auto mt-12 mb-8">
 			{" "}
-			{/* Added margin-top and margin-bottom */}
-			<h1 className="text-white text-5xl mb-4 font-bold font-sans-Helvetica">About Us</h1>
+			<h1 className="text-hackrpi-primary-blue text-4xl mb-4 font-bold font-sans-Helvetica" style={{ 
+    textShadow: "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff" }}>About Us 
+			</h1>
 			<div className="flex justify-center">
 				<div
-					className={`text-left mx-auto text-hackrpi-secondary-grey ${activeTab === "one" ? "block" : "hidden"}`}
+					className={`text-left mx-auto text-hackrpi-secondary-grey`}
 					style={{ width: "60%", minWidth: "300px" }}
 				>
 					<p>
