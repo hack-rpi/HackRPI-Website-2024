@@ -13,7 +13,7 @@ const AboutSection: React.FC = () => {
 		<div id="about" className="text-center w-90 mx-auto mt-12 mb-8">
 			{" "}
 			{/* Added margin-top and margin-bottom */}
-			<h1 className="text-white text-5xl mb-4 font-hveltica">About Us</h1>
+			<h1 className="text-white text-5xl mb-4 font-bold font-sans-Helvetica">About Us</h1>
 			<div className="flex justify-center">
 				<div
 					className={`text-left mx-auto text-hackrpi-secondary-grey ${activeTab === "one" ? "block" : "hidden"}`}
