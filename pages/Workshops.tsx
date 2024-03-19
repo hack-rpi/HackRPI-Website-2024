@@ -14,6 +14,7 @@ import workshopSemi from './../public/workshopPics/semi.jpeg';
 import workshopTechstack from './../public/workshopPics/techstack.jpeg';
 import Footer from "@/components/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
+import Image from 'next/image';
 
 interface Workshop {
     title: string;
@@ -210,6 +211,13 @@ const WorkshopPage = () => {
                     pointer-events: none;
                     z-index: -1; /* Ensure the overlay is behind the content */
                 }
+
+                .image-container {
+                    width: 100%;
+                    padding-top: 60.25%; /* 16:9 aspect ratio (more rectangular) */
+                    position: relative;
+                    overflow: hidden;
+                }
             `}</style>
             <NavBar showOnScroll={false} />
             <div className="px-6 md:px-10 lg:px-20 xl:px-32">
@@ -223,11 +231,15 @@ const WorkshopPage = () => {
                                 <div className="group relative">
                                     <div className="workshop-container rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
                                         <div className="bg-overlay"></div>
-                                        <img
-                                            src={workshop.pic}
-                                            className="rounded-t-lg h-48 object-cover mx-auto"
-                                            alt="workshop"
-                                        />
+                                        <div className="image-container">
+                                            <Image
+                                                src={workshop.pic}
+                                                alt="workshop"
+                                                layout="fill" // Fill parent container
+                                                objectFit="cover" // Maintain aspect ratio and cover container
+                                                className="rounded-t-lg"
+                                            />
+                                        </div>
                                         <div className="bg-transparent p-4 text-center">
                                             <h2 className="text-white">{workshop.title}</h2>
                                             <p className="text-sm"><span className="text-green-200 font-bold">Time:</span> <span className="text-white">{workshop.time}</span></p>
