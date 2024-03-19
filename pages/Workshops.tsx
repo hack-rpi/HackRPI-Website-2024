@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../app/globals.css";
 import workshopMern from './../public/workshopPics/mern.png';
 import workshopPassword from './../public/workshopPics/password.jpeg';
@@ -12,6 +12,8 @@ import workshopMobdev from './../public/workshopPics/mobdev.png';
 import workshopQuantum from './../public/workshopPics/quantum.png';
 import workshopSemi from './../public/workshopPics/semi.jpeg';
 import workshopTechstack from './../public/workshopPics/techstack.jpeg';
+import Footer from "@/components/footer";
+import NavBar from "@/components/nav-bar/nav-bar";
 
 interface Workshop {
     title: string;
@@ -173,24 +175,23 @@ interface Workshop {
 
 ];
 
-
 const WorkshopPage = () => {
-    const [show, setShow] = useState(false);
     const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null);
 
     const handleShow = (workshop: Workshop) => {
         setSelectedWorkshop(workshop);
-        setShow(true);
     };
 
     const handleClose = () => {
         setSelectedWorkshop(null);
-        setShow(false);
     };
 
     return (
         <div id="workshops" className="WorkshopPage text-center max-w-screen-xlg mx-auto px-6">
-            <h1 className="font-Mokoto text-6xl mb-10">Checkout our Workshops!</h1>
+        <NavBar showOnScroll={false} />
+		<br></br> <br></br><br></br><br></br><br></br>
+      <h1 className="font-helvetica text-white text-6xl mb-10">Checkout our Workshops!</h1>
+      <br></br>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 {workshops.map((workshop, index) => (
                     <div key={index} className="mb-8">
@@ -223,11 +224,12 @@ const WorkshopPage = () => {
                             <p><strong className="text-red font-bold">Location:</strong> {selectedWorkshop.location}</p>
                             <p><strong className="text-red font-bold">Speaker:</strong> {selectedWorkshop.speaker}</p>
                             <p>{selectedWorkshop.description}</p>
-                            <button className="bg-red text-white px-4 py-2 mt-4" onClick={handleClose}>Close</button>
+                            <button className="bg-red-500 text-white px-4 rounded-t-lg rounded-b-lg py-2 mt-4" onClick={handleClose}>Close</button>
                         </div>
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 };
