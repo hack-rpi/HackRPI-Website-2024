@@ -177,21 +177,25 @@ interface Workshop {
 
 const WorkshopPage = () => {
     const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null);
+    const [showDetail, setShowDetail] = useState<boolean>(false);
 
     const handleShow = (workshop: Workshop) => {
         setSelectedWorkshop(workshop);
+        setShowDetail(false); // Start by hiding the detail view
+        setTimeout(() => setShowDetail(true), 100); // Set a delay before showing the detail view
     };
 
     const handleClose = () => {
-        setSelectedWorkshop(null);
+        setShowDetail(false);
+        setTimeout(() => setSelectedWorkshop(null), 500); // Adjust timing as needed to match transition duration
     };
 
     return (
         <div id="workshops" className="WorkshopPage text-center max-w-screen-xlg mx-auto px-6">
-        <NavBar showOnScroll={false} />
-		<br></br> <br></br><br></br><br></br><br></br>
-      <h1 className="font-helvetica text-white text-6xl mb-10">Checkout our Workshops!</h1>
-      <br></br>
+            <NavBar showOnScroll={false} />
+            <br></br> <br></br><br></br><br></br><br></br>
+            <h1 className="font-helvetica text-white text-6xl mb-10">Checkout our Workshops!</h1>
+            <br></br>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 {workshops.map((workshop, index) => (
                     <div key={index} className="mb-8">
@@ -205,9 +209,9 @@ const WorkshopPage = () => {
                                     />
                                     <div className="bg-transparent p-4">
                                         <h2 className="text-white">{workshop.title}</h2>
-                                        <p className="text-sm"><span className="text-red font-bold">Time:</span> {workshop.time}</p>
-                                        <p className="text-sm"><span className="text-red font-bold">Location:</span> {workshop.location}</p>
-                                        <p className="text-sm"><span className="text-red font-bold">Speaker:</span> {workshop.speaker}</p>
+                                        <p className="text-sm"><span className="text-green-200 font-bold">Time:</span> <span className="text-white">{workshop.time}</span></p>
+                                        <p className="text-sm"><span className="text-green-200 font-bold">Location:</span> <span className="text-white">{workshop.location}</span></p>
+                                        <p className="text-sm"><span className="text-green-200 font-bold">Speaker:</span> <span className="text-white">{workshop.speaker}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -216,16 +220,15 @@ const WorkshopPage = () => {
                 ))}
             </div>
             {selectedWorkshop && (
-                <div>
-                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
-                        <div className="bg-white p-8 rounded-lg">
-                            <h2 className="text-2xl font-bold mb-4">{selectedWorkshop.title}</h2>
-                            <p><strong className="text-red font-bold">Time:</strong> {selectedWorkshop.time}</p>
-                            <p><strong className="text-red font-bold">Location:</strong> {selectedWorkshop.location}</p>
-                            <p><strong className="text-red font-bold">Speaker:</strong> {selectedWorkshop.speaker}</p>
-                            <p>{selectedWorkshop.description}</p>
-                            <button className="bg-red-500 text-white px-4 rounded-t-lg rounded-b-lg py-2 mt-4" onClick={handleClose}>Close</button>
-                        </div>
+                <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 transition-opacity ${showDetail ? 'opacity-100' : 'opacity-0'}`}>
+                    <div className={`bg-gray-800 text-white p-8 rounded-lg transition-opacity duration-500 ${showDetail ? 'opacity-100' : 'opacity-0'} max-w-sm`}>
+                        <h2 className="text-2xl font-bold mb-4">{selectedWorkshop.title}</h2>
+                        <p><strong className="text-green-200 font-bold">Time:</strong> <span className="text-white">{selectedWorkshop.time}</span></p>
+                        <p><strong className="text-green-200 font-bold">Location:</strong> <span className="text-white">{selectedWorkshop.location}</span></p>
+                        <p><strong className="text-green-200 font-bold">Speaker:</strong> <span className="text-white">{selectedWorkshop.speaker}</span></p>
+                        <br></br>
+                        <p>{selectedWorkshop.description}</p>
+                        <button className="bg-red-500 text-white px-4 rounded-t-lg rounded-b-lg py-2 mt-4" onClick={handleClose}>Close</button>
                     </div>
                 </div>
             )}
