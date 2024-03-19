@@ -5,14 +5,16 @@ const AboutSection: React.FC = () => {
 	return (
 		<div id="about" className="text-center w-90 mx-auto mt-12 mb-8">
 			{" "}
-			<h1 className="text-hackrpi-primary-blue text-4xl mb-4 font-bold font-sans-Helvetica" style={{ 
-    textShadow: "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff" }}>About Us 
+			<h1
+				className="text-hackrpi-primary-blue text-4xl mb-4 font-bold font-sans-Helvetica"
+				style={{
+					textShadow: "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
+				}}
+			>
+				About Us
 			</h1>
 			<div className="flex justify-center">
-				<div
-					className={`text-left mx-auto text-hackrpi-secondary-grey`}
-					style={{ width: "60%", minWidth: "300px" }}
-				>
+				<div className={`text-left mx-auto text-hackrpi-secondary-grey`} style={{ width: "60%", minWidth: "300px" }}>
 					<p>
 						HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
 						also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
