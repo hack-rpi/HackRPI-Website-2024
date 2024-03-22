@@ -20,8 +20,8 @@ export default function Footer() {
 							<p>110 8th St, Troy, NY 12180</p>
 						</div>
 						<p>
-							HackRPI invites you to tackle the challenges of tomorrow&apos;s cities! Whether you&apos;re passionate about
-							sustainability, technology, or community development, come build the next big urban upgrade with us.
+							HackRPI invites you to tackle the challenges of tomorrow&apos;s cities! Whether you&apos;re passionate
+							about sustainability, technology, or community development, come build the next big urban upgrade with us.
 							Secure your spot today!
 						</p>
 					</div>

@@ -4,8 +4,6 @@ import MobileNavBar from "./nav-bar-mobile";
 import { links } from "@/types/nav-bar-links";
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
-	
-
 	const [showNav, setShowNav] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
 	const navHeight = 96;
