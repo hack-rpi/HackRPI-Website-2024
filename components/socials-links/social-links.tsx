@@ -39,9 +39,11 @@ const socialLinks: CardProps[] = [
 ];
 
 export default function SocialLinks() {
-	return <div className="flex w-full items-center justify-between">
-        {socialLinks.map((socialLink) => (
-            <Card key={socialLink.name} {...socialLink} />
-        ))}
-    </div>;
+	return (
+		<div className="flex w-full items-center justify-between">
+			{socialLinks.map((socialLink) => (
+				<Card key={socialLink.name} {...socialLink} />
+			))}
+		</div>
+	);
 }

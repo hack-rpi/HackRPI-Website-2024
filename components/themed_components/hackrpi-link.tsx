@@ -1,4 +1,3 @@
-import NextImage from "next/image";
 import NextLink from "next/link";
 
 export default function HackRPILink({

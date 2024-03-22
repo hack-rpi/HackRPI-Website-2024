@@ -2,7 +2,6 @@ import NextImage from "next/image";
 import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import HackRPILink from "../themed_components/hackrpi-link";
 import SocialLinks from "../socials-links/social-links";
-import { links } from "@/types/nav-bar-links";
 
 export default function Footer() {
 	return (
@@ -21,7 +20,7 @@ export default function Footer() {
 							<p>110 8th St, Troy, NY 12180</p>
 						</div>
 						<p>
-							HackRPI invites you to tackle the challenges of tomorrow's cities! Whether you're passionate about
+							HackRPI invites you to tackle the challenges of tomorrow&apos;s cities! Whether you&apos;re passionate about
 							sustainability, technology, or community development, come build the next big urban upgrade with us.
 							Secure your spot today!
 						</p>
