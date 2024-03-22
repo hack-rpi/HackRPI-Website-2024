@@ -78,7 +78,10 @@ function LeftSide() {
 					sustainability, technology, or community development, come build the next big urban upgrade with us. Secure
 					your spot today!
 				</p>
-				<HackRPILink href="https://changethislink.com"> Register and Join Us Today! </HackRPILink>
+				<HackRPILink href="https://changethislink.com" className="text-lg">
+					{" "}
+					Register and Join Us Today!{" "}
+				</HackRPILink>
 			</div>
 		</div>
 	);

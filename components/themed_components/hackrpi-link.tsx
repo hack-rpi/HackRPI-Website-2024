@@ -11,7 +11,7 @@ export default function HackRPILink({
 }) {
 	return (
 		<div
-			className={`${className} flex group border-hackrpi-secondary-yellow border-2 text-white hover:bg-hackrpi-secondary-yellow hover:text-hackrpi-secondary-light-blue transition-colors duration-200 font-sans font-medium `}
+			className={`${className} flex group border-hackrpi-secondary-yellow border-2 text-white hover:bg-hackrpi-secondary-yellow hover:text-hackrpi-secondary-dark-blue transition-colors duration-200 font-sans font-medium `}
 		>
 			<div className="w-full h-full flex items-center justify-center m-2">
 				<a href={href} className="">
@@ -19,7 +19,7 @@ export default function HackRPILink({
 				</a>
 			</div>
 			<svg
-				className="sticky z-10 top-2 right-2 m-0.5 group-hover:fill-hackrpi-secondary-light-blue fill-hackrpi-secondary-yellow transition-colors duration-200"
+				className="sticky z-10 top-2 right-2 m-0.5 group-hover:fill-hackrpi-secondary-dark-blue fill-hackrpi-secondary-yellow transition-colors duration-200"
 				xmlns="http://www.w3.org/2000/svg"
 				width="15"
 				height="15"
