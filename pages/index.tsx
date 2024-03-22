@@ -17,7 +17,6 @@ export default function Home() {
 				/>
 			</Head>
 			<div className="flex flex-col items-start desktop:items-center justify-start">
-				<MlhBanner />
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
 					<TitleComponent />

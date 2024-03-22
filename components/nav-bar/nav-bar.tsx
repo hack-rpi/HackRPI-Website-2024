@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DesktopNavBar from "./nav-bar-desktop";
 import MobileNavBar from "./nav-bar-mobile";
 import { NavBarLinkType } from "@/types/nav-bar-links";
+import MlhBanner from "../mlh-banner/mlh-banner";
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 	const links: NavBarLinkType[] = [
@@ -32,11 +33,20 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 		};
 	}, []);
 
-	if (windowWidth < 860) return <MobileNavBar links={links} />;
+	if (windowWidth < 860)
+		return (
+			<>
+				<MobileNavBar links={links} />
+				<MlhBanner />
+			</>
+		);
 
 	return (
-		<div className={`${showOnScroll ? (showNav ? "top-0" : "-top-24") : "top-0"} fixed transition-all w-full z-10`}>
-			<DesktopNavBar links={links} />
-		</div>
+		<>
+			<div className={`${showOnScroll ? (showNav ? "top-0" : "-top-24") : "top-0"} fixed transition-all w-full z-10`}>
+				<DesktopNavBar links={links} />
+			</div>
+			<MlhBanner />
+		</>
 	);
 }
