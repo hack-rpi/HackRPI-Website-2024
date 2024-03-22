@@ -1,111 +1,46 @@
-import RegistrationButton from "../title-components/registration-button";
-import Card, { CardProps } from "./socials-card";
 import NextImage from "next/image";
-import logo from "@/public/HackRPI-logo-blue.png";
-import { links } from "@/types/nav-bar-links";
-import NavBarLink from "../nav-bar/nav-bar-link";
+import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import HackRPILink from "../themed_components/hackrpi-link";
-
-const socialLinks: CardProps[] = [
-	{
-		svgPath: "/social/instagram.svg",
-		link: "https://www.instagram.com/hack.rpi/",
-		name: "Instagram",
-		bgGradientFrom: "from-[#FD1D1D]",
-		bgGradientTo: "to-[#405DE6]",
-	},
-	{
-		svgPath: "/social/discord.svg",
-		link: "https://discord.gg/Pzmdt7FYnu",
-		name: "Discord",
-		bgGradientFrom: "from-[#5865F2]",
-		bgGradientTo: "to-[#7289da]",
-	},
-	{
-		svgPath: "/social/email.svg",
-		link: "mailto:hackrpi@rpi.edu",
-		name: "Email",
-		bgGradientFrom: "to-[#0063b0]",
-		bgGradientTo: "from-[#218cff]",
-	},
-	{
-		svgPath: "/social/tiktok.svg",
-		link: "https://www.tiktok.com/@hackrpi",
-		name: "TikTok",
-		bgGradientFrom: "from-[#ff0050]",
-		bgGradientTo: "to-[#00f2ea]",
-	},
-	{
-		svgPath: "/social/linkedin.svg",
-		link: "https://www.linkedin.com/company/hackrpiorganizingteam/",
-		name: "LinkedIn",
-		bgGradientFrom: "from-[#0077B5]",
-		bgGradientTo: "to-[#0077B5]",
-	},
-];
+import SocialLinks from "../socials-links/social-links";
+import { links } from "@/types/nav-bar-links";
 
 export default function Footer() {
 	return (
-		<div className="bg-hackrpi-secondary-light-blue w-screen h-fit z-[5] ">
-			<div className="flex flex-col justify-between items-center p-2 h-full w-full">
-				<div className="flex h-fit items-start justify-center w-full flex-wrap">
-					<div className="h-fit w-5/6 sm:w-1/2 min-w-[320px]">
-						<LeftSide />
-					</div>
-					<div className="h-fit w-5/6 sm:w-1/2 min-w-[320px]">
-						<RightSide />
+		<div className="flex flex-col items-center justify-center w-full min-h-fit  z-10 bg-hackrpi-secondary-light-blue">
+			<div className="flex flex-col md:flex-row items-start md:items-center justify-center w-11/12 h-fit md:h-60 my-10">
+				<div className="w-1/6 h-full mr-4">
+					<NextImage src={logo} alt="HackRPI Logo" className="h-full object-contain" />
+				</div>
+				<div className="w-full md:w-3/6 h-full mr-1 my-4">
+					<div className=" w-11/12 flex flex-col justify-around items-start h-full">
+						<div className="mb-4">
+							<h2 className="text-2xl tracking-wider font-sans font-thin">
+								<span className="font-bold tracking-normal">HackRPI</span> Urban Upgrades
+							</h2>
+							<p>Darrin Communications Center @ Rensselaer Polytechnic Institute</p>
+							<p>110 8th St, Troy, NY 12180</p>
+						</div>
+						<p>
+							HackRPI invites you to tackle the challenges of tomorrow's cities! Whether you're passionate about
+							sustainability, technology, or community development, come build the next big urban upgrade with us.
+							Secure your spot today!
+						</p>
 					</div>
 				</div>
-				<div className="h-14 w-full flex items-center justify-center flex-col">
-					<h3 className="text-lg">Made with ❤️ by HackRPI</h3>
-					<h3 className="text-lg">(c) 2024 HackRPI</h3>
+				<div className="w-3/4 md:w-1/4 border-l-2 border-l-white h-full">
+					<div className="w-full ml-2 h-full flex flex-col items-start justify-around">
+						<HackRPILink className="w-full mb-4" href="https://hackrpi.com">
+							Register Today and Join Us!
+						</HackRPILink>
+						<SocialLinks />
+					</div>
 				</div>
 			</div>
-		</div>
-	);
-}
-
-function LeftSide() {
-	return (
-		<div className="h-full w-full flex flex-col items-start justify-start p-4">
-			<div className="flex items-center justify-start border-b border-base-content w-full p-1 mb-2 h-20">
-				<NextImage src={logo} alt="HackRPI Logo" className="w-14 image-full mr-4" />
-				<h1 className="text-4xl xs:text-5xl md:text-6xl font-bold">HACKRPI</h1>
-			</div>
-			<div className="w-full h-full flex flex-col items-start justify-around">
-				<p className="mb-4">
-					HackRPI invites you to tackle the challenges of tomorrow's cities! Whether you're passionate about
-					sustainability, technology, or community development, come build the next big urban upgrade with us. Secure
-					your spot today!
+			<div className="flex flex-col items-center justify-center w-fit pb-4">
+				<p>
+					Made with <span className="text-red-600">❤️</span> by HackRPI.
 				</p>
-				<HackRPILink href="https://changethislink.com" className="text-lg">
-					{" "}
-					Register and Join Us Today!{" "}
-				</HackRPILink>
-			</div>
-		</div>
-	);
-}
-
-function RightSide() {
-	return (
-		<div className="h-full w-full flex flex-col items-start justify-start p-4 ">
-			<div className="flex items-center justify-start border-b border-base-content w-full p-1 mb-4 h-20">
-				<h1 className="text-4xl xs:text-5xl md:text-6xl font-bold">Links</h1>
-			</div>
-			<div className="w-full flex flex-col items-center justify-center">
-				<div className="w-full md:w-2/3 h-full flex items-start justify-around mb-6">
-					{socialLinks.map((link) => (
-						<Card key={link.link} {...link} />
-					))}
-				</div>
-				<div className="flex w-full items-center justify-center flex-wrap">
-					{links.map((link) => (
-						<NavBarLink key={link.href} href={link.href}>
-							{link.children}
-						</NavBarLink>
-					))}
-				</div>
+				<p>&copy; 2024 HackRPI</p>
 			</div>
 		</div>
 	);
