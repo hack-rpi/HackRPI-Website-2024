@@ -4,6 +4,7 @@ import NextImage from "next/image";
 import logo from "@/public/HackRPI-logo-blue.png";
 import { links } from "@/types/nav-bar-links";
 import NavBarLink from "../nav-bar/nav-bar-link";
+import HackRPILink from "../themed_components/hackrpi-link";
 
 const socialLinks: CardProps[] = [
 	{
@@ -77,7 +78,7 @@ function LeftSide() {
 					sustainability, technology, or community development, come build the next big urban upgrade with us. Secure
 					your spot today!
 				</p>
-				<RegistrationButton />
+				<HackRPILink href="https://changethislink.com"> Register and Join Us Today! </HackRPILink>
 			</div>
 		</div>
 	);
