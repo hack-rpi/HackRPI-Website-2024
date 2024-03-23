@@ -7,7 +7,7 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 	const links: NavBarLinkType[] = [
 		{ href: "/", children: "Home" },
 		{ href: "/sponsor-us", children: "Sponsor Us" },
-		{ href: "/SpomsorUsPage", children: "SponsorUsNew" },
+		{ href: "/sponsor-us-page", children: "SponsorUsPage" },
 	];
 
 	const [showNav, setShowNav] = useState(false);
