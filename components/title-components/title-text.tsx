@@ -34,7 +34,7 @@ export default function TitleText() {
 				November 9-10, <span onMouseEnter={() => setYear(1824)}>{year}</span>
 			</p>
 			<p className="w-full text-md mb-8 ">
-				HackRPI is Rensselaer Polytechnic Institute's flagship annual hackathon. This year we are bringing together
+				HackRPI is Rensselaer Polytechnic Institute&apos;s flagship annual hackathon. This year we are bringing together
 				innovators, creators, and problem-solvers to tackle the challenges of urban living. Join us this November for a
 				weekend of free food, networking, and the opportunity to our enhance cities and communities!
 			</p>
