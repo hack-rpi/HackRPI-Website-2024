@@ -3,7 +3,7 @@ import TitleText from "./title-text";
 
 export default function DesktopTitleComponent() {
 	return (
-		<div className="flex w-full h-screen justify-around items-center mb-8">
+		<div className="pl-4 pt-4 flex w-full h-screen justify-around items-center mb-8">
 			<div className="flex flex-col w-1/2 items-start justify-around h-full ">
 				<TitleText />
 				<Timer />

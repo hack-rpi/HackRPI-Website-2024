@@ -38,7 +38,7 @@ export default function TitleText() {
 				innovators, creators, and problem-solvers to tackle the challenges of urban living. Join us this November for a
 				weekend of free food, networking, and the opportunity to our enhance cities and communities!
 			</p>
-
+			{/* TODO: Replace this with the themed button when that PR is merged in. */}
 			<RegistrationButton />
 		</div>
 	);

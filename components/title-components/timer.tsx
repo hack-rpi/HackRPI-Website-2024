@@ -50,7 +50,7 @@ export default function Timer() {
 	}
 
 	return (
-		<div className="w-full h-fit flex flex-col items-start justify-center">
+		<div className="w-full desktop:w-4/6 h-fit flex flex-col items-start justify-center">
 			{hackathonStarted && !hackathonEnded ? <h1 className="text-4xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
 			{hackathonEnded ? <h1 className="text-4xl font-bold mb-2">THANKS FOR JOINING US! </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">
@@ -94,7 +94,7 @@ export default function Timer() {
 function Circle({ bgColor, textColor, children }: { bgColor: string; textColor: string; children: React.ReactNode }) {
 	return (
 		<div
-			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-3xl xs:text-5xl sm:text-6xl desktop:text-5xl lg:text-6xl xl:text-7xl font-bold shadow-lg`}
+			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-3xl xs:text-5xl sm:text-6xl desktop:text-4xl lg:text-5xl font-bold shadow-lg`}
 			suppressHydrationWarning
 		>
 			{children}
