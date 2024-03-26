@@ -48,7 +48,7 @@ const links: CardProps[] = [
 
 export default function Footer() {
 	return (
-		<div className="bg-hackrpi-secondary-light-blue w-screen min-h-64 h-fit z-[5] ">
+		<div className="bg-hackrpi-secondary-light-blue w-full min-h-64 h-fit z-[5] ">
 			<div className="flex flex-col justify-between items-center p-2 min-h-64 h-fit">
 				<div className="w-3/4 sm:w-1/2 mb-4  min-w-80 flex items-center justify-center">
 					<h1 className="text-4xl font-bold w-full text-center ">
