@@ -4,6 +4,7 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
+import AboutSection from "../components/about-us";
 
 export default function Home() {
 	return (
@@ -19,6 +20,7 @@ export default function Home() {
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
 					<TitleComponent />
+					<AboutSection />
 					<FAQPage />
 				</div>
 				<Footer />

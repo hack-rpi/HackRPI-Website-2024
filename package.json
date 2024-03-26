@@ -11,7 +11,6 @@
 	"dependencies": {
 		"next": "^14.1.0",
 		"react": "^18",
-		"react-bootstrap": "^2.10.0",
 		"react-dom": "^18"
 	},
 	"devDependencies": {
@@ -26,7 +25,7 @@
 		"eslint-config-next": "14.0.4",
 		"eslint-plugin-react": "^7.33.2",
 		"postcss": "^8",
-		"tailwindcss": "^3.4.0",
+		"tailwindcss": "^3.4.1",
 		"typescript": "^5"
 	}
 }
