@@ -207,7 +207,7 @@ const WorkshopPage = () => {
                     position: absolute;
                     inset: 0;
                     background-color: rgba(34, 34, 34, 0); /* Initial background color */
-                    transition: background-color 0.5s ease; /* Background color transition */
+                    transition: background-color 0.4s ease; /* Background color transition */
                     pointer-events: none;
                     z-index: -1; /* Ensure the overlay is behind the content */
                 }
