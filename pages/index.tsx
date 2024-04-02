@@ -1,7 +1,6 @@
 import Footer from "@/components/footer";
 import FAQPage from "@/components/faq/faq";
 import NavBar from "@/components/nav-bar/nav-bar";
-import MlhBanner from "@/components/mlh-banner/mlh-banner";
 import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
@@ -18,7 +17,6 @@ export default function Home() {
 				/>
 			</Head>
 			<div className="flex flex-col items-start desktop:items-center justify-start">
-				<MlhBanner />
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
 					<TitleComponent />
