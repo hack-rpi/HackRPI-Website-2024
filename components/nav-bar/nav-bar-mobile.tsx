@@ -1,7 +1,7 @@
 import { NavBarLinkType } from "@/types/nav-bar-links";
 import { useState, useEffect } from "react";
 import NextImg from "next/image";
-import hackrpi_logo from "@/public/HackRPI-logo-blue.png";
+import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import NavBarLink from "./nav-bar-link";
 
 export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {

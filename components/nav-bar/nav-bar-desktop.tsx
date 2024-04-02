@@ -1,7 +1,7 @@
 import NextImg from "next/image";
 import { NavBarLinkType } from "@/types/nav-bar-links";
 import NavBarLink from "./nav-bar-link";
-import logo from "@/public/HackRPI-logo-blue.png";
+import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import RegistrationButton from "./registration-button";
 
 export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
