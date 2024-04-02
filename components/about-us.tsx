@@ -25,9 +25,9 @@ const AboutSection: React.FC = () => {
 							HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
 							also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
 							range of workshops and mentors on-site, there's no experience necessary to attend. Hackers will also have
-							the opportunity to network with our fantastic sponsors from the companies that make our event possible. This
-							year's theme, <span className="font-bold text-hackrpi-secondary-light-green">Urban Upgrade</span> is an ode to a
-							decade inspiring students and HackRPI!
+							the opportunity to network with our fantastic sponsors from the companies that make our event possible.
+							This year's theme, <span className="font-bold text-hackrpi-secondary-light-green">Urban Upgrade</span> is
+							an ode to a decade inspiring students and HackRPI!
 						</p>
 						<p style={paragraphStyle}>
 							Come join us this November 9-10, 2024 to hack, learn, and meet other people! We are a motivated team of
