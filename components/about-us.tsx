@@ -24,9 +24,9 @@ const AboutSection: React.FC = () => {
 						<p style={paragraphStyle}>
 							HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
 							also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
-							range of workshops and mentors on-site, there's no experience necessary to attend. Hackers will also have
+							range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also have
 							the opportunity to network with our fantastic sponsors from the companies that make our event possible. This
-							year's theme, <span className="font-bold text-hackrpi-secondary-light-green">Urban Upgrade</span> is an ode to a
+							year&apos;s theme, <span className="font-bold text-hackrpi-secondary-light-green">Urban Upgrade</span> is an ode to a
 							decade inspiring students and HackRPI!
 						</p>
 						<p style={paragraphStyle}>
@@ -37,9 +37,9 @@ const AboutSection: React.FC = () => {
 						</p>
 						<p style={paragraphStyle}>
 							We believe that HackRPI is a vital part of our school. Our goal is to inspire and challenge innovators,
-							creators, developers, and entrepreneurs in New York's Tech Valley and beyond. We help attendees develop
+							creators, developers, and entrepreneurs in New York&apos;s Tech Valley and beyond. We help attendees develop
 							their skills, explore new technologies, and turn their interests and visions into opportunities. Staying
-							true to our slogan "Why Not Code the World?"
+							true to our slogan &quot;Why Not Code the World?&quot;
 						</p>
 					</>
 
