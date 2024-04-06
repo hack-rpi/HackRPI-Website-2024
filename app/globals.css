@@ -6,9 +6,3 @@
 .custom-arrow .collapse-title::before {
 	font-size: 4rem; /* Adjust as needed */
 }
-
-/* Adjusts the height of the button */
-.custom-btn-height {
-	height: 2.3rem; /* or any other value */
-	min-height: 2.3rem; /* or any other value */
-}
