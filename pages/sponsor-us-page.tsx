@@ -20,15 +20,15 @@ function SponsorUsPage() {
 				></iframe>
 			</div>
 
-<div className="text-left w-full pt-20">
-  <h3 className="text-4xl font-bold mb-4">This year... we need your help!</h3>
-</div>
-<Link
-  href="https://tinyurl.com/hackrpi-donation"
-  className="btn btn-primary rounded-full bg-hackrpi-primary-blue border-none hover:bg-hackrpi-primary-blue-dark px-6 h-[50px] text-white text-[1.575rem]"
->
-  Donate Now!
-</Link>
+			<div className="text-left w-full pt-20">
+				<h3 className="text-4xl font-bold mb-4">This year... we need your help!</h3>
+			</div>
+			<Link
+				href="https://tinyurl.com/hackrpi-donation"
+				className="btn btn-primary rounded-full bg-hackrpi-primary-blue border-none hover:bg-hackrpi-primary-blue-dark px-6 h-[50px] text-white text-[1.575rem]"
+			>
+				Donate Now!
+			</Link>
 			<div className="flex flex-col sm:flex-row justify-center w-full">
 				<div className="flex flex-col items-center w-full sm:w-1/2 p-2 sm:mr-4 mb-4 sm:mb-0">
 					<h1 className="text-2xl font-bold mb-4">Individual Donations</h1>
