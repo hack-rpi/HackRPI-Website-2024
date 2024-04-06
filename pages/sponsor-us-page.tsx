@@ -29,8 +29,8 @@ function SponsorUsPage() {
 >
   Donate Now!
 </Link>
-			<div className="flex flex-col sm:flex-row justify-center w-full">
-				<div className="flex flex-col items-center w-full sm:w-1/2 p-2 sm:mr-4 mb-4 sm:mb-0">
+46c0715fb3dfdec5f00e
+ p-2 sm:mr-4 mb-4 sm:mb-0">
 					<h1 className="text-2xl font-bold mb-4">Individual Donations</h1>
 					<iframe
 						className="w-full aspect-[8.5/11]"
