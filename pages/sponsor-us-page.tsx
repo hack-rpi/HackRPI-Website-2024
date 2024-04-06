@@ -21,7 +21,7 @@ function SponsorUsPage() {
 			</div>
 
 <div className="text-left w-full pt-20">
-  <h3 className="text-4xl font-bold mb-4">This year we need your help...</h3>
+  <h3 className="text-4xl font-bold mb-4">This year... we need your help!</h3>
 </div>
 <Link
   href="https://tinyurl.com/hackrpi-donation"
