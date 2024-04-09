@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
 import DesktopNavBar from "./nav-bar-desktop";
 import MobileNavBar from "./nav-bar-mobile";
-import { NavBarLinkType } from "@/types/nav-bar-links";
-import MlhBanner from "../mlh-banner/mlh-banner";
+import { links } from "@/types/nav-bar-links";
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
-	const links: NavBarLinkType[] = [
-		{ href: "/", children: "Home" },
-		{ href: "/sponsor-us-page", children: "Sponsor Us" },
-	];
-
 	const [showNav, setShowNav] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
 	const navHeight = 96;
@@ -37,7 +31,6 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 		return (
 			<>
 				<MobileNavBar links={links} />
-				<MlhBanner />
 			</>
 		);
 
@@ -46,7 +39,6 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 			<div className={`${showOnScroll ? (showNav ? "top-0" : "-top-24") : "top-0"} fixed transition-all w-full z-10`}>
 				<DesktopNavBar links={links} />
 			</div>
-			<MlhBanner />
 		</>
 	);
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import "../app/globals.css";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 
 function SponsorUsPage() {
