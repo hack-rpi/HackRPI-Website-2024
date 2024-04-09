@@ -27,11 +27,20 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 		};
 	}, []);
 
-	if (windowWidth < 860) return <MobileNavBar links={links} />;
+	if (windowWidth < 860)
+		return (
+			<>
+				<MobileNavBar links={links} />
+				<MlhBanner />
+			</>
+		);
 
 	return (
-		<div className={`${showOnScroll ? (showNav ? "top-0" : "-top-24") : "top-0"} fixed transition-all w-full z-10`}>
-			<DesktopNavBar links={links} />
-		</div>
+		<>
+			<div className={`${showOnScroll ? (showNav ? "top-0" : "-top-24") : "top-0"} fixed transition-all w-full z-10`}>
+				<DesktopNavBar links={links} />
+			</div>
+			<MlhBanner />
+		</>
 	);
 }
