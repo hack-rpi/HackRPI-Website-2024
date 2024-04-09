@@ -1,6 +1,6 @@
 import React from "react";
 import "../app/globals.css";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import Image from "next/image";
 
@@ -79,7 +79,7 @@ const MeetTheTeamPage = () => {
 	];
 
 	return (
-		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b">
+		<div className="flex flex-col w-full justify-start items-center bg-gradient-to-b mt-16">
 			<NavBar showOnScroll={false} />
 			<br />
 			<br />
@@ -97,7 +97,7 @@ const MeetTheTeamPage = () => {
 								height={500} // Adjusted size
 							/>
 							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
-							<p className="font-bold text-green-400">{member.role}</p>
+							<p className="font-bold text-hackrpi-secondary-grey">{member.role}</p>
 						</div>
 					))}
 				</div>
@@ -113,7 +113,7 @@ const MeetTheTeamPage = () => {
 								height={500} // Adjusted size
 							/>
 							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
-							<p className="font-bold text-green-400">{member.role}</p>
+							<p className="font-bold text-hackrpi-secondary-grey">{member.role}</p>
 						</div>
 					))}
 				</div>
@@ -130,7 +130,7 @@ const MeetTheTeamPage = () => {
 								height={500} // Adjusted size
 							/>
 							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
-							<p className="font-bold text-green-400">{member.role}</p>
+							<p className="font-bold text-hackrpi-secondary-grey">{member.role}</p>
 						</div>
 					))}
 				</div>
@@ -146,7 +146,7 @@ const MeetTheTeamPage = () => {
 								height={500} // Adjusted size
 							/>
 							<h3 className="text-lg text-white font-semibold">{member.name}</h3>
-							<p className="font-bold text-green-500">{member.role}</p>
+							<p className="font-bold text-hackrpi-secondary-grey">{member.role}</p>
 						</div>
 					))}
 				</div>
