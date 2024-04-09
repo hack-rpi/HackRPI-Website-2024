@@ -15,7 +15,7 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, []);
 
-	const dayOfMonthPassed = currentTime.getDate() > hackathonStart.getDate();
+	const dayOfMonthPassed = currentTime.getDate() >= hackathonStart.getDate();
 	const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 	let dayOffset = -1;
