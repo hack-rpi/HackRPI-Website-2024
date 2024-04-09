@@ -25,7 +25,7 @@ function SponsorUsPage() {
 			</div>
 			<Link
 				href="https://tinyurl.com/hackrpi-donation"
-				className="btn btn-primary rounded-full bg-hackrpi-primary-blue border-none hover:bg-hackrpi-primary-blue-dark px-6 h-[50px] text-white text-[1.575rem]"
+				className="btn btn-primary rounded-full bg-hackrpi-primary-blue border-none hover:bg-hackrpi-primary-blue-dark px-6 h-[50px] text-black text-[1.575rem]"
 			>
 				Donate Now!
 			</Link>
