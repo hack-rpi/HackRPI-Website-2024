@@ -1,6 +1,8 @@
 import Image from "next/image";
 import calendarImage from "../pages/about-us_images/calendar.png";
 import locationImage from "../pages/about-us_images/location.png";
+import registerImage from "../pages/about-us_images/register.png";
+import whenwhereImage from "../pages/about-us_images/w&w.png";
 
 const AboutSection: React.FC = () => {
 	const paragraphStyle = {
@@ -11,15 +13,12 @@ const AboutSection: React.FC = () => {
 		<div id="about" className="text-center w-90 mx-auto mt-12 mb-8">
 			{" "}
 			<h1
-				className="text-hackrpi-secondary-light-blue text-5xl mb-4 font-bold font-sans-Helvetica"
-				style={{
-					textShadow: "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
-				}}
+				className="text-white text-4xl mb-4 font-bold font-sans-Helvetica"
 			>
-				About Us
+				About HackRPI
 			</h1>
 			<div className="flex justify-center">
-				<div className={`text-left mx-auto text-hackrpi-secondary-grey`} style={{ width: "60%", minWidth: "300px" }}>
+				<div className={`text-left mx-auto text-hackrpi-secondary-grey`} style={{ width: "70%", minWidth: "300px" }}>
 					<>
 						<p style={paragraphStyle}>
 							HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
@@ -27,7 +26,7 @@ const AboutSection: React.FC = () => {
 							range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also
 							have the opportunity to network with our fantastic sponsors from the companies that make our event
 							possible. This year&apos;s theme,{" "}
-							<span className="font-bold text-hackrpi-secondary-light-green">Urban Upgrade</span> is an ode to a decade
+							<span className="font-bold text-hackrpi-primary-light-green">Urban Upgrade</span> is an ode to a decade
 							inspiring students and HackRPI!
 						</p>
 						<p style={paragraphStyle}>
@@ -45,20 +44,20 @@ const AboutSection: React.FC = () => {
 					</>
 
 					<div className="flex items-center mt-4 justify-center flex-wrap">
-						{/* Calendar */}
 						<div className="flex flex-col items-center justify-center mt-4 mx-4">
-							<Image src={calendarImage} alt="Calendar" width={50} height={50} />
-							<span>November 9-10, 2024</span>
+							<Image src={registerImage} alt="Location" width={50} height={50} />
+							{/* <Image src={calendarImage} alt="Calendar" width={50} height={50} />
+							<span>November 9-10, 2024</span> */}
 						</div>
 
-						{/* Location */}
 						<div className="flex flex-col items-center justify-center mt-4 mx-4">
-							<Image src={locationImage} alt="Location" width={50} height={50} />
+							<Image src={whenwhereImage} alt="Location" width={50} height={50} />
+							{/* <Image src={locationImage} alt="Location" width={50} height={50} />
 							<span>
 								Darrins Communications Center
 								<br />
 								Rensselaer Polytechnic Institute
-							</span>
+							</span> */}
 						</div>
 					</div>
 				</div>
