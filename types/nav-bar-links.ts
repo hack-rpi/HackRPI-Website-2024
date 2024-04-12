@@ -8,4 +8,5 @@ export interface NavBarLinkType {
 export const links: NavBarLinkType[] = [
 	{ href: "/", children: "Home" },
 	{ href: "/sponsor-us", children: "Sponsor Us" },
+	{ href: "/past-year-projects", children: "Previous Projects" },
 ];
