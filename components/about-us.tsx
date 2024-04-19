@@ -5,15 +5,15 @@ import whenwhereImage from "../pages/about-us_images/w&w.png";
 const AboutSection: React.FC = () => {
     const paragraphStyle: React.CSSProperties = {
         marginBottom: "10px",
-        width: "100%", // Adjusted width to fill the container
+        width: "100%",
         minWidth: "300px",
         textAlign: "left",
     };    
     
     return (
-        <div id="about" className="w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start"> {/* Adjusted layout for different screen sizes */}
-            <div className="w-full lg:w-2/5 lg:ml-1/6 ml-auto"> {/* Adjusted layout for different screen sizes */}
-                <h1 className="text-white text-4xl mb-4 font-bold font-sans-Helvetica">About HackRPI</h1>
+        <div id="about" className="w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start">
+            <div className="w-full lg:w-3/6 ml-auto"> 
+                <h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
                 
                 <div style={paragraphStyle}>
                     <>
@@ -28,7 +28,7 @@ const AboutSection: React.FC = () => {
                         </p>
                         <p style={paragraphStyle}>
                             Come join us this November 9-10, 2024 to hack, learn, and meet other people! We are a motivated team of
-                            RPI students who share a passion for exploring the bounds of computer science and a commitment to
+                            RPI students who share a passion for exploring the bounds of Computer Science and a commitment to
                             organizing a fantastic event. Our team of students from every grade level works together to plan the
                             hackathon and find sponsors to bring the event together.
                         </p>
@@ -42,17 +42,19 @@ const AboutSection: React.FC = () => {
                 </div>
             </div>
             
-            <div className="w-full lg:w-2/5 flex flex-col items-center lg:items-start mt-4 lg:mt-0"> {/* Adjusted layout for different screen sizes */}
-                <div className="flex flex-col items-center mb-2 lg:mb-0"> {/* Adjusted layout */}
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <Image src={registerImage} alt="Register" width={3000} height={200} /> {/* Adjusted image size */}
+            <div className="w-full lg:w-2/6 flex flex-col items-center lg:items-start mt-4 lg:mt-0"> 
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <div className="flex flex-col items-center mb-2 lg:mb-0" style={{ marginBottom: '-15px' }}> {/* Adjusted layout and reduced margin */}
+                    <Image src={registerImage} alt="Register" width={400} height={400} /> 
+                     <br style={{ margin: '0' }}></br> 
                 </div>
                 <div className="flex flex-col items-center mt-2 lg:mt-0"> {/* Adjusted layout */}
-                    <Image src={whenwhereImage} alt="When & Where" width={3000} height={2000} /> {/* Adjusted image size */}
+                    <Image src={whenwhereImage} alt="When & Where" width={1000} height={1000} /> {/* Adjusted image size */}
                 </div>
             </div>
         </div>
