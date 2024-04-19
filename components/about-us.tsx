@@ -51,7 +51,6 @@ const AboutSection: React.FC = () => {
                     <br></br>
                     <Image src={registerImage} alt="Register" width={3000} height={200} /> {/* Adjusted image size */}
                 </div>
-                <br></br>
                 <div className="flex flex-col items-center mt-2 lg:mt-0"> {/* Adjusted layout */}
                     <Image src={whenwhereImage} alt="When & Where" width={3000} height={2000} /> {/* Adjusted image size */}
                 </div>
