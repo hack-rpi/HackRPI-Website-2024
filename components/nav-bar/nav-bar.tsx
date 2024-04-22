@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DesktopNavBar from "./nav-bar-desktop";
 import MobileNavBar from "./nav-bar-mobile";
 import { links } from "@/types/nav-bar-links";
+import MlhBanner from "../mlh-banner/mlh-banner";
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 	const [showNav, setShowNav] = useState(false);
@@ -31,6 +32,7 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 		return (
 			<>
 				<MobileNavBar links={links} />
+				<MlhBanner />
 			</>
 		);
 
@@ -38,6 +40,7 @@ export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 		<>
 			<div className={`${showOnScroll ? (showNav ? "top-0" : "-top-24") : "top-0"} fixed transition-all w-full z-10`}>
 				<DesktopNavBar links={links} />
+				<MlhBanner />
 			</div>
 		</>
 	);
