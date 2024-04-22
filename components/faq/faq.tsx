@@ -68,7 +68,6 @@ const FAQPage = () => {
 		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
 
-
 		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
 			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
