@@ -64,15 +64,19 @@ const FAQPage = () => {
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
 	useEffect(() => {
+		// Highlight the FAQ section in the navbar when the user scrolls to it
 		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
 
+
+		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
 			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
 			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
 		};
 
+		// Update the faqStart and faqEnd when the user resizes the window
 		const handleResize = () => {
 			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
