@@ -3,8 +3,8 @@ import "../../app/globals.css";
 import RegistrationButton from "../nav-bar/registration-button";
 
 type FAQ = {
-  title: string;
-  content: React.ReactNode;
+	title: string;
+	content: React.ReactNode;
 };
 
 const faqs: FAQ[] = [
@@ -59,84 +59,79 @@ const faqs: FAQ[] = [
 	},
 ];
 
-
 const FAQPage = () => {
-  const [highlightFAQ, setHighlightFAQ] = useState(false);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+	const [highlightFAQ, setHighlightFAQ] = useState(false);
+	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-    let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+	useEffect(() => {
+		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
 
-    const handleScroll = () => {
-      setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
-      faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-      faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-    };
+		const handleScroll = () => {
+			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
+			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+		};
 
-    const handleResize = () => {
-      faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-      faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-    };
+		const handleResize = () => {
+			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
+			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+		};
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
+		window.addEventListener("resize", handleResize);
+		window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
-  const handleToggle = (index: number) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
+	const handleToggle = (index: number) => {
+		setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+	};
 
-  return (
-    <div className="h-auto mb-8 flex flex-col items-center text-white bg-base-100" id="faq">
-      <div className="flex w-full desktop:w-2/3">
-        <h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">
-          FAQs
-        </h1>
-        <div>
-          <div
-            className={`${
-              highlightFAQ ? "fixed top-32 bg-white" : "absolute bg-hackrpi-secondary-dark-blue"
-            } w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5] right-1.5 2xs:right-3.5`}
-          ></div>
-        </div>
-      </div>
-      <div className="w-full desktop:w-2/3">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className={`collapse collapse-arrow custom-arrow bg-base-200 p-1 text-2xl border-t-2 ${
-              index === faqs.length - 1 ? "border-b-2" : ""
-            } border-hackrpi-primary-blue rounded-none`}
-          >
-            <input
-              type="checkbox"
-              className="w-auto h-auto"
-              checked={expandedIndex === index}
-              onChange={() => handleToggle(index)}
-            />
-            <div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">
-              {faq.title}
-            </div>
-            <div className="collapse-content">{faq.content}</div>
-          </div>
-        ))}
-      </div>
-      <div className="w-full desktop:w-2/3">
-        <h2 id="sponsors" className="font-poppins text-2xl text-center pt-10">
-          Feel free to contact us with any other questions at{" "}
-          <a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">
-            hackrpi@rpi.edu!
-          </a>
-        </h2>
-      </div>
-    </div>
-  );
+	return (
+		<div className="h-auto mb-8 flex flex-col items-center text-white bg-base-100" id="faq">
+			<div className="flex w-full desktop:w-2/3">
+				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
+				<div>
+					<div
+						className={`${
+							highlightFAQ ? "fixed top-32 bg-white" : "absolute bg-hackrpi-secondary-dark-blue"
+						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5] right-1.5 2xs:right-3.5`}
+					></div>
+				</div>
+			</div>
+			<div className="w-full desktop:w-2/3">
+				{faqs.map((faq, index) => (
+					<div
+						key={index}
+						className={`collapse collapse-arrow custom-arrow bg-base-200 p-1 text-2xl border-t-2 ${
+							index === faqs.length - 1 ? "border-b-2" : ""
+						} border-hackrpi-primary-blue rounded-none`}
+					>
+						<input
+							type="checkbox"
+							className="w-auto h-auto"
+							checked={expandedIndex === index}
+							onChange={() => handleToggle(index)}
+						/>
+						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
+						<div className="collapse-content">{faq.content}</div>
+					</div>
+				))}
+			</div>
+			<div className="w-full desktop:w-2/3">
+				<h2 id="sponsors" className="font-poppins text-2xl text-center pt-10">
+					Feel free to contact us with any other questions at{" "}
+					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">
+						hackrpi@rpi.edu!
+					</a>
+				</h2>
+			</div>
+		</div>
+	);
 };
 
 export default FAQPage;
