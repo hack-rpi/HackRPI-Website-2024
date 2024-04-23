@@ -1,26 +1,22 @@
-
 type HackRPIButtonProps = {
-    children: React.ReactNode;
-    className?: string;
-    onClick?: () => void;
-    active?: boolean;
-    ariaLabel?: string;
+	children: React.ReactNode;
+	className?: string;
+	onClick?: () => void;
+	active?: boolean;
+	ariaLabel?: string;
 };
 
-
-export default function HackRPIButton(
-	props: HackRPIButtonProps
-) {
+export default function HackRPIButton(props: HackRPIButtonProps) {
 	return (
 		<button
 			onClick={props.onClick}
-            aria-label={props.ariaLabel}
-            aria-pressed={props.active}
+			aria-label={props.ariaLabel}
+			aria-pressed={props.active}
 			className={`${props.className} ${props.active ? "bg-hackrpi-secondary-yellow text-hackrpi-secondary-dark-blue border-hackrpi-secondary-yellow" : "border-hackrpi-secondary-yellow text-white"} flex group  border-2  hover:bg-hackrpi-secondary-yellow hover:text-hackrpi-secondary-dark-blue transition-colors duration-200 font-sans font-medium ring-hackrpi-secondary-yellow`}
 		>
 			<div className="p-2 w-full">{props.children}</div>
 			<svg
-				className={`relative top-1 right-1 group-hover:fill-hackrpi-secondary-dark-blue ${props.active ? "fill-hackrpi-secondary-dark-blue": ""} fill-hackrpi-secondary-yellow transition-colors duration-200`}
+				className={`relative top-1 right-1 group-hover:fill-hackrpi-secondary-dark-blue ${props.active ? "fill-hackrpi-secondary-dark-blue" : ""} fill-hackrpi-secondary-yellow transition-colors duration-200`}
 				xmlns="http://www.w3.org/2000/svg"
 				width="15"
 				height="15"
