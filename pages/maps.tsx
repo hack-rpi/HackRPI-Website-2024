@@ -3,7 +3,7 @@ import DCC from "./maps_img/DCC.png";
 import LOW from "./maps_img/LOW.png";
 import NavBar from "@/components/nav-bar/nav-bar";
 import Head from "next/head";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 import MlhBanner from "@/components/mlh-banner/mlh-banner";
 
 const MapsPage = () => {

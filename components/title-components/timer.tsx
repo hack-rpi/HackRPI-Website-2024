@@ -15,7 +15,7 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, []);
 
-	const dayOfMonthPassed = currentTime.getDate() > hackathonStart.getDate();
+	const dayOfMonthPassed = currentTime.getDate() >= hackathonStart.getDate();
 	const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 	let dayOffset = -1;
@@ -50,7 +50,7 @@ export default function Timer() {
 	}
 
 	return (
-		<div className="w-full h-fit flex flex-col items-start justify-center">
+		<div className="w-11/12 desktop:w-full h-fit flex flex-col items-start ">
 			{hackathonStarted && !hackathonEnded ? <h1 className="text-4xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
 			{hackathonEnded ? <h1 className="text-4xl font-bold mb-2">THANKS FOR JOINING US! </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">
@@ -94,7 +94,7 @@ export default function Timer() {
 function Circle({ bgColor, textColor, children }: { bgColor: string; textColor: string; children: React.ReactNode }) {
 	return (
 		<div
-			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-3xl xs:text-5xl sm:text-6xl desktop:text-5xl lg:text-6xl xl:text-7xl font-bold shadow-lg`}
+			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-3xl xs:text-5xl sm:text-6xl desktop:text-5xl lg:text-6xl font-bold shadow-lg`}
 			suppressHydrationWarning
 		>
 			{children}
