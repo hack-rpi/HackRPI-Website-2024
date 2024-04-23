@@ -4,7 +4,6 @@ import MobileNavBar from "./nav-bar-mobile";
 import { NavBarLinkType } from "@/types/nav-bar-links";
 import MlhBanner from "../mlh-banner/mlh-banner";
 
-
 export const links: NavBarLinkType[] = [
 	{ href: "/", children: "Home" },
 	{ href: "/sponsor-us", children: "Sponsor Us" },
