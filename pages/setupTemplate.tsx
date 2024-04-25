@@ -3,18 +3,31 @@ import "../app/globals.css";
 import NavBar from "@/components/nav-bar/nav-bar";
 import Footer from "@/components/footer";
 
+function BackToTop() {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <p className="text-lg font-bold text-blue-400 mt-8 cursor-pointer" onClick={handleScrollToTop}>
+      Back to top
+    </p>
+  );
+}
+
 function App() {
   return (
     <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-center h-screen">
-      {<NavBar showOnScroll={false} />}
-        <br></br><br></br><br></br>
-      
+      <NavBar showOnScroll={false} />
+      <br/><br/><br/>
+
       {/* Image */}
       <div className="mb-4">
         <img src="your-image-url.jpg" className="mx-auto" style={{ maxWidth: "300px" }} /> {/* Adjust max-width as needed */}
       </div>
       
       {/* Page Title */}
+      <br></br>
       <h1 className="text-3xl font-bold mb-2">Your Page Title Here</h1>
       
       {/* Name and Date */}
@@ -45,7 +58,7 @@ function App() {
       {/* Add more sections following similar structure */}
       
       {/* Back to top link */}
-      <p className="text-xs text-gray-500 mt-8">Back to top</p>
+      <BackToTop />
       
       {/* Footer */}
       <footer className="text-sm text-gray-500">Made with ❤️ by [Your Name] © [Year] [Your Name]</footer>
@@ -55,3 +68,4 @@ function App() {
 }
 
 export default App;
+
