@@ -67,7 +67,7 @@ const WorkshopPage = () => {
 				<br />
 				<h1 className="font-helvetica text-white text-6xl mb-10 text-center">Checkout our Workshops!</h1>
 				<br />
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
 					{workshops.map((workshop, index) => (
 						<div key={index} className="mb-8 relative">
 							<div className="cursor-pointer" onClick={() => handleShow(workshop)}>
@@ -86,15 +86,15 @@ const WorkshopPage = () => {
 										<div className="bg-transparent p-4 text-center">
 											<h2 className="text-white">{workshop.title}</h2>
 											<p className="text-sm">
-												<span className="text-green-200 font-bold">Time:</span>{" "}
+												<span className="text-hackrpi-primary-light-green font-bold">Time:</span>{" "}
 												<span className="text-white">{workshop.time}</span>
 											</p>
 											<p className="text-sm">
-												<span className="text-green-200 font-bold">Location:</span>{" "}
+												<span className="text-hackrpi-primary-light-green font-bold">Location:</span>{" "}
 												<span className="text-white">{workshop.location}</span>
 											</p>
 											<p className="text-sm">
-												<span className="text-green-200 font-bold">Speaker:</span>{" "}
+												<span className="text-hackrpi-primary-light-green font-bold">Speaker:</span>{" "}
 												<span className="text-white">{workshop.speaker}</span>
 											</p>
 										</div>
@@ -114,15 +114,15 @@ const WorkshopPage = () => {
 					>
 						<h2 className="text-2xl font-bold mb-4">{selectedWorkshop.title}</h2>
 						<p>
-							<strong className="text-green-200 font-bold">Time:</strong>{" "}
+							<strong className="text-hackrpi-primary-light-green font-bold">Time:</strong>{" "}
 							<span className="text-white">{selectedWorkshop.time}</span>
 						</p>
 						<p>
-							<strong className="text-green-200 font-bold">Location:</strong>{" "}
+							<strong className="text-hackrpi-primary-light-green font-bold">Location:</strong>{" "}
 							<span className="text-white">{selectedWorkshop.location}</span>
 						</p>
 						<p>
-							<strong className="text-green-200 font-bold">Speaker:</strong>{" "}
+							<strong className="text-hackrpi-primary-light-green font-bold">Speaker:</strong>{" "}
 							<span className="text-white">{selectedWorkshop.speaker}</span>
 						</p>
 						<br />
