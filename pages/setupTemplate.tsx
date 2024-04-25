@@ -52,10 +52,10 @@ function App() {
 
       {/* Page Title */}
       <br></br>
-      <h1 className="text-3xl font-bold mb-2 font-sans text-gray-100">Your Page Title Here</h1>
+      <h1 className="text-3xl font-bold mb-2 font-sans" style={{ background: 'linear-gradient(to right, #2563EB, #38BDF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Your Page Title Here</h1>
 
-      {/* Name and Date */}
-      <div className="text-center text-gray-500 mb-4 font-sans">
+       {/* Name and Date */}
+       <div className="text-center text-gray-500 mb-4 font-sans" style={{ background: 'linear-gradient(to right, #2563EB, #38BDF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
         <p className="text-gray-100">John Doe - April 2, 2024</p>
       </div>
 
@@ -70,11 +70,11 @@ function App() {
       {/* Sections */}
       <div className="text-left mb-4">
         <div>
-          <h2 className="text-xl font-bold mb-2 font-sans text-gray-100">Installing Stuff</h2>
+          <h2 className="text-xl font-bold mb-2 font-sans" style={{ background: 'linear-gradient(to right, #2563EB, #38BDF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Installing Stuff</h2>
           <p className="mb-4 font-sans text-gray-100">Provide a list of all tools that will need to be installed</p>
         </div>
         <div>
-          <h2 className="text-xl font-bold mb-2 font-sans text-gray-100">Section Title</h2>
+          <h2 className="text-xl font-bold mb-2 font-sans" style={{ background: 'linear-gradient(to right, #2563EB, #38BDF8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Section Title</h2>
           <p className="mb-4 font-sans text-gray-100">Section content goes here. You can add more sections following similar structure.</p>
         </div>
       </div>
