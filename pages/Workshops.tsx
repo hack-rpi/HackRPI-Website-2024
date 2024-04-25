@@ -1,17 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../app/globals.css";
-import workshopMern from "./../public/workshopPics/mern.png";
-import workshopPassword from "./../public/workshopPics/password.jpeg";
-import workshopHacking from "./../public/workshopPics/hacking.jpeg";
-import workshopSafety from "./../public/workshopPics/safety.jpeg";
-import workshopDesign from "./../public/workshopPics/design.jpeg";
-import workshopAI from "./../public/workshopPics/ai.jpeg";
-import workshopAgile from "./../public/workshopPics/agile.jpeg";
-import workshopForge from "./../public/workshopPics/forge.png";
-import workshopMobdev from "./../public/workshopPics/mobdev.png";
-import workshopQuantum from "./../public/workshopPics/quantum.png";
-import workshopSemi from "./../public/workshopPics/semi.jpeg";
-import workshopTechstack from "./../public/workshopPics/techstack.jpeg";
 import Footer from "@/components/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import Image from "next/image";
@@ -31,7 +19,7 @@ const workshops = [
 		time: "12-12:30pm",
 		location: "DCC 318",
 		speaker: "Kathy Rauch",
-		pic: workshopSafety.src,
+		pic: "/workshopPics/safety.jpeg",
 		description:
 			"This workshop is designed for hackers interested in the Patient Safety Tech Prize. It will\
             give you background on patient safety as an urgent issue and will help inspire you to\
@@ -44,7 +32,7 @@ const workshops = [
 		time: "12:30-1:30pm",
 		location: "DCC 308",
 		speaker: "Michael Anderson and Konstantin Kuzmin",
-		pic: workshopTechstack.src,
+		pic: "/workshopPics/techstack.jpeg",
 		description: "TBD",
 	},
 
@@ -53,7 +41,7 @@ const workshops = [
 		time: "1:30-2:30pm",
 		location: "DCC 308",
 		speaker: "Yash Kaul",
-		pic: workshopMern.src,
+		pic: "/workshopPics/mern.png",
 		description:
 			"Gain hands-on experience with MongoDB—covering schema validation, client to database connection, and implementing API \
             controllers. Learn about Express: including routing, middleware, and error handling. Utilize React to quickly build \
@@ -67,7 +55,7 @@ const workshops = [
 		time: "1:30-2:30pm",
 		location: "DCC 318",
 		speaker: "Ryan Hickey",
-		pic: workshopMobdev.src,
+		pic: "/workshopPics/mobdev.png",
 		description:
 			"If you've ever wondered how those awesome apps on your phone are made, or if you've got an itch to create something fun and \
           innovative, the Mobile Dev Workshop is the perfect place to start! The main course of our workshop revolves around React and Flutter.  \
@@ -86,7 +74,7 @@ const workshops = [
 		time: "2:30-3:30pm",
 		location: "DCC 308",
 		speaker: "Brian Ingmanson",
-		pic: workshopQuantum.src,
+		pic: "/workshopPics/quantum.png",
 		description:
 			"How folks can run their first quantum circuit on a real quantum computer, and some of the quirks of quantum computing.",
 	},
@@ -96,7 +84,7 @@ const workshops = [
 		time: "3:30-4:30pm",
 		location: "DCC 324",
 		speaker: "John Sturman",
-		pic: workshopAgile.src,
+		pic: "/workshopPics/agile.jpeg",
 		description:
 			"Join John Sturman for a presentation about agile development and how to work in a development group for maximum productivity.\
           We will explore Scrum and iterative development doing a fun simulation exercise to give you some hands-on experience. \
@@ -108,7 +96,7 @@ const workshops = [
 		time: "4:30-5:30pm",
 		location: "DCC 318",
 		speaker: " Dr. Brian Callahan (w/ Ayah Tharwat )",
-		pic: workshopHacking.src,
+		pic: "/workshopPics/hacking.jpeg",
 		description:
 			"Securing software requires developers to learn how to think like an attacker; you cannot defend against what you cannot\
         imagine going  wrong with your software. There are a wide variety of potential attacks, but \
@@ -124,7 +112,7 @@ const workshops = [
 		time: "4:30-5:30pm",
 		location: "DCC 308",
 		speaker: "Kylinn Askew",
-		pic: workshopDesign.src,
+		pic: "/workshopPics/design.jpeg",
 		description:
 			"Explore the power of design thinking to drive innovation and foster collaboration to build\
       strong technical products and startups. Learn how to harness creative problem-solving,\
@@ -137,7 +125,7 @@ const workshops = [
 		time: "5:30-6:30pm",
 		location: "DCC 318",
 		speaker: "Alex Vargas and Ryan Gallagher",
-		pic: workshopPassword.src,
+		pic: "/workshopPics/password.jpeg",
 		description:
 			"Join the FBI as they explain the math behind password complexity, including tactics for how to attack and\
         break passwords. They will cover steps on how to extract a password hash from a file and run it with \
@@ -149,7 +137,7 @@ const workshops = [
 		time: "5:30-6:30pm",
 		location: "DCC 324",
 		speaker: "Alexander Martin",
-		pic: workshopSemi.src,
+		pic: "/workshopPics/semi.jpeg",
 		description:
 			"Software needs hardware to operate. The last several years has seen a fundamental shift in the\
       Semiconductor Supply Chain. We will provide an overview of the Semiconductor Industry and the role of Global \
@@ -161,7 +149,7 @@ const workshops = [
 		time: "6:30-7:30pm",
 		location: "DCC 324",
 		speaker: "Raven Levitt",
-		pic: workshopAI.src,
+		pic: "/workshopPics/ai.jpeg",
 		description:
 			"Have a hack that needs AI but no idea where to start? In this workshop I’ll go over how to use the\
         Hugging Face API to easily leverage thousands of different machine learning models to tackle whatever\
@@ -175,7 +163,7 @@ const workshops = [
 		time: "7:30-8:30",
 		location: "Forge",
 		speaker: "Mikiel Gica, Saad Mujahid, and Julia Kapchynsky",
-		pic: workshopForge.src,
+		pic: "/workshopPics/forge.png",
 		description:
 			"The Forge will be open to anyone interested in designing and creating their\
         own contour-cut vinyl stickers. We will be holding a workshop on using free\
