@@ -43,33 +43,41 @@ function App() {
       <NavBar showOnScroll={false} />
       <br/><br/><br/>
 
-    {/* Image - Add your picture here */}
-    <div className="mb-4">
-        <img src="your-image-url.jpg" className="mx-auto" style={{ maxWidth: "300px" }} /> {/* Adjust max-width as needed */}
+      {/* Image - Add your picture here */}
+      <div className="mb-4">
+        <img src="your-image-url.jpg" alt="Your Image" className="mx-auto" style={{ maxWidth: "300px" }} />
+        {/* Add a comment to inform users to add their picture here */}
+        <p className="text-gray-100 text-sm">Add your picture here</p>
       </div>
-      
+
       {/* Page Title */}
       <br></br>
       <h1 className="text-3xl font-bold mb-2 font-sans text-gray-100">Your Page Title Here</h1>
-      
+
       {/* Name and Date */}
       <div className="text-center text-gray-500 mb-4 font-sans">
         <p className="text-gray-100">John Doe - April 2, 2024</p>
       </div>
-      
+
       {/* Tags */}
       <div className="mb-4">
         <Tags />
       </div>
-      
+
       {/* Page Content */}
       <p className="mb-4 font-sans text-gray-100">Provide a brief introduction to the purpose of your page here</p>
       
-      {/* Section Title */}
-      <h2 className="text-xl font-bold mb-2 font-sans text-gray-100">Section Title</h2>
-      
-      {/* Section Content */}
-      <p className="mb-4 font-sans text-gray-100">Section content goes here. You can add more sections following similar structure.</p>
+      {/* Sections */}
+      <div className="text-left mb-4">
+        <div>
+          <h2 className="text-xl font-bold mb-2 font-sans text-gray-100">Installing Stuff</h2>
+          <p className="mb-4 font-sans text-gray-100">Provide a list of all tools that will need to be installed</p>
+        </div>
+        <div>
+          <h2 className="text-xl font-bold mb-2 font-sans text-gray-100">Section Title</h2>
+          <p className="mb-4 font-sans text-gray-100">Section content goes here. You can add more sections following similar structure.</p>
+        </div>
+      </div>
       
       {/* Add more sections following similar structure */}
       
