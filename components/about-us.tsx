@@ -58,8 +58,8 @@ export default function AboutUs() {
 							<p>Rensselaer Polytechnic Institute</p>
 							<p>Darrin Communications Center</p>
 						</div>
-						<div className="w-fit pl-2 md:pl-0 lg:pl-2 mb-4 md:mb-0 lg:mb-4" >
-							<RegistrationLink  />
+						<div className="w-fit pl-2 md:pl-0 lg:pl-2 mb-4 md:mb-0 lg:mb-4">
+							<RegistrationLink />
 						</div>
 					</div>
 				</div>
