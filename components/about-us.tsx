@@ -1,4 +1,3 @@
-import Image from "next/image";
 import RegistrationLink from "./themed-components/registration-link";
 
 export default function AboutUs() {
