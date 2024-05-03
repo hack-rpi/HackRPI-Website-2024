@@ -9,7 +9,6 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import "../app/globals.css";
 
 export default function Custom404() {
-	const [isHovered, setIsHovered] = useState(false);
 
 	return (
 		<div className="flex flex-col items-start desktop:items-center justify-start">
@@ -24,9 +23,7 @@ export default function Custom404() {
 						alt="HackRPI Logo"
 						aria-label="Home Page"
 						src={logo}
-						className={`w-36 transition duration-300 ease-in-out ${isHovered ? "transform scale-110" : ""}`}
-						onMouseEnter={() => setIsHovered(true)}
-						onMouseLeave={() => setIsHovered(false)}
+						className={`w-36`}
 					/>
 				</NavBarLink>
 			</div>
