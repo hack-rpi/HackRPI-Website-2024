@@ -3,8 +3,8 @@ import RegistrationLink from "./themed-components/registration-link";
 
 export default function AboutUs() {
 	return (
-		<div id="about" className="w-11/12 mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start h-fit">
-			<div className="w-full lg:w-3/6 ml-auto">
+		<div id="about" className="w-11/12 lg:w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start justify-start h-fit ml-0">
+			<div className="w-full lg:w-3/6 ml-auto lg:pl-4">
 				<h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
 
 				<div>
@@ -43,7 +43,7 @@ export default function AboutUs() {
 					<h2 className="flex items-center text-2xl xs:text-4xl font-semibold pl-2 mt-2">
 						When &amp; Where{" "}
 						<svg
-							className="fill-white ml-4 rotate-90"
+							className="fill-white ml-4 rotate-180 md:rotate-90 lg:rotate-180"
 							xmlns="http://www.w3.org/2000/svg"
 							width="25"
 							height="25"
@@ -52,7 +52,7 @@ export default function AboutUs() {
 							<path d="M11 1C11 0.447715 10.5523 -3.74211e-07 10 4.72575e-08L1 -1.63477e-07C0.447715 -1.63477e-07 2.8711e-07 0.447715 2.8711e-07 1C2.8711e-07 1.55228 0.447715 2 1 2L9 2L9 10C9 10.5523 9.44772 11 10 11C10.5523 11 11 10.5523 11 10L11 1ZM1.70711 10.7071L10.7071 1.70711L9.29289 0.292893L0.292893 9.29289L1.70711 10.7071Z" />
 						</svg>
 					</h2>
-					<div className="flex flex-col md:flex-row lg:flex-col w-full items-start justify-center md:justify-start md:items-center lg:items-start lg:justify-center">
+					<div className=" w-11/12 flex flex-col md:flex-row lg:flex-col items-start justify-center md:justify-start md:items-center lg:items-start lg:justify-center">
 						<div className="pl-2 text-md xs:text-xl mb-4 md:mb-8 lg:mb-4 mt-2 w-1/2 min-w-96 ">
 							<p>November 9-10, 2024</p>
 							<p>Rensselaer Polytechnic Institute</p>
