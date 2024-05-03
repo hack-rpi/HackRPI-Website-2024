@@ -1,11 +1,59 @@
+import { useEffect, useState } from "react";
 import RegistrationLink from "./themed-components/registration-link";
 
+function isMobileDevice() {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 export default function AboutUs() {
+	const [aboutTop, setAboutTop] = useState(0);
+	const [higlightAbout, setHighlightAbout] = useState(false);
+
+	useEffect(() => {
+		// Highlight the about section in the navbar when the user scrolls to it
+		let aboutStart = (document.getElementById("about")?.offsetTop || window.innerHeight) - 140;
+		let aboutEnd = aboutStart + (document.getElementById("about")?.offsetHeight || window.innerHeight);
+		setAboutTop(aboutStart + 140);
+
+		// Update whether the about should be highlighted when the user scrolls
+		const handleScroll = () => {
+			setHighlightAbout(window.scrollY > aboutStart && window.scrollY < aboutEnd);
+			aboutStart = (document.getElementById("about")?.offsetTop || window.innerHeight) - 140;
+			aboutEnd = aboutStart + (document.getElementById("about")?.offsetHeight || window.innerHeight);
+			setAboutTop(aboutStart + 140);
+		};
+
+		// Update the aboutStart and aboutEnd when the user resizes the window
+		const handleResize = () => {
+			aboutStart = (document.getElementById("about")?.offsetTop || window.innerHeight) - 140;
+			aboutEnd = aboutStart + (document.getElementById("about")?.offsetHeight || window.innerHeight);
+			setAboutTop(aboutStart + 140);
+		};
+
+		window.addEventListener("resize", handleResize);
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
 		<div
 			id="about"
 			className="w-11/12 lg:w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start justify-start h-fit ml-0"
 		>
+			<div
+				className={`${
+					higlightAbout
+						? `fixed bg-white ${isMobileDevice() ? "right-9" : "right-3.5"}`
+						: "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+				} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
+				style={{
+					top: higlightAbout ? "8rem" : aboutTop - 20 + "px",
+				}}
+			></div>
 			<div className="w-full lg:w-3/6 ml-auto lg:pl-4">
 				<h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
 
