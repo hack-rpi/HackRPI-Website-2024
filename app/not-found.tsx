@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import logo from "@/public/HackRPI-logo-blue.png";
 import NextImg from "next/image";
 import NavBarLink from "@/components/nav-bar/nav-bar-link";
@@ -9,6 +6,7 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import "../app/globals.css";
 
 export default function Custom404() {
+
 	return (
 		<div className="flex flex-col items-start desktop:items-center justify-start">
 			<NavBar showOnScroll={false} />
@@ -18,7 +16,12 @@ export default function Custom404() {
 			</div>
 			<div className="mt-8 flex justify-center">
 				<NavBarLink href="/">
-					<NextImg alt="HackRPI Logo" aria-label="Home Page" src={logo} className={`w-36`} />
+					<NextImg
+						alt="HackRPI Logo"
+						aria-label="Home Page"
+						src={logo}
+						className={`w-36`}
+					/>
 				</NavBarLink>
 			</div>
 			<div className="mt-40"></div>
