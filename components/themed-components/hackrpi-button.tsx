@@ -16,7 +16,7 @@ export default function HackRPIButton(props: HackRPIButtonProps) {
 		>
 			<div className="p-2 w-full">{props.children}</div>
 			<svg
-				className={`relative top-1 right-1 group-hover:fill-hackrpi-secondary-dark-blue ${props.active ? "fill-hackrpi-secondary-dark-blue" : ""} fill-hackrpi-secondary-yellow transition-colors duration-200`}
+				className={`relative top-1 right-1 group-hover:fill-hackrpi-secondary-dark-blue ${props.active ? "fill-hackrpi-secondary-dark-blue" : "fill-hackrpi-secondary-yellow"}  transition-colors duration-200`}
 				xmlns="http://www.w3.org/2000/svg"
 				width="15"
 				height="15"

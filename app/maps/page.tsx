@@ -1,9 +1,12 @@
+"use client";
 import React, { useState } from "react";
-import DCC from "./maps_img/DCC.png";
-import LOW from "./maps_img/LOW.png";
+import DCC from "@/public/maps_img/DCC.png";
+import LOW from "@/public/maps_img/LOW.png";
+import "@/app/globals.css";
 import NavBar from "@/components/nav-bar/nav-bar";
 import NextImg from "next/image";
 import Footer from "@/components/footer/footer";
+import HackRPIButton from "@/components/themed-components/hackrpi-button";
 
 const MapsPage = () => {
 	const [showDCC, setShowDCC] = useState(true);
@@ -20,32 +23,29 @@ const MapsPage = () => {
 	};
 
 	return (
-		<div>
+		<div className="flex w-full items-center justify-center flex-col">
 			<NavBar showOnScroll={false} />
 			<div>
 				<h1 className="title text-5xl py-10"></h1>
 			</div>
-			<div id="about" className="MapsPage text-center mx-auto w-2/3">
-				<h1 className="title font-sans-helvetica font-bold text-hackrpi-secondary-grey text-7xl py-6">MAPS</h1>
-				<div className="flex flex-row items-center space-x-4">
-					<button
-						onClick={handleShowDCC}
-						className={`bg-hackrpi-secondary-light-blue hover:bg-hackrpi-primary-light-green text-hackrpi-secondary-grey font-bold font-sans-helvetica text-xl py-6 px-24 rounded-full mb-2 ${showDCC ? "bg-hackrpi-primary-dark-green border-hackrpi-secondary-grey border-4" : ""}`}
-					>
-						Darrin Communications Center
-					</button>
+			<div
+				id="maps"
+				className="text-center flex items-center justify-center flex-col w-11/12 md:w-2/3  h-[calc(100vh-80px)]"
+			>
+				<h1 className="font-sans font-bold text-hackrpi-secondary-grey text-7xl ">MAPS</h1>
 
-					<button
-						onClick={handleShowLOW}
-						className={`bg-hackrpi-secondary-light-blue hover:bg-hackrpi-primary-light-green text-hackrpi-secondary-grey font-bold font-sans-helvetica text-xl py-6 px-24 rounded-full mb-2 ${showLOW ? "bg-hackrpi-primary-dark-green border-hackrpi-secondary-grey border-4" : ""}`}
-					>
-						Low Center for Industrial Innovation
-					</button>
-				</div>
+				<div className="mt-4 mb-8 max-w-[800px]">
+					<div className="flex flex-col md:flex-row items-center justify-between w-full md:space-x-4 md:space-y-0 space-y-4 mb-4">
+						<HackRPIButton onClick={handleShowDCC} active={showDCC} className="text-xl md:w-[350px] w-full ">
+							Darrin Communications Center
+						</HackRPIButton>
 
-				<div className="maps-container mt-4 mb-8">
-					{showDCC && <NextImg src={DCC.src} alt="DCC Image" width={1000} height={1000} style={{ maxWidth: "100%" }} />}
-					{showLOW && <NextImg src={LOW.src} alt="LOW Image" width={1000} height={1000} style={{ maxWidth: "100%" }} />}
+						<HackRPIButton onClick={handleShowLOW} active={showLOW} className="text-xl md:w-[350px] w-full ">
+							Low Center for Industrial Innovation
+						</HackRPIButton>
+					</div>
+					{showDCC && <NextImg src={DCC} alt="DCC Image" className="w-full" />}
+					{showLOW && <NextImg src={LOW} alt="LOW Image" className="w-full" />}
 				</div>
 			</div>
 			<Footer />
