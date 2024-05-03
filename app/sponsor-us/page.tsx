@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import "../app/globals.css";
-import Footer from "../components/footer/footer";
+import "@/app/globals.css";
+import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import Head from "next/head";
 
