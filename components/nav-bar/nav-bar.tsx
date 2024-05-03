@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import DesktopNavBar from "./nav-bar-desktop";
 import MobileNavBar from "./nav-bar-mobile";
-import { links } from "@/types/nav-bar-links";
+import { NavBarLinkType } from "@/types/nav-bar-links";
 import MlhBanner from "../mlh-banner/mlh-banner";
+
+export const links: NavBarLinkType[] = [
+	{ href: "/", children: "Home" },
+	{ href: "/sponsor-us", children: "Sponsor Us" },
+	{ href: "/maps", children: "Maps" },
+];
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
 	const [showNav, setShowNav] = useState(false);
