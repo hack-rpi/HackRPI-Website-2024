@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../app/globals.css"; // Global styles location for tailwind css
+import "../../app/globals.css";
 import RegistrationButton from "../nav-bar/registration-button";
 
 type FAQ = {
@@ -33,7 +33,7 @@ const faqs: FAQ[] = [
 		content: (
 			<div className="flex items-center justify-start">
 				<p className="pr-2">Click here to register:</p>
-				<RegistrationButton />
+				<RegistrationButton /> {/* This is a custom button component will update later */}
 			</div>
 		),
 	},
@@ -50,7 +50,7 @@ const faqs: FAQ[] = [
 	{
 		title: "Who else will be there?",
 		content:
-			"Not only can you meet other RPI students and people from other colleges, but we’ve got wonderful sponsors who make this event possible! You’ll have the opportunity to talk to representatives from a variety of tech companies at career-fair style tables.",
+			"Not only can you meet other RPI students and people from other colleges, but we've got wonderful sponsors who make this event possible! You'll have the opportunity to talk to representatives from a variety of tech companies at career-fair style tables.",
 	},
 	{
 		title: "Does HackRPI provide travel reimbursement?",
@@ -59,43 +59,63 @@ const faqs: FAQ[] = [
 	},
 ];
 
+function isMobileDevice() {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 const FAQPage = () => {
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
+	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+	const [faqTop, setFaqTop] = useState(0);
 
 	useEffect(() => {
 		// Highlight the FAQ section in the navbar when the user scrolls to it
 		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+		setFaqTop(faqStart + 140);
 
 		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
 			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
 			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+			setFaqTop(faqStart + 140);
 		};
 
 		// Update the faqStart and faqEnd when the user resizes the window
 		const handleResize = () => {
 			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+			setFaqTop(faqStart + 140);
 		};
+
 		window.addEventListener("resize", handleResize);
 		window.addEventListener("scroll", handleScroll);
+
 		return () => {
+			window.removeEventListener("resize", handleResize);
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
+	const handleToggle = (index: number) => {
+		setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+	};
+
 	return (
-		<div className="h-auto mb-8 flex flex-col items-center text-white bg-base-100 " id="faq">
+		<div className="h-auto mb-8 flex flex-col items-center text-white bg-base-100" id="faq">
 			<div className="flex w-full desktop:w-2/3">
-				<h1 className=" font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
+				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
 				<div>
 					<div
 						className={`${
-							highlightFAQ ? `fixed top-32 bg-white` : `absolute bg-hackrpi-secondary-dark-blue`
-						} w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue 
-							transition-colors duration-300 z-[5] right-1.5 2xs:right-3.5`}
+							highlightFAQ
+								? `fixed bg-white ${isMobileDevice() ? "right-9" : "right-3.5"}`
+								: "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
+						style={{
+							top: highlightFAQ ? "8rem" : faqTop - 20 + "px",
+						}}
 					></div>
 				</div>
 			</div>
@@ -107,13 +127,18 @@ const FAQPage = () => {
 							index === faqs.length - 1 ? "border-b-2" : ""
 						} border-hackrpi-primary-blue rounded-none`}
 					>
-						<input type="radio" name="my-accordion-1" defaultChecked={index === 0} />
+						<input
+							type="checkbox"
+							className="w-auto h-auto"
+							checked={expandedIndex === index}
+							onChange={() => handleToggle(index)}
+						/>
 						<div className="collapse-title font-medium text-2xl text-hackrpi-primary-blue">{faq.title}</div>
 						<div className="collapse-content">{faq.content}</div>
 					</div>
 				))}
 			</div>
-			<div className="w-full desktop:w-2/3 ">
+			<div className="w-full desktop:w-2/3">
 				<h2 id="sponsors" className="font-poppins text-2xl text-center pt-10">
 					Feel free to contact us with any other questions at{" "}
 					<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue">

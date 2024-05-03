@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
-import HackRPILink from "../themed_components/hackrpi-link";
+import HackRPILink from "../themed-components/hackrpi-link";
 import SocialLinks from "../socials-links/social-links";
 
 export default function Footer() {
