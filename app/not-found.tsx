@@ -1,3 +1,5 @@
+"use client";
+
 import logo from "@/public/HackRPI-logo-blue.png";
 import NextImg from "next/image";
 import NavBarLink from "@/components/nav-bar/nav-bar-link";
