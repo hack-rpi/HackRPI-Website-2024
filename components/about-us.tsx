@@ -38,10 +38,10 @@ export default function AboutUs() {
 			</div>
 
 			<div className="w-full lg:w-2/6 flex flex-col items-center lg:items-start mt-4 lg:mt-0 h-full lg:ml-4">
-				<div className="w-full bg-hackrpi-secondary-yellow text-black text-xl h-fit overflow-hidden whitespace-nowrap font-bold lg:mt-16 pl-1 ">
+				<div className="w-full lg:w-11/12 bg-hackrpi-secondary-yellow text-black text-xl h-fit overflow-hidden whitespace-nowrap font-bold lg:mt-16 pl-1 ">
 					REGISTER NOW! REGISTER NOW! REGISTER NOW! REGISTER NOW! REGISTER NOW! REGISTER NOW! REGISTER NOW!
 				</div>
-				<div className="w-full bg-gray-900 text-white h-fit flex flex-col items-start justify-start">
+				<div className="w-full lg:w-11/12 bg-gray-900 text-white h-fit flex flex-col items-start justify-start">
 					<div className="w-full h-2 bg-white mt-4" />
 					<h2 className="flex items-center text-2xl xs:text-4xl font-semibold pl-2 mt-2">
 						When &amp; Where{" "}
