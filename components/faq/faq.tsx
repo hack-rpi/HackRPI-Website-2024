@@ -59,26 +59,34 @@ const faqs: FAQ[] = [
 	},
 ];
 
+function isMobileDevice() {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 const FAQPage = () => {
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+	const [faqTop, setFaqTop] = useState(0);
 
 	useEffect(() => {
 		// Highlight the FAQ section in the navbar when the user scrolls to it
 		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+		setFaqTop(faqStart + 140);
 
 		// Update whether the faq should be highlighted when the user scrolls
 		const handleScroll = () => {
 			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
 			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+			setFaqTop(faqStart + 140);
 		};
 
 		// Update the faqStart and faqEnd when the user resizes the window
 		const handleResize = () => {
 			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
 			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
+			setFaqTop(faqStart + 140);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -101,8 +109,11 @@ const FAQPage = () => {
 				<div>
 					<div
 						className={`${
-							highlightFAQ ? "fixed top-32 bg-white" : "absolute bg-hackrpi-secondary-dark-blue"
-						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5] right-1.5 2xs:right-3.5`}
+							highlightFAQ ? `fixed bg-white ${isMobileDevice() ? "right-9" :"right-3.5"}` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
+						style={{
+							top: highlightFAQ ? "8rem" : faqTop - 20 + "px",
+						}}
 					></div>
 				</div>
 			</div>

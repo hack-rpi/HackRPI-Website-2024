@@ -10,18 +10,25 @@ import { useEffect, useState } from "react";
 export default function Home() {
 	const [lineStart, setLineStart] = useState(0);
 	const [lineEnd, setLineEnd] = useState(0);
+	const [faqStart, setFaqStart] = useState(0);
 
 	useEffect(() => {
 		setLineStart(document.getElementById("about")!.offsetTop);
 		setLineEnd(document.getElementById("faq")!.offsetTop + document.getElementById("faq")!.offsetHeight);
+		setFaqStart(document.getElementById("faq")!.offsetTop);
 
 		const handleResize = () => {
 			setLineStart(document.getElementById("about")!.offsetTop);
 			setLineEnd(document.getElementById("faq")!.offsetTop + document.getElementById("faq")!.offsetHeight);
+			setFaqStart(document.getElementById("faq")!.offsetTop);
 		};
 
 		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
+		window.addEventListener("scroll", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("scroll", handleResize);
+		};
 	}, []);
 
 	return (
@@ -50,13 +57,19 @@ export default function Home() {
 					}}
 				></div>
 				<div
-					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-1.5 2xs:right-3.5`}
+					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
 					style={{
 						top: lineStart - 20 + "px",
 					}}
 				></div>
 				<div
-					className={`absolute bg-hackrpi-secondary-dark-blue w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-1.5 2xs:right-3.5`}
+					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
+					style={{
+						top: faqStart - 22 + "px",
+					}}
+				></div>
+				<div
+					className={`absolute bg-hackrpi-secondary-dark-blue w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
 					style={{
 						top: lineEnd - 20 + "px",
 					}}
