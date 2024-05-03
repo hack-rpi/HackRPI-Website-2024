@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import logo from "@/public/HackRPI-logo-blue.png";
 import NextImg from "next/image";
