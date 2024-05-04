@@ -1,8 +1,8 @@
 import HackRPILink from "./hackrpi-link";
 
-export default function RegistrationLink() {
+export default function RegistrationLink({className}: {className?: string}) {
 	return (
-		<HackRPILink href="https://hackrpi.com" className="text-xl">
+		<HackRPILink href="https://hackrpi.com" className={`${className}`}>
 			{" "}
 			Register Now{" "}
 		</HackRPILink>
