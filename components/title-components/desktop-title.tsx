@@ -1,5 +1,7 @@
 import Timer from "./timer";
 import TitleText from "./title-text";
+import Image from "next/image";
+import MapSvg from "@/public/interactive-navigation/WebInteractiveMap.svg"
 
 export default function DesktopTitleComponent() {
 	return (
@@ -8,7 +10,9 @@ export default function DesktopTitleComponent() {
 				<TitleText />
 				<Timer />
 			</div>
-			<div className="flex items center justify-center w-1/2">{/* Interactive Map Goes Here */}</div>
+			<div className="flex items center justify-center w-1/2 pl-16">
+				<Image src={MapSvg} alt="Map" className="rounded-md" />
+			</div>
 		</div>
 	);
 }
