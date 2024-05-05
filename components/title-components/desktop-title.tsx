@@ -10,8 +10,10 @@ export default function DesktopTitleComponent() {
 				<TitleText />
 				<Timer />
 			</div>
-			<div className="flex items center justify-center w-1/2 pl-16">+
-				<Image src={MapSvg} alt="Map" className="rounded-md" />
+			<div className="flex items center justify-center w-1/2 pl-16">
+				<div className="w-11/12 aspect-square">
+					<Image src={MapSvg} alt="Map" className="rounded-md" />
+				</div>
 			</div>
 		</div>
 	);
