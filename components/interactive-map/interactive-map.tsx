@@ -44,26 +44,21 @@ function SubwayStops() {
 			<div className={`${subwayStopStyle} border-subway-blue top-[30.2%] xl:top-[29%] left-[30%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-blue top-[30.2%] xl:top-[29%] left-[60%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-blue top-[30.2%] xl:top-[29%] left-[70.5%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-blue top-[30.2%] xl:top-[29%] left-[19%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-blue top-[30.2%] xl:top-[76%] left-[64%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-purple top-[82%] xl:top-[81.5%] left-[35%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-purple top-[82%] xl:top-[81.5%] left-[50%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-purple top-[82%] xl:top-[81.5%] left-[64%] `}></div>
+			<div className={`${subwayStopStyle} border-subway-purple top-[82%] xl:top-[81.5%] left-[40%] `}></div>
+			<div className={`${subwayStopStyle} border-subway-purple top-[82%] xl:top-[81.5%] left-[55%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-purple top-[82%] xl:top-[81.5%] left-[85%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-purple top-[90%] xl:top-[90%] left-[8.6%] xl:left-[7%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-red top-[30.2%] xl:top-[67%] left-[18%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-red top-[30.2%] xl:top-[72.4%] left-[23.5%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-red top-[30.2%] xl:top-[78%] left-[29%] `}></div>
+			<div className={`${subwayStopStyle} border-subway-red top-[30.2%] xl:top-[69%] left-[20.5%] `}></div>
+			<div className={`${subwayStopStyle} border-subway-red top-[30.2%] xl:top-[76%] left-[27.5%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-yellow top-[30.2%] xl:top-[10%] left-[60%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-yellow top-[30.2%] xl:top-[40%] left-[60%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-yellow top-[30.2%] xl:top-[52.5%] left-[63.5%] `}></div>
-			<div className={`${subwayStopStyle} border-subway-yellow top-[30.2%] xl:top-[65%] left-[67.5%] `}></div>
+			<div className={`${subwayStopStyle} border-subway-yellow top-[30.2%] xl:top-[72.5%] left-[67.5%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-green top-[30.2%] xl:top-[10%] left-[70.5%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-green top-[30.2%] xl:top-[40%] left-[70.5%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-green top-[30.2%] xl:top-[52.5%] left-[76.7%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-green top-[30.2%] xl:top-[65%] left-[76.7%] `}></div>
 			<div className={`${subwayStopStyle} border-subway-green top-[30.2%] xl:top-[81.5%] left-[72%] `}></div>
-
 		</div>
 	);
 }
