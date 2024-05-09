@@ -41,7 +41,7 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 			<div
 				className={`fixed top-24 ${
 					navMenuOpen ? "left-0" : "-left-60"
-				} h-full bg-hackrpi-secondary-dark-blue w-48 z-10 transition-all`}
+				} h-full bg-hackrpi-secondary-dark-blue w-60 z-10 transition-all`}
 			>
 				<div className="flex flex-col items-center justify-start h-full">
 					{links.map((link) => (
