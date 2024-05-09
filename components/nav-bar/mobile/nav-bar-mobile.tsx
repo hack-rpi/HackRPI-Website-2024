@@ -41,11 +41,11 @@ export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 			<div
 				className={`fixed top-24 ${
 					navMenuOpen ? "left-0" : "-left-3/4"
-				} h-full bg-hackrpi-secondary-dark-blue w-3/4 z-10 transition-all`}
+				} h-full bg-hackrpi-secondary-dark-blue w-3/4 z-20 transition-all overflow-y-auto`}
 			>
-				<div className="flex flex-col items-center justify-start h-full">
+				<div className="flex flex-col items-center justify-start h-full ">
 					{links.map((link) => (
-						<NavGroupComponent key={link.name} name={link.name} links={link.links} onClick={() => setNavMenuOpen(false)} />
+						<NavGroupComponent key={link.name} name={link.name} links={link.links} onLinkClick={() => setNavMenuOpen(false)} />
 					))}
 				</div>
 			</div>
