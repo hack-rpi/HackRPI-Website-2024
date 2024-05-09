@@ -6,13 +6,12 @@ import MlhBanner from "../mlh-banner/mlh-banner";
 
 export const links: NavBarLinkType[] = [
 	{ href: "/", children: "Home" },
-	{ href: "/sponsor-us", children: "Sponsor Us" },
-	{ href: "/location", children: "Location" },
+	{ href: "/event-info", children: "Event Information"},
 	{ href: "/schedule", children: "Schedule" },
-	{ href: "/previous-winners", children: "Previous Winners" },
-	{ href: "/photo-gallery", children: "Photo Gallery" },
 	{ href: "/prizes", children: "Prizes" },
 	{ href: "/resources", children: "Resources"},
+	{ href: "/hackrpi-2023", children: "HackRPI 2023" },
+	{ href: "/sponsor-us", children: "Sponsor Us" },
 ];
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
