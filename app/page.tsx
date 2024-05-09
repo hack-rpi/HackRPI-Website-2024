@@ -8,8 +8,6 @@ import "../app/globals.css";
 import AboutSection from "../components/about-us";
 import { useEffect, useState } from "react";
 
-
-
 export default function Home() {
 	const [lineStart, setLineStart] = useState(0);
 	const [lineEnd, setLineEnd] = useState(0);
