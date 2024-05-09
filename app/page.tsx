@@ -3,7 +3,6 @@
 import Footer from "@/components/footer/footer";
 import FAQPage from "@/components/faq/faq";
 import NavBar from "@/components/nav-bar/nav-bar";
-import Head from "next/head";
 import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
 import AboutSection from "../components/about-us";
@@ -35,13 +34,6 @@ export default function Home() {
 
 	return (
 		<>
-			<Head>
-				<title>HackRPI 2024</title>
-				<meta
-					name="description"
-					content="HackRPI is RPI's annual intercollegiate hackathon hosted by students for students. Get swag and free food as you compete for exciting prizes! With a broad range of workshops and mentors on-site, there’s no experience necessary to attend."
-				/>
-			</Head>
 			<div className="flex flex-col items-start desktop:items-center justify-start">
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
