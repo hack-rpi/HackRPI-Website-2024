@@ -1,10 +1,10 @@
-import { NavBarLinkType } from "@/types/nav-bar-links";
+import { NavGroup } from "@/types/nav-bar-links";
 import { useState, useEffect } from "react";
 import NextImg from "next/image";
 import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
-import NavBarLink from "./nav-bar-link";
+import NavGroupComponent from "./nav-group";
 
-export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
+export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
 
 	useEffect(() => {
@@ -40,14 +40,12 @@ export default function MobileNavBar({ links }: { links: NavBarLinkType[] }) {
 			></div>
 			<div
 				className={`fixed top-24 ${
-					navMenuOpen ? "left-0" : "-left-60"
-				} h-full bg-hackrpi-secondary-dark-blue w-60 z-10 transition-all`}
+					navMenuOpen ? "left-0" : "-left-3/4"
+				} h-full bg-hackrpi-secondary-dark-blue w-3/4 z-10 transition-all`}
 			>
 				<div className="flex flex-col items-center justify-start h-full">
 					{links.map((link) => (
-						<NavBarLink key={link.href} href={link.href}>
-							{link.children}
-						</NavBarLink>
+						<NavGroupComponent key={link.name} name={link.name} links={link.links} onClick={() => setNavMenuOpen(false)} />
 					))}
 				</div>
 			</div>

@@ -1,10 +1,10 @@
 import NextImg from "next/image";
-import { NavBarLinkType } from "@/types/nav-bar-links";
-import NavBarLink from "./nav-bar-link";
+import { NavGroup } from "@/types/nav-bar-links";
+import NavBarLink from "../nav-bar-link";
 import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import RegistrationButton from "@/components/themed-components/registration-link";
 
-export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
+export default function DesktopNavBar({ links }: { links: NavGroup[] }) {
 	return (
 		<div className="bg-hackrpi-secondary-dark-blue w-full h-24">
 			<div className="flex justify-start items-center h-full">
@@ -12,11 +12,11 @@ export default function DesktopNavBar({ links }: { links: NavBarLinkType[] }) {
 					<NextImg alt="HackRPI Logo" aria-label="Home Page" src={logo} className="w-14 image-full" />
 				</div>
 				<div className="w-7/12">
-					{links.map((link) => (
+					{/* {links.map((link) => (
 						<NavBarLink key={link.href} href={link.href}>
 							{link.children}
 						</NavBarLink>
-					))}
+					))} */}
 				</div>
 				<RegistrationButton />
 			</div>
