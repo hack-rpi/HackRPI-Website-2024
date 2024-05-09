@@ -4,12 +4,12 @@ import Link from "next/link";
 import interactiveMap from "@/public/interactive-navigation/WebInteractiveMap.svg";
 
 const links: NavBarLinkType[] = [
-	{ href: "/sponsor-us", children: "Sponsor Us" },
-	{ href: "/location", children: "Location" },
+	{ href: "/event-info", children: "Event Information" },
 	{ href: "/schedule", children: "Schedule" },
-	{ href: "/last-year", children: "HackRPI 2023" },
 	{ href: "/prizes", children: "Prizes" },
 	{ href: "/resources", children: "Resources" },
+	{ href: "/last-year", children: "HackRPI 2023" },
+	{ href: "/sponsor-us", children: "Sponsor Us" },
 ];
 
 export default function InteractiveNavigationMap() {
