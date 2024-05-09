@@ -6,10 +6,10 @@ import MlhBanner from "../mlh-banner/mlh-banner";
 
 export const links: NavBarLinkType[] = [
 	{ href: "/", children: "Home" },
-	{ href: "/event", children: "Event Information"},
+	{ href: "/event", children: "Event Information" },
 	{ href: "/event/schedule", children: "Schedule" },
 	{ href: "/event/prizes", children: "Prizes" },
-	{ href: "/resources", children: "Resources"},
+	{ href: "/resources", children: "Resources" },
 	{ href: "/last-year", children: "HackRPI 2023" },
 	{ href: "/sponsor-us", children: "Sponsor Us" },
 ];

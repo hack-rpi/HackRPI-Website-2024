@@ -33,7 +33,7 @@ export default function TitleText() {
 			<p className={`w-full text-3xl sm:text-4xl 2xl:text-5xl mb-8`}>
 				November 9-10, <span onMouseEnter={() => setYear(1824)}>{year}</span>
 			</p>
-			<RegistrationButton className="text-3xl"/>
+			<RegistrationButton className="text-3xl" />
 		</div>
 	);
 }
