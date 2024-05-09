@@ -1,5 +1,6 @@
 import Timer from "./timer";
 import TitleText from "./title-text";
+import InteractiveNavigationMap from "../interactive-map/interactive-map";
 
 export default function DesktopTitleComponent() {
 	return (
@@ -8,7 +9,9 @@ export default function DesktopTitleComponent() {
 				<TitleText />
 				<Timer />
 			</div>
-			<div className="flex items center justify-center w-1/2">{/* Interactive Map Goes Here */}</div>
+			<div className="flex items-center justify-center w-1/2 h-full ">
+				<InteractiveNavigationMap />
+			</div>
 		</div>
 	);
 }

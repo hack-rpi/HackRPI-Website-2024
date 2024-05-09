@@ -59,7 +59,7 @@ export default function AboutUs() {
 
 				<div>
 					<>
-						<p>
+						<p className="pb-4">
 							HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
 							also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
 							range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also
@@ -68,13 +68,13 @@ export default function AboutUs() {
 							<span className="font-bold text-hackrpi-primary-light-green">Urban Upgrade</span> is an ode to a decade
 							inspiring students and HackRPI!
 						</p>
-						<p>
+						<p className="pb-4">
 							Come join us this November 9-10, 2024 to hack, learn, and meet other people! We are a motivated team of
 							RPI students who share a passion for exploring the bounds of Computer Science and a commitment to
 							organizing a fantastic event. Our team of students from every grade level works together to plan the
 							hackathon and find sponsors to bring the event together.
 						</p>
-						<p>
+						<p className="pb-4">
 							We believe that HackRPI is a vital part of our school. Our goal is to inspire and challenge innovators,
 							creators, developers, and entrepreneurs in New York&apos;s Tech Valley and beyond. We help attendees
 							develop their skills, explore new technologies, and turn their interests and visions into opportunities.
@@ -109,7 +109,7 @@ export default function AboutUs() {
 							<p>Darrin Communications Center</p>
 						</div>
 						<div className="w-fit pl-2 md:pl-0 lg:pl-2 mb-4 md:mb-0 lg:mb-4">
-							<RegistrationLink />
+							<RegistrationLink className="text-xl" />
 						</div>
 					</div>
 				</div>

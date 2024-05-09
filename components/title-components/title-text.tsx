@@ -28,15 +28,12 @@ export default function TitleText() {
 
 	return (
 		<div className="w-full font-sans  text-left flex items-start justify-center flex-col mb-8">
-			<h1 className="w-full text-5xl 2xs:text-7xl sm:text-8xl font-bold">HACKRPI</h1>
-			<h2 className="w-full text-4xl sm:text-[4rem] whitespace-nowrap h-14">Urban Upgrades</h2>
-			<p className={`w-full text-3xl sm:text-4xl mb-8`}>
-				November 9-10,{" "}
-				<span onMouseEnter={() => setYear(1824)} className={year < 2024 ? "text-[#d6001c]" : "text-base-content"}>
-					{year}
-				</span>
+			<h1 className="w-full text-5xl 2xs:text-7xl sm:text-8xl 2xl:text-9xl font-bold">HACKRPI</h1>
+			<h2 className="w-full text-4xl sm:text-[3.5rem] 2xl:text-7xl whitespace-nowrap h-14 2xl:h-20">Urban Upgrades</h2>
+			<p className={`w-full text-3xl sm:text-4xl 2xl:text-5xl mb-8`}>
+				November 9-10, <span onMouseEnter={() => setYear(1824)}>{year}</span>
 			</p>
-			<RegistrationButton />
+			<RegistrationButton className="text-3xl" />
 		</div>
 	);
 }
