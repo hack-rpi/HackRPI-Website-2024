@@ -4,9 +4,9 @@ import Link from "next/link";
 import interactiveMap from "@/public/interactive-navigation/WebInteractiveMap.svg";
 
 const links: NavBarLinkType[] = [
-	{ href: "/event-info", children: "Event Information" },
-	{ href: "/schedule", children: "Schedule" },
-	{ href: "/prizes", children: "Prizes" },
+	{ href: "/event", children: "Event Information" },
+	{ href: "/event/schedule", children: "Schedule" },
+	{ href: "/event/prizes", children: "Prizes" },
 	{ href: "/resources", children: "Resources" },
 	{ href: "/last-year", children: "HackRPI 2023" },
 	{ href: "/sponsor-us", children: "Sponsor Us" },
