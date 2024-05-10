@@ -2,7 +2,6 @@ import { Link } from "@/types/nav-bar-links";
 import { useState } from "react";
 import NextLink from "next/link";
 
-
 export default function NavGroup({
 	name,
 	links,
@@ -51,7 +50,7 @@ export default function NavGroup({
 	);
 }
 
-function NavLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void}) {
+function NavLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) {
 	return (
 		<NextLink
 			className="w-full px-1 bg-opacity-0 bg-black hover:bg-opacity-15 text-white text-lg transition-all"
@@ -62,4 +61,3 @@ function NavLink({ href, children, onClick }: { href: string; children: React.Re
 		</NextLink>
 	);
 }
-
