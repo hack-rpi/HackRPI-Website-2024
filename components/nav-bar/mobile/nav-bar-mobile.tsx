@@ -56,7 +56,6 @@ export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 					<Link
 						href="/sponsor-us"
 						className="w-11/12 whitespace-nowrap text-2xl px-2 pb-2 bg-[length:0%_4px] bg-no-repeat bg-left-bottom transition-all duration-200 bg-gradient-to-r from-hackrpi-primary-blue to-hackrpi-primary-blue hover:bg-[length:100%_4px]"
-						target="_blank"
 					>
 						Sponsor Us
 					</Link>
