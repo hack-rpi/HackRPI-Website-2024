@@ -9,10 +9,9 @@ export default function NavGroup({ name, links }: { name: string; links: Link[] 
 				role="button"
 				className="text-lg xl:text-xl bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-all duration-200 bg-gradient-to-r from-hackrpi-primary-blue to-hackrpi-primary-blue hover:bg-[length:100%_2px] focus:bg-[length:100%_4px] "
 			>
-				{" "}
-				{name}{" "}
+				{name}
 			</div>
-			<ul tabIndex={0} className="dropdown-content z-10 p-2 w-52 bg-base-200 h-fit">
+			<ul tabIndex={0} className="dropdown-content z-10 p-2 w-52 bg-base-200 h-fit rounded">
 				{links.map((link) => (
 					<li key={link.href} className="my-1">
 						<NavLink href={link.href}>{link.children}</NavLink>
