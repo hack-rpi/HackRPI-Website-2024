@@ -19,7 +19,6 @@ export default function DesktopNavBar({ links }: { links: NavGroup[] }) {
 					<Link
 						href="/sponsor-us"
 						className="mx-2 whitespace-nowrap text-lg xl:text-xl bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-all duration-200 bg-gradient-to-r from-hackrpi-primary-blue to-hackrpi-primary-blue hover:bg-[length:100%_2px]"
-						target="_blank"
 					>
 						Sponsor Us
 					</Link>
