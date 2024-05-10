@@ -12,9 +12,15 @@ export default function TeamComponent() {
 					Quas laboriosam optio nostrum explicabo.
 				</p>
 				<div className="flex items-center justify-between w-full my-4">
-					<HackRPILink className="w-60 text-center"  href="https://discord.gg/Pzmdt7FYnu">Join our Organizing Team!</HackRPILink>
-					<HackRPILink className="w-60 text-center" href="https://forms.gle/">Help Mentor!</HackRPILink>
-					<HackRPILink className="w-60 text-center" href="https://forms.gle/">Volunteer!</HackRPILink>
+					<HackRPILink className="w-60 text-center" href="https://discord.gg/Pzmdt7FYnu">
+						Join our Organizing Team!
+					</HackRPILink>
+					<HackRPILink className="w-60 text-center" href="https://forms.gle/">
+						Help Mentor!
+					</HackRPILink>
+					<HackRPILink className="w-60 text-center" href="https://forms.gle/">
+						Volunteer!
+					</HackRPILink>
 				</div>
 				<h2 className="text-2xl font-bold text-white">Our Executive Board</h2>
 				<div></div>
