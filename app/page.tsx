@@ -7,6 +7,7 @@ import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
 import AboutSection from "../components/about-us";
 import { useEffect, useState } from "react";
+import TeamComponent from "@/components/team/team";
 
 export default function Home() {
 	const [lineStart, setLineStart] = useState(0);
@@ -40,6 +41,7 @@ export default function Home() {
 					<TitleComponent />
 					<AboutSection />
 					<FAQPage />
+					<TeamComponent />
 				</div>
 				<Footer />
 
