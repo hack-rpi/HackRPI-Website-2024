@@ -46,7 +46,12 @@ export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 			>
 				<div className="flex flex-col items-center justify-start h-full ">
 					{links.map((link) => (
-						<NavGroupComponent key={link.name} name={link.name} links={link.links} onLinkClick={() => setNavMenuOpen(false)} />
+						<NavGroupComponent
+							key={link.name}
+							name={link.name}
+							links={link.links}
+							onLinkClick={() => setNavMenuOpen(false)}
+						/>
 					))}
 					<Link
 						href="/sponsor-us"

@@ -11,17 +11,17 @@ export const links: NavGroup[] = [
 			{ href: "/", children: "Home" },
 			{ href: "/#about", children: "About" },
 			{ href: "/#faq", children: "FAQ" },
-			{href: "/#sponsors", children: "Sponsors"},
-			{href: "/#team", children: "Team"},
+			{ href: "/#sponsors", children: "Sponsors" },
+			{ href: "/#team", children: "Team" },
 		],
 	},
 	{
 		name: "Event",
 		links: [
 			{ href: "/event", children: "Event Info" },
-			{href: "/event/schedule", children: "Schedule"},
-			{href: "/event/prizes", children: "Prizes"},
-			{href: "/event/mentor-queue", children: "Mentor Queue"},
+			{ href: "/event/schedule", children: "Schedule" },
+			{ href: "/event/prizes", children: "Prizes" },
+			{ href: "/event/mentor-queue", children: "Mentor Queue" },
 		],
 	},
 	{
