@@ -1,9 +1,9 @@
-import { NavBarLinkType } from "@/types/nav-bar-links";
+import { Link } from "@/types/nav-bar-links";
 import Image from "next/image";
-import Link from "next/link";
+import NextLink from "next/link";
 import interactiveMap from "@/public/interactive-navigation/WebInteractiveMap.svg";
 
-const links: NavBarLinkType[] = [
+const links: Link[] = [
 	{ href: "/event", children: "Event Information" },
 	{ href: "/event/schedule", children: "Schedule" },
 	{ href: "/event/prizes", children: "Prizes" },
@@ -18,7 +18,7 @@ export default function InteractiveNavigationMap() {
 			<Image src={interactiveMap} alt="Map" className="rounded-md w-full" />
 			<div className="absolute z-10 flex flex-col text-lg lg:text-xl xl:text-2xl 2xl:text-4xl top-8 lg:top-10 2xl:top-12 left-[17.6%] lg:left-[16.1%] xl:left-[15.7%] 2xl:left-[14.5%]">
 				{links.map((link) => (
-					<Link
+					<NextLink
 						key={link.href}
 						href={link.href}
 						className="text-white  font-bold flex items-center group mb-3 lg:mb-6 xl:mb-8 2xl:mb-10"
@@ -26,7 +26,7 @@ export default function InteractiveNavigationMap() {
 						<div className="w-4 lg:w-6 xl:w-7 2xl:w-10 aspect-square rounded-full mr-2 xl:mr-4 border-4 lg:border-[5px] xl:border-[6px] 2xl:border-[8px] border-subway-red bg-[#48566aff] group-hover:bg-white transition-colors duration-300"></div>
 
 						<span className="">{link.children}</span>
-					</Link>
+					</NextLink>
 				))}
 			</div>
 			<SubwayStops />

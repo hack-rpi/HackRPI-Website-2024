@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../app/globals.css";
-import RegistrationButton from "../nav-bar/registration-button";
+import RegistrationButton from "@/components/themed-components/registration-link";
 
 type FAQ = {
 	title: string;
