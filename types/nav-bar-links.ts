@@ -1,12 +1,11 @@
 import React from "react";
 
-export interface NavBarLinkType {
+export interface Link {
 	href: string;
 	children: React.ReactNode;
 }
 
-export const links: NavBarLinkType[] = [
-	{ href: "/", children: "Home" },
-	{ href: "/sponsor-us", children: "Sponsor Us" },
-	{ href: "/team", children: "Team" },
-];
+export interface NavGroup {
+	name: string;
+	links: Link[];
+}
