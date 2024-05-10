@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import NextImg from "next/image";
 import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import NavGroupComponent from "./nav-group";
+import Link from "next/link";
 
 export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 	const [navMenuOpen, setNavMenuOpen] = useState(false);
@@ -47,6 +48,20 @@ export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 					{links.map((link) => (
 						<NavGroupComponent key={link.name} name={link.name} links={link.links} onLinkClick={() => setNavMenuOpen(false)} />
 					))}
+					<Link
+						href="/sponsor-us"
+						className="w-11/12 whitespace-nowrap text-2xl px-2 pb-2 bg-[length:0%_4px] bg-no-repeat bg-left-bottom transition-all duration-200 bg-gradient-to-r from-hackrpi-primary-blue to-hackrpi-primary-blue hover:bg-[length:100%_4px]"
+						target="_blank"
+					>
+						Sponsor Us
+					</Link>
+					<Link
+						href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+						className="w-11/12 whitespace-nowrap text-2xl p-2 bg-[length:0%_4px] bg-no-repeat bg-left-bottom transition-all duration-200 bg-gradient-to-r from-hackrpi-primary-blue to-hackrpi-primary-blue hover:bg-[length:100%_4px]"
+						target="_blank"
+					>
+						Code of Conduct
+					</Link>
 				</div>
 			</div>
 		</>

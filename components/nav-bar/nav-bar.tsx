@@ -41,15 +41,7 @@ export const links: NavGroup[] = [
 			{ href: "/resources#cloud", children: "Cloud Computing" },
 			{ href: "/resources#submissions", children: "Submitting Your Project" },
 		],
-	},
-	{
-		name: "Sponsor Us",
-		links: [
-			{ href: "/sponsor-us#impact", children: "Impact" },
-			{ href: "/sponsor-us#info", children: "Sponsorship Info" },
-			{ href: "/sponsor-us#contact", children: "Contact Us" },
-		],
-	},
+	}
 ];
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {
