@@ -5,29 +5,27 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import ProjectDisplay, { ProjectDisplayProps } from '@/components/prev-projects/projectdisplay';
 import Arrow from '@/components/prev-projects/Arrow';
 
-
-
 const PastYearProjects: React.FC = () => {
     const allProjects: ProjectDisplayProps[] = [
       {
-        title: 'Project Title 1',
+        title: 'DAVE',
         authors: ['Name 1', 'Name 2', 'Name 3', 'Name 4'],
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
         imageUrl: '/projectImages/firstPlaceHack.png',
       },
       {
-        title: 'Project Title 2',
+        title: 'HealthChat',
         authors: ['Name 1', 'Name 2', 'Name 3', 'Name 4'],
         description: 'In tempus sit amet lorem sed suscipit...',
-        imageUrl: '/images/project2.jpg',
+        imageUrl: '/projectImages/secondPlaceHack.png  ',
         imageOnLeft: true,
         textRightAlign: true,
       },
       {
-        title: 'Project Title 3',
+        title: 'RPillPal: A Biometric Pill Dispenser',   
         authors: ['Name 1', 'Name 2', 'Name 3', 'Name 4'],
         description: 'Pellentesque habitant morbi tristique senectus et netus...',
-        imageUrl: '/images/project3.jpg',
+        imageUrl: '/projectImages/patientsafety.png',
       },
       {
         title: 'Project Title',
@@ -76,19 +74,28 @@ const PastYearProjects: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 max-w-screen-lg">
       <NavBar showOnScroll={false} />
       <h2 className="text-3xl font-bold text-center mb-8 pt-20">Previous Projects From HackRPI X</h2>
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 gap-8 mx-auto">
         {topProjects.map((project, index) => (
-          <ProjectDisplay key={index} {...project} />
+          <div key={index}>
+            <ProjectDisplay {...project} />
+            {index < topProjects.length - 1 && <hr className="my-8 border-t border-gray-200 w-1/2 mx-auto"/>} {/* Add this line */}
+          </div>
         ))}
       </div>
-      <div className="flex justify-center items-center my-8">
-        <Arrow direction="left" onClick={prevProject} />
+      <hr className="my-8 border-t border-gray-200 w-1/2 mx-auto"/> {/* Add this line */}
+      <div className="flex justify-center items-center my-8 mx-auto">
+        <div className="bg-gray-200 p-4">
+          <Arrow direction="left" onClick={prevProject} />
+        </div>
         <ProjectDisplay {...otherProjects[currentIndex]} />
-        <Arrow direction="right" onClick={nextProject} />
+        <div className="bg-gray-200 p-4">
+          <Arrow direction="right" onClick={nextProject} />
+        </div>
       </div>
+      <hr className="my-8 border-t border-gray-200 w-1/2 mx-auto"/> {/* Add this line */}
       <Footer />
     </div>
   );
