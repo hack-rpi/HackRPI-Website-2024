@@ -50,40 +50,40 @@ export default function Timer() {
 	}
 
 	return (
-		<div className="w-full h-fit flex flex-col items-start justify-center">
+		<div className="w-11/12 desktop:w-full 2xl:w-10/12 h-fit flex flex-col items-start ">
 			{hackathonStarted && !hackathonEnded ? <h1 className="text-4xl font-bold mb-2">SUBMISSIONS DUE: </h1> : null}
 			{hackathonEnded ? <h1 className="text-4xl font-bold mb-2">THANKS FOR JOINING US! </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">
-				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
+				<Circle bgColor="bg-subway-red" textColor="text-white">
 					{monthDelta > 9 ? monthDelta : "0" + monthDelta}
 				</Circle>
-				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
+				<Circle bgColor="bg-subway-yellow" textColor="text-white">
 					{dayDelta > 9 ? dayDelta : "0" + dayDelta}
 				</Circle>
-				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
+				<Circle bgColor="bg-subway-green" textColor="text-white">
 					{hourDelta > 9 ? hourDelta : "0" + hourDelta}
 				</Circle>
-				<Circle bgColor="bg-[#0058a9]" textColor="text-white">
+				<Circle bgColor="bg-subway-blue" textColor="text-white">
 					{minuteDelta > 9 ? minuteDelta : "0" + minuteDelta}
 				</Circle>
-				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
+				<Circle bgColor="bg-subway-purple" textColor="text-white">
 					{secondDelta > 9 ? secondDelta : "0" + secondDelta}
 				</Circle>
 			</div>
 			<div className="flex items-center justify-between w-full">
-				<Circle bgColor="bg-[#ef3a42]" textColor="text-white">
+				<Circle bgColor="bg-subway-red" textColor="text-white">
 					M
 				</Circle>
-				<Circle bgColor="bg-[#f8a13a]" textColor="text-white">
+				<Circle bgColor="bg-subway-yellow" textColor="text-white">
 					D
 				</Circle>
-				<Circle bgColor="bg-[#00a65c]" textColor="text-white">
+				<Circle bgColor="bg-subway-green" textColor="text-white">
 					H
 				</Circle>
-				<Circle bgColor="bg-[#0058a9]" textColor="text-white">
+				<Circle bgColor="bg-subway-blue" textColor="text-white">
 					M
 				</Circle>
-				<Circle bgColor="bg-[#b43c96]" textColor="text-white">
+				<Circle bgColor="bg-subway-purple" textColor="text-white">
 					S
 				</Circle>
 			</div>
@@ -94,7 +94,7 @@ export default function Timer() {
 function Circle({ bgColor, textColor, children }: { bgColor: string; textColor: string; children: React.ReactNode }) {
 	return (
 		<div
-			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-3xl xs:text-5xl sm:text-6xl desktop:text-5xl lg:text-6xl xl:text-7xl font-bold shadow-lg`}
+			className={`w-1/6 aspect-square rounded-full flex items-center justify-center ${bgColor} ${textColor} text-3xl xs:text-5xl sm:text-6xl desktop:text-5xl lg:text-6xl 2xl:text-7xl font-bold shadow-lg`}
 			suppressHydrationWarning
 		>
 			{children}
