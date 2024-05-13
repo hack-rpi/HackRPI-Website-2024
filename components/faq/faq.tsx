@@ -59,8 +59,6 @@ const faqs: FAQ[] = [
 	},
 ];
 
-
-
 const FAQPage = () => {
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -107,9 +105,7 @@ const FAQPage = () => {
 				<div>
 					<div
 						className={`${
-							highlightFAQ
-								? `fixed bg-white right-3.5`
-								: "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+							highlightFAQ ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
 						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
 						style={{
 							top: highlightFAQ ? "8rem" : faqTop - 20 + "px",
