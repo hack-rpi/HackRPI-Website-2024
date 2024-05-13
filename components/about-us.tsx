@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import RegistrationLink from "./themed-components/registration-link";
 
-
 export default function AboutUs() {
 	const [aboutTop, setAboutTop] = useState(0);
 	const [higlightAbout, setHighlightAbout] = useState(false);
@@ -43,9 +42,7 @@ export default function AboutUs() {
 		>
 			<div
 				className={`${
-					higlightAbout
-						? `fixed bg-white right-3.5`
-						: "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+					higlightAbout ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
 				} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
 				style={{
 					top: higlightAbout ? "8rem" : aboutTop - 20 + "px",

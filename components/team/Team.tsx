@@ -72,7 +72,6 @@ export default function TeamComponent() {
 		window.addEventListener("resize", handleResize);
 		window.addEventListener("scroll", handleScroll);
 
-
 		return () => {
 			cancelAnimationFrame(animID);
 			cancelAnimationFrame(animID2);
