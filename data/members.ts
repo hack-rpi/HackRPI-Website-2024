@@ -1,4 +1,4 @@
-const teamColors = {
+export const teamColors = {
 	president: { bg: "#303ECF", text: "#ffffff" },
 	vicePresident: { bg: "#a12022", text: "#ffffff" },
 	Technology: { bg: "#773E8E", text: "#ffffff" },
@@ -19,7 +19,7 @@ export interface Director {
 
 export interface Organizer {
 	name: string;
-	team: string;
+	team: "Technology" | "Logistics" | "Marketing" | "Outreach" | "Finance" | "Sponsorship";
 }
 
 export interface TeamColor {
@@ -39,56 +39,64 @@ export const team: Team = {
 			role: "President",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.president,
-			teamDescription: "The President leads the overall planning and execution of the hackathon, coordinating with all teams to ensure a successful event."
+			teamDescription:
+				"The President leads the overall planning and execution of the hackathon, coordinating with all teams to ensure a successful event.",
 		},
 		{
 			name: "Adwait Naware",
 			role: "Vice President",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.vicePresident,
-			teamDescription: "The Vice President supports the President's role, providing leadership and assistance in many aspects of the hackathon."
+			teamDescription:
+				"The Vice President supports the President's role, providing leadership and assistance in many aspects of the hackathon.",
 		},
 		{
 			name: "Vickie Chen",
 			role: "Director of Outreach",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Outreach,
-			teamDescription: "The Outreach team is responsible for engaging with the community and local students to promote the hackathon and encourage participation."
+			teamDescription:
+				"The Outreach team is responsible for engaging with the community and local students to promote the hackathon and encourage participation.",
 		},
 		{
 			name: "Grace Hui",
 			role: "Director of Finance",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Finance,
-			teamDescription: "The Finance team is responsible for managing the budget and purchasing necessary items for the hackathon."
+			teamDescription:
+				"The Finance team is responsible for managing the budget and purchasing necessary items for the hackathon.",
 		},
 		{
 			name: "Heman Kolla",
 			role: "Director of Sponsorship",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Sponsorship,
-			teamDescription: "The Sponsorship team is responsible for reaching out to companies and securing sponsorships to support the hackathon."
+			teamDescription:
+				"The Sponsorship team is responsible for reaching out to companies and securing sponsorships to support the hackathon.",
 		},
 		{
 			name: "CJ Marino",
 			role: "Director of Logistics",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Logistics,
-			teamDescription: "The Logistics team is responsible for planning and executing the physical aspects of the hackathon, such as food, swag, transportation, and more."
+			teamDescription:
+				"The Logistics team is responsible for planning and executing the physical aspects of the hackathon, such as food, swag, transportation, and more.",
 		},
 		{
 			name: "Cooper Werner",
 			role: "Director of Technology",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Technology,
-			teamDescription: "The Technology team is responsible for developing and maintaining the hackathon website, discord server, as well as providing technical support during the event."
+			teamDescription:
+				"The Technology team is responsible for developing and maintaining the hackathon website, discord server, as well as providing technical support during the event.",
 		},
 		{
 			name: "Miranda Zheng",
 			role: "Director of Marketing",
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Marketing,
-			teamDescription: "The Marketing team is responsible for promoting the hackathon and engaging with participants through social media, fliers, and other marketing materials."
+			teamDescription:
+				"The Marketing team is responsible for promoting the hackathon and engaging with participants through social media, fliers, and other marketing materials.",
 		},
 	],
 	organizers: [
@@ -111,6 +119,34 @@ export const team: Team = {
 		{
 			name: "Test Organizer",
 			team: "Finance",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
+		},
+		{
+			name: "Test Organizer",
+			team: "Sponsorship",
 		},
 		{
 			name: "Test Organizer",

@@ -13,16 +13,19 @@ export default function Home() {
 	const [lineStart, setLineStart] = useState(0);
 	const [lineEnd, setLineEnd] = useState(0);
 	const [faqStart, setFaqStart] = useState(0);
+	const [teamStart, setTeamStart] = useState(0);
 
 	useEffect(() => {
 		setLineStart(document.getElementById("about")!.offsetTop);
-		setLineEnd(document.getElementById("faq")!.offsetTop + document.getElementById("faq")!.offsetHeight);
+		setLineEnd(document.getElementById("team")!.offsetTop + document.getElementById("team")!.offsetHeight);
 		setFaqStart(document.getElementById("faq")!.offsetTop);
+		setTeamStart(document.getElementById("team")!.offsetTop);
 
 		const handleResize = () => {
 			setLineStart(document.getElementById("about")!.offsetTop);
-			setLineEnd(document.getElementById("faq")!.offsetTop + document.getElementById("faq")!.offsetHeight);
+			setLineEnd(document.getElementById("team")!.offsetTop + document.getElementById("team")!.offsetHeight);
 			setFaqStart(document.getElementById("faq")!.offsetTop);
+			setTeamStart(document.getElementById("team")!.offsetTop);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -62,6 +65,12 @@ export default function Home() {
 					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
 					style={{
 						top: faqStart - 22 + "px",
+					}}
+				></div>
+				<div
+					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
+					style={{
+						top: teamStart - 22 + "px",
 					}}
 				></div>
 				<div

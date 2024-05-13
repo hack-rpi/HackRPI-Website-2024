@@ -59,9 +59,7 @@ const faqs: FAQ[] = [
 	},
 ];
 
-function isMobileDevice() {
-	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
+
 
 const FAQPage = () => {
 	const [highlightFAQ, setHighlightFAQ] = useState(false);
@@ -110,7 +108,7 @@ const FAQPage = () => {
 					<div
 						className={`${
 							highlightFAQ
-								? `fixed bg-white ${isMobileDevice() ? "right-9" : "right-3.5"}`
+								? `fixed bg-white right-3.5`
 								: "absolute bg-hackrpi-secondary-dark-blue right-3.5"
 						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
 						style={{

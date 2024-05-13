@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import HackRPILink from "../themed-components/hackrpi-link";
-import { team } from "../../data/members";
+import { team, teamColors } from "../../data/members";
 import Image from "next/image";
 
 export default function TeamComponent() {
@@ -11,11 +11,19 @@ export default function TeamComponent() {
 		offset: 0,
 		hover: false,
 	});
-	const [organizers, setOrganizers] = useState(team.organizers);
+	const [organizersAnim, setOrganizersAnim] = useState({
+		organizers: team.organizers,
+		offset: 0,
+		hover: false,
+	});
+
+	const [teamTop, setTeamTop] = useState(0);
+	const [highlightTeam, setHighlightTeam] = useState(false);
 
 	const DIRECTOR_DX_PERCENT = 0.5;
+	const ORGANIZER_DX_PERCENT = 2;
 
-	const moveDirectors = () => {
+	const animate_directors = () => {
 		setDirectorsAnim((prev) => {
 			if (prev.hover) return prev;
 			if (prev.offset <= -110) {
@@ -23,43 +31,88 @@ export default function TeamComponent() {
 			}
 			return { directors: prev.directors, offset: prev.offset - DIRECTOR_DX_PERCENT, hover: prev.hover };
 		});
+		requestAnimationFrame(animate_directors);
 	};
 
-	const animate_directors = () => {
-		moveDirectors();
-		requestAnimationFrame(animate_directors);
+	const animate_organizers = () => {
+		setOrganizersAnim((prev) => {
+			if (prev.hover) return prev;
+			if (prev.offset <= -110) {
+				return { organizers: [...prev.organizers.slice(1), prev.organizers[0]], offset: 11.5, hover: prev.hover };
+			}
+			return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
+		});
+		requestAnimationFrame(animate_organizers);
 	};
 
 	useEffect(() => {
 		const animID = requestAnimationFrame(animate_directors);
+		const animID2 = requestAnimationFrame(animate_organizers);
+
+		// Highlight the team section in the navbar when the user scrolls to it
+		let teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
+		let teamEnd = teamStart + (document.getElementById("team")?.offsetHeight || window.innerHeight);
+		setTeamTop(teamStart + 140);
+
+		// Update whether the team should be highlighted when the user scrolls
+		const handleScroll = () => {
+			setHighlightTeam(window.scrollY > teamStart && window.scrollY < teamEnd);
+			teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
+			teamEnd = teamStart + (document.getElementById("team")?.offsetHeight || window.innerHeight);
+			setTeamTop(teamStart + 140);
+		};
+
+		// Update the aboutStart and aboutEnd when the user resizes the window
+		const handleResize = () => {
+			teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
+			teamEnd = teamStart + (document.getElementById("team")?.offsetHeight || window.innerHeight);
+			setTeamTop(teamStart + 140);
+		};
+
+		window.addEventListener("resize", handleResize);
+		window.addEventListener("scroll", handleScroll);
+
+
 		return () => {
 			cancelAnimationFrame(animID);
+			cancelAnimationFrame(animID2);
+
+			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
 	return (
 		<div className="w-full flex items-center justify-center mb-4">
+			<div
+				className={`${
+					highlightTeam ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+				} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
+				style={{
+					top: highlightTeam ? "8rem" : teamTop - 20 + "px",
+				}}
+			></div>
 			<div id="team" className="flex w-full desktop:w-2/3 flex-col items-start justify-start">
 				<h1 className="text-4xl text-white font-bold ">Meet the Team</h1>
 				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi vitae eligendi aspernatur laboriosam
-					consectetur perspiciatis ipsa harum accusantium itaque error. Nisi, voluptatibus quod! Cupiditate, molestiae.
-					Quas laboriosam optio nostrum explicabo.
+					HackRPI is organized by a team of dedicated students from Rensselaer Polytechnic Institute. We are always
+					looking for more students to join our team and help us make the event a success. If you are interested in
+					helping out, please join our discord or fill out one of the forms below!
 				</p>
-				<div className="flex flex-col lg:flex-row items-center justify-between w-full my-4">
-					<HackRPILink className="w-60 text-center" href="https://discord.gg/Pzmdt7FYnu">
+				<div className="flex flex-wrap items-center justify-around w-full my-4">
+					<HackRPILink className="w-60 text-center my-1" href="https://discord.gg/Pzmdt7FYnu">
 						Join our Organizing Team!
 					</HackRPILink>
-					<HackRPILink className="w-60 text-center" href="https://forms.gle/">
+					<HackRPILink className="w-60 text-center my-1" href="https://forms.gle/">
 						Help Mentor!
 					</HackRPILink>
-					<HackRPILink className="w-60 text-center" href="https://forms.gle/">
+					<HackRPILink className="w-60 text-center my-1" href="https://forms.gle/">
 						Volunteer!
 					</HackRPILink>
 				</div>
 				<h2 className="text-2xl font-bold text-white">Our Executive Board</h2>
 				<div
-					className="w-full h-fit overflow-hidden flex text-nowrap py-12"
+					className="w-full h-fit overflow-hidden flex text-nowrap py-4"
 					onMouseEnter={() => {
 						setDirectorsAnim((prev) => {
 							return { directors: prev.directors, offset: prev.offset, hover: true };
@@ -113,7 +166,39 @@ export default function TeamComponent() {
 					})}
 				</div>
 				<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
-				<div></div>
+				<div
+					className="w-full h-fit overflow-hidden flex text-nowrap py-4"
+					onMouseEnter={() => {
+						setOrganizersAnim((prev) => {
+							return { organizers: prev.organizers, offset: prev.offset, hover: true };
+						});
+					}}
+					onMouseLeave={() => {
+						setOrganizersAnim((prev) => {
+							return { organizers: prev.organizers, offset: prev.offset, hover: false };
+						});
+					}}
+				>
+					{organizersAnim.organizers.map((organizer, indx) => {
+						return (
+							<div
+								key={indx}
+								className="w-fit flex-shrink-0 mr-8 flex items-center justify-center flex-col"
+								style={{ transform: `translate(${organizersAnim.offset}%, 0%)` }}
+							>
+								<div
+									className="w-[150px] aspect-square rounded-full flex items-center justify-center"
+									style={{ backgroundColor: teamColors[organizer.team].bg }}
+								>
+									<div className="my-2 w-full rounded-full flex items-center justify-center flex-col text-white text-center">
+										<h3 className="text-lg font-bold whitespace-pre-wrap">{organizer.name}</h3>
+										<p className="">{organizer.team}</p>
+									</div>
+								</div>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
