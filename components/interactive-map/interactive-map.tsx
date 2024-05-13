@@ -1,4 +1,4 @@
-import { Link } from "@/types/nav-bar-links";
+import { Link } from "@/data/nav-bar-links";
 import Image from "next/image";
 import NextLink from "next/link";
 import interactiveMap from "@/public/interactive-navigation/WebInteractiveMap.svg";

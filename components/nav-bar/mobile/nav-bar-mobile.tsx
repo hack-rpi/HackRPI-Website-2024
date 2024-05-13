@@ -1,4 +1,4 @@
-import { NavGroup } from "@/types/nav-bar-links";
+import { NavGroup } from "@/data/nav-bar-links";
 import { useState, useEffect } from "react";
 import NextImg from "next/image";
 import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";

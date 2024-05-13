@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DesktopNavBar from "./desktop/nav-bar-desktop";
 import MobileNavBar from "./mobile/nav-bar-mobile";
-import { NavGroup } from "@/types/nav-bar-links";
+import { NavGroup } from "@/data/nav-bar-links";
 import MlhBanner from "../mlh-banner/mlh-banner";
 
 export const links: NavGroup[] = [
