@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import HackRPILink from "../themed-components/hackrpi-link";
-import { team, teamColors } from "../../data/members";
+import { Director, team, teamColors } from "../../data/members";
 import Image from "next/image";
 
 export default function TeamComponent() {
@@ -23,7 +23,7 @@ export default function TeamComponent() {
 	const DIRECTOR_DX_PERCENT = 0.5;
 	const ORGANIZER_DX_PERCENT = 2;
 
-	const animate_directors = () => {
+	const animate_directors = useCallback(() => {
 		setDirectorsAnim((prev) => {
 			if (prev.hover) return prev;
 			if (prev.offset <= -110) {
@@ -32,9 +32,9 @@ export default function TeamComponent() {
 			return { directors: prev.directors, offset: prev.offset - DIRECTOR_DX_PERCENT, hover: prev.hover };
 		});
 		requestAnimationFrame(animate_directors);
-	};
+	}, []);
 
-	const animate_organizers = () => {
+	const animate_organizers = useCallback(() => {
 		setOrganizersAnim((prev) => {
 			if (prev.hover) return prev;
 			if (prev.offset <= -110) {
@@ -43,7 +43,7 @@ export default function TeamComponent() {
 			return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
 		});
 		requestAnimationFrame(animate_organizers);
-	};
+	}, []);
 
 	useEffect(() => {
 		const animID = requestAnimationFrame(animate_directors);
@@ -72,7 +72,6 @@ export default function TeamComponent() {
 		window.addEventListener("resize", handleResize);
 		window.addEventListener("scroll", handleScroll);
 
-
 		return () => {
 			cancelAnimationFrame(animID);
 			cancelAnimationFrame(animID2);
@@ -80,7 +79,7 @@ export default function TeamComponent() {
 			window.removeEventListener("resize", handleResize);
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, []);
+	}, [animate_directors, animate_organizers]);
 
 	return (
 		<div className="w-full flex items-center justify-center mb-4">
@@ -125,44 +124,7 @@ export default function TeamComponent() {
 					}}
 				>
 					{directorsAnim.directors.map((director) => {
-						const [hovered, setHovered] = useState(false);
-
-						return (
-							<div
-								key={director.name}
-								className="w-[200px] flex-shrink-0 mr-8 flex items-center justify-center flex-col"
-								style={{ transform: `translate(${directorsAnim.offset}%, 0%)` }}
-								onMouseEnter={() => setHovered(true)}
-								onMouseLeave={() => setHovered(false)}
-							>
-								{!hovered && (
-									<Image
-										src={director.image}
-										alt={director.name}
-										height={200}
-										width={200}
-										className="w-[200px] h-[200px] rounded-full"
-									/>
-								)}
-
-								{hovered && (
-									<div
-										className="w-[200px] h-[200px] rounded-full flex items-center justify-center whitespace-pre-wrap"
-										style={{ backgroundColor: director["team-color"].bg }}
-									>
-										<p className="w-11/12 h-fit rounded-full text-sm text-center">{director.teamDescription}</p>
-									</div>
-								)}
-
-								<div
-									className={`my-2 w-full rounded-full flex items-center justify-center flex-col`}
-									style={{ backgroundColor: director["team-color"].bg, color: director["team-color"].text }}
-								>
-									<h3 className="text-xl font-bold">{director.name}</h3>
-									<p className="">{director.role}</p>
-								</div>
-							</div>
-						);
+						return DirectorCard(director, directorsAnim.offset);
 					})}
 				</div>
 				<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
@@ -199,6 +161,47 @@ export default function TeamComponent() {
 						);
 					})}
 				</div>
+			</div>
+		</div>
+	);
+}
+
+function DirectorCard(director: Director, offset: number) {
+	const [hovered, setHovered] = useState(false);
+
+	return (
+		<div
+			key={director.name}
+			className="w-[200px] flex-shrink-0 mr-8 flex items-center justify-center flex-col"
+			style={{ transform: `translate(${offset}%, 0%)` }}
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={() => setHovered(false)}
+		>
+			{!hovered && (
+				<Image
+					src={director.image}
+					alt={director.name}
+					height={200}
+					width={200}
+					className="w-[200px] h-[200px] rounded-full"
+				/>
+			)}
+
+			{hovered && (
+				<div
+					className="w-[200px] h-[200px] rounded-full flex items-center justify-center whitespace-pre-wrap"
+					style={{ backgroundColor: director["team-color"].bg }}
+				>
+					<p className="w-11/12 h-fit rounded-full text-sm text-center">{director.teamDescription}</p>
+				</div>
+			)}
+
+			<div
+				className={`my-2 w-full rounded-full flex items-center justify-center flex-col`}
+				style={{ backgroundColor: director["team-color"].bg, color: director["team-color"].text }}
+			>
+				<h3 className="text-xl font-bold">{director.name}</h3>
+				<p className="">{director.role}</p>
 			</div>
 		</div>
 	);
