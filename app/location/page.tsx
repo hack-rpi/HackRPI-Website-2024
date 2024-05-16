@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import DCC from "@/public/maps_img/DCC.png";
 import LOW from "@/public/maps_img/LOW.png";
 import "@/app/globals.css";
-import NavBar from "@/components/nav-bar/nav-bar";
 import NextImg from "next/image";
-import Footer from "@/components/footer/footer";
 import HackRPIButton from "@/components/themed-components/hackrpi-button";
 
 const MapsPage = () => {
@@ -24,7 +22,6 @@ const MapsPage = () => {
 
 	return (
 		<div className="flex w-full items-center justify-center flex-col">
-			<NavBar showOnScroll={false} />
 			<div>
 				<h1 className="title text-5xl py-10"></h1>
 			</div>
@@ -48,7 +45,6 @@ const MapsPage = () => {
 					{showLOW && <NextImg src={LOW} alt="LOW Image" className="w-full" />}
 				</div>
 			</div>
-			<Footer />
 		</div>
 	);
 };
