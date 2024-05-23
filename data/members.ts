@@ -88,7 +88,7 @@ export const team: Team = {
 			image: "/team/photos/defaultUserIcon.jpg",
 			"team-color": teamColors.Technology,
 			teamDescription:
-				"The Technology team is responsible for developing and maintaining the hackathon website, discord server, as well as providing technical support during the event.",
+				"The Technology team is responsible for developing and maintaining the hackathon website, discord server, and providing technical support during the event.",
 		},
 		{
 			name: "Miranda Zheng",

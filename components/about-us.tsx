@@ -52,29 +52,20 @@ export default function AboutUs() {
 				<h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
 
 				<div>
-					<>
-						<p className="pb-4">
-							HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
-							also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
-							range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also
-							have the opportunity to network with our fantastic sponsors from the companies that make our event
-							possible. This year&apos;s theme,{" "}
-							<span className="font-bold text-hackrpi-primary-light-green">Urban Upgrade</span> is an ode to a decade
-							inspiring students and HackRPI!
-						</p>
-						<p className="pb-4">
-							Come join us this November 9-10, 2024 to hack, learn, and meet other people! We are a motivated team of
-							RPI students who share a passion for exploring the bounds of Computer Science and a commitment to
-							organizing a fantastic event. Our team of students from every grade level works together to plan the
-							hackathon and find sponsors to bring the event together.
-						</p>
-						<p className="pb-4">
-							We believe that HackRPI is a vital part of our school. Our goal is to inspire and challenge innovators,
-							creators, developers, and entrepreneurs in New York&apos;s Tech Valley and beyond. We help attendees
-							develop their skills, explore new technologies, and turn their interests and visions into opportunities.
-							Staying true to our slogan &quot;Why Not Code the World?&quot;
-						</p>
-					</>
+					<p className="pb-4">
+						HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
+						also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
+						range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also
+						have the opportunity to network with our fantastic sponsors from the companies that make our event possible.
+						This year&apos;s theme, <span className="font-bold text-hackrpi-primary-light-green">Urban Upgrades</span> is
+						an ode to a decade inspiring students and HackRPI!
+					</p>
+					<p className="pb-4">
+						Our goal is to inspire and challenge innovators, creators, developers, and entrepreneurs in New York&apos;s
+						Tech Valley and beyond. We help attendees develop their skills, explore new technologies, and turn their
+						interests and visions into opportunities. Staying true to our slogan &quot;Why Not Code the World?&quot;
+						Come join us this November 9-10, 2024 to hack, learn, and meet other people!
+					</p>
 				</div>
 			</div>
 

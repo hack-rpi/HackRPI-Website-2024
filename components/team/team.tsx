@@ -21,7 +21,7 @@ export default function TeamComponent() {
 	const [highlightTeam, setHighlightTeam] = useState(false);
 
 	const DIRECTOR_DX_PERCENT = 0.5;
-	const ORGANIZER_DX_PERCENT = 2;
+	const ORGANIZER_DX_PERCENT = 1.25;
 
 	const animate_directors = useCallback(() => {
 		setDirectorsAnim((prev) => {
@@ -37,7 +37,7 @@ export default function TeamComponent() {
 	const animate_organizers = useCallback(() => {
 		setOrganizersAnim((prev) => {
 			if (prev.hover) return prev;
-			if (prev.offset <= -110) {
+			if (prev.offset <= -105) {
 				return { organizers: [...prev.organizers.slice(1), prev.organizers[0]], offset: 11.5, hover: prev.hover };
 			}
 			return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
@@ -94,15 +94,17 @@ export default function TeamComponent() {
 			<div id="team" className="flex w-full desktop:w-2/3 flex-col items-start justify-start">
 				<h1 className="text-4xl text-white font-bold ">Meet the Team</h1>
 				<p>
-					HackRPI is organized by a team of dedicated students from Rensselaer Polytechnic Institute. We are always
-					looking for more students to join our team and help us make the event a success. If you are interested in
-					helping out, please join our discord or fill out one of the forms below!
+					We are a motivated team of RPI students who share a passion for exploring the bounds of Computer Science and a
+					commitment to organizing a fantastic event. Our team of students from every grade and experience level work
+					together to organize our Hackathon in the fall and a variety of other smaller events throughout the year. We
+					are always looking for more students to join our team and help us make the event a success. If you are
+					interested in helping out, please join our discord or fill out one of the forms below!
 				</p>
-				<div className="flex flex-wrap items-center justify-around w-full my-4">
+				<div className="flex flex-wrap items-center justify-center  xl:justify-between w-full my-4">
 					<HackRPILink className="w-60 text-center my-1" href="https://discord.gg/Pzmdt7FYnu">
 						Join our Organizing Team!
 					</HackRPILink>
-					<HackRPILink className="w-60 text-center my-1" href="https://forms.gle/">
+					<HackRPILink className="w-60 text-center my-1 mx-2" href="https://forms.gle/">
 						Help Mentor!
 					</HackRPILink>
 					<HackRPILink className="w-60 text-center my-1" href="https://forms.gle/">
@@ -111,7 +113,7 @@ export default function TeamComponent() {
 				</div>
 				<h2 className="text-2xl font-bold text-white">Our Executive Board</h2>
 				<div
-					className="w-full h-fit overflow-hidden flex text-nowrap py-4"
+					className="w-full h-fit overflow-hidden flex text-nowrap py-4 text-white"
 					onMouseEnter={() => {
 						setDirectorsAnim((prev) => {
 							return { directors: prev.directors, offset: prev.offset, hover: true };
@@ -149,7 +151,7 @@ export default function TeamComponent() {
 								style={{ transform: `translate(${organizersAnim.offset}%, 0%)` }}
 							>
 								<div
-									className="w-[150px] aspect-square rounded-full flex items-center justify-center"
+									className="w-fit h-fit rounded-full flex items-center justify-center px-8 "
 									style={{ backgroundColor: teamColors[organizer.team].bg }}
 								>
 									<div className="my-2 w-full rounded-full flex items-center justify-center flex-col text-white text-center">
