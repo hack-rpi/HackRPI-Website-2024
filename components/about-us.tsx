@@ -57,8 +57,8 @@ export default function AboutUs() {
 						also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
 						range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also
 						have the opportunity to network with our fantastic sponsors from the companies that make our event possible.
-						This year&apos;s theme, <span className="font-bold text-hackrpi-primary-light-green">Urban Upgrades</span> is
-						an ode to a decade inspiring students and HackRPI!
+						This year&apos;s theme, <span className="font-bold text-hackrpi-primary-light-green">Urban Upgrades</span>{" "}
+						is an ode to a decade inspiring students and HackRPI!
 					</p>
 					<p className="pb-4">
 						Our goal is to inspire and challenge innovators, creators, developers, and entrepreneurs in New York&apos;s
