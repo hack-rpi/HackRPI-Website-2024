@@ -185,7 +185,8 @@ function DirectorCard(director: Director, offset: number) {
 					alt={director.name}
 					height={200}
 					width={200}
-					className="w-[200px] h-[200px] rounded-full"
+					className="w-[200px] h-[200px] rounded-full object-cover"
+					objectFit="contain"
 				/>
 			)}
 
