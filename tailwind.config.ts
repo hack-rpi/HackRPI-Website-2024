@@ -21,6 +21,11 @@ const config: Config = {
 				"hackrpi-secondary-dark-green": "#27303b",
 				"hackrpi-secondary-light-green": "#6d8740",
 				"hackrpi-secondary-yellow": "#edd559",
+				"subway-red": "#ef3a42",
+				"subway-blue": "#0058a9",
+				"subway-green": "#00a65c",
+				"subway-yellow": "#f8a13a",
+				"subway-purple": "#b43c96",
 			},
 			screens: {
 				desktop: "860px",
