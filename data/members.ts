@@ -1,3 +1,23 @@
+import xenia from "../public/team/photos/Xenia_Khusid.jpg";
+import adwait from "../public/team/photos/Adwait_Naware.jpg";
+import vickie from "../public/team/photos/Vickie_Chen.jpg";
+import grace from "../public/team/photos/Grace_Hui.jpg";
+import heman from "../public/team/photos/Heman_Kolla.jpg";
+import cj from "../public/team/photos/CJ_Marino.jpg";
+import cooper from "../public/team/photos/Cooper_Werner.jpg";
+import miranda from "../public/team/photos/Miranda_Zheng.jpg";
+
+export const executive = {
+	"Xenia Khusid": xenia,
+	"Adwait Naware": adwait,
+	"Vickie Chen": vickie,
+	"Grace Hui": grace,
+	"Heman Kolla": heman,
+	"CJ Marino": cj,
+	"Cooper Werner": cooper,
+	"Miranda Zheng": miranda,
+}
+
 export const teamColors = {
 	president: { bg: "#303ECF", text: "#ffffff" },
 	vicePresident: { bg: "#a12022", text: "#ffffff" },
@@ -10,7 +30,7 @@ export const teamColors = {
 };
 
 export interface Director {
-	name: string;
+	name: "Xenia Khusid" | "Adwait Naware" | "Vickie Chen" | "Grace Hui" | "Heman Kolla" | "CJ Marino" | "Cooper Werner" | "Miranda Zheng";
 	role: string;
 	image: string;
 	"team-color": TeamColor;
