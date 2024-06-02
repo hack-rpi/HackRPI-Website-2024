@@ -130,8 +130,8 @@ export default function TeamComponent() {
 						});
 					}}
 				>
-					{directorsAnim.directors.map((director, index) => {
-						return DirectorCard(director, directorsAnim.offset, index);
+					{directorsAnim.directors.map((director) => {
+						return DirectorCard(director, directorsAnim.offset);
 					})}
 				</div>
 				{/*<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
@@ -173,7 +173,7 @@ export default function TeamComponent() {
 	);
 }
 
-function DirectorCard(director: Director, offset: number, index: number) {
+function DirectorCard(director: Director, offset: number) {
 	const [hovered, setHovered] = useState(false);
 
 	return (
