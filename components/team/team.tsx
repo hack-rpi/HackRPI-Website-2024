@@ -129,7 +129,7 @@ export default function TeamComponent() {
 						return DirectorCard(director, directorsAnim.offset);
 					})}
 				</div>
-				<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
+				{/*<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
 				<div
 					className="w-full h-fit overflow-hidden flex text-nowrap py-4"
 					onMouseEnter={() => {
@@ -162,7 +162,7 @@ export default function TeamComponent() {
 							</div>
 						);
 					})}
-				</div>
+				</div>*/}
 			</div>
 		</div>
 	);
@@ -186,7 +186,6 @@ function DirectorCard(director: Director, offset: number) {
 					height={200}
 					width={200}
 					className="w-[200px] h-[200px] rounded-full object-cover"
-					objectFit="contain"
 				/>
 			)}
 
