@@ -190,6 +190,8 @@ function DirectorCard(director: Director, offset: number) {
 					height={200}
 					width={200}
 					className="w-[200px] h-[200px] rounded-full object-cover"
+					loading="eager"
+					priority
 				/>
 			)}
 
