@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { Link } from "@/types/nav-bar-links";
+import { Link } from "@/data/nav-bar-links";
 
 export default function NavGroup({ name, links }: { name: string; links: Link[] }) {
 	return (

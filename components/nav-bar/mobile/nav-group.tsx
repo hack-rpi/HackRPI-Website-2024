@@ -1,4 +1,4 @@
-import { Link } from "@/types/nav-bar-links";
+import { Link } from "@/data/nav-bar-links";
 import { useState } from "react";
 import NextLink from "next/link";
 
