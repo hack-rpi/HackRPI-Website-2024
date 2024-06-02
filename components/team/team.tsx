@@ -2,7 +2,8 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import HackRPILink from "../themed-components/hackrpi-link";
-import { Director, team, teamColors } from "../../data/members";
+import { Director, team } from "../../data/members";
+// import { teamColors } from "../../data/members";
 import Image from "next/image";
 
 export default function TeamComponent() {
@@ -11,17 +12,17 @@ export default function TeamComponent() {
 		offset: 0,
 		hover: false,
 	});
-	const [organizersAnim, setOrganizersAnim] = useState({
-		organizers: team.organizers,
-		offset: 0,
-		hover: false,
-	});
+	// const [organizersAnim, setOrganizersAnim] = useState({
+	// 	organizers: team.organizers,
+	// 	offset: 0,
+	// 	hover: false,
+	// });
 
 	const [teamTop, setTeamTop] = useState(0);
 	const [highlightTeam, setHighlightTeam] = useState(false);
 
 	const DIRECTOR_DX_PERCENT = 0.5;
-	const ORGANIZER_DX_PERCENT = 1.25;
+	// const ORGANIZER_DX_PERCENT = 1.25;
 
 	const animate_directors = useCallback(() => {
 		setDirectorsAnim((prev) => {
@@ -34,20 +35,20 @@ export default function TeamComponent() {
 		requestAnimationFrame(animate_directors);
 	}, []);
 
-	const animate_organizers = useCallback(() => {
-		setOrganizersAnim((prev) => {
-			if (prev.hover) return prev;
-			if (prev.offset <= -105) {
-				return { organizers: [...prev.organizers.slice(1), prev.organizers[0]], offset: 11.5, hover: prev.hover };
-			}
-			return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
-		});
-		requestAnimationFrame(animate_organizers);
-	}, []);
+	// const animate_organizers = useCallback(() => {
+	// 	setOrganizersAnim((prev) => {
+	// 		if (prev.hover) return prev;
+	// 		if (prev.offset <= -105) {
+	// 			return { organizers: [...prev.organizers.slice(1), prev.organizers[0]], offset: 11.5, hover: prev.hover };
+	// 		}
+	// 		return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
+	// 	});
+	// 	requestAnimationFrame(animate_organizers);
+	// }, []);
 
 	useEffect(() => {
 		const animID = requestAnimationFrame(animate_directors);
-		const animID2 = requestAnimationFrame(animate_organizers);
+		// const animID2 = requestAnimationFrame(animate_organizers);
 
 		// Highlight the team section in the navbar when the user scrolls to it
 		let teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
@@ -74,12 +75,15 @@ export default function TeamComponent() {
 
 		return () => {
 			cancelAnimationFrame(animID);
-			cancelAnimationFrame(animID2);
+			// cancelAnimationFrame(animID2);
 
 			window.removeEventListener("resize", handleResize);
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, [animate_directors, animate_organizers]);
+	}, [
+		animate_directors,
+		//animate_organizers
+	]);
 
 	return (
 		<div className="w-full flex items-center justify-center mb-4">
