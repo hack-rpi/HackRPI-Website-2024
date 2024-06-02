@@ -16,7 +16,7 @@ export const executive = {
 	"CJ Marino": cj,
 	"Cooper Werner": cooper,
 	"Miranda Zheng": miranda,
-}
+};
 
 export const teamColors = {
 	president: { bg: "#303ECF", text: "#ffffff" },
@@ -30,7 +30,15 @@ export const teamColors = {
 };
 
 export interface Director {
-	name: "Xenia Khusid" | "Adwait Naware" | "Vickie Chen" | "Grace Hui" | "Heman Kolla" | "CJ Marino" | "Cooper Werner" | "Miranda Zheng";
+	name:
+		| "Xenia Khusid"
+		| "Adwait Naware"
+		| "Vickie Chen"
+		| "Grace Hui"
+		| "Heman Kolla"
+		| "CJ Marino"
+		| "Cooper Werner"
+		| "Miranda Zheng";
 	role: string;
 	image: string;
 	"team-color": TeamColor;
