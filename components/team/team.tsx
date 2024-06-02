@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import HackRPILink from "../themed-components/hackrpi-link";
 import { Director, team } from "../../data/members";
 // import { teamColors } from "../../data/members";
-import {executive } from "../../data/members";
+import { executive } from "../../data/members";
 import Image from "next/image";
 
 export default function TeamComponent() {
