@@ -7,21 +7,25 @@ import TitleComponent from "@/components/title-components/title";
 import "../app/globals.css";
 import AboutSection from "../components/about-us";
 import { useEffect, useState } from "react";
+import TeamComponent from "@/components/team/team";
 
 export default function Home() {
 	const [lineStart, setLineStart] = useState(0);
 	const [lineEnd, setLineEnd] = useState(0);
 	const [faqStart, setFaqStart] = useState(0);
+	const [teamStart, setTeamStart] = useState(0);
 
 	useEffect(() => {
 		setLineStart(document.getElementById("about")!.offsetTop);
-		setLineEnd(document.getElementById("faq")!.offsetTop + document.getElementById("faq")!.offsetHeight);
+		setLineEnd(document.getElementById("team")!.offsetTop + document.getElementById("team")!.offsetHeight);
 		setFaqStart(document.getElementById("faq")!.offsetTop);
+		setTeamStart(document.getElementById("team")!.offsetTop);
 
 		const handleResize = () => {
 			setLineStart(document.getElementById("about")!.offsetTop);
-			setLineEnd(document.getElementById("faq")!.offsetTop + document.getElementById("faq")!.offsetHeight);
+			setLineEnd(document.getElementById("team")!.offsetTop + document.getElementById("team")!.offsetHeight);
 			setFaqStart(document.getElementById("faq")!.offsetTop);
+			setTeamStart(document.getElementById("team")!.offsetTop);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -34,12 +38,13 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="flex flex-col items-start desktop:items-center justify-start">
+			<div className="flex flex-col items-start desktop:items-center justify-start w-screen">
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
 					<TitleComponent />
 					<AboutSection />
 					<FAQPage />
+					<TeamComponent />
 				</div>
 				<Footer />
 
@@ -60,6 +65,12 @@ export default function Home() {
 					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
 					style={{
 						top: faqStart - 22 + "px",
+					}}
+				></div>
+				<div
+					className={`absolute bg-hackrpi-secondary-dark-blue  w-12 h-12 rounded-full  border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-0 right-3.5`}
+					style={{
+						top: teamStart - 22 + "px",
 					}}
 				></div>
 				<div

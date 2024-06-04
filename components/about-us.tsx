@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import RegistrationLink from "./themed-components/registration-link";
 
-function isMobileDevice() {
-	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
 export default function AboutUs() {
 	const [aboutTop, setAboutTop] = useState(0);
 	const [higlightAbout, setHighlightAbout] = useState(false);
@@ -46,9 +42,7 @@ export default function AboutUs() {
 		>
 			<div
 				className={`${
-					higlightAbout
-						? `fixed bg-white ${isMobileDevice() ? "right-9" : "right-3.5"}`
-						: "absolute bg-hackrpi-secondary-dark-blue right-3.5"
+					higlightAbout ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
 				} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
 				style={{
 					top: higlightAbout ? "8rem" : aboutTop - 20 + "px",
@@ -58,29 +52,26 @@ export default function AboutUs() {
 				<h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
 
 				<div>
-					<>
-						<p className="pb-4">
-							HackRPI 11 is the 11th annual intercollegiate hackathon hosted by RPI for students not only from RPI but
-							also from all around the world. Get swag and free food as you compete for exciting prizes! With a broad
-							range of workshops and mentors on-site, there&apos;s no experience necessary to attend. Hackers will also
-							have the opportunity to network with our fantastic sponsors from the companies that make our event
-							possible. This year&apos;s theme,{" "}
-							<span className="font-bold text-hackrpi-primary-light-green">Urban Upgrade</span> is an ode to a decade
-							inspiring students and HackRPI!
-						</p>
-						<p className="pb-4">
-							Come join us this November 9-10, 2024 to hack, learn, and meet other people! We are a motivated team of
-							RPI students who share a passion for exploring the bounds of Computer Science and a commitment to
-							organizing a fantastic event. Our team of students from every grade level works together to plan the
-							hackathon and find sponsors to bring the event together.
-						</p>
-						<p className="pb-4">
-							We believe that HackRPI is a vital part of our school. Our goal is to inspire and challenge innovators,
-							creators, developers, and entrepreneurs in New York&apos;s Tech Valley and beyond. We help attendees
-							develop their skills, explore new technologies, and turn their interests and visions into opportunities.
-							Staying true to our slogan &quot;Why Not Code the World?&quot;
-						</p>
-					</>
+					<p className="pb-3">
+						HackRPI 2024 is Rensselaer Polytechnic Institute&apos;s 11th annual intercollegiate hackathon hosted by
+						students for students. Starting at noon on Saturday, November 9th, teams of 1-4 people have 24 hours to
+						build and submit projects relating to our theme,{" "}
+						<span className="text-hackrpi-primary-light-green font-bold">Urban Upgrades</span>. After submitting their
+						projects, participants demonstrate their projects in front of a panel of professors, industry professionals,
+						and fellow students.
+					</p>
+					<p className="pb-3">
+						<span className="text-hackrpi-primary-light-green font-bold">Urban Upgrades</span> is all about enhancing
+						the infrastructure, services, and quality of life in our cities. From smart transportation systems and
+						sustainable energy solutions to improved public safety and inclusive community spaces, this theme challenges
+						you to develop ideas and technologies that make cities more livable, efficient, and enjoyable for everyone.
+					</p>
+					<p className="pb-3">
+						Our goal is to inspire and challenge innovators, creators, developers, and entrepreneurs in New York&apos;s
+						Tech Valley and beyond. All students from all schools are welcome to participate, regardless of their major
+						or experience level. Whether you&apos;re a seasoned hacker or a first-time participant, HackRPI is the
+						perfect opportunity to learn new skills, meet new people, and have fun!
+					</p>
 				</div>
 			</div>
 
@@ -90,7 +81,7 @@ export default function AboutUs() {
 				</div>
 				<div className="w-full lg:w-11/12 bg-gray-900 text-white h-fit flex flex-col items-start justify-start">
 					<div className="w-full h-2 bg-white mt-4" />
-					<h2 className="flex items-center text-2xl xs:text-4xl font-semibold pl-2 mt-2">
+					<h2 className="flex items-center text-2xl xs:text-4xl font-semibold pl-2 mt-2 text-nowrap">
 						When &amp; Where{" "}
 						<svg
 							className="fill-white ml-4 rotate-180 md:rotate-90 lg:rotate-180"
@@ -103,10 +94,10 @@ export default function AboutUs() {
 						</svg>
 					</h2>
 					<div className=" w-11/12 flex flex-col md:flex-row lg:flex-col items-start justify-center md:justify-start md:items-center lg:items-start lg:justify-center">
-						<div className="pl-2 text-md xs:text-xl mb-4 md:mb-8 lg:mb-4 mt-2 w-1/2 min-w-96 ">
-							<p>November 9-10, 2024</p>
-							<p>Rensselaer Polytechnic Institute</p>
-							<p>Darrin Communications Center</p>
+						<div className="pl-2 text-md xs:text-xl mb-4 md:mb-8 lg:mb-4 mt-2 w-1/2 md:min-w-80 ">
+							<p className="w-fit text-nowrap">November 9-10, 2024</p>
+							<p className="w-fit text-nowrap">Rensselaer Polytechnic Institute</p>
+							<p className="w-fit text-nowrap">Darrin Communications Center</p>
 						</div>
 						<div className="w-fit pl-2 md:pl-0 lg:pl-2 mb-4 md:mb-0 lg:mb-4">
 							<RegistrationLink className="text-xl" />
