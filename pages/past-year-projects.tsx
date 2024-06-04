@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../app/globals.css";
 import Footer from "../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
@@ -62,13 +62,45 @@ const PastYearProjects: React.FC = () => {
 	const otherProjects = allProjects.slice(3);
 	const [currentIndex, setCurrentIndex] = useState(0);
 
-	const nextProject = () => {
-		setCurrentIndex((prevIndex) => (prevIndex + 1) % otherProjects.length);
-	};
+	useEffect(() => {
+		//preload next and previous image on initial render
+		const nextIndex = (currentIndex + 1) % otherProjects.length;
+		const prevIndex = (currentIndex - 1 + otherProjects.length) % otherProjects.length;
+		const nextImg = new Image();
+		const prevImg = new Image();
+		if (otherProjects[nextIndex].imageUrl) {
+			nextImg.src = otherProjects[nextIndex].imageUrl || '';
+		}
+		if (otherProjects[prevIndex].imageUrl) {
+			prevImg.src = otherProjects[prevIndex].imageUrl || '';
+		}
+	}, []);
 
-	const prevProject = () => {
-		setCurrentIndex((prevIndex) => (prevIndex - 1 + otherProjects.length) % otherProjects.length);
-	};
+const nextProject = () => {
+    setCurrentIndex(prevIndex => {
+        const nextIndex = (prevIndex + 1) % otherProjects.length;
+        // Preload next image
+        const nextNextIndex = (nextIndex + 1) % otherProjects.length;
+        const img = new Image();
+		if (otherProjects[nextNextIndex].imageUrl) {
+			img.src = otherProjects[nextNextIndex].imageUrl || '';
+		}
+        return nextIndex;
+    });
+};
+
+const prevProject = () => {
+    setCurrentIndex(prevIndex => {
+        const newIndex = (prevIndex - 1 + otherProjects.length) % otherProjects.length; // Renamed to newIndex
+        // Preload previous image
+        const prevPrevIndex = (newIndex - 1 + otherProjects.length) % otherProjects.length; // Use newIndex here
+        const img = new Image();
+		if (otherProjects[prevPrevIndex].imageUrl) {
+			img.src = otherProjects[prevPrevIndex].imageUrl || '';
+		}
+        return newIndex; // Return newIndex
+    });
+};
 
 	return (
 		<div>
