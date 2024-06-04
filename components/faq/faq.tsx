@@ -11,28 +11,27 @@ const faqs: FAQ[] = [
 	{
 		title: "What is HackRPI?",
 		content:
-			"HackRPI is a 24 hour coding event where hackers will work in teams of 1 to 4 people to create projects based around the theme to win epic prizes thanks to our sponsors!",
+			"Teams of 1-4 have 24 hours to build a project relating to our theme Urban Upgrades. Teams will then present their projects, and the best projects win prizes!",
 	},
 	{
 		title: "When is HackRPI?",
 		content:
-			"November 9th-10th 2024, is the date for our 11th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 10th. We're really excited to celebrate the 11th year of our incredible event with YOU! Save the date!",
+			"HackRPI takes place on November 9th and 10th, 2024. Arrival and check-in takes place from 10-11 AM. Our opening ceremony starts at 11 AM, and hacking begins at noon. Your projects must be on Devpost by 11 AM Sunday, and all coding must stop at noon Sunday. Teams will present, and the event will end around 4PM on Sunday. We are excited to see you there!",
 	},
 	{
 		title: "Where is HackRPI?",
 		content:
-			"HackRPI is held at the RPI campus in Troy, New York. The event will take place in the Darrin Communications Center (DCC).",
+			"HackRPI takes place at Rensselaer Polytechnic Institute, in the Darrin Communication Center. Darrin Communications Center, 51 College Ave, Troy, NY 12180. See our event information page for more details. ",
 	},
 	{
-		title: "Is it free to attend?",
-		content:
-			"Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you can get!",
+		title: "Is HackRPI free to attend?",
+		content: "Yes! Thanks to our many wonderful sponsors, all food and swag are completely free for participants!",
 	},
 	{
 		title: "How do I register?",
 		content: (
-			<div className="flex items-center justify-start">
-				<p className="pr-2">Click here to register:</p>
+			<div className="flex items-start md:items-center justify-start flex-col md:flex-row">
+				<p className="pr-2">You can click here to register with Major League Hacking (MLH).</p>
 				<RegistrationButton /> {/* This is a custom button component will update later */}
 			</div>
 		),
@@ -40,22 +39,40 @@ const faqs: FAQ[] = [
 	{
 		title: "Who can participate?",
 		content:
-			"Anyone with any skill level! Whether you're an experienced hackathon veteran, or if you've never coded before, our hackathon is for you! With our team of mentors ready to assist you with whatever direction you're taking your project, HackRPI is the place you should go to grow and test your technical skills!",
+			"Everyone is welcome to participate, whether you are a hackathon veteran or this is your first hackathon, this is a great opportunity to learn, experiment with new technologies, and grow your skills. Our team of experienced mentors is here to help you in every step of the way.",
 	},
 	{
 		title: "Do I have to be an RPI student?",
 		content:
-			"No! You don't have to be an RPI student to participate! Students from other colleges are welcome and any recent college graduates!",
-	},
-	{
-		title: "Who else will be there?",
-		content:
-			"Not only can you meet other RPI students and people from other colleges, but we've got wonderful sponsors who make this event possible! You'll have the opportunity to talk to representatives from a variety of tech companies at career-fair style tables.",
+			"No! HackRPI is open to everyone, students of all experience levels from all colleges and universities are welcome to attend. Did you know that students from over 45 other colleges attended HackRPI!",
 	},
 	{
 		title: "Does HackRPI provide travel reimbursement?",
+		content: (
+			<p>
+				Unfortunately, we are unable to provide travel reimbursement at this time, however, we have sleep rooms on
+				campus for students 18 and older, and we are more than happy to recommend local accommodations if you email us
+				at{" "}
+				<a href="mailto:hackrpi@rpi.edu" className="text-hackrpi-primary-blue underline">
+					hackrpi@rpi.edu
+				</a>
+				.
+			</p>
+		),
+	},
+	{
+		title: "What should I bring?",
+		content: "Bring your team, your laptop, chargers, any hardware you need, and a good night's sleep!",
+	},
+	{
+		title: "What is the theme?",
 		content:
-			"We are unable to provide travel reimbursement at this time, but are happy to offer advice for nearby and affordable transportation options.",
+			"The theme for HackRPI 2024 is Urban Upgrades. This theme is all about enhancing the infrastructure, services, and quality of life in our cities. From smart transportation systems and sustainable energy solutions to improved public safety and inclusive community spaces, this theme challenges you to develop ideas and technologies that make cities more livable, efficient, and enjoyable for everyone.",
+	},
+	{
+		title: "Is it okay if I am late to the event?",
+		content:
+			"Yes! You can arrive at any time during the event, but we recommend arriving before 11 AM on Saturday. Remember, the longer you are late, the less time you have to work on your project!",
 	},
 ];
 

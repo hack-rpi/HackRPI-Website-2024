@@ -100,10 +100,10 @@ export default function TeamComponent() {
 				<h1 className="text-4xl text-white font-bold ">Meet the Team</h1>
 				<p>
 					We are a motivated team of RPI students who share a passion for exploring the bounds of Computer Science and a
-					commitment to organizing a fantastic event. Our team of students from every grade and experience level work
-					together to organize our Hackathon in the fall and a variety of other smaller events throughout the year. We
-					are always looking for more students to join our team and help us make the event a success. If you are
-					interested in helping out, please join our discord or fill out one of the forms below!
+					commitment to organizing a fantastic event. Our team of students from every grade and major work together to
+					organize our Hackathon in the fall and many other smaller events throughout the year. We are always looking
+					for more students to join our team and help us make the event a success. If you are interested in helping,
+					please join our discord or fill out one of the forms below!
 				</p>
 				<div className="flex flex-wrap items-center justify-center  xl:justify-between w-full my-4">
 					<HackRPILink className="w-60 text-center my-1" href="https://discord.gg/Pzmdt7FYnu">
