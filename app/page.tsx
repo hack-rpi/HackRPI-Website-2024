@@ -38,7 +38,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="flex flex-col items-start desktop:items-center justify-start">
+			<div className="flex flex-col items-start desktop:items-center justify-start w-screen">
 				<NavBar showOnScroll={true} />
 				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
 					<TitleComponent />
