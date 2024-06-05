@@ -16,12 +16,12 @@ export default function page() {
 				<h1 className="text-4xl font-bold mb-4">🚧 HackRPI Site Under Development! 🚧</h1>
 				<p className="text-xl mb-2">
 					Attention all code warriors and caffeine aficionados! Our hackathon hub is currently in the middle of an epic
-					upgrade. We're coding faster than a team of over-caffeinated developers at 3 AM.
+					upgrade. We&apos;re coding faster than a team of over-caffeinated developers at 3 AM.
 				</p>
 				<ul className="list-disc w-full list-inside mb-2">
-					<li>Challenges so brain-bending, they'll make your algorithms sweat!</li>
+					<li>Challenges so brain-bending, they&apos;ll make your algorithms sweat!</li>
 					<li>Prizes so cool, even your keyboard will do a happy dance.</li>
-					<li>Resources so valuable, they'll make Stack Overflow blush.</li>
+					<li>Resources so valuable, they&apos;ll make Stack Overflow blush.</li>
 				</ul>
 				<p className="mb-2">
 					Stay tuned for the ultimate hackathon experience. In the meantime, feel free to practice your speed coding and
