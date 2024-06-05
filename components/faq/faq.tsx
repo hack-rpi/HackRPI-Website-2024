@@ -74,6 +74,21 @@ const faqs: FAQ[] = [
 		content:
 			"Yes! You can arrive at any time during the event, but we recommend arriving before 11 AM on Saturday. Remember, the longer you are late, the less time you have to work on your project!",
 	},
+	{
+		title: "When are submissions due?",
+		content:
+			"All projects must be submitted to Devpost by 11 AM on Sunday. You will be able to modify your submission until noon. After noon, no coding or changes to your project are allowed.",
+	},
+	{
+		title: "How do I submit my project?",
+		content:
+			'You will submit your project on Devpost. See our "Event Information" and "Resources" pages for more details.',
+	},
+	{
+		title: "When and how will prizes be awarded?",
+		content:
+			"Prizes are announced at the closing ceremony, which will take place around 4 PM on Sunday. Physical prizes will be distributed during the closing ceremony. Winners of cash prizes will be contacted by our team after the event. ",
+	},
 ];
 
 const FAQPage = () => {
