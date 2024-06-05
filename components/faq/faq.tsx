@@ -82,6 +82,7 @@ const faqs: FAQ[] = [
 	{
 		title: "How do I submit my project?",
 		content:
+			// eslint-disable-next-line
 			'You will submit your project on Devpost. See our "Event Information" and "Resources" pages for more details.',
 	},
 	{
