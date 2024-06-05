@@ -82,7 +82,7 @@ const faqs: FAQ[] = [
 	{
 		title: "How do I submit my project?",
 		content:
-			'You will submit your project on Devpost. See our "Event Information" and "Resources" pages for more details.',
+			"You will submit your project on Devpost. See our \"Event Information\" and \"Resources\" pages for more details.",
 	},
 	{
 		title: "When and how will prizes be awarded?",
