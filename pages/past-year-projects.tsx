@@ -110,7 +110,7 @@ const PastYearProjects: React.FC = () => {
 			title: "Terra",
 			authors: ["Liam Agu Vaitkus", "Bigmaccar McCarthy", "Lillith", "Christian Monfiston"],
 			description:
-				'Terra, named after the goddess of nature, or, "Mother Earth," seeks to connect humanitarian organizations with volunteers who are eager to lend a hand to communities impacted by tragedy. Organizations can post volunteer openings and our site facilitates the rest.',
+				"Terra, named after the goddess of nature, or, \"Mother Earth\", seeks to connect humanitarian organizations with volunteers who are eager to lend a hand to communities impacted by tragedy. Organizations can post volunteer openings and our site facilitates the rest.",
 			imageUrl: "/projectImages/domainName.png",
 		},
 		{
@@ -145,7 +145,7 @@ const PastYearProjects: React.FC = () => {
 		if (otherProjects[prevIndex].imageUrl) {
 			prevImg.src = otherProjects[prevIndex].imageUrl || "";
 		}
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const nextProject = useCallback(() => {
 		setCurrentIndex((prevIndex) => {

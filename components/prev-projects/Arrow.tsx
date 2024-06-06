@@ -23,5 +23,5 @@ const Arrow: React.FC<ArrowProps> = React.memo(({ direction, onClick }) => (
 		</svg>
 	</button>
 ));
-
+Arrow.displayName = "Arrow";
 export default Arrow;
