@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "../app/globals.css";
 import Footer from "@/components/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
@@ -13,7 +13,6 @@ interface Workshop {
 	pic: string;
 	description: string;
 }
-
 
 const WorkshopPage = () => {
 	const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null);

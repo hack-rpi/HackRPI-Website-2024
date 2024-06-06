@@ -1,5 +1,3 @@
-
-
 export const workshops = [
 	{
 		title: "Patient Safety 101",
