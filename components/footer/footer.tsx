@@ -19,27 +19,22 @@ export default function Footer() {
 							<p>Darrin Communications Center @ Rensselaer Polytechnic Institute</p>
 							<p>110 8th St, Troy, NY 12180</p>
 						</div>
-						{/* <p>
-							HackRPI invites you to tackle the challenges of tomorrow&apos;s cities! Whether you&apos;re passionate
-							about sustainability, technology, or community development, come build the next big urban upgrade with us.
-							Secure your spot today!
-						</p> */}
 					</div>
 				</div>
 				<div className="w-3/4 md:w-1/3 md:border-l-2 border-l-white h-full">
-					<div className="w-full ml-2 h-full flex flex-col items-start justify-around">
+					<div className="w-full h-full flex flex-col items-start justify-around">
 						<HackRPILink className="w-full mb-4" href="https://hackrpi.com">
 							Register Today and Join Us!
 						</HackRPILink>
 						<SocialLinks />
 					</div>
 				</div>
-			</div>
-			<div className="flex flex-col items-center justify-center w-fit pb-4">
-				<p>
-					Made with <span className="text-red-600">❤️</span> by HackRPI.
-				</p>
-				<p>&copy; 2024 HackRPI</p>
+				<div className="flex flex-col items-start justify-center w-fit pb-4 mb">
+					<p>
+						Made with <span className="text-red-600">❤️</span> by HackRPI.
+					</p>
+					<p>&copy; 2024 HackRPI</p>
+				</div>
 			</div>
 		</div>
 	);
