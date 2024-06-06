@@ -44,7 +44,6 @@ const PastYearProjects: React.FC = () => {
 				"PyPlay ports through the basic features of Scratch via PyGame and handles all of the multithreading behind the scenes so that kids can learn to code easily, continuing making Scratch-like games while learning to write in a full-fledged programming language.",
 			imageUrl: "/projectImages/EducationHack.png",
 		},
-		// Repeat similar objects for projects 6 to 18
 		{
 			title: "CryptoLearner",
 			authors: ["Hunter Gould", "smullahy", "Ashlesha Bhagat", "Name 4"],
@@ -163,14 +162,14 @@ const PastYearProjects: React.FC = () => {
 
 	const prevProject = useCallback(() => {
 		setCurrentIndex((prevIndex) => {
-			const newIndex = (prevIndex - 1 + otherProjects.length) % otherProjects.length; // Renamed to newIndex
+			const newIndex = (prevIndex - 1 + otherProjects.length) % otherProjects.length;
 			// Preload previous image
-			const prevPrevIndex = (newIndex - 1 + otherProjects.length) % otherProjects.length; // Use newIndex here
+			const prevPrevIndex = (newIndex - 1 + otherProjects.length) % otherProjects.length;
 			const img = new Image();
 			if (otherProjects[prevPrevIndex].imageUrl) {
 				img.src = otherProjects[prevPrevIndex].imageUrl || "";
 			}
-			return newIndex; // Return newIndex
+			return newIndex;
 		});
 	}, [otherProjects]);
 
