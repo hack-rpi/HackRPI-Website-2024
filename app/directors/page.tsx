@@ -21,7 +21,6 @@ const MS_IN_HOUR = 3600000;
 
 type Event = {
 	id: string;
-	hackathonId: string;
 	title: string;
 	description: string;
 	startTime: number;
@@ -238,7 +237,6 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 
 async function AddEvent(): Promise<Event | undefined> {
 	const { errors, data } = await client.models.event.create({
-		hackathonId: "2024",
 		title: "New Event",
 		description: "New Event Description",
 		startTime: Date.now(),
@@ -256,7 +254,6 @@ async function AddEvent(): Promise<Event | undefined> {
 
 	return {
 		id: data.id,
-		hackathonId: data.hackathonId,
 		title: data.title,
 		description: data.description || "",
 		startTime: data.startTime,
@@ -300,7 +297,6 @@ async function listAllEvents(): Promise<Event[]> {
 			...events,
 			...response.data.map((item) => ({
 				id: item.id,
-				hackathonId: item.hackathonId,
 				title: item.title,
 				description: item.description || "",
 				startTime: item.startTime,
@@ -323,7 +319,6 @@ async function listAllEvents(): Promise<Event[]> {
 async function updateEvent(event: Event): Promise<Event | undefined> {
 	const { errors, data } = await client.models.event.update({
 		id: event.id,
-		hackathonId: event.hackathonId,
 		title: event.title,
 		description: event.description,
 		startTime: event.startTime,
@@ -341,7 +336,6 @@ async function updateEvent(event: Event): Promise<Event | undefined> {
 
 	return {
 		id: data.id,
-		hackathonId: data.hackathonId,
 		title: data.title,
 		description: data.description || "",
 		startTime: data.startTime,
@@ -363,7 +357,6 @@ async function deleteEvent(event: Event): Promise<Event | undefined> {
 
 	return {
 		id: data.id,
-		hackathonId: data.hackathonId,
 		title: data.title,
 		description: data.description || "",
 		startTime: data.startTime,

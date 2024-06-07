@@ -10,7 +10,6 @@ const schema = a.schema({
 	event: a
 		.model({
 			id: a.id().required(),
-			hackathonId: a.string().required(),
 			title: a.string().required(),
 			description: a.string(),
 			startTime: a.timestamp().required(),
