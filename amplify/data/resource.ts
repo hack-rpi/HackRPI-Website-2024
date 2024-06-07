@@ -19,9 +19,6 @@ const schema = a.schema({
 			speaker: a.string().default(""), 
 			visible: a.boolean().default(false).required(),
 		})
-		.secondaryIndexes((index) => {
-			return [index("hackathonId").sortKeys(["startTime"]).queryField("ByStartTime").name("ByStartTime")];
-		})
 		.authorization((allow) => {
 			return [
 				allow.publicApiKey().to(["read"]),
