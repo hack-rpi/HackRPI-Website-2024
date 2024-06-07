@@ -6,3 +6,17 @@
 .custom-arrow .collapse-title::before {
 	font-size: 4rem; /* Adjust as needed */
 }
+
+:root, [data-amplify-theme] {
+	--amplify-colors-background-primary: #27303b;
+	--amplify-components-field-label-color: #efefef;
+	--amplify-components-button-primary-background-color: #74b7ef;
+	--amplify-components-button-primary-color: #213445 ;
+	--amplify-components-button-primary-hover-background-color: #4a6277;
+	--amplify-components-button-link-color: #efefef;
+	--amplify-components-button-link-hover-color: #74b7ef;
+	--amplify-components-button-link-hover-background-color: #213445;
+	--amplify-components-heading-color: #efefef;
+	--amplify-components-input-color: #efefef;
+	--amplify-components-radio-label-color: #efefef;
+}
