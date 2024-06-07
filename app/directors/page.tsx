@@ -69,7 +69,9 @@ export default function Page() {
 									updateEvent(updatedEvent).then((resp) => {
 										if (resp) {
 											// Update the event in the list of events
-											setEvents(events.map((e) => (e.id === resp.id ? resp : e)));
+											setEvents(
+												events.map((e) => (e.id === resp.id ? resp : e)).sort((a, b) => a.startTime - b.startTime),
+											);
 										}
 									});
 								}}
