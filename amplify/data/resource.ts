@@ -16,7 +16,7 @@ const schema = a.schema({
 			startTime: a.timestamp().required(),
 			endTime: a.timestamp().required(),
 			location: a.string().required(),
-			speaker: a.string().default(""), 
+			speaker: a.string().default(""),
 			visible: a.boolean().default(false).required(),
 		})
 		.authorization((allow) => {
@@ -24,7 +24,7 @@ const schema = a.schema({
 				allow.publicApiKey().to(["read"]),
 				allow.guest().to(["read"]),
 				allow.group("directors").to(["create", "update", "delete", "read"]),
-			]
+			];
 		}),
 });
 
@@ -37,9 +37,9 @@ export const data = defineData({
 		apiKeyAuthorizationMode: {
 			description: "Mobile App API Key",
 			expiresInDays: 365,
-		}
+		},
 	},
-	name: "HackRPI2024-Events"
+	name: "HackRPI2024-Events",
 });
 
 /*== STEP 2 ===============================================================

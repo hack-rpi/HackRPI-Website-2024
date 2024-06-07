@@ -13,7 +13,6 @@ import amplify_outputs from "@/amplify_outputs.json";
 
 import "@aws-amplify/ui-react/styles.css";
 import "@/app/globals.css";
-import { list } from "postcss";
 
 Amplify.configure(amplify_outputs);
 const client = generateClient<Schema>({ authMode: "userPool" });
