@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useEffect, useState, useCallback } from "react";
-import "../app/globals.css";
+import "@/app/globals.css";
 import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import ProjectDisplay, { ProjectDisplayProps } from "@/components/prev-projects/projectdisplay";
@@ -110,7 +112,7 @@ const PastYearProjects: React.FC = () => {
 			title: "Terra",
 			authors: ["Liam Agu Vaitkus", "Bigmaccar McCarthy", "Lillith", "Christian Monfiston"],
 			description:
-				'Terra, named after the goddess of nature, or, "Mother Earth", seeks to connect humanitarian organizations with volunteers who are eager to lend a hand to communities impacted by tragedy. Organizations can post volunteer openings and our site facilitates the rest.',
+				"Terra, named after the goddess of nature, or, \"Mother Earth\", seeks to connect humanitarian organizations with volunteers who are eager to lend a hand to communities impacted by tragedy. Organizations can post volunteer openings and our site facilitates the rest.",
 			imageUrl: "/projectImages/domainName.png",
 		},
 		{
