@@ -1,6 +1,5 @@
 import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
 
-
 const schema = a.schema({
 	event: a
 		.model({
@@ -35,4 +34,3 @@ export const data = defineData({
 	},
 	name: "HackRPI2024-Events",
 });
-
