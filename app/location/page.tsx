@@ -26,7 +26,7 @@ const MapsPage = () => {
 				id="maps"
 				className="text-center flex items-center justify-center flex-col w-11/12 md:w-2/3"
 			>
-				<h1 className="font-medium text-2xl text-hackrpi-secondary-yellow">MAPS</h1>
+				<h1 className="font-semibold text-4xl text-white mb-4">MAPS</h1>
 
 				<div className="mt-2 mb-2 max-w-[800px]">
 					<div className="flex flex-col md:flex-row items-center justify-between w-full md:space-x-4 md:space-y-0 space-y-4 mb-4">
