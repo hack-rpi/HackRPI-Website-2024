@@ -218,9 +218,7 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 			) : (
 				<div className="w-11/12 flex flex-col items-start justify-start py-2">
 					<h1 className="text-2xl">{event.title}</h1>
-					<p className="text-xl description-box">
-						{event.description}
-					</p>
+					<p className="text-xl description-box">{event.description}</p>
 					<p className="text-xl">Starts: {new Date(event.startTime).toLocaleString()}</p>
 					<p className="text-xl">Ends: {new Date(event.endTime).toLocaleString()}</p>
 					<p className="text-xl">Location: {event.location}</p>

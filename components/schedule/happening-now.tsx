@@ -34,7 +34,7 @@ function HappeningNowCard(props: { event: Event }) {
 				</div>
 			</div>
 			<div className="w-fit mx-4 min-w-64 flex flex-col items-center justify-center px-4 ">
-				<h3 className="text-nowrap text-2xl font-bold text-white" >{props.event.title}</h3>
+				<h3 className="text-nowrap text-2xl font-bold text-white">{props.event.title}</h3>
 				<p className="text-nowrap">
 					{props.event.location} {props.event.speaker != "" ? `• ${props.event.speaker}` : ""}{" "}
 				</p>
