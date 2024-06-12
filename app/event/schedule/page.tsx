@@ -33,6 +33,10 @@ export default function Page() {
 
 		const { data, errors } = await client.models.event.list({
 			authMode: groups ? "userPool" : "identityPool",
+			limit: 200,
+			filter: {
+				visible: { eq: true },
+			}
 		});
 
 		if (errors) {
