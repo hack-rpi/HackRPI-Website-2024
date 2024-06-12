@@ -36,7 +36,7 @@ export default function Page() {
 			limit: 200,
 			filter: {
 				visible: { eq: true },
-			}
+			},
 		});
 
 		if (errors) {
