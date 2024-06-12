@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
 	content: [
@@ -47,7 +48,21 @@ const config: Config = {
 			},
 		],
 	},
-	plugins: [require("daisyui")],
+	plugins: [
+		require("daisyui"),
+		plugin(function ({ addUtilities }) {
+			const newUtilities = {
+				".description-box": {
+					overflow: "hidden",
+					display: "-webkit-box",
+					"-webkit-box-orient": "vertical",
+					"-webkit-line-clamp": "2",
+					"text-overflow": "ellipsis",
+				},
+			};
+			addUtilities(newUtilities);
+		}),
+	],
 };
 
 export default config;

@@ -4,73 +4,67 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
+import type { Event } from "@/data/schedule";
+import { SUNDAY_START, saturdayTimes } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
 import awsconfig from "@/amplify_outputs.json";
+import * as Auth from "aws-amplify/auth";
 
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
+import HappeningNow from "@/components/schedule/happening-now";
+import Schedule from "@/components/schedule/schedule";
 
 Amplify.configure(awsconfig);
 const client = generateClient<Schema>({});
 
-type Event = {
-	id: string;
-	title: string;
-	description: string;
-	startTime: number;
-	endTime: number;
-	location: string;
-	speaker: string;
-	visible: true;
-};
-
-export default function page() {
+export default function Page() {
 	const [currentDateTime, setCurrentDateTime] = useState(new Date());
-	const [events, setEvents] = useState<Event[]>([]);
+	const [saturdayEvents, setSaturdayEvents] = useState<Event[]>([]);
+	const [sundayEvents, setSundayEvents] = useState<Event[]>([]);
 	const [state, setState] = useState<"loading" | "loaded" | "error">("loading");
 	const [happeningNow, setHappeningNow] = useState<Event[]>([]);
 
 	async function fetchEvents(): Promise<Event[]> {
-		let { data, errors } = await client.models.event.list({
-			filter: { visible: { eq: true } },
-			limit: 100,
-			authMode: "identityPool",
+		const session = await Auth.fetchAuthSession();
+
+		let groups = session.tokens?.accessToken.payload["cognito:groups"];
+
+		const { data, errors } = await client.models.event.list({
+			authMode: groups ? "userPool" : "identityPool",
 		});
 
-		if (!errors && data) {
-			setState("loaded");
-			return data.map((event) => event as Event);
+		if (errors) {
+			setState("error");
+			console.error(errors);
+			return [];
 		}
 
-		// If the user is authenticated and apart of the directors group, they should be able to see all events
-		// For some reason, amplify is failing to use the Authenticated IAM role, for directors so we will use the userPool role instead
-
-		({ data, errors } = await client.models.event.list({
-			filter: { visible: { eq: true } },
-			limit: 100,
-			authMode: "userPool",
-		}));
-
-		if (!errors && data) {
-			setState("loaded");
-			return data.map((event) => event as Event);
-		}
-
-		setState("error");
-		console.error(errors);
-		return [];
+		setState("loaded");
+		return data.map((event) => event as Event);
 	}
 
 	useEffect(() => {
+		fetchEvents().then((events) => {
+			setSaturdayEvents(events.filter((event) => new Date(event.startTime).getDay() === 6));
+			// get all events that start or end on sunday
+			let sundayEvents = events.filter(
+				(event) => new Date(event.startTime).getDay() === 0 || new Date(event.endTime).getDay() === 0,
+			);
+			// if the event starts before sunday, set the start time to the start of sunday
+			sundayEvents = sundayEvents.map((event) => {
+				if (event.startTime < SUNDAY_START) {
+					event.startTime = SUNDAY_START;
+				}
+				return event;
+			});
+			setHappeningNow(determineHappeningNow(events));
+		});
+
 		const interval = setInterval(() => {
 			setCurrentDateTime(new Date());
 		}, 1000);
-
-		fetchEvents().then((events) => {
-			setEvents(events);
-			setHappeningNow(determineHappeningNow(events));
-		});
 
 		return () => clearInterval(interval);
 	}, []);
@@ -85,7 +79,13 @@ export default function page() {
 						{currentDateTime.toLocaleString(undefined, { dateStyle: "short", timeStyle: "short" })}
 					</p>
 				</div>
-				{state === "loading" && <p className="text-3xl mb-2">Loading Schedule...</p>}
+				<hr className="w-full border-primary border-2 my-4" />
+				{state === "loading" && (
+					<div className="flex h-fit items-center justify-center w-full">
+						<h2 className="text-xl">Loading the schedule: </h2>
+						<div className="loading loading-infinity loading-lg text-primary"></div>
+					</div>
+				)}
 
 				{state === "error" && (
 					<div className="badge bg-primary flex items-center justify-center h-fit my-4 ">
@@ -97,25 +97,15 @@ export default function page() {
 					</div>
 				)}
 
+				{state === "loaded" && happeningNow.length > 0 && <HappeningNow events={happeningNow} />}
+
 				{state === "loaded" && (
-					<div>
-						{happeningNow.length > 0 && (
-							<div>
-								<h2>Happening Now!</h2>
-								{happeningNow.map((event) => (
-									<div key={event.id} className="border-b border-gray-400 h-16 flex justify-start items-center">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								))}
-							</div>
-						)}
-						{events.map((event) => (
-							<div key={event.id} className="border-b border-gray-400 h-16 flex justify-start items-center">
-								<div>{event.title}</div>
-							</div>
-						))}
+					<div className="flex flex-col items-start w-full h-fit">
+						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Saturday, November 9, 2024</h1>
+						<Schedule events={saturdayEvents} times={saturdayTimes} />
+						<div className="h-4"></div>
+						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Sunday, November 10, 2024</h1>
+						<Schedule events={sundayEvents} times={saturdayTimes} />
 					</div>
 				)}
 			</div>
