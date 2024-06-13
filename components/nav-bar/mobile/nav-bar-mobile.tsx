@@ -1,4 +1,4 @@
-import { NavGroup } from "@/types/nav-bar-links";
+import { NavGroup } from "@/data/nav-bar-links";
 import { useState, useEffect } from "react";
 import NextImg from "next/image";
 import hackrpi_logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
@@ -21,7 +21,7 @@ export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 
 	return (
 		<>
-			<div className="w-full h-24 flex items-center justify-center fixed top-0 bg-hackrpi-secondary-dark-blue z-20">
+			<div className="w-screen h-24 flex items-center justify-center fixed top-0 bg-hackrpi-secondary-dark-blue z-20">
 				<div className="flex items-center justify-start w-1/3">
 					<button onClick={() => setNavMenuOpen((prev) => !prev)} className="text-white text-4xl ml-8 ">
 						<NextImg alt="Hamburger Menu" src="/menu-icon.svg" width={40} height={40} priority={true} />
