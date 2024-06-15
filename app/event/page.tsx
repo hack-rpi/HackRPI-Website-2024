@@ -6,7 +6,6 @@ import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MapsDCCLow from "@/components/maps/maps";
 import GoogleMapsWidget from "@/components/maps/google_maps";
-import Card from "@/components/socials-links/socials-card";
 import HackRPILink from "@/components/themed-components/hackrpi-link";
 import Image from "next/image";
 
@@ -68,8 +67,8 @@ function EventPage() {
 								Mentors will be available throughout HackRPI to provide invaluable guidance and assistance to
 								participants. Whether you need help with coding, debugging, refining your project idea, or navigating
 								the challenges of a hackathon, our experienced mentors are here to support you every step of the way.
-								With their expertise, you'll be able to overcome obstacles, learn new skills, and maximize your
-								hackathon experience. Don't hesitate to seek out their advice and make the most of the mentorship
+								With their expertise, you&apos;ll be able to overcome obstacles, learn new skills, and maximize your
+								hackathon experience. Don&apos;t hesitate to seek out their advice and make the most of the mentorship
 								opportunities available at HackRPI.
 							</p>
 						</div>
@@ -117,7 +116,7 @@ function EventPage() {
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
 									<strong>Practical & Useful:</strong> What problem do you want to solve? How applicable is your hack to
-									problems we're facing today?
+									problems we&apos;re facing today?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
 									<strong>Technical Difficulty:</strong> How technically challenging is it? Which technologies did you
