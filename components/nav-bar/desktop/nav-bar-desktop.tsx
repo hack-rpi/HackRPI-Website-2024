@@ -16,7 +16,7 @@ export default function DesktopNavBar({ links }: { links: NavGroup[] }) {
 				</div>
 				{/* Uncomment when ready to add registration button back */}
 				{/* <div className="min-w-fit lg:w-8/12 flex items-center justify-start"> */}
-				<div className="min-w-fit  flex items-center justify-start"> 
+				<div className="min-w-fit  flex items-center justify-start">
 					{links.map((link) => (
 						<NavGroupComponent key={link.name} name={link.name} links={link.links} />
 					))}
