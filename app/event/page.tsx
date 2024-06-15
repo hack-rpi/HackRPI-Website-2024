@@ -138,9 +138,9 @@ function EventPage() {
 								HackRPI uses Devpost to manage project submissions. You will need to create a Devpost account and submit
 								your project to the HackRPI 2024 hackathon page. Make sure to include a title, description, demo video,
 								and any other relevant information about your project. You can submit your project at any time before
-								11:00 AM on Sunday. You must have a Devpost submission to be eligible for judging. You can edit your project
-								submission until 12:00 PM on Sunday. After noon, you will not be able to make any changes to your project or
-								your submission.
+								11:00 AM on Sunday. You must have a Devpost submission to be eligible for judging. You can edit your
+								project submission until 12:00 PM on Sunday. After noon, you will not be able to make any changes to
+								your project or your submission.
 							</p>
 							<h1 className="font-semibold text-3xl mb-4 text-white">Devpost link will be added here soon!</h1>
 						</div>
