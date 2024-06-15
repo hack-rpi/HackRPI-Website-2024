@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RegistrationLink from "./themed-components/registration-link";
+// import RegistrationLink from "./themed-components/registration-link";
 
 export default function AboutUs() {
 	const [aboutTop, setAboutTop] = useState(0);

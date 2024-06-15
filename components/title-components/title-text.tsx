@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RegistrationButton from "@/components/themed-components/registration-link";
+// import RegistrationButton from "@/components/themed-components/registration-link";
 
 export default function TitleText() {
 	const [year, setYear] = useState(1824);

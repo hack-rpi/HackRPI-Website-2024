@@ -1,7 +1,7 @@
 import NextImage from "next/image";
 import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
 import SocialLinks from "../socials-links/social-links";
-import RegistrationLink from "../themed-components/registration-link";
+// import RegistrationLink from "../themed-components/registration-link";
 
 export default function Footer() {
 	return (

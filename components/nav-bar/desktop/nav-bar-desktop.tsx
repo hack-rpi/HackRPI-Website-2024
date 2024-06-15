@@ -1,7 +1,7 @@
 import NextImg from "next/image";
 import { NavGroup } from "@/data/nav-bar-links";
 import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
-import RegistrationButton from "@/components/themed-components/registration-link";
+// import RegistrationButton from "@/components/themed-components/registration-link";
 import NavGroupComponent from "./nav-group";
 import Link from "next/link";
 
