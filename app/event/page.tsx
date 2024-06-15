@@ -100,7 +100,7 @@ function EventPage() {
 				</div>
 
 				<div className="flex flex-col items-start justify-start w-full" id="project-submission">
-					<h1 className="p-4 text-4xl font-bold">Project Submission and Judging</h1>
+					<h1 className="p-4 text-4xl font-bold text-white">Project Submission and Judging</h1>
 					<div className="flex flex-col md:flex-row">
 						<div className="container p-4">
 							<h1 className="font-semibold text-3xl mb-4 text-white">JUDGING CRITERIA</h1>
