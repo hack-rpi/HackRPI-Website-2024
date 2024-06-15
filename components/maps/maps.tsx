@@ -25,11 +25,19 @@ const MapsDCCLow = () => {
 			<div id="maps" className="text-center flex items-center justify-center flex-col w-full">
 				<div className="mt-2 mb-2 max-w-[800px] w-full">
 					<div className="flex flex-col md:flex-row items-center justify-between w-full md:space-x-4 md:space-y-0 space-y-4 mb-4 desktop:h-24">
-						<HackRPIButton onClick={handleShowDCC} active={showDCC} className="text-xl w-full h-full flex items-center justify-center">
+						<HackRPIButton
+							onClick={handleShowDCC}
+							active={showDCC}
+							className="text-xl w-full h-full flex items-center justify-center"
+						>
 							Darrin Communications Center
 						</HackRPIButton>
 
-						<HackRPIButton onClick={handleShowLOW} active={showLOW} className="text-xl w-full h-full flex items-center justify-center">
+						<HackRPIButton
+							onClick={handleShowLOW}
+							active={showLOW}
+							className="text-xl w-full h-full flex items-center justify-center"
+						>
 							Low Center for Industrial Innovation
 						</HackRPIButton>
 					</div>
