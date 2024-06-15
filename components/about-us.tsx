@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RegistrationLink from "./themed-components/registration-link";
+// import RegistrationLink from "./themed-components/registration-link";
 
 export default function AboutUs() {
 	const [aboutTop, setAboutTop] = useState(0);
@@ -100,7 +100,7 @@ export default function AboutUs() {
 							<p className="w-fit text-nowrap">Darrin Communications Center</p>
 						</div>
 						<div className="w-fit pl-2 md:pl-0 lg:pl-2 mb-4 md:mb-0 lg:mb-4">
-							<RegistrationLink className="text-xl" />
+							{/* <RegistrationLink className="text-xl pr-2" /> */}
 						</div>
 					</div>
 				</div>
