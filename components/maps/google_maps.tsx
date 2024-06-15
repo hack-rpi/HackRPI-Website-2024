@@ -1,5 +1,4 @@
 export default function GoogleMapsWidget() {
-	const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 	return (
 		<a
@@ -16,7 +15,7 @@ export default function GoogleMapsWidget() {
 					frameBorder="0"
 					style={{ border: 0 }}
 					referrerPolicy="no-referrer-when-downgrade"
-					src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=Darrin+Communications+Center,Rensselaer+Polytechnic+Institute|1102+Sage+Ave,+Troy,+NY+12180&zoom=15`}
+					src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=Darrin+Communications+Center,Rensselaer+Polytechnic+Institute|1102+Sage+Ave,+Troy,+NY+12180&zoom=15`}
 					allowFullScreen
 				></iframe>
 			</div>
