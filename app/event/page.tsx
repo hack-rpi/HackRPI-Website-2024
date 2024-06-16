@@ -6,8 +6,8 @@ import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MapsDCCLow from "@/components/maps/maps";
 import GoogleMapsWidget from "@/components/maps/google_maps";
-import HackRPILink from "@/components/themed-components/hackrpi-link";
-import Image from "next/image";
+// import HackRPILink from "@/components/themed-components/hackrpi-link";
+// import Image from "next/image";
 
 function EventPage() {
 	return (
