@@ -51,6 +51,13 @@ function EventPage() {
 								</a>
 							</p>
 						</div>
+						<div className="mt-4 text-xl">
+							<p>
+								Be sure to check-in with our organizers at the organizing team table in the front of the DCC.
+								Participants will be given a wrist band at check-in which will grant access to food, and activities.
+								Check-in is open throughout the event!{" "}
+							</p>
+						</div>
 					</div>
 
 					{/* Right Side - Map */}
@@ -80,6 +87,7 @@ function EventPage() {
 								Have questions for the staff? Want to chat with other participants? Looking for a team? Join the
 								conversation on Discord and get the support you need to succeed at HackRPI.
 							</p>
+							<p>Event Discord Will Be Posted Soon</p>
 							{/* 
 							{
 								svgPath: "/social/discord.svg",
@@ -89,12 +97,12 @@ function EventPage() {
 								bgGradientTo: "to-[#7289da]",
 							},
 							 */}
-							<HackRPILink
+							{/* <HackRPILink
 								href="https://discord.gg/Pzmdt7FYnu"
 								className="hover:bg-gradient-to-br hover:from-[#5865F2] hover:to-[#7289da] hover:bg-transparent hover:border-[#5865F2] w-20 h-20 flex items-center justify-center"
 							>
 								<Image src="/social/discord.svg" alt="Discord Logo" width={50} height={50} />
-							</HackRPILink>
+							</HackRPILink> */}
 						</div>
 					</div>
 				</div>
@@ -134,13 +142,19 @@ function EventPage() {
 
 						<div className="container p-4">
 							<h1 className="font-semibold text-3xl mb-4 text-white">PROJECT SUBMISSION</h1>
-							<p className="text-lg mb-8">
+							<p className="text-lg mb-2">
 								HackRPI uses Devpost to manage project submissions. You will need to create a Devpost account and submit
 								your project to the HackRPI 2024 hackathon page. Make sure to include a title, description, demo video,
-								and any other relevant information about your project. You can submit your project at any time before
-								11:00 AM on Sunday. You must have a Devpost submission to be eligible for judging. You can edit your
-								project submission until 12:00 PM on Sunday. After noon, you will not be able to make any changes to
-								your project or your submission.
+								and any other relevant information about your project.  
+							</p>
+							<p className="text-lg mb-2">
+								You can submit your project at any time before 11:00 AM on Sunday. You must have a Devpost submission to
+								be eligible for judging. You can edit your project submission until 12:00 PM on Sunday.{" "}
+							</p>
+							<p className="text-lg mb-2">
+								After noon, you will not be able to make any changes to your project or your submission. Judging begins
+								immediately after the submission deadline. You must be present at the event to give a live demo and
+								explain your project to the judges.
 							</p>
 							<h1 className="font-semibold text-3xl mb-4 text-white">Devpost link will be added here soon!</h1>
 						</div>
