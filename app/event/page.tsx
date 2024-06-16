@@ -145,7 +145,7 @@ function EventPage() {
 							<p className="text-lg mb-2">
 								HackRPI uses Devpost to manage project submissions. You will need to create a Devpost account and submit
 								your project to the HackRPI 2024 hackathon page. Make sure to include a title, description, demo video,
-								and any other relevant information about your project.  
+								and any other relevant information about your project.
 							</p>
 							<p className="text-lg mb-2">
 								You can submit your project at any time before 11:00 AM on Sunday. You must have a Devpost submission to
