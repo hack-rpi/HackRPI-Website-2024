@@ -5,7 +5,7 @@ import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import type { Event } from "@/data/schedule";
-import { SUNDAY_START, saturdayTimes } from "@/data/schedule";
+import { SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
 import awsconfig from "@/amplify_outputs.json";
@@ -51,18 +51,41 @@ export default function Page() {
 
 	useEffect(() => {
 		fetchEvents().then((events) => {
-			setSaturdayEvents(events.filter((event) => new Date(event.startTime).getDay() === 6));
+			// get all events that start on saturday
+			let saturdayEvents = events.filter((event) => new Date(event.startTime).getDay() === 6);
+
+			// Make all events on saturday fall between 10am and 12am
+			saturdayEvents = saturdayEvents.map((event) => {
+				if (event.startTime < saturdayTimes[0].unix) {
+					event.startTime = saturdayTimes[0].unix;
+				}
+				if (event.endTime > saturdayTimes[saturdayTimes.length - 1].unix) {
+					event.endTime = saturdayTimes[saturdayTimes.length - 1].unix;
+				}
+				return event;
+			});
+
 			// get all events that start or end on sunday
 			let sundayEvents = events.filter(
 				(event) => new Date(event.startTime).getDay() === 0 || new Date(event.endTime).getDay() === 0,
 			);
-			// if the event starts before sunday, set the start time to the start of sunday
+
+			// Make all events on sunday fall between 12am and 6pm
 			sundayEvents = sundayEvents.map((event) => {
 				if (event.startTime < SUNDAY_START) {
 					event.startTime = SUNDAY_START;
 				}
+
+				if (event.endTime > sundayTimes[sundayTimes.length - 1].unix) {
+					event.endTime = sundayTimes[sundayTimes.length - 1].unix;
+				}
+
 				return event;
 			});
+
+			setSaturdayEvents(saturdayEvents);
+			setSundayEvents(sundayEvents);
+
 			setHappeningNow(determineHappeningNow(events));
 		});
 
@@ -104,12 +127,16 @@ export default function Page() {
 				{state === "loaded" && happeningNow.length > 0 && <HappeningNow events={happeningNow} />}
 
 				{state === "loaded" && (
-					<div className="flex flex-col items-start w-full h-fit">
+					<div className="flex flex-col items-start w-full h-fit mb-8">
 						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Saturday, November 9, 2024</h1>
-						<Schedule events={saturdayEvents} times={saturdayTimes} />
+						<hr className="w-full border-grey my-4" />
+
+						<Schedule events={saturdayEvents} times={saturdayTimes} currentTime={currentDateTime} />
 						<div className="h-4"></div>
 						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Sunday, November 10, 2024</h1>
-						<Schedule events={sundayEvents} times={saturdayTimes} />
+						<hr className="w-full border-grey my-4" />
+						
+						<Schedule events={sundayEvents} times={sundayTimes} currentTime={currentDateTime} />
 					</div>
 				)}
 			</div>

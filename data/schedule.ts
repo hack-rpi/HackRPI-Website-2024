@@ -28,7 +28,6 @@ export const saturdayTimes = [
 	{ str: "9:00 PM", unix: SATURDAY_START + 3600000 * 11 },
 	{ str: "10:00 PM", unix: SATURDAY_START + 3600000 * 12 },
 	{ str: "11:00 PM", unix: SATURDAY_START + 3600000 * 13 },
-	{ str: "12:00 AM", unix: SATURDAY_START + 3600000 * 14 },
 ];
 
 export const sundayTimes = [
