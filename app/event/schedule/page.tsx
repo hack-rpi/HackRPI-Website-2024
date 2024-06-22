@@ -135,7 +135,7 @@ export default function Page() {
 						<div className="h-4"></div>
 						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Sunday, November 10, 2024</h1>
 						<hr className="w-full border-grey my-4" />
-						
+
 						<Schedule events={sundayEvents} times={sundayTimes} currentTime={currentDateTime} />
 					</div>
 				)}

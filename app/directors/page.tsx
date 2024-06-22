@@ -56,7 +56,10 @@ export default function Page() {
 							>
 								Add New Event
 							</button>
-							<button className="btn btn-primary btn-sm" onClick={() => listAllEvents().then((events) => setEvents(events))}>
+							<button
+								className="btn btn-primary btn-sm"
+								onClick={() => listAllEvents().then((events) => setEvents(events))}
+							>
 								Reload Events
 							</button>
 							<button className="btn btn-warning btn-sm" onClick={() => Auth.signOut()}>
