@@ -105,16 +105,20 @@ export default function TeamComponent() {
 					for more students to join our team and help us make the event a success. If you are interested in helping,
 					please join our discord or fill out one of the forms below!
 				</p>
-				<div className="flex flex-wrap items-center justify-center  xl:justify-between w-full my-4">
-					<HackRPILink className="w-60 text-center my-1" href="https://discord.gg/Pzmdt7FYnu">
+				{/* <div className="flex flex-wrap items-center justify-center  xl:justify-between w-full my-4"> */}
+				<div className="flex flex-wrap items-center justify-center w-full my-4">
+					<HackRPILink
+						className="w-72 h-12 flex items-center justify-center text-xl text-center my-1"
+						href="https://discord.gg/Pzmdt7FYnu"
+					>
 						Join our Organizing Team!
 					</HackRPILink>
-					<HackRPILink className="w-60 text-center my-1 mx-2" href="https://forms.gle/">
+					{/* <HackRPILink className="w-72 h-12 flex items-center justify-center text-xl text-center my-1 mx-2" href="https://forms.gle/">
 						Help Mentor!
 					</HackRPILink>
-					<HackRPILink className="w-60 text-center my-1" href="https://forms.gle/">
+					<HackRPILink className="w-72 h-12 flex items-center justify-center text-xl text-center my-1" href="https://forms.gle/">
 						Volunteer!
-					</HackRPILink>
+					</HackRPILink> */}
 				</div>
 				<h2 className="text-2xl font-bold text-white">Our Executive Board</h2>
 				<div
