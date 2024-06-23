@@ -24,7 +24,7 @@ export const auth = defineAuth({
 							<p>Hi ${username()},</p>
 							<p>Click the link below to sign in to the HackRPI 2024 Director's Schedule Portal.</p>
 							<p> Sign in with your email and the temporary password below.</p>
-							<a href="https://hackrpi2024.com/directors">Sign in</a>
+							<a href="https://hackrpi.com/directors">Sign in</a>
 							<p>Temporary Password: ${code()}</p>
 							<p>Thank you!</p>
 							<p> -- Cooper Werner, HackRPI 2024 Director of Technology</p>
