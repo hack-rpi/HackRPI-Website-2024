@@ -53,9 +53,7 @@ export function arrangeEvents(events: Event[]): Event[][] {
 function findConflict(event: Event, events: Event[]): Event | undefined {
 	for (let i = 0; i < events.length; i++) {
 		// Find if the event conflicts with any other event in the column
-		if (
-			(event.startTime >= events[i].startTime && event.startTime < events[i].endTime) 
-		) {
+		if (event.startTime >= events[i].startTime && event.startTime < events[i].endTime) {
 			return events[i];
 		}
 	}
