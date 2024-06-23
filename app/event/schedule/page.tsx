@@ -5,7 +5,7 @@ import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import type { Event } from "@/data/schedule";
-import { SATURDAY_END, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
+import { SATURDAY_END, SATURDAY_START, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
 // eslint-disable-next-line
@@ -32,10 +32,10 @@ export default function Page() {
 
 	async function fetchEvents(): Promise<Event[]> {
 		let groups = undefined;
-		try{
+		try {
 			const session = await Auth.fetchAuthSession();
 			groups = session.tokens?.accessToken.payload["cognito:groups"];
-		}catch(e){
+		} catch (e) {
 			console.error(e);
 			groups = undefined;
 		}
@@ -63,8 +63,7 @@ export default function Page() {
 			const saturdayEvents = events
 				.slice()
 				.map((event) => {
-					const startDay = new Date(event.startTime).getDay();
-					if (startDay === 6) {
+					if ( event.startTime >= SATURDAY_START && event.startTime < SATURDAY_END) {
 						// Saturday
 						return {
 							...event,
@@ -74,15 +73,17 @@ export default function Page() {
 					}
 					return null;
 				})
-				.filter((event) => event !== null)
+				.filter((event) => (event !== null && event.endTime > event.startTime))
 				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
 			const sundayEvents = events
 				.slice()
 				.map((event) => {
-					const startDay = new Date(event.startTime).getDay();
-					const endDay = new Date(event.endTime).getDay();
-					if (startDay === 0 || (endDay === 0 && event.endTime !== SUNDAY_START)) {
+					if (
+						event.endTime > event.startTime &&
+						((event.startTime >= SUNDAY_START && event.startTime < SUNDAY_END) ||
+							(event.endTime > SUNDAY_START && event.endTime <= SUNDAY_END))
+					) {
 						// Sunday
 						const ret = {
 							...event,
@@ -94,7 +95,7 @@ export default function Page() {
 					}
 					return null;
 				})
-				.filter((event) => event !== null)
+				.filter((event) => (event !== null && event.endTime > event.startTime))
 				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
 			setSaturdayEvents(saturdayEvents);

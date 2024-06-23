@@ -157,10 +157,11 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 						<input
 							className="grow"
 							type="text"
-							placeholder="Location"
+							placeholder="Location (Optional)"
 							value={event.location}
 							onChange={(e) => setEvent({ ...event, location: e.target.value })}
 						/>
+						<span className="badge badge-primary">Optional</span>
 					</label>
 					<label className="text-sm input bg-base-200 input-primary flex items-center text-nowrap w-full my-2 gap-2">
 						Speaker:

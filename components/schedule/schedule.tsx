@@ -61,26 +61,11 @@ export default function Schedule(props: ScheduleProps) {
 									}}
 									onClick={() => props.onEventClick(event)}
 								>
-									<p className={`font-bold text-sm xs:text-base sm:text-lg border-b-2 pl-1 ${color}`}>
-										{eventPassed && <s>{event.title}</s>}
-										{!eventPassed && <>{event.title}</>}
-									</p>
+									<p className={`font-bold text-sm xs:text-base sm:text-lg border-b-2 pl-1 ${color}`}>{event.title}</p>
 									<p className={`text-xs xs:text-sm sm:text-base border-b-2 pl-1 ${color}`}>
-										{eventPassed && (
-											<s>
-												{event.location} {event.speaker != "" ? `• ${event.speaker}` : ""}
-											</s>
-										)}
-										{!eventPassed && (
-											<>
-												{event.location} {event.speaker != "" ? `• ${event.speaker}` : ""}
-											</>
-										)}
+										{event.location} {event.speaker != "" ? `• ${event.speaker}` : ""}
 									</p>
-									<p className={`font-normal text-xs xs:text-sm sm:text-base pl-1 ${color}`}>
-										{eventPassed && <s>{event.description}</s>}
-										{!eventPassed && <>{event.description}</>}
-									</p>
+									<p className={`font-normal text-xs xs:text-sm sm:text-base pl-1 ${color}`}>{event.description}</p>
 								</div>
 							);
 						})}
