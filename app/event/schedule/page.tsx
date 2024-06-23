@@ -5,9 +5,11 @@ import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import type { Event } from "@/data/schedule";
-import { SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
+import { SATURDAY_END, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
+// eslint-disable-next-line
+// @ts-ignore
 import awsconfig from "@/amplify_outputs.json";
 import * as Auth from "aws-amplify/auth";
 
@@ -21,15 +23,17 @@ const client = generateClient<Schema>({});
 
 export default function Page() {
 	const [currentDateTime, setCurrentDateTime] = useState(new Date());
+	const [allEvents, setAllEvents] = useState<Event[]>([]);
 	const [saturdayEvents, setSaturdayEvents] = useState<Event[]>([]);
 	const [sundayEvents, setSundayEvents] = useState<Event[]>([]);
 	const [state, setState] = useState<"loading" | "loaded" | "error">("loading");
 	const [happeningNow, setHappeningNow] = useState<Event[]>([]);
+	const [modalEvent, setModalEvent] = useState<Event | null>(null);
 
 	async function fetchEvents(): Promise<Event[]> {
 		const session = await Auth.fetchAuthSession();
 
-		let groups = session.tokens?.accessToken.payload["cognito:groups"];
+		const groups = session.tokens?.accessToken.payload["cognito:groups"];
 
 		const { data, errors } = await client.models.event.list({
 			authMode: groups ? "userPool" : "identityPool",
@@ -51,40 +55,47 @@ export default function Page() {
 
 	useEffect(() => {
 		fetchEvents().then((events) => {
-			// get all events that start on saturday
-			let saturdayEvents = events.filter((event) => new Date(event.startTime).getDay() === 6);
+			const saturdayEvents = events
+				.slice()
+				.map((event) => {
+					const startDay = new Date(event.startTime).getDay();
+					if (startDay === 6) {
+						// Saturday
+						return {
+							...event,
+							startTime: Math.max(event.startTime, saturdayTimes[0].unix),
+							endTime: Math.min(event.endTime, SATURDAY_END),
+						};
+					}
+					return null;
+				})
+				.filter((event) => event !== null)
+				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
-			// Make all events on saturday fall between 10am and 12am
-			saturdayEvents = saturdayEvents.map((event) => {
-				if (event.startTime < saturdayTimes[0].unix) {
-					event.startTime = saturdayTimes[0].unix;
-				}
-				if (event.endTime > saturdayTimes[saturdayTimes.length - 1].unix) {
-					event.endTime = saturdayTimes[saturdayTimes.length - 1].unix;
-				}
-				return event;
-			});
+			const sundayEvents = events
+				.slice()
+				.map((event) => {
+					const startDay = new Date(event.startTime).getDay();
+					const endDay = new Date(event.endTime).getDay();
+					if (startDay === 0 || endDay === 0 && event.endTime !== SUNDAY_START) {
+						// Sunday
+						const ret = {
+							...event,
+							startTime: Math.max(event.startTime, SUNDAY_START),
+							endTime: Math.min(event.endTime, SUNDAY_END),
+						};
 
-			// get all events that start or end on sunday
-			let sundayEvents = events.filter(
-				(event) => new Date(event.startTime).getDay() === 0 || new Date(event.endTime).getDay() === 0,
-			);
+						return ret;
+					}
+					return null;
+				})
+				.filter((event) => event !== null)
+				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
-			// Make all events on sunday fall between 12am and 6pm
-			sundayEvents = sundayEvents.map((event) => {
-				if (event.startTime < SUNDAY_START) {
-					event.startTime = SUNDAY_START;
-				}
-
-				if (event.endTime > sundayTimes[sundayTimes.length - 1].unix) {
-					event.endTime = sundayTimes[sundayTimes.length - 1].unix;
-				}
-
-				return event;
-			});
 
 			setSaturdayEvents(saturdayEvents);
 			setSundayEvents(sundayEvents);
+			setAllEvents(events);
 
 			setHappeningNow(determineHappeningNow(events));
 		});
@@ -92,6 +103,12 @@ export default function Page() {
 		const interval = setInterval(() => {
 			setCurrentDateTime(new Date());
 		}, 1000);
+
+		addEventListener("keydown", (event) => {
+			if (event.key === "Escape") {
+				setModalEvent(null);
+			}
+		});
 
 		return () => clearInterval(interval);
 	}, []);
@@ -129,14 +146,60 @@ export default function Page() {
 				{state === "loaded" && (
 					<div className="flex flex-col items-start w-full h-fit mb-8">
 						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Saturday, November 9, 2024</h1>
+						<p>Click / Tap any event for more info!</p>
 						<hr className="w-full border-grey my-4" />
 
-						<Schedule events={saturdayEvents} times={saturdayTimes} currentTime={currentDateTime} />
+						<Schedule
+							events={saturdayEvents}
+							times={saturdayTimes}
+							currentTime={currentDateTime}
+							onEventClick={(event) => {
+								setModalEvent(allEvents.find((e) => e.id === event.id)!);
+							}}
+						/>
 						<div className="h-4"></div>
 						<h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">Sunday, November 10, 2024</h1>
+						<p>Click / Tap any event for more info!</p>
 						<hr className="w-full border-grey my-4" />
-						
-						<Schedule events={sundayEvents} times={sundayTimes} currentTime={currentDateTime} />
+
+						<Schedule
+							events={sundayEvents}
+							times={sundayTimes}
+							currentTime={currentDateTime}
+							onEventClick={(event) => {
+								setModalEvent(allEvents.find((e) => e.id === event.id)!);
+							}}
+						/>
+					</div>
+				)}
+
+				{modalEvent && (
+					<div
+						className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex items-center justify-center z-20"
+						onClick={() => {
+							setModalEvent(null);
+						}}
+					>
+						<div className="w-11/12 desktop:w-2/3 h-5/6 bg-hackrpi-secondary-light-blue rounded-lg p-4 overflow-y-auto z-30">
+							<div className="flex items-center justify-between mb-4 border-b-2 border-b-gray-400 h-24">
+								<h1 className="text-4xl md:text-6xl font-bold">{modalEvent.title}</h1>
+								<button
+									className="text-4xl font-bold text-black mr-4 hover:text-primary focus:text-primary"
+									onClick={() => {
+										setModalEvent(null);
+									}}
+								>
+									&times;
+								</button>
+							</div>
+							<p className="text-2xl md:text-4xl mb-4">
+								{modalEvent.location} {modalEvent.speaker ? `• ${modalEvent.speaker}` : ""}
+							</p>
+							<p className="text-3xl mb-4">
+								{new Date(modalEvent.startTime).toLocaleString()} - {new Date(modalEvent.endTime).toLocaleString()}
+							</p>
+							<p className="text-2xl">{modalEvent.description}</p>
+						</div>
 					</div>
 				)}
 			</div>

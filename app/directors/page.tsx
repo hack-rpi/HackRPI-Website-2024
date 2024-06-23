@@ -9,6 +9,8 @@ import * as Auth from "@aws-amplify/auth";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { generateClient } from "aws-amplify/api";
 import type { Schema } from "@/amplify/data/resource";
+// eslint-disable-next-line
+// @ts-ignore
 import amplify_outputs from "@/amplify_outputs.json";
 
 import "@aws-amplify/ui-react/styles.css";
@@ -138,7 +140,7 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 							type="datetime-local"
 							placeholder="Start Time"
 							value={convertUnixToTimeInput(event.startTime)}
-							onChange={(e) => setEvent({ ...event, startTime: new Date(e.target.value).valueOf() })}
+							onChange={(e) => setEvent({ ...event, startTime: new Date(e.target.value).valueOf(), endTime: new Date(e.target.value).valueOf() + MS_IN_HOUR})}
 						/>
 					</label>
 					<label className="text-sm input bg-base-200 input-primary flex items-center text-nowrap w-full my-2 gap-2">

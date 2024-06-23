@@ -10,8 +10,10 @@ export type Event = {
 };
 
 export const SATURDAY_START = 1731164400000;
+export const SATURDAY_END = 1731214800000 - 1;
 
 export const SUNDAY_START = 1731214800000;
+export const SUNDAY_END =  	1731286800000;
 
 export const saturdayTimes = [
 	{ str: "10:00 AM", unix: SATURDAY_START },
