@@ -39,8 +39,8 @@ export default function Schedule(props: ScheduleProps) {
 										props.currentTime.getTime() < event.startTime
 											? "bg-hackrpi-primary-blue text-black"
 											: props.currentTime.getTime() < event.endTime // eslint-disable-next-line
-											? "bg-hackrpi-secondary-yellow text-black" // eslint-disable-next-line
-											: "bg-hackrpi-secondary-light-blue text-gray-300"
+												? "bg-hackrpi-secondary-yellow text-black" // eslint-disable-next-line
+												: "bg-hackrpi-secondary-light-blue text-gray-300"
 									}`}
 									style={{
 										top,

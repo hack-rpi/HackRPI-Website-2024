@@ -77,7 +77,7 @@ export default function Page() {
 				.map((event) => {
 					const startDay = new Date(event.startTime).getDay();
 					const endDay = new Date(event.endTime).getDay();
-					if (startDay === 0 || endDay === 0 && event.endTime !== SUNDAY_START) {
+					if (startDay === 0 || (endDay === 0 && event.endTime !== SUNDAY_START)) {
 						// Sunday
 						const ret = {
 							...event,
@@ -91,7 +91,6 @@ export default function Page() {
 				})
 				.filter((event) => event !== null)
 				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
-
 
 			setSaturdayEvents(saturdayEvents);
 			setSundayEvents(sundayEvents);
