@@ -60,7 +60,9 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Add Amplify outputs file
         run: touch amplify_outputs.json
+      - name: Populate Amplify outputs file
         run: echo "{}" > amplify_outputs.json
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
