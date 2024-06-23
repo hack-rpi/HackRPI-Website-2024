@@ -186,7 +186,7 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 						className="select select-bordered w-full my-2 select-primary"
 						value={event.eventType}
 						onChange={(e) => {
-							setEvent({ ...event, eventType: e.target.value});
+							setEvent({ ...event, eventType: e.target.value });
 						}}
 					>
 						<option value="default">Default</option>
