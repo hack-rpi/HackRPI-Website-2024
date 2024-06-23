@@ -6,7 +6,8 @@ export type Event = {
 	endTime: number;
 	location: string;
 	speaker: string;
-	visible: true;
+	eventType: string;
+	visible: boolean;
 };
 
 export const SATURDAY_START = 1731164400000;

@@ -28,33 +28,62 @@ export default function Schedule(props: ScheduleProps) {
 				{eventsInColumns.map((column, index) => (
 					<div
 						key={index}
-						className="relative flex flex-col flex-grow flex-shrink basis-auto h-full mx-0.5 xs:mx-1 sm:mx-2"
+						className="relative flex flex-col flex-grow flex-shrink basis-auto h-full px-0.5 ps:mx-1 pm:mx-2"
 					>
 						{column.map((event) => {
 							const { top, height } = calculateTopAndHeightOfEvent(event, props.times);
+							let color = "bg-hackrpi-primary-blue text-black border-black";
+
+							const eventPassed = props.currentTime.getTime() > event.endTime;
+							const eventStarted = props.currentTime.getTime() > event.startTime;
+
+							if (event.eventType === "workshop") {
+								color = "bg-hackrpi-primary-light-green text-black border-black";
+							} else if (event.eventType === "deadline") {
+								color = "bg-red-400 text-black border-black";
+							} else if (event.eventType === "food") {
+								color = "bg-hackrpi-secondary-light-green text-black border-black";
+							} else if (event.eventType === "activity") {
+								color = "bg-hackrpi-primary-dark-green text-gray-300 border-gray-300";
+							}
+
+							if (eventStarted) {
+								color = "bg-hackrpi-secondary-yellow text-black border-black";
+							}
+							if (eventPassed) {
+								color = "bg-hackrpi-secondary-light-blue text-gray-300 border-gray-300";
+							}
+
 							return (
 								<div
 									key={event.id}
-									className={`absolute w-full h-full rounded-lg shadow-md mb-4 overflow-hidden ${
-										props.currentTime.getTime() < event.startTime
-											? "bg-hackrpi-primary-blue text-black"
-											: props.currentTime.getTime() < event.endTime // eslint-disable-next-line
-											? "bg-hackrpi-secondary-yellow text-black" // eslint-disable-next-line
-											: "bg-hackrpi-secondary-light-blue text-gray-300"
-									}`}
+									className={`absolute w-11/12 h-full rounded-lg shadow-md mb-4 overflow-hidden ${color}`}
 									style={{
 										top,
 										height,
 									}}
 									onClick={() => props.onEventClick(event)}
 								>
-									<p className=" font-bold text-sm xs:text-base sm:text-lg border-b-2 border-black pl-1">
-										{event.title}
+									<p className={`font-bold text-sm xs:text-base sm:text-lg border-b-2 pl-1 ${color}`}>
+										{eventPassed && <s>{event.title}</s>}
+										{!eventPassed && <>{event.title}</>}
 									</p>
-									<p className=" text-xs xs:text-sm sm:text-base border-b-2 border-black pl-1">
-										{event.location} {event.speaker != "" ? `• ${event.speaker}` : ""}{" "}
+									<p className={`text-xs xs:text-sm sm:text-base border-b-2 pl-1 ${color}`}>
+										{eventPassed && (
+											<s>
+												{event.location} {event.speaker != "" ? `• ${event.speaker}` : ""}
+											</s>
+										)}
+										{!eventPassed && (
+											<>
+												{event.location} {event.speaker != "" ? `• ${event.speaker}` : ""}
+											</>
+										)}
 									</p>
-									<p className=" font-normal text-xs xs:text-sm sm:text-base pl-1">{event.description}</p>
+									<p className={`font-normal text-xs xs:text-sm sm:text-base pl-1 ${color}`}>
+										{eventPassed && <s>{event.description}</s>}
+										{!eventPassed && <>{event.description}</>}
+									</p>
 								</div>
 							);
 						})}

@@ -3,6 +3,7 @@
 import Footer from "@/components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import { useEffect, useState } from "react";
+import { Event } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
 import * as Auth from "@aws-amplify/auth";
@@ -20,17 +21,6 @@ Amplify.configure(amplify_outputs);
 const client = generateClient<Schema>({ authMode: "userPool" });
 
 const MS_IN_HOUR = 3600000;
-
-type Event = {
-	id: string;
-	title: string;
-	description: string;
-	startTime: number;
-	endTime: number;
-	location: string;
-	speaker: string;
-	visible: boolean;
-};
 
 export default function Page() {
 	const [events, setEvents] = useState<Event[]>([]);
@@ -143,7 +133,13 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 							type="datetime-local"
 							placeholder="Start Time"
 							value={convertUnixToTimeInput(event.startTime)}
-							onChange={(e) => setEvent({ ...event, startTime: new Date(e.target.value).valueOf(), endTime: new Date(e.target.value).valueOf() + MS_IN_HOUR})}
+							onChange={(e) =>
+								setEvent({
+									...event,
+									startTime: new Date(e.target.value).valueOf(),
+									endTime: new Date(e.target.value).valueOf() + MS_IN_HOUR,
+								})
+							}
 						/>
 					</label>
 					<label className="text-sm input bg-base-200 input-primary flex items-center text-nowrap w-full my-2 gap-2">
@@ -186,6 +182,19 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 							onChange={(e) => setEvent({ ...event, visible: e.target.checked })}
 						/>
 					</div>
+					<select
+						className="select select-bordered w-full my-2 select-primary"
+						value={event.eventType}
+						onChange={(e) => {
+							setEvent({ ...event, eventType: e.target.value});
+						}}
+					>
+						<option value="default">Default</option>
+						<option value="workshop">Workshop</option>
+						<option value="deadline">Deadline</option>
+						<option value="food">Food</option>
+						<option value="activity">Activity</option>
+					</select>
 					<div className="flex w-full items-center justify-between my-2">
 						<button type="submit" className="btn btn-primary btn-sm">
 							Save
@@ -231,6 +240,7 @@ function EventCard(props: { event: Event; onUpdate: (event: Event) => void; onDe
 					<p className="text-xl">Ends: {new Date(event.endTime).toLocaleString()}</p>
 					<p className="text-xl">Location: {event.location}</p>
 					<p className="text-xl">Speaker: {event.speaker}</p>
+					<p className="text-xl">Event Type: {event.eventType}</p>
 					<p className="text-xl">{event.visible ? "Visible on Site ✅" : "Not Visible on Site ❌"}</p>
 					<button className="btn btn-primary btn-sm" onClick={() => setEditing(true)}>
 						Edit
@@ -249,6 +259,7 @@ async function AddEvent(): Promise<Event | undefined> {
 		endTime: Date.now() + MS_IN_HOUR,
 		location: "New Location",
 		speaker: "New Speaker",
+		eventType: "default",
 		visible: false,
 	});
 
@@ -266,6 +277,7 @@ async function AddEvent(): Promise<Event | undefined> {
 		endTime: data.endTime,
 		location: data.location,
 		speaker: data.speaker || "",
+		eventType: data.eventType || "default",
 		visible: data.visible,
 	};
 }
@@ -309,6 +321,7 @@ async function listAllEvents(): Promise<Event[]> {
 				endTime: item.endTime,
 				location: item.location,
 				speaker: item.speaker || "",
+				eventType: item.eventType || "default",
 				visible: item.visible,
 			})),
 		];
@@ -331,6 +344,7 @@ async function updateEvent(event: Event): Promise<Event | undefined> {
 		endTime: event.endTime,
 		location: event.location,
 		speaker: event.speaker,
+		eventType: event.eventType,
 		visible: event.visible,
 	});
 
@@ -348,6 +362,7 @@ async function updateEvent(event: Event): Promise<Event | undefined> {
 		endTime: data.endTime,
 		location: data.location,
 		speaker: data.speaker || "",
+		eventType: data.eventType || "default",
 		visible: data.visible,
 	};
 }
@@ -369,6 +384,7 @@ async function deleteEvent(event: Event): Promise<Event | undefined> {
 		endTime: data.endTime,
 		location: data.location,
 		speaker: data.speaker || "",
+		eventType: data.eventType || "default",
 		visible: data.visible,
 	};
 }

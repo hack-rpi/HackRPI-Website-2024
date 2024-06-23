@@ -5,7 +5,7 @@ import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import type { Event } from "@/data/schedule";
-import { SATURDAY_END, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
+import { SATURDAY_END, SATURDAY_START, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
 // eslint-disable-next-line
@@ -182,7 +182,7 @@ export default function Page() {
 					>
 						<div className="w-11/12 desktop:w-2/3 h-5/6 bg-hackrpi-secondary-light-blue rounded-lg p-4 overflow-y-auto z-30">
 							<div className="flex items-center justify-between mb-4 border-b-2 border-b-gray-400 h-24">
-								<h1 className="text-4xl md:text-6xl font-bold">{modalEvent.title}</h1>
+								<h1 className=" text-3xl xs:text-4xl md:text-5xl font-bold">{modalEvent.title}</h1>
 								<button
 									className="text-4xl font-bold text-black mr-4 hover:text-primary focus:text-primary"
 									onClick={() => {

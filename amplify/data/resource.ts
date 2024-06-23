@@ -10,6 +10,7 @@ const schema = a.schema({
 			endTime: a.timestamp().required(),
 			location: a.string().required(),
 			speaker: a.string().default(""),
+			eventType: a.string(),
 			visible: a.boolean().default(false).required(),
 		})
 		.authorization((allow) => {
