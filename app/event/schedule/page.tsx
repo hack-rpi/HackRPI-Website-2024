@@ -32,10 +32,10 @@ export default function Page() {
 
 	async function fetchEvents(): Promise<Event[]> {
 		let groups = undefined;
-		try{
+		try {
 			const session = await Auth.fetchAuthSession();
 			groups = session.tokens?.accessToken.payload["cognito:groups"];
-		}catch(e){
+		} catch (e) {
 			console.error(e);
 			groups = undefined;
 		}
