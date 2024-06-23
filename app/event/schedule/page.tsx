@@ -63,7 +63,7 @@ export default function Page() {
 			const saturdayEvents = events
 				.slice()
 				.map((event) => {
-					if ( event.startTime >= SATURDAY_START && event.startTime < SATURDAY_END) {
+					if (event.startTime >= SATURDAY_START && event.startTime < SATURDAY_END) {
 						// Saturday
 						return {
 							...event,
@@ -73,7 +73,7 @@ export default function Page() {
 					}
 					return null;
 				})
-				.filter((event) => (event !== null && event.endTime > event.startTime))
+				.filter((event) => event !== null && event.endTime > event.startTime)
 				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
 			const sundayEvents = events
@@ -95,7 +95,7 @@ export default function Page() {
 					}
 					return null;
 				})
-				.filter((event) => (event !== null && event.endTime > event.startTime))
+				.filter((event) => event !== null && event.endTime > event.startTime)
 				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
 			setSaturdayEvents(saturdayEvents);
