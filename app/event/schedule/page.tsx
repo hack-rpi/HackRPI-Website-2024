@@ -5,7 +5,7 @@ import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import type { Event } from "@/data/schedule";
-import { SATURDAY_END, SATURDAY_START, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
+import { SATURDAY_END, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
 
 import { Amplify } from "aws-amplify";
 // eslint-disable-next-line
@@ -31,9 +31,14 @@ export default function Page() {
 	const [modalEvent, setModalEvent] = useState<Event | null>(null);
 
 	async function fetchEvents(): Promise<Event[]> {
-		const session = await Auth.fetchAuthSession();
-
-		const groups = session.tokens?.accessToken.payload["cognito:groups"];
+		let groups = undefined;
+		try{
+			const session = await Auth.fetchAuthSession();
+			groups = session.tokens?.accessToken.payload["cognito:groups"];
+		}catch(e){
+			console.error(e);
+			groups = undefined;
+		}
 
 		const { data, errors } = await client.models.event.list({
 			authMode: groups ? "userPool" : "identityPool",

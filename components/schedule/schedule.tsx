@@ -26,10 +26,7 @@ export default function Schedule(props: ScheduleProps) {
 			</div>
 			<div className="absolute top-0 right-0 flex-grow flex-shrink basis-auto w-full h-full pl-24 sm:pl-28 flex items-start justify-start">
 				{eventsInColumns.map((column, index) => (
-					<div
-						key={index}
-						className="relative flex flex-col flex-grow flex-shrink basis-auto h-full px-0.5 ps:mx-1 pm:mx-2"
-					>
+					<div key={index} className="relative flex flex-col flex-grow flex-shrink basis-auto h-full mx-0.5 sm:mx-1">
 						{column.map((event) => {
 							const { top, height } = calculateTopAndHeightOfEvent(event, props.times);
 							let color = "bg-hackrpi-primary-blue text-black border-black";
@@ -57,7 +54,7 @@ export default function Schedule(props: ScheduleProps) {
 							return (
 								<div
 									key={event.id}
-									className={`absolute w-11/12 h-full rounded-lg shadow-md mb-4 overflow-hidden ${color}`}
+									className={`absolute w-full h-full rounded-lg shadow-md mb-4 overflow-hidden ${color}`}
 									style={{
 										top,
 										height,
@@ -129,10 +126,10 @@ function calculateTopAndHeightOfEvent(event: Event, times: TimelineLabel[]): { t
 		}
 	}
 
-	const top =
-		document.getElementById(`${nearestStartTime.unix}`)?.offsetTop ||
-		0 + ((event.startTime - nearestStartTime.unix) / 3600000) * HOUR_HEIGHT;
-	const height = ((event.endTime - event.startTime) / 3600000) * HOUR_HEIGHT - 8;
+	const top = // the position of the hour line + the minute offset
+		(document.getElementById(`${nearestStartTime.unix}`)?.offsetTop || 0) +
+		((event.startTime - nearestStartTime.unix) / 3600000) * HOUR_HEIGHT;
+	const height = ((event.endTime - event.startTime) / 3600000) * HOUR_HEIGHT - 4;
 
 	return { top, height };
 }
