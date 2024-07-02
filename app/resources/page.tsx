@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function page() {
 	return (
-		<div className="flex flex-col w-screen h-fit min-h-screen items-center justify-center">
+		<div className="flex flex-col w-full h-fit min-h-screen items-center justify-center">
 			<NavBar showOnScroll={false} />
 			<div className="flex flex-col w-11/12 md:w-1/2 flex-grow flex-shrink basis-auto items-center justify-center text-center desktop:text-left">
 				<div className="h-24 desktop:h-16"></div>
