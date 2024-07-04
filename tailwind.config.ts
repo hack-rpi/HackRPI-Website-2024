@@ -27,6 +27,9 @@ const config: Config = {
 				"subway-green": "#00a65c",
 				"subway-yellow": "#f8a13a",
 				"subway-purple": "#b43c96",
+				"gold": "#ffd700",
+				"silver": "#C0C0C0",
+				"bronze": "#cd7f32",
 			},
 			screens: {
 				desktop: "860px",
