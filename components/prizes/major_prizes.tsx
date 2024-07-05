@@ -13,12 +13,12 @@ export default function MajorPrizes({ majorPrizes }: { majorPrizes: Prize[] }) {
 					} w-full py-2 my-2 desktop:my-0`}
 					key={index}
 				>
-					<div className="flex flex-col items-center justify-center mx-4">
-						<h1 className="text-3xl sm:text-4xl font-bold font-sans">{prize.name}</h1>
-						<h2 className="text-2xl font-sans font-bold">{prize.amount}</h2>
+					<div className="flex flex-col items-center justify-center mx-4 desktop:w-1/2">
+						<h1 className="text-center text-3xl sm:text-4xl font-bold font-sans">{prize.name}</h1>
+						<h2 className="text-center text-2xl font-sans font-bold">{prize.amount}</h2>
 						<p className="text-center">{prize.description}</p>
 					</div>
-					<div className="h-full min-w-fit w-1/3 flex items-center justify-start desktop:justify-center my-2 ml-4">
+					<div className="h-full min-w-fit desktop:w-1/2 flex items-center justify-start desktop:justify-center my-2 ml-4">
 						<Image src={prize.imagePath!} alt={prize.name} className="object-contain h-48 desktop:h-full w-fit" />
 					</div>
 				</div>
