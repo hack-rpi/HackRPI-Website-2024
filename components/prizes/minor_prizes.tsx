@@ -30,7 +30,7 @@ export default function MinorPrizes({ minorPrizes }: { minorPrizes: Prize[] }) {
 							<Image src={prize.imagePath!} alt={prize.name} className="w-full max-h-60 object-cover mb-2 rounded-md"></Image>
 							<h1 className="w-11/12 text-center text-xl xs:text-2xl sm:text-3xl font-bold font-sans">{prize.name}</h1>
 							<h2 className="w-11/12 text-center text-2xl font-bold font-sans">{prize.amount}</h2>
-							<p  className="w-11/12 text-lg font-sans text-center">{prize.description}</p>
+							<p  className="w-11/12 text-lg font-sans text-center mb-2">{prize.description}</p>
 						</div>
 					</div>
 				))}
