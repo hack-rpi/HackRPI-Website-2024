@@ -21,17 +21,17 @@ export interface Prize {
 
 export const podiumPrizes: Prize[] = [
 	{
-		name: "1st Place",
+		name: "1st",
 		amount: "$1500",
 		description: "",
 	},
 	{
-		name: "2nd Place",
+		name: "2nd",
 		amount: "$1000",
 		description: "",
 	},
 	{
-		name: "3rd Place",
+		name: "3rd",
 		amount: "$750",
 		description: "",
 	},
