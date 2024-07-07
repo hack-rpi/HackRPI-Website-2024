@@ -32,7 +32,7 @@ export default function Podium({ podiumPrizes }: { podiumPrizes: Prize[] }) {
 					{podiumPrizes[0].amount}
 				</h2>
 			</div>
-			<div className="w-1/3 mx-2 h-2/5 bg-gradient-to-b from-bronze via-orange-400 to-hackrpi-secondary-dark-blue flex flex-col items-center justify-start">
+			<div className="w-1/3 mx-2 h-2/5 bg-gradient-to-b from-hackrpi-primary-blue via-blue-400 to-hackrpi-secondary-dark-blue flex flex-col items-center justify-start">
 				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-lg xs:text-2xl sm:text-4xl mt-2">{podiumPrizes[2].name}</h1>
 				<h2 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-lg xs:text-2xl sm:text-4xl mt-2">
 					{podiumPrizes[2].amount}
