@@ -28,7 +28,9 @@ export default function MobileNavBar({ links }: { links: NavGroup[] }) {
 					</button>
 				</div>
 				<div className="flex items-center justify-center w-1/3">
-					<NextImg alt="HackRPI Logo" src={hackrpi_logo} className="w-14 image-full" priority={true} />
+					<Link href="/" className="w-fit whitespace-nowrap">
+						<NextImg alt="HackRPI Logo" src={hackrpi_logo} className="w-14 image-full" priority={true} />
+					</Link>
 				</div>
 				<div className="flex items-center justify-center w-1/3"></div>
 			</div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import RegistrationButton from "@/components/themed-components/registration-link";
+import RegistrationButton from "@/components/themed-components/registration-link";
 
 export default function TitleText() {
 	const [year, setYear] = useState(1824);
@@ -33,8 +33,7 @@ export default function TitleText() {
 			<p className={`w-full text-3xl sm:text-4xl 2xl:text-5xl mb-8`}>
 				November 9-10, <span onMouseEnter={() => setYear(1824)}>{year}</span>
 			</p>
-			{/* <RegistrationButton className="text-3xl" /> */}
-			<h2 className="w-full text-xl md:text-3xl whitespace-nowrap h-14 2xl:h-20">Registration Opens July 15th</h2>
+			<RegistrationButton className="text-3xl" />
 		</div>
 	);
 }
