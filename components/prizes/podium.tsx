@@ -21,19 +21,25 @@ export default function Podium({ podiumPrizes }: { podiumPrizes: Prize[] }) {
 			} flex justify-around items-end overflow-hidden`}
 		>
 			<div className="w-1/3 mx-2 h-3/4 bg-gradient-to-b from-silver via-gray-300  to-hackrpi-secondary-dark-blue flex flex-col items-center justify-start">
-				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">{podiumPrizes[1].name}</h1>
+				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">
+					{podiumPrizes[1].name}
+				</h1>
 				<h2 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-2xl xs:text-3xl sm:text-5xl mt-2">
 					{podiumPrizes[1].amount}
 				</h2>
 			</div>
 			<div className="w-1/3 mx-2 h-full bg-gradient-to-b from-gold via-yellow-300   to-hackrpi-secondary-dark-blue flex flex-col items-center justify-start">
-				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">{podiumPrizes[0].name}</h1>
+				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">
+					{podiumPrizes[0].name}
+				</h1>
 				<h2 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-2xl xs:text-3xl sm:text-5xl mt-2">
 					{podiumPrizes[0].amount}
 				</h2>
 			</div>
 			<div className="w-1/3 mx-2 h-1/2 bg-gradient-to-b from-hackrpi-primary-blue via-blue-400 to-hackrpi-secondary-dark-blue flex flex-col items-center justify-start">
-				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">{podiumPrizes[2].name}</h1>
+				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">
+					{podiumPrizes[2].name}
+				</h1>
 				<h2 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-2xl xs:text-3xl sm:text-5xl mt-2">
 					{podiumPrizes[2].amount}
 				</h2>

@@ -19,7 +19,11 @@ export default function MajorPrizes({ majorPrizes }: { majorPrizes: Prize[] }) {
 						<p className="text-center w-5/6 sm:w-2/3 desktop:w-full ">{prize.description}</p>
 					</div>
 					<div className="h-full min-w-fit desktop:w-1/2 flex items-center justify-start desktop:justify-center my-2 ml-4">
-						<Image src={prize.imagePath!} alt={prize.name} className="object-contain h-48 desktop:h-full w-fit max-w-60" />
+						<Image
+							src={prize.imagePath!}
+							alt={prize.name}
+							className="object-contain h-48 desktop:h-full w-fit max-w-60"
+						/>
 					</div>
 				</div>
 			))}

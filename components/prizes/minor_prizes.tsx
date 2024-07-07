@@ -27,10 +27,14 @@ export default function MinorPrizes({ minorPrizes }: { minorPrizes: Prize[] }) {
 				{minorPrizes.map((prize, index) => (
 					<div className="w-full h-fit flex items-start justify-center my-4" key={index}>
 						<div className="w-3/4 flex flex-col items-center justify-start bg-silver rounded-md m-4 text-hackrpi-secondary-dark-blue shadow-lg shadow-hackrpi-primary-blue">
-							<Image src={prize.imagePath!} alt={prize.name} className="w-full max-h-60 object-cover mb-2 rounded-md"></Image>
+							<Image
+								src={prize.imagePath!}
+								alt={prize.name}
+								className="w-full max-h-60 object-cover mb-2 rounded-md"
+							></Image>
 							<h1 className="w-11/12 text-center text-xl xs:text-2xl sm:text-3xl font-bold font-sans">{prize.name}</h1>
 							<h2 className="w-11/12 text-center text-2xl font-bold font-sans">{prize.amount}</h2>
-							<p  className="w-11/12 text-lg font-sans text-center mb-2">{prize.description}</p>
+							<p className="w-11/12 text-lg font-sans text-center mb-2">{prize.description}</p>
 						</div>
 					</div>
 				))}
