@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { type DeltaTime } from "@/utils/timer";
 import { calculateDeltaTime } from "@/utils/timer";
 
 export default function Timer() {
-	const hackathonStart = new Date(1731171600000); // November 9, 2024 12:00:00 PM
-	const hackathonEnd = new Date(1731258000000); // November 10, 2024 12:00:00 PM
+	const hackathonStart = useMemo(() => new Date(1731171600000), []); // November 9, 2024 12:00:00 PM
+	const hackathonEnd = useMemo(() => new Date(1731258000000), []); // November 10, 2024 12:00:00 PM
 
 	const [DeltaTime, setDeltaTime] = useState<DeltaTime>(
 		Date.now() > hackathonStart.getTime()
@@ -36,7 +36,7 @@ export default function Timer() {
 			}
 		}, 1000);
 		return () => clearInterval(interval);
-	}, []);
+	}, [hackathonStart, hackathonEnd]);
 
 	return (
 		<div className="w-11/12 desktop:w-full 2xl:w-10/12 h-fit flex flex-col items-start ">

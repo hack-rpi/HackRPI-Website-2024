@@ -1,3 +1,5 @@
+"use client";
+
 import Timer from "./timer";
 import TitleText from "./title-text";
 import InteractiveNavigationMap from "../interactive-map/interactive-map";
