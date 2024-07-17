@@ -5,8 +5,8 @@ import { type DeltaTime } from "@/utils/timer";
 import { calculateDeltaTime } from "@/utils/timer";
 
 export default function Timer() {
-	const hackathonStart = new Date(2024, 10, 9, 12, 0, 0);
-	const hackathonEnd = new Date(2024, 10, 10, 12, 0, 0);
+	const hackathonStart = new Date(1731171600000); // November 9, 2024 12:00:00 PM
+	const hackathonEnd = new Date(1731258000000); // November 10, 2024 12:00:00 PM
 
 	const [DeltaTime, setDeltaTime] = useState<DeltaTime>(
 		Date.now() > hackathonStart.getTime()
