@@ -8,6 +8,7 @@ import "../app/globals.css";
 import AboutSection from "../components/about-us";
 import { useEffect, useState } from "react";
 import TeamComponent from "@/components/team/team";
+import Sponsors from "@/components/sponsors";
 
 export default function Home() {
 	const [lineStart, setLineStart] = useState(0);
@@ -40,10 +41,11 @@ export default function Home() {
 		<>
 			<div className="flex flex-col items-start desktop:items-center justify-start w-full">
 				<NavBar showOnScroll={true} />
-				<div className="w-5/6 desktop:w-full pl-8 desktop:px-8">
+				<div className="w-full  desktop:mx-8">
 					<TitleComponent />
 					<AboutSection />
 					<FAQPage />
+					<Sponsors />
 					<TeamComponent />
 				</div>
 				<Footer />
