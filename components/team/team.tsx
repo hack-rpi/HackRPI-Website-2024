@@ -87,7 +87,7 @@ export default function TeamComponent() {
 	]);
 
 	return (
-		<div className="w-full flex items-center justify-center mb-4">
+		<div className="w-full flex items-center justify-center mb-4  desktop:pl-0">
 			<div
 				className={`${
 					highlightTeam ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
@@ -96,7 +96,7 @@ export default function TeamComponent() {
 					top: highlightTeam ? "8rem" : teamTop - 20 + "px",
 				}}
 			></div>
-			<div id="team" className="flex w-full desktop:w-2/3 flex-col items-start justify-start">
+			<div id="team" className="flex w-5/6 desktop:w-2/3 flex-col items-start justify-start">
 				<h1 className="text-4xl text-white font-bold ">Meet the Team</h1>
 				<p>
 					We are a motivated team of RPI students who share a passion for exploring the bounds of Computer Science and a

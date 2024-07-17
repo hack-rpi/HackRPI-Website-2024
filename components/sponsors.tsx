@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import sponsorsJson from "../../HackRPI-Website-2024/public/sponsors/sponsors.json";
+import sponsorsJson from "@/public/sponsors/sponsors.json";
 import { SponsorsJSON, sponsorTiers } from "@/types/sponsorsType";
 import NextImage from "next/image";
 
@@ -8,13 +8,14 @@ const Sponsors = () => {
 	const [sponsors] = useState<SponsorsJSON>(sponsorsJson);
 
 	return (
-		<div className="flex flex-col w-full justify-center items-start desktop:items-center pl-8 bg-gradient-to-b from-hackrpi-secondary-dark-blue via-hackrpi-primary-blue to-hackrpi-secondary-dark-blue ">
+		<div className="flex flex-col w-full justify-center items-start desktop:items-center pl-8 bg-gradient-to-b from-hackrpi-secondary-dark-blue via-hackrpi-primary-blue to-hackrpi-secondary-dark-blue py-8 ">
 			<div className="w-5/6 desktop:w-11/12">
 				<h2 className="pb-10 text-white font-sans font-bold text-center text-4xl">
 					Thank you to our sponsors that make HackRPI possible!
 				</h2>
 
 				{tierList.map((tier) => {
+					if (sponsors[tier].length === 0) return null;
 					return (
 						<div className="w-11/12" key={tier}>
 							<h3 className="text-white font-sans font-semibold text-left text-4xl">{tier}</h3>
