@@ -19,8 +19,8 @@ export default function Timer() {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			const currentTime = new Date(); 
-														
+			const currentTime = new Date();
+
 			if (currentTime.getTime() > hackathonStart.getTime()) {
 				setHackathonStarted(true);
 			}
