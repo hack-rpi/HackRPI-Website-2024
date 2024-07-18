@@ -94,7 +94,6 @@ const faqs: FAQ[] = [
 
 const FAQPage = () => {
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-	
 
 	const handleToggle = (index: number) => {
 		setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -107,7 +106,6 @@ const FAQPage = () => {
 		>
 			<div className="flex w-full desktop:w-2/3">
 				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
-				
 			</div>
 			<div className="w-full desktop:w-2/3">
 				{faqs.map((faq, index) => (
