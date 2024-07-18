@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import DesktopTitleComponent from "./desktop-title";
 import MobileTitleComponent from "./mobile-title";
@@ -15,6 +17,11 @@ export default function TitleComponent() {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
+	if (windowWidth > 860)
+		return <DesktopTitleComponent />;
 
-	return windowWidth > 860 ? <DesktopTitleComponent /> : <MobileTitleComponent />;
+	if (windowWidth < 859 && windowWidth > 0)
+		return <MobileTitleComponent />;
+
+	return (<div className="h-screen"></div>);
 }

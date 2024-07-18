@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../app/globals.css";
 import RegistrationButton from "@/components/themed-components/registration-link";
 
@@ -93,39 +93,8 @@ const faqs: FAQ[] = [
 ];
 
 const FAQPage = () => {
-	const [highlightFAQ, setHighlightFAQ] = useState(false);
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-	const [faqTop, setFaqTop] = useState(0);
-
-	useEffect(() => {
-		// Highlight the FAQ section in the navbar when the user scrolls to it
-		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-		setFaqTop(faqStart + 140);
-
-		// Update whether the faq should be highlighted when the user scrolls
-		const handleScroll = () => {
-			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
-			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-			setFaqTop(faqStart + 140);
-		};
-
-		// Update the faqStart and faqEnd when the user resizes the window
-		const handleResize = () => {
-			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-			setFaqTop(faqStart + 140);
-		};
-
-		window.addEventListener("resize", handleResize);
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
+	
 
 	const handleToggle = (index: number) => {
 		setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -138,16 +107,7 @@ const FAQPage = () => {
 		>
 			<div className="flex w-full desktop:w-2/3">
 				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
-				<div>
-					<div
-						className={`${
-							highlightFAQ ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
-						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
-						style={{
-							top: highlightFAQ ? "8rem" : faqTop - 20 + "px",
-						}}
-					></div>
-				</div>
+				
 			</div>
 			<div className="w-full desktop:w-2/3">
 				{faqs.map((faq, index) => (
