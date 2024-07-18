@@ -19,7 +19,7 @@ export default function Home() {
 	const [showHighlightDot, setShowHighlightDot] = useState(false);
 
 	useEffect(() => {
-		const scrollThreshold = window.innerHeight - 110;
+		const scrollThreshold = window.innerWidth > 860 ? window.innerHeight - 110 : window.innerHeight - 370;
 		setLineStart(document.getElementById("about")!.offsetTop);
 		setLineEnd(document.getElementById("team")!.offsetTop + document.getElementById("team")!.offsetHeight);
 		setFaqStart(document.getElementById("faq")!.offsetTop);
@@ -57,7 +57,7 @@ export default function Home() {
 				</div>
 				<Footer />
 
-				<div className={`${showHighlightDot ? "fixed top-32 right-3.5 block": "opacity-0"} w-12 h-12 z-10 bg-white border-[6px] border-hackrpi-primary-blue rounded-full transition-opacity duration-500`}>
+				<div className={`${showHighlightDot ? "fixed top-32 right-3.5 block": "opacity-0"} w-12 h-12 z-[5] bg-white border-[6px] border-hackrpi-primary-blue rounded-full transition-opacity duration-500`}>
 
 				</div>
 

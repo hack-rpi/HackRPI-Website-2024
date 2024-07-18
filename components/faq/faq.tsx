@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../app/globals.css";
 import RegistrationButton from "@/components/themed-components/registration-link";
 

@@ -23,5 +23,5 @@ export default function TitleComponent() {
 	if (windowWidth < 859 && windowWidth > 0)
 		return <MobileTitleComponent />;
 
-	return (<></>);
+	return (<div className="h-screen"></div>);
 }
