@@ -17,11 +17,9 @@ export default function TitleComponent() {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
-	if (windowWidth > 860)
-		return <DesktopTitleComponent />;
+	if (windowWidth > 860) return <DesktopTitleComponent />;
 
-	if (windowWidth < 859 && windowWidth > 0)
-		return <MobileTitleComponent />;
+	if (windowWidth < 859 && windowWidth > 0) return <MobileTitleComponent />;
 
-	return (<div className="h-screen"></div>);
+	return <div className="h-screen"></div>;
 }

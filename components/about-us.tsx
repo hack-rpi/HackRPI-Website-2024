@@ -6,11 +6,10 @@ export default function AboutUs() {
 			id="about"
 			className="w-11/12 lg:w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start justify-start h-fit ml-0 pl-8 lg:pl-0 "
 		>
-			
 			<div className="w-full lg:w-3/6 ml-auto lg:pl-4 pr-4">
 				<h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
 
-				<div>
+				<div className="w-11/12">
 					<p className="pb-3">
 						HackRPI 2024 is Rensselaer Polytechnic Institute&apos;s 11th annual intercollegiate hackathon hosted by
 						students for students. Starting at noon on Saturday, November 9th, teams of 1-4 people have 24 hours to
