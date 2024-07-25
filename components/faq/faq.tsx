@@ -42,6 +42,11 @@ const faqs: FAQ[] = [
 			"Everyone is welcome to participate, whether you are a hackathon veteran or this is your first hackathon, this is a great opportunity to learn, experiment with new technologies, and grow your skills. Our team of experienced mentors is here to help you in every step of the way.",
 	},
 	{
+		title: "I'm under 18, can I still participate?",
+		content:
+			"Students under 18 are welcome to attend, but are not allowed to stay overnight in the sleep rooms. Students under the age of 17 must have an adult (21+) chaperone with them at all times during the event.",
+	},
+	{
 		title: "Do I have to be an RPI student?",
 		content:
 			"No! HackRPI is open to everyone, students of all experience levels from all colleges and universities are welcome to attend. Did you know that students from over 45 other colleges attended HackRPI!",
