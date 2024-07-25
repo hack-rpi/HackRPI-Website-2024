@@ -19,7 +19,6 @@ export default function TeamComponent() {
 	// 	hover: false,
 	// });
 
-
 	const DIRECTOR_DX_PERCENT = 0.5;
 	// const ORGANIZER_DX_PERCENT = 1.25;
 
