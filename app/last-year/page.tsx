@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import "@/app/globals.css";
 import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
