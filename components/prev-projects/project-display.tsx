@@ -21,7 +21,9 @@ export default function ProjectDisplay(props: ProjectDisplayProps) {
 
 function DesktopProjectDisplay(props: ProjectDisplayProps) {
 	return (
-		<div className={`hidden xl:flex  ${props.imageOnLeft ? "flex-row-reverse" : "flex-row"} items-center justify-between`}>
+		<div
+			className={`hidden xl:flex  ${props.imageOnLeft ? "flex-row-reverse" : "flex-row"} items-center justify-between`}
+		>
 			<div className="w-1/2">
 				<h1 className="font-sans font-bold font-white text-4xl">{props.prizeCategory}</h1>
 				<h2 className="font-sans font-bold font-white text-2xl">{props.title}</h2>
@@ -41,7 +43,7 @@ function MobileProjectDisplay(props: ProjectDisplayProps) {
 	return (
 		<div className="flex xl:hidden flex-col items-start justify-start w-fit">
 			<div className="w-full flex items-center justify-center">
-				<Image src={props.imageUrl} alt={props.title} height={500} width={500} className=""/>
+				<Image src={props.imageUrl} alt={props.title} height={500} width={500} className="" />
 			</div>
 			<div>
 				<h1 className="font-sans font-bold font-white text-4xl">{props.prizeCategory}</h1>
