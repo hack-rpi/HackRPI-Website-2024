@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
 	content: [
@@ -26,6 +27,9 @@ const config: Config = {
 				"subway-green": "#00a65c",
 				"subway-yellow": "#f8a13a",
 				"subway-purple": "#b43c96",
+				gold: "#ffd700",
+				silver: "#C0C0C0",
+				bronze: "#cd7f32",
 			},
 			screens: {
 				desktop: "860px",
@@ -47,7 +51,21 @@ const config: Config = {
 			},
 		],
 	},
-	plugins: [require("daisyui")],
+	plugins: [
+		require("daisyui"),
+		plugin(function ({ addUtilities }) {
+			const newUtilities = {
+				".description-box": {
+					overflow: "hidden",
+					display: "-webkit-box",
+					"-webkit-box-orient": "vertical",
+					"-webkit-line-clamp": "2",
+					"text-overflow": "ellipsis",
+				},
+			};
+			addUtilities(newUtilities);
+		}),
+	],
 };
 
 export default config;

@@ -1,7 +1,7 @@
 import NextImg from "next/image";
 import { NavGroup } from "@/data/nav-bar-links";
 import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
-// import RegistrationButton from "@/components/themed-components/registration-link";
+import RegistrationButton from "@/components/themed-components/registration-link";
 import NavGroupComponent from "./nav-group";
 import Link from "next/link";
 
@@ -34,10 +34,9 @@ export default function DesktopNavBar({ links }: { links: NavGroup[] }) {
 						Code of Conduct
 					</Link>
 				</div>
-				{/* <div className="w-fit flex items-center justify-around ml-2">
+				<div className="w-fit flex items-center justify-around ml-2">
 					<RegistrationButton className="w-fit whitespace-nowrap" />
 				</div>
-				<div className="w-1/12"></div> */}
 			</div>
 		</div>
 	);

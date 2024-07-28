@@ -1,53 +1,42 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { type DeltaTime } from "@/utils/timer";
+import { calculateDeltaTime } from "@/utils/timer";
 
 export default function Timer() {
-	const [currentTime, setCurrentTime] = useState<Date>(new Date());
-	const hackathonStart = new Date(2024, 10, 9, 12, 0, 0);
-	const hackathonEnd = new Date(2024, 10, 10, 12, 0, 0);
+	const hackathonStart = useMemo(() => new Date(1731171600000), []); // November 9, 2024 12:00:00 PM
+	const hackathonEnd = useMemo(() => new Date(1731258000000), []); // November 10, 2024 12:00:00 PM
+
+	const [DeltaTime, setDeltaTime] = useState<DeltaTime>(
+		Date.now() > hackathonStart.getTime()
+			? calculateDeltaTime(new Date(), hackathonEnd)
+			: calculateDeltaTime(new Date(), hackathonStart),
+	);
+
+	const [hackathonStarted, setHackathonStarted] = useState(false);
+	const [hackathonEnded, setHackathonEnded] = useState(false);
 
 	useEffect(() => {
-		setCurrentTime(new Date());
 		const interval = setInterval(() => {
-			setCurrentTime(new Date());
+			const currentTime = new Date();
+
+			if (currentTime.getTime() > hackathonStart.getTime()) {
+				setHackathonStarted(true);
+			}
+
+			if (currentTime.getTime() > hackathonEnd.getTime()) {
+				setHackathonEnded(true);
+			}
+
+			if (currentTime.getTime() > hackathonStart.getTime()) {
+				setDeltaTime(calculateDeltaTime(currentTime, hackathonEnd));
+			} else {
+				setDeltaTime(calculateDeltaTime(currentTime, hackathonStart));
+			}
 		}, 1000);
 		return () => clearInterval(interval);
-	}, []);
-
-	const dayOfMonthPassed = currentTime.getDate() >= hackathonStart.getDate();
-	const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-	let dayOffset = -1;
-	let monthOffset = 0;
-	if (dayOfMonthPassed) {
-		dayOffset += daysInMonths[currentTime.getMonth()];
-		monthOffset = -1;
-	}
-
-	const hackathonStarted = currentTime.getTime() > hackathonStart.getTime();
-	const hackathonEnded = currentTime.getTime() > hackathonEnd.getTime();
-	let secondDelta = hackathonStart.getSeconds() - currentTime.getSeconds() + 59;
-	let minuteDelta = hackathonStart.getMinutes() - currentTime.getMinutes() + 59;
-	let hourDelta = hackathonStart.getHours() - currentTime.getHours() + 23;
-	let dayDelta = hackathonStart.getDate() - currentTime.getDate() + dayOffset;
-	let monthDelta = hackathonStart.getMonth() - currentTime.getMonth() + monthOffset;
-
-	if (hackathonStarted) {
-		secondDelta = hackathonEnd.getSeconds() - currentTime.getSeconds() + 59;
-		minuteDelta = hackathonEnd.getMinutes() - currentTime.getMinutes() + 59;
-		hourDelta = hackathonEnd.getHours() - currentTime.getHours() - 1;
-		dayDelta = hackathonEnd.getDate() - currentTime.getDate();
-		monthDelta = hackathonEnd.getMonth() - currentTime.getMonth();
-	}
-
-	if (hackathonEnded) {
-		secondDelta = 0;
-		minuteDelta = 0;
-		hourDelta = 0;
-		dayDelta = 0;
-		monthDelta = 0;
-	}
+	}, [hackathonStart, hackathonEnd]);
 
 	return (
 		<div className="w-11/12 desktop:w-full 2xl:w-10/12 h-fit flex flex-col items-start ">
@@ -55,19 +44,19 @@ export default function Timer() {
 			{hackathonEnded ? <h1 className="text-4xl font-bold mb-2">THANKS FOR JOINING US! </h1> : null}
 			<div className="flex items-center justify-between w-full mb-4">
 				<Circle bgColor="bg-subway-red" textColor="text-white">
-					{monthDelta > 9 ? monthDelta : "0" + monthDelta}
+					{DeltaTime.months > 9 ? DeltaTime.months : "0" + DeltaTime.months}
 				</Circle>
 				<Circle bgColor="bg-subway-yellow" textColor="text-white">
-					{dayDelta > 9 ? dayDelta : "0" + dayDelta}
+					{DeltaTime.days > 9 ? DeltaTime.days : "0" + DeltaTime.days}
 				</Circle>
 				<Circle bgColor="bg-subway-green" textColor="text-white">
-					{hourDelta > 9 ? hourDelta : "0" + hourDelta}
+					{DeltaTime.hours > 9 ? DeltaTime.hours : "0" + DeltaTime.hours}
 				</Circle>
 				<Circle bgColor="bg-subway-blue" textColor="text-white">
-					{minuteDelta > 9 ? minuteDelta : "0" + minuteDelta}
+					{DeltaTime.minutes > 9 ? DeltaTime.minutes : "0" + DeltaTime.minutes}
 				</Circle>
 				<Circle bgColor="bg-subway-purple" textColor="text-white">
-					{secondDelta > 9 ? secondDelta : "0" + secondDelta}
+					{DeltaTime.seconds > 9 ? DeltaTime.seconds : "0" + DeltaTime.seconds}
 				</Circle>
 			</div>
 			<div className="flex items-center justify-between w-full">

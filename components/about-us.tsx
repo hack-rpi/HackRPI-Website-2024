@@ -1,57 +1,15 @@
-import { useEffect, useState } from "react";
-// import RegistrationLink from "./themed-components/registration-link";
+import RegistrationLink from "./themed-components/registration-link";
 
 export default function AboutUs() {
-	const [aboutTop, setAboutTop] = useState(0);
-	const [higlightAbout, setHighlightAbout] = useState(false);
-
-	useEffect(() => {
-		// Highlight the about section in the navbar when the user scrolls to it
-		let aboutStart = (document.getElementById("about")?.offsetTop || window.innerHeight) - 140;
-		let aboutEnd = aboutStart + (document.getElementById("about")?.offsetHeight || window.innerHeight);
-		setAboutTop(aboutStart + 140);
-
-		// Update whether the about should be highlighted when the user scrolls
-		const handleScroll = () => {
-			setHighlightAbout(window.scrollY > aboutStart && window.scrollY < aboutEnd);
-			aboutStart = (document.getElementById("about")?.offsetTop || window.innerHeight) - 140;
-			aboutEnd = aboutStart + (document.getElementById("about")?.offsetHeight || window.innerHeight);
-			setAboutTop(aboutStart + 140);
-		};
-
-		// Update the aboutStart and aboutEnd when the user resizes the window
-		const handleResize = () => {
-			aboutStart = (document.getElementById("about")?.offsetTop || window.innerHeight) - 140;
-			aboutEnd = aboutStart + (document.getElementById("about")?.offsetHeight || window.innerHeight);
-			setAboutTop(aboutStart + 140);
-		};
-
-		window.addEventListener("resize", handleResize);
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-
 	return (
 		<div
 			id="about"
-			className="w-11/12 lg:w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start justify-start h-fit ml-0"
+			className="w-11/12 lg:w-full mx-auto mt-12 mb-8 flex flex-col lg:flex-row items-start justify-start h-fit ml-0 pl-8 lg:pl-0 "
 		>
-			<div
-				className={`${
-					higlightAbout ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
-				} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
-				style={{
-					top: higlightAbout ? "8rem" : aboutTop - 20 + "px",
-				}}
-			></div>
-			<div className="w-full lg:w-3/6 ml-auto lg:pl-4">
+			<div className="w-full lg:w-3/6 ml-auto lg:pl-4 pr-4">
 				<h1 className="text-white text-4xl mb-2 font-bold font-sans-Helvetica">About HackRPI</h1>
 
-				<div>
+				<div className="w-11/12">
 					<p className="pb-3">
 						HackRPI 2024 is Rensselaer Polytechnic Institute&apos;s 11th annual intercollegiate hackathon hosted by
 						students for students. Starting at noon on Saturday, November 9th, teams of 1-4 people have 24 hours to
@@ -100,7 +58,7 @@ export default function AboutUs() {
 							<p className="w-fit text-nowrap">Darrin Communications Center</p>
 						</div>
 						<div className="w-fit pl-2 md:pl-0 lg:pl-2 mb-4 md:mb-0 lg:mb-4">
-							{/* <RegistrationLink className="text-xl pr-2" /> */}
+							<RegistrationLink className="text-xl pr-2" />
 						</div>
 					</div>
 				</div>

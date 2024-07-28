@@ -19,9 +19,6 @@ export default function TeamComponent() {
 	// 	hover: false,
 	// });
 
-	const [teamTop, setTeamTop] = useState(0);
-	const [highlightTeam, setHighlightTeam] = useState(false);
-
 	const DIRECTOR_DX_PERCENT = 0.5;
 	// const ORGANIZER_DX_PERCENT = 1.25;
 
@@ -51,35 +48,9 @@ export default function TeamComponent() {
 		const animID = requestAnimationFrame(animate_directors);
 		// const animID2 = requestAnimationFrame(animate_organizers);
 
-		// Highlight the team section in the navbar when the user scrolls to it
-		let teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
-		let teamEnd = teamStart + (document.getElementById("team")?.offsetHeight || window.innerHeight);
-		setTeamTop(teamStart + 140);
-
-		// Update whether the team should be highlighted when the user scrolls
-		const handleScroll = () => {
-			setHighlightTeam(window.scrollY > teamStart && window.scrollY < teamEnd);
-			teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
-			teamEnd = teamStart + (document.getElementById("team")?.offsetHeight || window.innerHeight);
-			setTeamTop(teamStart + 140);
-		};
-
-		// Update the aboutStart and aboutEnd when the user resizes the window
-		const handleResize = () => {
-			teamStart = (document.getElementById("team")?.offsetTop || window.innerHeight) - 140;
-			teamEnd = teamStart + (document.getElementById("team")?.offsetHeight || window.innerHeight);
-			setTeamTop(teamStart + 140);
-		};
-
-		window.addEventListener("resize", handleResize);
-		window.addEventListener("scroll", handleScroll);
-
 		return () => {
 			cancelAnimationFrame(animID);
 			// cancelAnimationFrame(animID2);
-
-			window.removeEventListener("resize", handleResize);
-			window.removeEventListener("scroll", handleScroll);
 		};
 	}, [
 		animate_directors,
@@ -87,18 +58,10 @@ export default function TeamComponent() {
 	]);
 
 	return (
-		<div className="w-full flex items-center justify-center mb-4">
-			<div
-				className={`${
-					highlightTeam ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
-				} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
-				style={{
-					top: highlightTeam ? "8rem" : teamTop - 20 + "px",
-				}}
-			></div>
-			<div id="team" className="flex w-full desktop:w-2/3 flex-col items-start justify-start">
+		<div className="w-full flex items-center justify-center mb-4  desktop:pl-0">
+			<div id="team" className="flex w-5/6 desktop:w-2/3 flex-col items-start justify-start">
 				<h1 className="text-4xl text-white font-bold ">Meet the Team</h1>
-				<p>
+				<p className="w-11/12 desktop:w-full">
 					We are a motivated team of RPI students who share a passion for exploring the bounds of Computer Science and a
 					commitment to organizing a fantastic event. Our team of students from every grade and major work together to
 					organize our Hackathon in the fall and many other smaller events throughout the year. We are always looking
@@ -106,7 +69,7 @@ export default function TeamComponent() {
 					please join our discord or fill out one of the forms below!
 				</p>
 				{/* <div className="flex flex-wrap items-center justify-center  xl:justify-between w-full my-4"> */}
-				<div className="flex flex-wrap items-center justify-center w-full my-4">
+				<div className="flex flex-wrap items-center justify-start desktop:justify-center w-full my-4">
 					<HackRPILink
 						className="w-72 h-12 flex items-center justify-center text-xl text-center my-1"
 						href="https://discord.gg/Pzmdt7FYnu"

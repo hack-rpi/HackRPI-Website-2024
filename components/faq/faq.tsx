@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../app/globals.css";
 import RegistrationButton from "@/components/themed-components/registration-link";
 
@@ -40,6 +40,11 @@ const faqs: FAQ[] = [
 		title: "Who can participate?",
 		content:
 			"Everyone is welcome to participate, whether you are a hackathon veteran or this is your first hackathon, this is a great opportunity to learn, experiment with new technologies, and grow your skills. Our team of experienced mentors is here to help you in every step of the way.",
+	},
+	{
+		title: "I'm under 18, can I still participate?",
+		content:
+			"Students under 18 are welcome to attend, but are not allowed to stay overnight in the sleep rooms. Students under the age of 17 must have an adult (21+) chaperone with them at all times during the event.",
 	},
 	{
 		title: "Do I have to be an RPI student?",
@@ -93,58 +98,19 @@ const faqs: FAQ[] = [
 ];
 
 const FAQPage = () => {
-	const [highlightFAQ, setHighlightFAQ] = useState(false);
 	const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-	const [faqTop, setFaqTop] = useState(0);
-
-	useEffect(() => {
-		// Highlight the FAQ section in the navbar when the user scrolls to it
-		let faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-		let faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-		setFaqTop(faqStart + 140);
-
-		// Update whether the faq should be highlighted when the user scrolls
-		const handleScroll = () => {
-			setHighlightFAQ(window.scrollY > faqStart && window.scrollY < faqEnd);
-			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-			setFaqTop(faqStart + 140);
-		};
-
-		// Update the faqStart and faqEnd when the user resizes the window
-		const handleResize = () => {
-			faqStart = (document.getElementById("faq")?.offsetTop || window.innerHeight) - 140;
-			faqEnd = faqStart + (document.getElementById("faq")?.offsetHeight || window.innerHeight);
-			setFaqTop(faqStart + 140);
-		};
-
-		window.addEventListener("resize", handleResize);
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
 
 	const handleToggle = (index: number) => {
 		setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
 	};
 
 	return (
-		<div className="h-auto mb-8 flex flex-col items-center text-white bg-base-100" id="faq">
+		<div
+			className="h-auto mb-8 flex flex-col items-center text-white bg-base-100 w-5/6 desktop:w-full pl-8 desktop:pl-0"
+			id="faq"
+		>
 			<div className="flex w-full desktop:w-2/3">
 				<h1 className="font-mokoto font-normal text-white text-left text-4xl text-shadow-md pb-4">FAQs</h1>
-				<div>
-					<div
-						className={`${
-							highlightFAQ ? `fixed bg-white right-3.5` : "absolute bg-hackrpi-secondary-dark-blue right-3.5"
-						} w-12 h-12 rounded-full border-[6px] border-hackrpi-primary-blue transition-colors duration-300 z-[5]  `}
-						style={{
-							top: highlightFAQ ? "8rem" : faqTop - 20 + "px",
-						}}
-					></div>
-				</div>
 			</div>
 			<div className="w-full desktop:w-2/3">
 				{faqs.map((faq, index) => (

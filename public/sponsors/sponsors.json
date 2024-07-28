@@ -1,0 +1,29 @@
+{
+	"Obsidian": [],
+	"Gold": [],
+	"Silver": [],
+	"Bronze": [
+		{
+			"name": "Troy Web Consulting",
+			"logoPath": "/troywebconsulting.png",
+			"url": "https://troyweb.com/"
+		}
+	],
+	"Collaborators": [
+		{
+			"name": "Awake Chocolate",
+			"logoPath": "/Awake_Chocolate.png",
+			"url": "https://awakechocolate.com/"
+		},
+		{
+			"name": "Axure",
+			"logoPath": "/Axure_logo_175.svg",
+			"url": "https://www.axure.com/"
+		},
+		{
+			"name": "Wolfram",
+			"logoPath": "/Wolfram.png",
+			"url": "https://www.wolfram.com/"
+		}
+	]
+}
