@@ -51,7 +51,8 @@ export const carouselPrizes: ProjectCarouselProps[] = [
 	{
 		title: "CryptoLearner",
 		authors: ["Hunter Gould", "smullahy", "Ashlesha Bhagat", "Name 4"],
-		description: "CryptoLearner is an interactive educational platform designed to make cryptographic algorithms accessible to aspiring cryptographers and security enthusiasts. Inspired by a fascination with cryptography and contemporary digital security challenges, the tool demystifies complex concepts through hands-on experience. Users can engage with key generation, encryption, decryption, and digital signatures via a user-friendly interface. The project was built using Python, with libraries like NumPy and SymPy for computations and symbolic mathematics. PySide6 and Qt were used to create an intuitive GUI, ensuring an engaging and accessible learning process.",
+		description:
+			"CryptoLearner is an interactive educational platform designed to make cryptographic algorithms accessible to aspiring cryptographers and security enthusiasts. Inspired by a fascination with cryptography and contemporary digital security challenges, the tool demystifies complex concepts through hands-on experience. Users can engage with key generation, encryption, decryption, and digital signatures via a user-friendly interface. The project was built using Python, with libraries like NumPy and SymPy for computations and symbolic mathematics. PySide6 and Qt were used to create an intuitive GUI, ensuring an engaging and accessible learning process.",
 		imageUrl: "/projectImages/CryptoLearner.png",
 		prizeCategory: "Cyber Security Hack",
 	},
@@ -124,7 +125,7 @@ export const carouselPrizes: ProjectCarouselProps[] = [
 		authors: ["Liam Agu Vaitkus", "Bigmaccar McCarthy", "Lillith", "Christian Monfiston"],
 		description:
 			// eslint-disable-next-line
-			'Terra is designed to connect humanitarian organizations with volunteers ready to assist communities affected by natural disasters. Named after the goddess of nature, Terra aims to streamline the process of finding and offering help during times of tragedy. Organizations can post volunteer opportunities, and the platform manages the connection between them and potential volunteers. The project was developed using a front-end technology stack consisting of HTML, CSS, and JavaScript, with Firebase and MongoDB employed to create and manage the database systems.',
+			"Terra is designed to connect humanitarian organizations with volunteers ready to assist communities affected by natural disasters. Named after the goddess of nature, Terra aims to streamline the process of finding and offering help during times of tragedy. Organizations can post volunteer opportunities, and the platform manages the connection between them and potential volunteers. The project was developed using a front-end technology stack consisting of HTML, CSS, and JavaScript, with Firebase and MongoDB employed to create and manage the database systems.",
 		imageUrl: "/projectImages/Terra.png",
 		prizeCategory: "Best Domain Name from GoDaddy Registry",
 	},
