@@ -23,80 +23,31 @@ export default function PhotoGallery() {
 			<div className="flex items-center justify-center">
 				<div className="grid-cols-4">
 					<div className="inline-grid">
-						<Image
-							src={image1}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
+						<Image src={image1} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image2}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
+						<Image src={image2} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image3}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
+						<Image src={image3} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image4}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
+						<Image src={image4} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image5}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
+						<Image src={image5} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image6}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
-
+						<Image src={image6} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image7}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
-                        
+						<Image src={image7} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image8}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
-
+						<Image src={image8} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 					<div className="inline-grid">
-						<Image
-							src={image9}
-							width={500}
-							height={500}
-							alt="Photo from HackRPI X 2023"
-						/>
-
+						<Image src={image9} width={500} height={500} alt="Photo from HackRPI X 2023" />
 					</div>
 				</div>
 			</div>
