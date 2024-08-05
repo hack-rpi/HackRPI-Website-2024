@@ -7,7 +7,7 @@ export const podiumPrizes: ProjectDisplayProps[] = [
 		authors: ["Aryash", "Zachary Fernandes", "Drew Bhavsar", "Shamar Samuels"],
 		description:
 			"DAVE (Digital Assistant for Vision Enhancement) is an innovative project designed to assist people with vision impairments. Developed by a team of four, three of whom have personal experience with vision issues, DAVE aims to address the challenges faced by 2.2 billion people worldwide with vision impairments. The system uses a camera mounted on glasses to capture the user's surroundings, allowing users to interact with DAVE through voice commands. Users can ask DAVE to describe their environment or answer questions about their surroundings. The project utilizes Python for both frontend and backend, incorporating technologies such as LLaVA for multimodal processing, OpenAI's Whisper for speech recognition, and Google Text-to-Speech for verbal responses.",
-		imageUrl: "/projectImages/Dave.jpg",
+		imageUrl: "/projectImages/DAVE.jpg",
 		prizeCategory: "First Place",
 		imageOnLeft: false,
 	},
@@ -34,7 +34,7 @@ export const podiumPrizes: ProjectDisplayProps[] = [
 export const carouselPrizes: ProjectCarouselProps[] = [
 	{
 		title: "Ed-You",
-		authors: ["Name 1", "Name 2", "Name 3", "Name 4"],
+		authors: ["Erica Dong", "Isha Nagireddy"],
 		description:
 			"Ed-You is a web application designed to provide secure and anonymous feedback from students to school administrators. Inspired by personal experiences, the project aims to empower students to share their thoughts on teachers without fear of retaliation, promoting a safer and more constructive educational environment. The app employs a fine-tuned large language model to filter out toxic comments, ensuring that feedback remains respectful and useful. Administrators can log in through Google OAuth to access a dashboard where they can view summarized feedback, average ratings, and raw comments about their teachers. The front-end is built with HTML, Bulma, CSS, and Thymeleaf, while the back-end utilizes Java Spring, integrating multiple Cohere language models for advanced text processing and classification.",
 		imageUrl: "/projectImages/EdYou.png",
@@ -42,7 +42,7 @@ export const carouselPrizes: ProjectCarouselProps[] = [
 	},
 	{
 		title: "PyPlay",
-		authors: ["Jeremy Goldberger", "Nyssa Gandhi", "Floofer++ Rafael", "zcacciapalle"],
+		authors: ["Jeremy Goldberger", "Nyssa Gandhi", "Floofer++ Rafael", "Zcacciapalle"],
 		description:
 			"PyPlay is a tool designed to help children transition from Scratch to Python while retaining the visual aspects they enjoy. Recognizing that kids often find text-based games dull after using Scratch, the team created PyPlay to make this shift easier and more engaging. PyPlay ports Scratch's basic features into Python using PyGame and manages multithreading to ensure smooth execution of commands. This allows kids to continue making Scratch-like games while learning to write in a full-fledged programming language. Built with Python and PyGame, PyPlay uses a multithreading framework to handle commands like wait() without suspending the main thread, ensuring a seamless learning experience.",
 		prizeCategory: "Best Education Hack",
@@ -50,7 +50,7 @@ export const carouselPrizes: ProjectCarouselProps[] = [
 	},
 	{
 		title: "CryptoLearner",
-		authors: ["Hunter Gould", "smullahy", "Ashlesha Bhagat", "Name 4"],
+		authors: ["Hunter Gould", "Smullahy", "Ashlesha Bhagat"],
 		description:
 			"CryptoLearner is an interactive educational platform designed to make cryptographic algorithms accessible to aspiring cryptographers and security enthusiasts. Inspired by a fascination with cryptography and contemporary digital security challenges, the tool demystifies complex concepts through hands-on experience. Users can engage with key generation, encryption, decryption, and digital signatures via a user-friendly interface. The project was built using Python, with libraries like NumPy and SymPy for computations and symbolic mathematics. PySide6 and Qt were used to create an intuitive GUI, ensuring an engaging and accessible learning process.",
 		imageUrl: "/projectImages/CryptoLearner.png",
@@ -82,7 +82,7 @@ export const carouselPrizes: ProjectCarouselProps[] = [
 	},
 	{
 		title: "HelpAlign",
-		authors: ["Haddleton"],
+		authors: ["BreadInvasion Haddleton"],
 		description:
 			"HelpAlign is designed to simplify the process of connecting with mental health providers in your area, offering a streamlined alternative to traditional help lines. The app was inspired by the founder's personal experience of struggling to find a therapist, which involved tedious Google searches and numerous voicemails. With just a click of a button, HelpAlign efficiently matches users with local mental health professionals, aligning their needs with available support.",
 		imageUrl: "/projectImages/HelpAlign.gif",
@@ -139,7 +139,7 @@ export const carouselPrizes: ProjectCarouselProps[] = [
 	},
 	{
 		title: "Graphing Guinea",
-		authors: ["Hanna Nakajima", "Kevin Liu", "Claire Chen", "Jared Lee"],
+		authors: ["Hanna Nakajima", "Kevin Liu", "Claire Chen", "MEKNOWKNOOB Lee"],
 		description:
 			"Graphing Guinea is a game designed to help young students learn about graph shapes through engaging puzzle-solving. Inspired by games like Poly Bridge, the game features a guinea pig attempting to cross a gap by creating a tunnel based on player-inputted equations and limits. The game was developed in just two days using Godot for game development, with Visual Studio Code for coding, and Procreate and Pixilart for art and sprite editing. Kevin Liu and Jared Lee focused on software development, while Claire Chen and Khayniyah Culpepper handled the art and animations.",
 		imageUrl: "/projectImages/GraphingGuinea.gif",
