@@ -891,17 +891,145 @@ export default function PastYearProjects() {
 								/>
 							</div>
 						</div>
+						<div className="col-span-4 grid grid-cols-2 gap-2 desktop:gap-5">
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2257-Edit.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2260.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+						</div>
+						<div className="col-span-4">
+							<Image
+								src="/lastYearPhotos/IMG_2224.jpg"
+								alt="HackRPI X 2023 Photo"
+								width={1000}
+								height={1000}
+							/>
+						</div>
+						<div className="col-span-4">
+							<Image
+								src="/lastYearPhotos/IMG_2231.jpg"
+								alt="HackRPI X 2023 Photo"
+								width={1000}
+								height={1000}
+							/>
+						</div>
+						<div className="col-span-4 grid grid-cols-2 gap-2 desktop:gap-5">
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2265.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2283.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+						</div>
+						<div className="col-span-5 grid grid-cols-3 gap-2 desktop:gap-5">
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2311.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2314.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2316.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+						</div>
+						<div className="col-span-3">
+							<Image
+								src="/lastYearPhotos/IMG_2234.jpg"
+								alt="HackRPI X 2023 Photo"
+								width={1000}
+								height={1000}
+							/>
+						</div>
+						<div className="col-span-4 grid grid-cols-2 gap-2 desktop:gap-5">
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2234.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2248.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2290.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+							<div className="col-span-1">
+								<Image
+									src="/lastYearPhotos/IMG_2298.jpg"
+									alt="HackRPI X 2023 Photo"
+									width={500}
+									height={500}
+								/>
+							</div>
+						</div>
+						<div className="col-span-4">
+							<Image
+								src="/lastYearPhotos/IMG_2327.jpg"
+								alt="HackRPI X 2023 Photo"
+								width={1000}
+								height={1000}
+							/>
+						</div>
 						{/*
 							WINNERS
 
 							Long:
 							- "/lastYearPhotos/IMG_2257-Edit.jpg" -
 							- "/lastYearPhotos/IMG_2260.jpg" -
-							- "/lastYearPhotos/IMG_2265.jpg" -
+							- "/lastYearPhotos/IMG_2265.jpg" - 
 							- "/lastYearPhotos/IMG_2283.jpg" -
 							- "/lastYearPhotos/IMG_2311.jpg" -
-							- "/lastYearPhotos/IMG_2314.jpg"
-							- "/lastYearPhotos/IMG_2316.jpg"
+							- "/lastYearPhotos/IMG_2314.jpg" -
+							- "/lastYearPhotos/IMG_2316.jpg" -
 							
 							short:
 							- "/lastYearPhotos/IMG_2224.jpg" -
@@ -911,7 +1039,6 @@ export default function PastYearProjects() {
 							- "/lastYearPhotos/IMG_2248.jpg"
 							- "/lastYearPhotos/IMG_2290.jpg"
 							- "/lastYearPhotos/IMG_2298.jpg"
-							- "/lastYearPhotos/IMG_2319.jpg"
 							- "/lastYearPhotos/IMG_2327.jpg"
 						*/}
 					</div>
