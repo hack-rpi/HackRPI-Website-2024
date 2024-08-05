@@ -8,7 +8,7 @@ const links: Link[] = [
 	{ href: "/event/schedule", children: "Schedule" },
 	{ href: "/event/prizes", children: "Prizes" },
 	{ href: "/resources", children: "Resources" },
-	{ href: "/last-year", children: "HackRPI 2023" },
+	{ href: "/last-year", children: "HackRPI X" },
 	{ href: "/sponsor-us", children: "Sponsor Us" },
 ];
 
