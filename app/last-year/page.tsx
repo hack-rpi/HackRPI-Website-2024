@@ -519,28 +519,6 @@ export default function PastYearProjects() {
 								height={1000}
 							/>
 						</div>
-						{/*
-							WINNERS
-
-							Long:
-							- "/lastYearPhotos/IMG_2257-Edit.jpg" -
-							- "/lastYearPhotos/IMG_2260.jpg" -
-							- "/lastYearPhotos/IMG_2265.jpg" - 
-							- "/lastYearPhotos/IMG_2283.jpg" -
-							- "/lastYearPhotos/IMG_2311.jpg" -
-							- "/lastYearPhotos/IMG_2314.jpg" -
-							- "/lastYearPhotos/IMG_2316.jpg" -
-							
-							short:
-							- "/lastYearPhotos/IMG_2224.jpg" -
-							- "/lastYearPhotos/IMG_2231.jpg" -
-							- "/lastYearPhotos/IMG_2234.jpg" -
-							- "/lastYearPhotos/IMG_2237.jpg"
-							- "/lastYearPhotos/IMG_2248.jpg"
-							- "/lastYearPhotos/IMG_2290.jpg"
-							- "/lastYearPhotos/IMG_2298.jpg"
-							- "/lastYearPhotos/IMG_2327.jpg"
-						*/}
 					</div>
 				</div>
 			</div>
