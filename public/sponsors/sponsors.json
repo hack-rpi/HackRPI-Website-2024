@@ -1,10 +1,7 @@
 {
-	"Obsidian": [
-	],
-	"Gold": [
-	],
-	"Silver": [
-	],
+	"Obsidian": [],
+	"Gold": [],
+	"Silver": [{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" }],
 	"Bronze": [
 		{
 			"name": "Troy Web Consulting",
