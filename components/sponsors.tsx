@@ -33,6 +33,7 @@ const Sponsors = () => {
 													alt={sponsor.name}
 													width={250}
 													height={250}
+													className="rounded-md"
 												/>
 											</a>
 										</div>
