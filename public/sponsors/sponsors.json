@@ -1,9 +1,11 @@
 {
-	"Obsidian": [{
-		"name": "IBM Call for Code",
-		"logoPath": "/CallForCode.png",
-		"url": "https://developer.ibm.com/callforcode/"
-	}],
+	"Obsidian": [
+		{
+			"name": "IBM Call for Code",
+			"logoPath": "/CallForCode.png",
+			"url": "https://developer.ibm.com/callforcode/"
+		}
+	],
 	"Gold": [],
 	"Silver": [
 		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" }
@@ -25,6 +27,11 @@
 			"name": "Axure",
 			"logoPath": "/Axure_logo_175.svg",
 			"url": "https://www.axure.com/"
+		},
+		{
+			"name": "Hannaford Snacks",
+			"logoPath": "/Hannaford.png",
+			"url": "https://www.hannaford.com/"
 		},
 		{
 			"name": "Nord Security",
