@@ -39,6 +39,11 @@
 			"url": "https://nordsecurity.com/"
 		},
 		{
+			"name": "O'Reilly",
+			"logoPath": "/Oreilly.png",
+			"url": "https://www.oreilly.com/"
+		},
+		{
 			"name": "Wolfram",
 			"logoPath": "/Wolfram.png",
 			"url": "https://www.wolfram.com/"
