@@ -69,17 +69,23 @@ export default function TeamComponent() {
 					please join our discord or fill out one of the forms below!
 				</p>
 				<div className="flex flex-wrap items-center justify-start md:justify-center  xl:justify-between w-full my-4">
-				{/* <div className="flex flex-wrap items-center justify-start desktop:justify-center w-full my-4"> */}
+					{/* <div className="flex flex-wrap items-center justify-start desktop:justify-center w-full my-4"> */}
 					<HackRPILink
 						className="w-72 h-12 flex items-center justify-center text-xl text-center my-1"
 						href="https://discord.gg/Pzmdt7FYnu"
 					>
 						Join our Organizing Team!
 					</HackRPILink>
-					<HackRPILink className="w-72 h-12 flex items-center justify-center text-xl text-center my-1 sm:mx-2 " href="https://forms.gle/2riKKB6H2ajsd1FM7">
+					<HackRPILink
+						className="w-72 h-12 flex items-center justify-center text-xl text-center my-1 sm:mx-2 "
+						href="https://forms.gle/2riKKB6H2ajsd1FM7"
+					>
 						Help Mentor!
 					</HackRPILink>
-					<HackRPILink className="w-72 h-12 flex items-center justify-center text-xl text-center my-1" href="https://forms.gle/3M6TZo7PRwgWSqqB8">
+					<HackRPILink
+						className="w-72 h-12 flex items-center justify-center text-xl text-center my-1"
+						href="https://forms.gle/3M6TZo7PRwgWSqqB8"
+					>
 						Volunteer!
 					</HackRPILink>
 				</div>
