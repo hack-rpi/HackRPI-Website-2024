@@ -11,16 +11,19 @@
 	"dependencies": {
 		"@aws-amplify/ui-react": "^6.2.0",
 		"aws-amplify": "^6.5.3",
-		"next": "^14.2.7",
+		"next": "^14.2.13",
+		"pdfjs-dist": "^4.4.168",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-multi-carousel": "^2.8.5",
+		"react-pdf": "^9.1.1",
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
 		"@aws-amplify/backend": "^1.2.0",
 		"@aws-amplify/backend-cli": "^1.2.5",
 		"@types/node": "^22.5.0",
+		"@types/pdfjs-dist": "^2.10.377",
 		"@types/react": "^18.3.4",
 		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^8.3.0",
