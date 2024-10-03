@@ -26,7 +26,7 @@ export function calculateDeltaTime(currentTime: Date, endTime: Date): DeltaTime 
 	let hours = endTime.getHours() - currentTime.getHours();
 	// We want to count down from 23 hours to 0 hours
 	// So we add 23 to the hours if the hours are less than 0
-	if (hours < 0) {
+	if (hours <= 0) {
 		hours += 23;
 	} else {
 		// We need to subtract 1 from the hours to account for the minutes counting down from 59
@@ -36,12 +36,12 @@ export function calculateDeltaTime(currentTime: Date, endTime: Date): DeltaTime 
 	let days = endTime.getDate() - currentTime.getDate();
 	// We want the days to count down from the number of days in the month to 0
 	// So we add the number of days in the month to the days
-	if (days < 0) {
+	if (days <= 0) {
 		days += daysInMonths[currentTime.getMonth()];
 	}
 
-	// If the hours are < 0 then we need to subtract 1 from the days
-	if (endTime.getHours() - currentTime.getHours() < 0) {
+	// If the hours are <= 0 then we need to subtract 1 from the days
+	if (endTime.getHours() - currentTime.getHours() <= 0) {
 		days -= 1;
 	}
 
