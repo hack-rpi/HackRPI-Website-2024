@@ -38,6 +38,11 @@
 			"url": "https://www.oreilly.com/"
 		},
 		{
+			"name": "Stand Out Stickers",
+			"logoPath":"/stand-out-stickers.png",
+			"url":"https://www.standoutstickers.com/"
+		},
+		{
 			"name": "Wolfram",
 			"logoPath": "/Wolfram.png",
 			"url": "https://www.wolfram.com/"
