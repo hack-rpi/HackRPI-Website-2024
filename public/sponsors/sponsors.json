@@ -6,6 +6,11 @@
 	],
 	"Bronze": [
 		{
+			"name":"Rensselaer Center for Open Source Software",
+			"logoPath": "/rcos-red.png",
+			"url": "https://new.rcos.io"
+		},
+		{
 			"name": "Troy Web Consulting",
 			"logoPath": "/troywebconsulting.png",
 			"url": "https://troyweb.com/"
