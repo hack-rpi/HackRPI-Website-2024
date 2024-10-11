@@ -43,7 +43,7 @@ function Tile({ value }: { value: number }) {
     }
 
     return (
-        <div className={`tile flex justify-center items-center rounded-lg shadow-lg h-full w-full ${bgColor} ${value ? '' : 'empty'}`}>
+        <div className={`tile flex justify-center items-center rounded-lg shadow-lg h-24 w-24 ${bgColor} ${value ? '' : 'empty'}`}>
             {value !== 0 ? value : ''}
         </div>
     );
