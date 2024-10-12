@@ -272,7 +272,7 @@ export default function (){
             <div className="flex-grow flex-shrink basis-auto">
                 <div className="flex-grow items-center justify-center basis-auto">
                     <div className="flex items-center justify-around mt-24">
-                        <button className="flex-1 w-100 border-2 border-hackrpi-secondary-yellow text-white h-[45px] hover:bg-hackrpi-secondary-yellow transition hover:text-[#213445] duration-200" onClick={handleReset}>Reset Game</button>
+                        <HackRPIButton className="flex-1 w-100" onClick={handleReset}>Reset Game</HackRPIButton>
                         <h1 className="flex-1 items-center justify-center text-center basis-auto text-6xl font-bold m-0 p-0">2048</h1>
                         <h2 className="flex-1 text-center m-0 p-0 w-100 text-4xl">Score: {score}</h2>
                     </div>
