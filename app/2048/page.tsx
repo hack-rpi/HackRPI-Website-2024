@@ -6,6 +6,8 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import Footer from "@/components/footer/footer";
 import Tile from "@/components/game/tile";
 import Board from "@/components/game/board";
+import GameOver from "@/components/game/game-over";
+import HackRPIButton from "@/components/themed-components/hackrpi-button";
 
 export default function (){
     const [grid, setGrid] = useState<number[][]>([
@@ -15,6 +17,9 @@ export default function (){
         [0, 0, 0, 0]
     ]);
 
+    const [score, setScore] = useState(0);
+    const [gameOver, setIsGameOver] = useState(false);
+    
     const initializeGame = () => {
         let newGrid = [...grid];
         newGrid = placeRandomTile(newGrid);
@@ -104,17 +109,21 @@ export default function (){
                 newGrid = addRandomTile(newGrid);
             }
 
+            setIsGameOver(isGameOver(newGrid));
+
             return newGrid;
         });
     };
 
     const moveLeft = (grid: number[][]): number[][] => {
+        let newScore = 0;
         const newGrid = grid.map(row => {
             const filteredRow = row.filter(tile => tile !== 0);
     
             for (let i = 0; i < filteredRow.length - 1; i++) {
                 if (filteredRow[i] === filteredRow[i + 1]) {
                     filteredRow[i] *= 2;
+                    newScore += filteredRow[i]/2;
                     filteredRow[i + 1] = 0;
                     i++;
                 }
@@ -129,6 +138,7 @@ export default function (){
             return mergedRow;
         });
     
+        setScore(prevScore => prevScore + newScore);
         return newGrid;
     };
     
@@ -142,6 +152,7 @@ export default function (){
     
     const moveUp = (grid: number[][]): number[][] => {
         const newGrid: number[][] = Array.from({ length: grid.length }, () => new Array(grid[0].length).fill(0));
+        let newScore = 0;
 
         for (let col = 0; col < grid[0].length; col++) {
             const filteredColumn = grid.map(row => row[col]).filter(tile => tile !== 0);
@@ -149,6 +160,7 @@ export default function (){
             for (let i = 0; i < filteredColumn.length - 1; i++) {
                 if (filteredColumn[i] === filteredColumn[i + 1]) {
                     filteredColumn[i] *= 2;
+                    newScore += filteredColumn[i]/2;
                     filteredColumn[i + 1] = 0;
                     i++;
                 }
@@ -168,11 +180,13 @@ export default function (){
             }
         }
     
+        setScore(prevScore => prevScore + newScore);
         return newGrid;
     };
     
     const moveDown = (grid: number[][]): number[][] => {
         const newGrid: number[][] = Array.from({ length: grid.length }, () => new Array(grid[0].length).fill(0));
+        let newScore = 0;
     
         for (let col = 0; col < grid[0].length; col++) {
             const filteredColumn = grid.map(row => row[col]).filter(tile => tile !== 0);
@@ -180,6 +194,7 @@ export default function (){
             for (let i = filteredColumn.length - 1; i > 0; i--) {
                 if (filteredColumn[i] === filteredColumn[i - 1]) {
                     filteredColumn[i] *= 2;
+                    newScore += filteredColumn[i]/2;
                     filteredColumn[i - 1] = 0;
                     i++;
                 }
@@ -196,7 +211,47 @@ export default function (){
             }
         }
     
+        setScore(prevScore => prevScore + newScore);
         return newGrid;
+    };
+
+    const resetGame = () => {
+        const newGrid = Array(4).fill(null).map(() => Array(4).fill(0));
+        
+        for (let i = 0; i < 2; i++) {
+            addRandomTile(newGrid);
+        }
+        
+        setScore(0);
+        return newGrid;
+    };
+
+    const handleReset = () => {
+        setGrid(resetGame());
+    };
+
+    const isGameOver = (grid: number[][]): boolean => {
+        for (let row of grid) {
+            if (row.includes(0)) return false;
+        }
+    
+        for (let i = 0; i < grid.length; i++) {
+            for (let j = 0; j < grid[i].length; j++) {
+                if (
+                    (j < grid[i].length - 1 && grid[i][j] === grid[i][j + 1]) ||
+                    (i < grid.length - 1 && grid[i][j] === grid[i + 1][j])
+                ) {
+                    return false;
+                }
+            }
+        }
+    
+        return true;
+    };
+
+    const handleCloseGameOver = () => {
+        setIsGameOver(false);
+        setGrid(resetGame());
     };
 
     useEffect(() => {
@@ -217,11 +272,12 @@ export default function (){
             <div className="flex-grow flex-shrink basis-auto">
                 <div className="flex-grow items-center justify-center basis-auto">
                     <div className="flex items-center justify-around mt-24">
-                        <button className="flex-1 w-100 border-2 border-hackrpi-secondary-yellow text-white h-[45px] hover:bg-hackrpi-secondary-yellow transition hover:text-[#213445] duration-200">Reset Game</button>
+                        <button className="flex-1 w-100 border-2 border-hackrpi-secondary-yellow text-white h-[45px] hover:bg-hackrpi-secondary-yellow transition hover:text-[#213445] duration-200" onClick={handleReset}>Reset Game</button>
                         <h1 className="flex-1 items-center justify-center text-center basis-auto text-6xl font-bold m-0 p-0">2048</h1>
-                        <h2 className="flex-1 text-center m-0 p-0 w-100 text-4xl">Score: 0</h2>
+                        <h2 className="flex-1 text-center m-0 p-0 w-100 text-4xl">Score: {score}</h2>
                     </div>
                     <Board grid={grid} />
+                    {gameOver && (<GameOver onClose={handleCloseGameOver} />)}
                 </div>
             </div>
             <div className="flex-grow mt-24"></div>

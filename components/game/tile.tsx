@@ -6,37 +6,37 @@ function Tile({ value }: { value: number }) {
             bgColor = "bg-gray-200";
             break;
         case 2:
-            bgColor = "bg-yellow-200";
+            bgColor = "bg-radial-yellow-200";
             break;
         case 4:
-            bgColor = "bg-yellow-300";
+            bgColor = "bg-radial-yellow-300";
             break;
         case 8:
-            bgColor = "bg-yellow-400";
+            bgColor = "bg-radial-yellow-400";
             break;
         case 16:
-            bgColor = "bg-yellow-500";
+            bgColor = "bg-radial-yellow-500";
             break;
         case 32:
-            bgColor = "bg-yellow-600";
+            bgColor = "bg-radial-yellow-600";
             break;
         case 64:
-            bgColor = "bg-yellow-700";
+            bgColor = "bg-radial-yellow-700";
             break;
         case 128:
-            bgColor = "bg-green-200";
+            bgColor = "bg-radial-green-200";
             break;
         case 256:
-            bgColor = "bg-green-300";
+            bgColor = "bg-radial-green-300";
             break;
         case 512:
-            bgColor = "bg-green-400";
+            bgColor = "bg-radial-green-400";
             break;
         case 1024:
-            bgColor = "bg-green-500";
+            bgColor = "bg-radial-green-500";
             break;
         case 2048:
-            bgColor = "bg-green-600";
+            bgColor = "bg-radial-green-600";
             break;
         default:
             bgColor = "bg-black";
