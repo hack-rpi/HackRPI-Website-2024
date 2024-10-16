@@ -1,7 +1,8 @@
 {
-	"Obsidian": [],
+	"Obsidian": [{ "name": "Nuvalence", "logoPath": "/Nuvalence.png", "url": "https://nuvalence.io/" }],
 	"Gold": [],
 	"Silver": [
+		{ "name": "Global Foundries", "logoPath": "/GlobalFoundries.png", "url": "https://gf.com/" },
 		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" },
 		{ "name": "Rensselaer School of Science", "logoPath": "/RPI_SOS.png", "url": "https://science.rpi.edu/" }
 	],
