@@ -2,11 +2,12 @@
 	"Obsidian": [],
 	"Gold": [],
 	"Silver": [
-		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" }
+		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" },
+		{ "name": "Rensselaer School of Science", "logoPath": "/RPI_SOS.png", "url": "https://science.rpi.edu/" }
 	],
 	"Bronze": [
 		{
-			"name":"Rensselaer Center for Open Source Software",
+			"name": "Rensselaer Center for Open Source Software",
 			"logoPath": "/rcos-red.png",
 			"url": "https://new.rcos.io"
 		},
@@ -44,8 +45,8 @@
 		},
 		{
 			"name": "Stand Out Stickers",
-			"logoPath":"/stand-out-stickers.png",
-			"url":"https://www.standoutstickers.com/"
+			"logoPath": "/stand-out-stickers.png",
+			"url": "https://www.standoutstickers.com/"
 		},
 		{
 			"name": "Wolfram",
