@@ -35,13 +35,23 @@
 			"url": "https://www.flyingpigsociety.org/"
 		},
 		{
-			"name": "Hannaford Snacks",
+			"name": "Hannaford",
 			"logoPath": "/Hannaford.png",
 			"url": "https://www.hannaford.com/"
 		},
 		{
-			"name": "Nord Security",
-			"logoPath": "/NordSecurity.png",
+			"name": "Incogni",
+			"logoPath": "/Incogni.png",
+			"url": "https://incogni.com/"
+		},
+		{
+			"name": "NordPass",
+			"logoPath": "/NordPass.png",
+			"url": "https://nordpass.com/"
+		},
+		{
+			"name": "NordVPN",
+			"logoPath": "/NordVPN.webp",
 			"url": "https://nordsecurity.com/"
 		},
 		{
