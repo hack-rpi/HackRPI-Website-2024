@@ -2,6 +2,23 @@
 
 import NavBar from "@/components/nav-bar/nav-bar";
 import Footer from "@/components/footer/footer";
+import { Amplify } from "aws-amplify";
+import * as Auth from "@aws-amplify/auth";
+import { generateClient } from "aws-amplify/api";
+import type { Schema } from "@/amplify/data/resource";
+// eslint-disable-next-line
+// @ts-ignore
+import amplify_outputs from "@/amplify_outputs.json";
+
+Amplify.configure(amplify_outputs);
+const client = generateClient<Schema>({ authMode: "userPool" });
+
+type LeaderboardEntry = {
+    id: string,
+    username: string,
+    score: number,
+    year: number,
+}
 
 export default function (){
     return (
@@ -17,4 +34,15 @@ export default function (){
             </div>
         </div> 
     )
+}
+
+async function getLeaderboard(): Promise<LeaderboardEntry[]> {
+    let entries: LeaderboardEntry[] = [];
+
+    let listOptions = {limit: 50};
+
+    await 
+
+
+    return entries;
 }
