@@ -130,7 +130,7 @@ function EventPage() {
 							</ul>
 						</div>
 
-						<div className="container p-4">
+						<div className="flex flex-col p-4">
 							<h1 className="font-semibold text-3xl mb-4 text-white">PROJECT SUBMISSION</h1>
 							<p className="text-lg mb-2">
 								HackRPI uses Devpost to manage project submissions. You will need to create a Devpost account and submit
@@ -146,7 +146,7 @@ function EventPage() {
 								immediately after the submission deadline. You must be present at the event to give a live demo and
 								explain your project to the judges.
 							</p>
-							<h1 className="font-semibold text-3xl mb-4 text-white">Devpost link will be added here soon!</h1>
+							<HackRPILink href="https://hackrpi2024.devpost.com/" className="text-3xl mt-4 text-center">DEVPOST</HackRPILink>
 						</div>
 					</div>
 				</div>
