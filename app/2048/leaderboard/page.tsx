@@ -9,6 +9,7 @@ import type { Schema } from "@/amplify/data/resource";
 // eslint-disable-next-line
 // @ts-ignore
 import amplify_outputs from "@/amplify_outputs.json";
+import { error } from "console";
 
 Amplify.configure(amplify_outputs);
 const client = generateClient<Schema>({ authMode: "userPool" });
@@ -37,12 +38,27 @@ export default function (){
 }
 
 async function getLeaderboard(): Promise<LeaderboardEntry[]> {
-    let entries: LeaderboardEntry[] = [];
+    let groups = undefined;
+    try {
+        const session = await Auth.fetchAuthSession();
+        groups = session.tokens?.accessToken.payload["cognito:groups"];
+    } catch (e) {
+        console.error(e);
+        groups = undefined;
+    } 
 
-    let listOptions = {limit: 50};
+    const {data, errors} = await client.models.Leaderboard.listByScore({
+        year: 2024,
+    }, {
+        limit: 50,
+        sortDirection: "DESC",
+        authMode: groups ? "userPool" : "identityPool"
+    })
 
-    await 
-
-
-    return entries;
+    if(errors){
+        console.error(errors);
+        return [];
+    }
+    
+    return data.map((entry)=> entry as LeaderboardEntry);
 }
