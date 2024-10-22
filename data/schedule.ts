@@ -10,27 +10,28 @@ export type Event = {
 	visible: boolean;
 };
 
-export const SATURDAY_START = 1731164400000;
+export const SATURDAY_START = 1731160800000;
 export const SATURDAY_END = 1731214800000 - 1;
 
 export const SUNDAY_START = 1731214800000;
 export const SUNDAY_END = 1731286800000;
 
 export const saturdayTimes = [
-	{ str: "10:00 AM", unix: SATURDAY_START },
-	{ str: "11:00 AM", unix: SATURDAY_START + 3600000 * 1 },
-	{ str: "12:00 PM", unix: SATURDAY_START + 3600000 * 2 },
-	{ str: "1:00 PM", unix: SATURDAY_START + 3600000 * 3 },
-	{ str: "2:00 PM", unix: SATURDAY_START + 3600000 * 4 },
-	{ str: "3:00 PM", unix: SATURDAY_START + 3600000 * 5 },
-	{ str: "4:00 PM", unix: SATURDAY_START + 3600000 * 6 },
-	{ str: "5:00 PM", unix: SATURDAY_START + 3600000 * 7 },
-	{ str: "6:00 PM", unix: SATURDAY_START + 3600000 * 8 },
-	{ str: "7:00 PM", unix: SATURDAY_START + 3600000 * 9 },
-	{ str: "8:00 PM", unix: SATURDAY_START + 3600000 * 10 },
-	{ str: "9:00 PM", unix: SATURDAY_START + 3600000 * 11 },
-	{ str: "10:00 PM", unix: SATURDAY_START + 3600000 * 12 },
-	{ str: "11:00 PM", unix: SATURDAY_START + 3600000 * 13 },
+	{ str: "9:00 AM", unix: SATURDAY_START },
+	{ str: "10:00 AM", unix: SATURDAY_START + 3600000 * 1 },
+	{ str: "11:00 AM", unix: SATURDAY_START + 3600000 * 2 },
+	{ str: "12:00 PM", unix: SATURDAY_START + 3600000 * 3 },
+	{ str: "1:00 PM", unix: SATURDAY_START + 3600000 * 4 },
+	{ str: "2:00 PM", unix: SATURDAY_START + 3600000 * 5 },
+	{ str: "3:00 PM", unix: SATURDAY_START + 3600000 * 6 },
+	{ str: "4:00 PM", unix: SATURDAY_START + 3600000 * 7 },
+	{ str: "5:00 PM", unix: SATURDAY_START + 3600000 * 8 },
+	{ str: "6:00 PM", unix: SATURDAY_START + 3600000 * 9 },
+	{ str: "7:00 PM", unix: SATURDAY_START + 3600000 * 10 },
+	{ str: "8:00 PM", unix: SATURDAY_START + 3600000 * 11 },
+	{ str: "9:00 PM", unix: SATURDAY_START + 3600000 * 12 },
+	{ str: "10:00 PM", unix: SATURDAY_START + 3600000 * 13 },
+	{ str: "11:00 PM", unix: SATURDAY_START + 3600000 * 14 },
 ];
 
 export const sundayTimes = [
