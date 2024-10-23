@@ -26,14 +26,9 @@ export const podiumPrizes: Prize[] = [
 	},
 	{
 		name: "2nd",
-		amount: "$1000",
-		description: "",
-	},
-	{
-		name: "3rd",
 		amount: "$750",
 		description: "",
-	},
+	}
 ];
 
 export const majorPrizes: Prize[] = [
@@ -63,42 +58,42 @@ export const majorPrizes: Prize[] = [
 export const minorPrizes: Prize[] = [
 	{
 		name: "Best Quantum Computing Hack",
-		amount: "TBD ($200 Value)",
+		amount: "JBL Speaker ($200 Value)",
 		description:
 			"Entangle some qubits and blow our minds! This prize celebrates the project that uses quantum computing to solve urban problems, proving that the future really is now (and at RPI!).",
 		imagePath: quantum_prize,
 	},
 	{
 		name: "Best Cybersecurity Hack",
-		amount: "TBD ($200 Value)",
+		amount: "1 Year Subscriptions to NordVPN, NordPass, and Incogni (Total Value: $200)",
 		description:
 			"Defend the digital city walls! Awarded to the project that best boosts urban cybersecurity, keeping our city's data safe from cybervillains.",
 		imagePath: cybersecurity_prize,
 	},
 	{
 		name: "Best Mobile Hack",
-		amount: "TBD ($200 Value)",
+		amount: "Hydroflasks + O'Reilly Media App Development Textbooks ($200 Value)",
 		description:
 			"Got an app for that? Recognizes the project that delivers the slickest, most useful mobile application for city dwellers, making urban life just a tap away.",
 		imagePath: mobile_prize,
 	},
 	{
 		name: "Best Startup Hack",
-		amount: "TBD ($200 Value)",
+		amount: "LED Projector + O'Reilly Media Machine Learning Textbooks ($200 Value)",
 		description:
 			"Shark Tank here we come! Celebrates the project with the most potential to become an urban-focused startup, showcasing innovative business ideas to transform city life.",
 		imagePath: startup_prize,
 	},
 	{
 		name: "Best Data Science Hack",
-		amount: "TBD ($100 Value)",
+		amount: "Amazon Echo Dot Speaker + O'Reilly Media Data Science Textbooks (Value: $100)",
 		description:
 			"Crunch those numbers! Given to the project that uses data science to unravel the mysteries of city living, driving decisions with insightful analytics.",
 		imagePath: data_science_prize,
 	},
 	{
 		name: "Best Beginner Hack",
-		amount: "TBD ($100 Value)",
+		amount: "NYC Lego Sets + O'Reilly Media Software Engineering Foundations Textbooks ($100 Value)",
 		description:
 			"Newbies unite! Awarded to the top project by first-time hackers that addresses urban challenges, showing off their fresh creativity and hard work.",
 		imagePath: beginner_prize,

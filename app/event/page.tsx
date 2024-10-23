@@ -6,8 +6,8 @@ import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MapsDCCLow from "@/components/maps/maps";
 import GoogleMapsWidget from "@/components/maps/google_maps";
-// import HackRPILink from "@/components/themed-components/hackrpi-link";
-// import Image from "next/image";
+import HackRPILink from "@/components/themed-components/hackrpi-link";
+import Image from "next/image";
 
 function EventPage() {
 	return (
@@ -87,22 +87,12 @@ function EventPage() {
 								Have questions for the staff? Want to chat with other participants? Looking for a team? Join the
 								conversation on Discord and get the support you need to succeed at HackRPI.
 							</p>
-							<p>Event Discord Will Be Posted Soon</p>
-							{/* 
-							{
-								svgPath: "/social/discord.svg",
-								link: "https://discord.gg/Pzmdt7FYnu",
-								name: "Discord",
-								bgGradientFrom: "from-[#5865F2]",
-								bgGradientTo: "to-[#7289da]",
-							},
-							 */}
-							{/* <HackRPILink
-								href="https://discord.gg/Pzmdt7FYnu"
+							<HackRPILink
+								href="https://discord.gg/7b2zc8fe26"
 								className="hover:bg-gradient-to-br hover:from-[#5865F2] hover:to-[#7289da] hover:bg-transparent hover:border-[#5865F2] w-20 h-20 flex items-center justify-center"
 							>
 								<Image src="/social/discord.svg" alt="Discord Logo" width={50} height={50} />
-							</HackRPILink> */}
+							</HackRPILink>
 						</div>
 					</div>
 				</div>
@@ -140,7 +130,7 @@ function EventPage() {
 							</ul>
 						</div>
 
-						<div className="container p-4">
+						<div className="flex flex-col p-4">
 							<h1 className="font-semibold text-3xl mb-4 text-white">PROJECT SUBMISSION</h1>
 							<p className="text-lg mb-2">
 								HackRPI uses Devpost to manage project submissions. You will need to create a Devpost account and submit
@@ -156,7 +146,7 @@ function EventPage() {
 								immediately after the submission deadline. You must be present at the event to give a live demo and
 								explain your project to the judges.
 							</p>
-							<h1 className="font-semibold text-3xl mb-4 text-white">Devpost link will be added here soon!</h1>
+							<HackRPILink href="https://hackrpi2024.devpost.com/" className="text-3xl mt-4 text-center">DEVPOST</HackRPILink>
 						</div>
 					</div>
 				</div>
