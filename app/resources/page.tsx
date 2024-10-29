@@ -14,7 +14,9 @@ export default function page() {
 			<NavBar showOnScroll={false} />
 			<div className="flex flex-wrap justify-center gap-12 m-10 pt-10 pb-10">
 				<div className="flex flex-col justify-center items-center">
-					<h2 id="web-dev" className="text-3xl font-bold text-center mb-8 pt-10">Web Development</h2>
+					<h2 id="web-dev" className="text-3xl font-bold text-center mb-8 pt-10">
+						Web Development
+					</h2>
 					<GoogleSlides
 						width={640}
 						height={480}
@@ -26,7 +28,9 @@ export default function page() {
 				</div>
 
 				<div className="flex flex-col justify-center items-center">
-					<h2 id="mobile-dev" className="text-3xl font-bold text-center mb-8 pt-10">Mobile Development</h2>
+					<h2 id="mobile-dev" className="text-3xl font-bold text-center mb-8 pt-10">
+						Mobile Development
+					</h2>
 					<GoogleSlides
 						width={640}
 						height={480}
@@ -38,7 +42,9 @@ export default function page() {
 				</div>
 
 				<div className="flex flex-col justify-center items-center">
-					<h2 id="game-dev" className="text-3xl font-bold text-center mb-8 pt-10">Game Development</h2>
+					<h2 id="game-dev" className="text-3xl font-bold text-center mb-8 pt-10">
+						Game Development
+					</h2>
 					<GoogleSlides
 						width={640}
 						height={480}
@@ -50,7 +56,9 @@ export default function page() {
 				</div>
 
 				<div className="flex flex-col justify-center items-center">
-					<h2 id="cloud" className="text-3xl font-bold text-center mb-8 pt-10">Cloud Development</h2>
+					<h2 id="cloud" className="text-3xl font-bold text-center mb-8 pt-10">
+						Cloud Development
+					</h2>
 					<GoogleSlides
 						width={640}
 						height={480}
@@ -60,9 +68,11 @@ export default function page() {
 						loop
 					/>
 				</div>
-	
+
 				<div className="flex flex-col justify-center items-center">
-					<h2 id="submissions" className="text-3xl font-bold text-center mb-8 pt-10">Submitting Your Project</h2>
+					<h2 id="submissions" className="text-3xl font-bold text-center mb-8 pt-10">
+						Submitting Your Project
+					</h2>
 					<GoogleSlides
 						width={640}
 						height={480}
