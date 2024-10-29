@@ -20,7 +20,6 @@ export default function Podium({ podiumPrizes }: { podiumPrizes: Prize[] }) {
 					: `transition-[height] duration-[1500ms] ${visible ? "h-96 xl:h-[500px]" : "h-0"}`
 			} flex justify-around items-end overflow-hidden`}
 		>
-			
 			<div className="w-1/2 mx-2 h-full bg-gradient-to-b from-gold via-yellow-300   to-hackrpi-secondary-dark-blue flex flex-col items-center justify-start">
 				<h1 className="text-hackrpi-secondary-dark-blue font-bold font-sans text-3xl xs:text-5xl sm:text-6xl mt-2">
 					{podiumPrizes[0].name}
