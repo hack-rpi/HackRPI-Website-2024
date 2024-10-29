@@ -8,6 +8,21 @@ import Tile from "@/components/game/tile";
 import Board from "@/components/game/board";
 import GameOver from "@/components/game/game-over";
 import HackRPIButton from "@/components/themed-components/hackrpi-button";
+import { Amplify } from "aws-amplify";
+import * as Auth from "@aws-amplify/auth";
+import { generateClient } from "aws-amplify/api";
+import type { Schema } from "@/amplify/data/resource";
+// eslint-disable-next-line
+// @ts-ignore
+import amplify_outputs from "@/amplify_outputs.json";
+
+import { Profanity } from '@2toad/profanity';
+
+
+Amplify.configure(amplify_outputs);
+const client = generateClient<Schema>({ authMode: "userPool" });
+
+import "@/app/globals.css";
 
 export default function (){
     const [grid, setGrid] = useState<number[][]>([
@@ -254,6 +269,58 @@ export default function (){
         setGrid(resetGame());
     };
 
+    const handleSubmit = async (username: string) => {
+        // TODO: POST to DB
+        const profanity = new Profanity({
+            wholeWord: false,
+            languages: ['en', 'de', 'es', 'fr']
+        })
+
+        profanity.addWords(
+            ['!', '@', '#', "$", "%", "^", "&", "*", "(", ")", "_", "-",
+             "+", "=", "{", "}", "[", "]", ":", ";" , "'", "\"", "<", ">", ",", ".",
+              "?", "/", "\\", "|", "~", "`", "fvck", "shjt", "bjtch", "njgga", "njgger"]
+        )
+
+        if(profanity.exists(username) || username.length > 20)
+        {
+            alert("haha i see what you tried to do there. bad! :(")
+            return;
+        }
+
+
+        let groups = undefined;
+        try {
+            const session = await Auth.fetchAuthSession();
+            groups = session.tokens?.accessToken.payload["cognito:groups"];
+        } catch (e) {
+            console.error(e);
+            groups = undefined;
+        } 
+
+        const {data, errors} = await client.models.Leaderboard.create(
+            {
+                username,
+                score,
+                year: new Date().getFullYear()
+            }, 
+            {
+                authMode: groups ? "userPool" : "identityPool"
+            }
+        )
+
+        if(errors){
+            alert("We failed to put your score in the DB. Please try again later. :(")
+        }
+
+    
+        handleCloseGameOver();
+    }
+
+    const handleExit = () => {
+        setIsGameOver(false);
+    }
+
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => handleKeyPress(e, grid, setGrid);
 
@@ -277,7 +344,7 @@ export default function (){
                         <h2 className="flex-1 text-center m-0 p-0 w-100 text-4xl">Score: {score}</h2>
                     </div>
                     <Board grid={grid} />
-                    {gameOver && (<GameOver onClose={handleCloseGameOver} />)}
+                    {gameOver && (<GameOver onSubmitClose={handleSubmit} onExitClose={handleExit} />)}
                 </div>
             </div>
             <div className="flex-grow mt-24"></div>

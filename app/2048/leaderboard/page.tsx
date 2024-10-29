@@ -13,6 +13,9 @@ import type { Schema } from "@/amplify/data/resource";
 import amplify_outputs from "@/amplify_outputs.json";
 import { error } from "console";
 
+import "@/app/globals.css";
+import HackRPIButton from "@/components/themed-components/hackrpi-button";
+
 Amplify.configure(amplify_outputs);
 const client = generateClient<Schema>({ authMode: "userPool" });
 
@@ -25,21 +28,41 @@ type LeaderboardEntry = {
 
 export default function (){
     const [leaderboardEntries, setLeaderboardEntries] = useState<LeaderboardEntry[]>([]);
+    const [isDirector, setIsDirector] = useState(false);
+
+    const checkIsDirector = async () => {
+        let groups = undefined;
+        try {
+            const session = await Auth.fetchAuthSession();
+            groups = session.tokens?.accessToken.payload["cognito:groups"];
+        } catch (e) {
+            console.error(e);
+            groups = undefined;
+        } 
+        return groups !== undefined;
+    }
+
+    const fetchLeaderboard = async () => {
+        const entries = await getLeaderboard();
+        setLeaderboardEntries(entries);
+    };
 
     useEffect(() => {
-        const fetchLeaderboard = async () => {
-            const entries = await getLeaderboard();
-            setLeaderboardEntries(entries);
-        };
         
+
+        const setDirectorStatus = async () => {
+            setIsDirector(await checkIsDirector());
+        }
+
+
+        setDirectorStatus();
         fetchLeaderboard();
     }, []);
 
     return (
-        <div className="flex flex-col items-start desktop:items-center justify-start w-full h-full">
+        <div className="flex flex-col items-start desktop:items-center justify-start w-full h-screen">
             <NavBar showOnScroll={false}></NavBar>
 
-            <div className="flex-grow mt-30"></div>
             <div className="flex-grow flex-shrink basis-auto">
                 <h1 className="mt-28 text-center text-4xl">2048 Leaderboard</h1>
 
@@ -48,7 +71,7 @@ export default function (){
                         <tr>
                             <th className="w-1/3 px-4 py-2 border">Username</th>
                             <th className="w-1/3 px-4 py-2 border">Score</th>
-                            <th className="w-1/3 px-4 py-2 border">Year</th>
+                            {isDirector ? <th className="w-1/3 px-4 py-2 border">Delete</th> : null}
                         </tr>
                     </thead>
 
@@ -57,7 +80,12 @@ export default function (){
                             <tr key={entry.id}>
                                 <td className="px-4 py-2 border">{entry.username}</td>
                                 <td className="px-4 py-2 border">{entry.score}</td>
-                                <td className="px-4 py-2 border">{entry.year}</td>
+                                {isDirector ? <td className="px-4 py-2 border flex items-center justify-center">
+                                   <HackRPIButton onClick={async () => {
+                                    await deleteLeaderboardEntry(entry.id);
+                                    await fetchLeaderboard();
+                                    }}>Delete Item</HackRPIButton>
+                                </td> : null}
                             </tr>
                         ))}
                     </tbody>
@@ -96,4 +124,20 @@ async function getLeaderboard(): Promise<LeaderboardEntry[]> {
     }
 
     return data.map((entry)=> entry as LeaderboardEntry);
+}
+
+async function deleteLeaderboardEntry(id: string) {
+    const {data, errors} = await client.models.Leaderboard.delete({id});
+
+    if(!confirm("Are you sure???")){
+        return;
+    }
+
+    if(errors){
+        console.error(errors);
+        alert("Failed to delete item. Please check your connection and try again.")
+        return [];
+    }
+
+
 }
