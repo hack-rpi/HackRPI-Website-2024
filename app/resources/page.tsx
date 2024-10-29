@@ -5,8 +5,6 @@ import GoogleSlides from "react-google-slides";
 import NavBar from "@/components/nav-bar/nav-bar";
 import "@/app/globals.css";
 import Footer from "@/components/footer/footer";
-import logo from "@/public/HackRPI_Logo_Yellow_Arrow.png";
-import Image from "next/image";
 
 export default function page() {
 	return (
