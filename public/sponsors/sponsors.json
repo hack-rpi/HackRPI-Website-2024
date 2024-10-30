@@ -1,10 +1,17 @@
 {
-	"Obsidian": [],
+	"Obsidian": [{ "name": "Nuvalence", "logoPath": "/Nuvalence.png", "url": "https://nuvalence.io/" }],
 	"Gold": [],
 	"Silver": [
-		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" }
+		{ "name": "Global Foundries", "logoPath": "/GlobalFoundries.png", "url": "https://gf.com/" },
+		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" },
+		{ "name": "Rensselaer School of Science", "logoPath": "/RPI_SOS.png", "url": "https://science.rpi.edu/" }
 	],
 	"Bronze": [
+		{
+			"name": "Rensselaer Center for Open Source Software",
+			"logoPath": "/rcos-red.png",
+			"url": "https://new.rcos.io"
+		},
 		{
 			"name": "Troy Web Consulting",
 			"logoPath": "/troywebconsulting.png",
@@ -23,13 +30,33 @@
 			"url": "https://www.axure.com/"
 		},
 		{
-			"name": "Hannaford Snacks",
+			"name": "Classiq",
+			"logoPath": "/Classiq.png",
+			"url": "https://www.classiq.io/"
+		},
+		{
+			"name": "Flying Pig Society",
+			"logoPath": "/FlyingPigSociety.png",
+			"url": "https://www.flyingpigsociety.org/"
+		},
+		{
+			"name": "Hannaford",
 			"logoPath": "/Hannaford.png",
 			"url": "https://www.hannaford.com/"
 		},
 		{
-			"name": "Nord Security",
-			"logoPath": "/NordSecurity.png",
+			"name": "Incogni",
+			"logoPath": "/Incogni.png",
+			"url": "https://incogni.com/"
+		},
+		{
+			"name": "NordPass",
+			"logoPath": "/NordPass.png",
+			"url": "https://nordpass.com/"
+		},
+		{
+			"name": "NordVPN",
+			"logoPath": "/NordVPN.webp",
 			"url": "https://nordsecurity.com/"
 		},
 		{
