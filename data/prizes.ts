@@ -28,7 +28,7 @@ export const podiumPrizes: Prize[] = [
 		name: "2nd",
 		amount: "$750",
 		description: "",
-	}
+	},
 ];
 
 export const majorPrizes: Prize[] = [

@@ -146,7 +146,9 @@ function EventPage() {
 								immediately after the submission deadline. You must be present at the event to give a live demo and
 								explain your project to the judges.
 							</p>
-							<HackRPILink href="https://hackrpi2024.devpost.com/" className="text-3xl mt-4 text-center">DEVPOST</HackRPILink>
+							<HackRPILink href="https://hackrpi2024.devpost.com/" className="text-3xl mt-4 text-center">
+								DEVPOST
+							</HackRPILink>
 						</div>
 					</div>
 				</div>
