@@ -1,6 +1,12 @@
 {
 	"Obsidian": [{ "name": "Nuvalence", "logoPath": "/Nuvalence.png", "url": "https://nuvalence.io/" }],
-	"Gold": [],
+	"Gold": [
+		{
+			"name": "ThinAir",
+			"logoPath": "/ThinAir.png",
+			"url": "https://thinair.cloud/"
+		}
+	],
 	"Silver": [
 		{ "name": "Global Foundries", "logoPath": "/GlobalFoundries.png", "url": "https://gf.com/" },
 		{ "name": "Lutron", "logoPath": "/Lutron.jpeg", "url": "https://www.lutron.com/en-US/Pages/default.aspx" },
@@ -63,6 +69,11 @@
 			"name": "O'Reilly",
 			"logoPath": "/OReilly.png",
 			"url": "https://www.oreilly.com/"
+		},
+		{
+			"name": "Severino Center for Technological Entrepreneurship",
+			"logoPath": "/Severino.jpg",
+			"url": "https://severinocenter.rpi.edu/"
 		},
 		{
 			"name": "Stand Out Stickers",
