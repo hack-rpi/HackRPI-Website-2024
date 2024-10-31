@@ -14,7 +14,6 @@
 		"next": "^14.2.16",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-google-slides": "^4.0.0",
 		"react-multi-carousel": "^2.8.5",
 		"sharp": "^0.33.5"
 	},

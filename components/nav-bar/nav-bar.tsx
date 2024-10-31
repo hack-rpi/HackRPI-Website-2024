@@ -34,11 +34,10 @@ export const links: NavGroup[] = [
 	{
 		name: "Resources",
 		links: [
-			{ href: "/resources#getting-started", children: "Getting Started" },
 			{ href: "/resources#web-dev", children: "Web Development" },
-			{ href: "/resources#mobile-dev", children: "Mobile Development" },
-			{ href: "/resources#game-dev", children: "Game Development" },
-			{ href: "/resources#cloud", children: "Cloud Computing" },
+			{ href: "/resources#git", children: "Git and GitHub" },
+			{ href: "/resources#leaflet", children: "Mapping Data" },
+			{ href: "/resources#desktop-dev", children: "Desktop Development" },
 			{ href: "/resources#submissions", children: "Submitting Your Project" },
 		],
 	},
