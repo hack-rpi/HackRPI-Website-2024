@@ -109,23 +109,27 @@ function EventPage() {
 							</p>
 							<ul className="text-lg list-disc list-inside">
 								<li className=" border-b border-gray-400 mb-2">
-									<strong>Creativity:</strong> How original is your hack? Is this a novel idea or something that many
-									people have come across?
+									<strong>Practicality & Utility</strong> What problem do you want to solve? How applicable is your hack
+									to problems we&apos;re facing today? Any future plans?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
-									<strong>Practical & Useful:</strong> What problem do you want to solve? How applicable is your hack to
-									problems we&apos;re facing today?
+									<strong>Creativity:</strong> How original is your hack? Is this a novel idea or something that many
+									people have come across?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
 									<strong>Technical Difficulty:</strong> How technically challenging is it? Which technologies did you
 									use?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
+									<strong>Effort:</strong> Did the team genuinely commit time and effort to this product?
+								</li>
+								<li className=" border-b border-gray-400 mb-2">
 									<strong>User Experience:</strong> What impression do you get from the hack? Does it provide for a
 									smooth user experience?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
-									<strong>Future Plans:</strong> Does it have ways it can be improved upon for the future?
+									<strong>Collaboration & Learning:</strong> Did the team work well together and split up work? Did they
+									learn from the experience?
 								</li>
 							</ul>
 						</div>
