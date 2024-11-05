@@ -67,7 +67,7 @@ export default function page() {
 
 				<div className="flex flex-col justify-center items-center w-80 xs:w-[400px] md:w-[600px]">
 					<h2 id="claude" className="text-3xl font-bold text-center mb-8 pt-10">
-						Anthropic Claude's Computer Use API
+						Anthropic Claude&apos;s Computer Use API
 					</h2>
 					<p>
 						The upgraded Claude 3.5 Sonnet model is capable of interacting with tools that can manipulate a computer
@@ -77,7 +77,7 @@ export default function page() {
 						href="https://docs.anthropic.com/en/docs/build-with-claude/computer-use"
 						className="px-4 py-4 mt-4"
 					>
-						Anthropic Claude's Computer Use API
+						Anthropic Claude&apos;s Computer Use API
 					</HackRPILink>
 				</div>
 
@@ -93,8 +93,8 @@ export default function page() {
 						Wolfram|One API
 					</HackRPILink>
 					<p>
-						This URL will take you to a sign-in page and prompt you to log in using your Wolfram ID. If you don't
-						already have a Wolfram ID, you'll be prompted to create one using an active email address. Once logged in,
+						This URL will take you to a sign-in page and prompt you to log in using your Wolfram ID. If you don&apos;t
+						already have a Wolfram ID, you&apos;ll be prompted to create one using an active email address. Once logged in,
 						you will see in the Downloads section which platforms of the software you have access to, with their
 						accompanying activation keys. Please download the desktop version to your machine, boot up the application
 						and use the associated activation key when prompted. This will grant you full access for 30 days from your
