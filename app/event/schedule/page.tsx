@@ -122,15 +122,17 @@ export default function Page() {
 	return (
 		<div className="flex flex-col w-full h-fit min-h-screen items-center justify-center">
 			<NavBar showOnScroll={false} />
-			<div className="w-11/12 desktop:w-2/3 flex-grow flex-shrink basis-auto mt-28 desktop:mt-16">
-				<div className="flex w-full items-center justify-between">
-					<h1 className="text-3xl xs:text-4xl font-bold text-center">Schedule</h1>
+			<div className="w-11/12 desktop:w-2/3 flex-grow flex-shrink basis-auto mt-28 desktop:mt-16 ">
+				<div className="flex w-full items-center justify-center">
 					<HackRPILink
 						href="https://calendar.google.com/calendar/u/0?cid=ZGFkOGYzNGIzMjY1ZGQ2OTQzODFiODE2ODI4M2I4OGVlOTQ3M2EyZDgzMWVkNmYzODY3YzAzODE4NjhmNGIzMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
-						className="text-primary text-xl xs:text-2xl px-5 py-2"
+						className="text-primary text-xl lg:text-2xl px-5 py-2"
 					>
-						Export to Google Calendar
+						Google Calendar
 					</HackRPILink>
+				</div>
+				<div className="flex w-full items-center justify-between">
+					<h1 className="text-3xl xs:text-4xl font-bold text-center">Schedule</h1>
 					<p className="text-center font-bold text-xl  xs:text-3xl">
 						{currentDateTime.toLocaleString(undefined, { dateStyle: "short", timeStyle: "short" })}
 					</p>
