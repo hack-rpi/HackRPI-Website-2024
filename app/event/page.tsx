@@ -6,8 +6,8 @@ import Footer from "../../components/footer/footer";
 import NavBar from "@/components/nav-bar/nav-bar";
 import MapsDCCLow from "@/components/maps/maps";
 import GoogleMapsWidget from "@/components/maps/google_maps";
-// import HackRPILink from "@/components/themed-components/hackrpi-link";
-// import Image from "next/image";
+import HackRPILink from "@/components/themed-components/hackrpi-link";
+import Image from "next/image";
 
 function EventPage() {
 	return (
@@ -87,22 +87,12 @@ function EventPage() {
 								Have questions for the staff? Want to chat with other participants? Looking for a team? Join the
 								conversation on Discord and get the support you need to succeed at HackRPI.
 							</p>
-							<p>Event Discord Will Be Posted Soon</p>
-							{/* 
-							{
-								svgPath: "/social/discord.svg",
-								link: "https://discord.gg/Pzmdt7FYnu",
-								name: "Discord",
-								bgGradientFrom: "from-[#5865F2]",
-								bgGradientTo: "to-[#7289da]",
-							},
-							 */}
-							{/* <HackRPILink
-								href="https://discord.gg/Pzmdt7FYnu"
+							<HackRPILink
+								href="https://discord.gg/7b2zc8fe26"
 								className="hover:bg-gradient-to-br hover:from-[#5865F2] hover:to-[#7289da] hover:bg-transparent hover:border-[#5865F2] w-20 h-20 flex items-center justify-center"
 							>
 								<Image src="/social/discord.svg" alt="Discord Logo" width={50} height={50} />
-							</HackRPILink> */}
+							</HackRPILink>
 						</div>
 					</div>
 				</div>
@@ -119,28 +109,32 @@ function EventPage() {
 							</p>
 							<ul className="text-lg list-disc list-inside">
 								<li className=" border-b border-gray-400 mb-2">
-									<strong>Creativity:</strong> How original is your hack? Is this a novel idea or something that many
-									people have come across?
+									<strong>Practicality & Utility</strong> What problem do you want to solve? How applicable is your hack
+									to problems we&apos;re facing today? Any future plans?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
-									<strong>Practical & Useful:</strong> What problem do you want to solve? How applicable is your hack to
-									problems we&apos;re facing today?
+									<strong>Creativity:</strong> How original is your hack? Is this a novel idea or something that many
+									people have come across?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
 									<strong>Technical Difficulty:</strong> How technically challenging is it? Which technologies did you
 									use?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
+									<strong>Effort:</strong> Did the team genuinely commit time and effort to this product?
+								</li>
+								<li className=" border-b border-gray-400 mb-2">
 									<strong>User Experience:</strong> What impression do you get from the hack? Does it provide for a
 									smooth user experience?
 								</li>
 								<li className=" border-b border-gray-400 mb-2">
-									<strong>Future Plans:</strong> Does it have ways it can be improved upon for the future?
+									<strong>Collaboration & Learning:</strong> Did the team work well together and split up work? Did they
+									learn from the experience?
 								</li>
 							</ul>
 						</div>
 
-						<div className="container p-4">
+						<div className="flex flex-col p-4">
 							<h1 className="font-semibold text-3xl mb-4 text-white">PROJECT SUBMISSION</h1>
 							<p className="text-lg mb-2">
 								HackRPI uses Devpost to manage project submissions. You will need to create a Devpost account and submit
@@ -156,7 +150,9 @@ function EventPage() {
 								immediately after the submission deadline. You must be present at the event to give a live demo and
 								explain your project to the judges.
 							</p>
-							<h1 className="font-semibold text-3xl mb-4 text-white">Devpost link will be added here soon!</h1>
+							<HackRPILink href="https://hackrpi2024.devpost.com/" className="text-3xl mt-4 text-center">
+								DEVPOST
+							</HackRPILink>
 						</div>
 					</div>
 				</div>
