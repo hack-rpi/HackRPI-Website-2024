@@ -25,7 +25,7 @@ type LeaderboardEntry = {
 	year: number;
 };
 
-export default function Page () {
+export default function Page() {
 	const [leaderboardEntries, setLeaderboardEntries] = useState<LeaderboardEntry[]>([]);
 	const [isDirector, setIsDirector] = useState(false);
 

@@ -21,7 +21,7 @@ const client = generateClient<Schema>({ authMode: "userPool" });
 
 import "@/app/globals.css";
 
-export default function Page () {
+export default function Page() {
 	const [grid, setGrid] = useState<number[][]>([
 		[0, 0, 0, 0],
 		[0, 0, 0, 0],
@@ -163,25 +163,25 @@ export default function Page () {
 
 			switch (e.key) {
 				case "ArrowUp":
-                    // eslint-disable-next-line
+					// eslint-disable-next-line
 					const upGrid = moveUp(newGrid);
 					moved = JSON.stringify(upGrid) !== JSON.stringify(newGrid);
 					newGrid = upGrid;
 					break;
 				case "ArrowDown":
-                    // eslint-disable-next-line
+					// eslint-disable-next-line
 					const downGrid = moveDown(newGrid);
 					moved = JSON.stringify(downGrid) !== JSON.stringify(newGrid);
 					newGrid = downGrid;
 					break;
 				case "ArrowLeft":
-                    // eslint-disable-next-line
+					// eslint-disable-next-line
 					const leftGrid = moveLeft(newGrid);
 					moved = JSON.stringify(leftGrid) !== JSON.stringify(newGrid);
 					newGrid = leftGrid;
 					break;
 				case "ArrowRight":
-                    // eslint-disable-next-line
+					// eslint-disable-next-line
 					const rightGrid = moveRight(newGrid);
 					moved = JSON.stringify(rightGrid) !== JSON.stringify(newGrid);
 					newGrid = rightGrid;
