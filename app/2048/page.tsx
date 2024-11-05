@@ -101,10 +101,7 @@ export default function Page() {
 			let newGrid = [...prevGrid];
 			let moved = false;
 
-			console.log(deltax, deltay);
-
 			if (deltax > 0 && Math.abs(deltax) > Math.abs(deltay)) {
-				console.log("right");
 				const rightGrid = moveRight(newGrid);
 				moved = JSON.stringify(rightGrid) !== JSON.stringify(newGrid);
 				newGrid = rightGrid;
@@ -355,7 +352,7 @@ export default function Page() {
 		profanity.addWords(["fvck", "shjt", "bjtch", "njgga", "njgger", "f4ck"]);
 
 		if (profanity.exists(username) || username.length > 20 || !isAlphanumeric(username)) {
-			alert("haha i see what you tried to do there. bad! :(");
+			alert("Sorry, that username is not allowed!");
 			return;
 		}
 
