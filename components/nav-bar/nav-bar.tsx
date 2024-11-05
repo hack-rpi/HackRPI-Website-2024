@@ -45,9 +45,9 @@ export const links: NavGroup[] = [
 		name: "2048",
 		links: [
 			{ href: "/2048", children: "Play" },
-			{ href: "/2048/leaderboard", children: "Leaderboard"},
+			{ href: "/2048/leaderboard", children: "Leaderboard" },
 		],
-	}
+	},
 ];
 
 export default function NavBar({ showOnScroll }: { showOnScroll: boolean }) {

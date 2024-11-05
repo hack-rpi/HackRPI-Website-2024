@@ -21,20 +21,21 @@ const schema = a.schema({
 			];
 		}),
 
-	Leaderboard: a.model({
-		id: a.id().required(),
-		username: a.string().required(),
-		score: a.integer().required().default(0),
-		year: a.integer().required().default(2024)
-	})
-	.secondaryIndexes((index) => [index("year").sortKeys(["score"]).queryField("listByScore")])
-	.authorization(allow => {
-		return [
-			allow.group("directors").to(["create", "delete", "read"]),
-			allow.authenticated("identityPool").to(["read", "create"]),
-			allow.guest().to(["read", "create"]),
-		];
-	})
+	Leaderboard: a
+		.model({
+			id: a.id().required(),
+			username: a.string().required(),
+			score: a.integer().required().default(0),
+			year: a.integer().required().default(2024),
+		})
+		.secondaryIndexes((index) => [index("year").sortKeys(["score"]).queryField("listByScore")])
+		.authorization((allow) => {
+			return [
+				allow.group("directors").to(["create", "delete", "read"]),
+				allow.authenticated("identityPool").to(["read", "create"]),
+				allow.guest().to(["read", "create"]),
+			];
+		}),
 });
 
 export type Schema = ClientSchema<typeof schema>;
