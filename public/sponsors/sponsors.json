@@ -57,6 +57,11 @@
 			"url": "https://incogni.com/"
 		},
 		{
+			"name": "Longhorn Screen & Stitch",
+			"logoPath": "/Longhorn.png",
+			"url": "https://www.longhornscreenandstitch.com/"
+		},
+		{
 			"name": "NordPass",
 			"logoPath": "/NordPass.png",
 			"url": "https://nordpass.com/"
