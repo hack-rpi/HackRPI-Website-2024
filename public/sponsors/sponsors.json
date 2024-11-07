@@ -42,6 +42,11 @@
 			"url": "https://www.classiq.io/"
 		},
 		{
+			"name": "Dibella's Subs",
+			"logoPath": "/Dibellas.png",
+			"url": "https://www.dibellas.com/"
+		},
+		{
 			"name": "Flying Pig Society",
 			"logoPath": "/FlyingPigSociety.png",
 			"url": "https://www.flyingpigsociety.org/"
@@ -85,6 +90,11 @@
 			"name": "Stand Out Stickers",
 			"logoPath": "/stand-out-stickers.png",
 			"url": "https://www.standoutstickers.com/"
+		},
+		{
+			"name": "Taichi Bubble Tea",
+			"logoPath": "/Taichi.png",
+			"url": "https://www.taichibubbletea.com/"
 		},
 		{
 			"name": "Wolfram",
