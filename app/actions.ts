@@ -12,7 +12,7 @@ import { Profanity } from "@2toad/profanity";
 import { Event } from "@/data/schedule";
 
 Amplify.configure(amplify_outputs);
-const client = generateClient<Schema>({ authMode: "userPool" });
+const client = generateClient<Schema>({ authMode: "identityPool" });
 
 const isAlphanumeric = (username: string) => {
 	return /^[a-z0-9]+$/i.test(username);
@@ -98,15 +98,6 @@ export async function create_leaderboard_entry({
 		return { status: 401, message: "Invalid score." };
 	}
 
-	let groups = undefined;
-	try {
-		const session = await Auth.fetchAuthSession();
-		groups = session.tokens?.accessToken.payload["cognito:groups"];
-	} catch (e) {
-		console.error(e);
-		groups = undefined;
-	}
-
 	const { errors } = await client.models.Leaderboard.create(
 		{
 			username,
@@ -114,12 +105,13 @@ export async function create_leaderboard_entry({
 			year: new Date().getFullYear(),
 		},
 		{
-			authMode: groups ? "userPool" : "identityPool",
+			authMode: "identityPool",
 		},
 	);
 
 	if (errors) {
-		return { status: 401, message: "Failed to create leaderboard entry. Please Try Again." };
+		console.error(errors);
+		return { status: 500, message: "Failed to create leaderboard entry. Please Try Again." };
 	}
 
 	return { status: 200, message: "Success" };

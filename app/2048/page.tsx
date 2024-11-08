@@ -6,6 +6,7 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import Board from "@/components/game/board";
 import GameOver from "@/components/game/game-over";
 import HackRPIButton from "@/components/themed-components/hackrpi-button";
+import * as Auth from "@aws-amplify/auth";
 
 import { create_leaderboard_entry } from "@/app/actions";
 
@@ -323,13 +324,23 @@ export default function Page() {
 		return true;
 	};
 
+	const is_director = async () => {
+		const session = await Auth.fetchAuthSession();
+		const groups = session.tokens?.accessToken.payload["cognito:groups"];
+		return groups !== undefined;
+	};
+
 	const handleCloseGameOver = () => {
 		setIsGameOver(false);
 		setGrid(resetGame());
 	};
 
 	const handleSubmit = async (username: string) => {
-		const response = await create_leaderboard_entry({ username, score, boardState: grid });
+		const response = await create_leaderboard_entry({
+			username,
+			score,
+			boardState: grid
+		});
 
 		if (response.status === 200) {
 			handleCloseGameOver();
