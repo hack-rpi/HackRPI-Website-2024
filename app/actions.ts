@@ -54,8 +54,6 @@ export async function get_leaderboard() {
 	return data.map((entry) => entry as LeaderboardEntry);
 }
 
-
-
 export async function create_leaderboard_entry({ username, score }: { username: string; score: number }) {
 	const profanity = new Profanity({
 		wholeWord: false,

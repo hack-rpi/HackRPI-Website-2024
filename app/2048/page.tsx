@@ -328,8 +328,6 @@ export default function Page() {
 		setGrid(resetGame());
 	};
 
-	
-
 	const handleSubmit = async (username: string) => {
 		const response = await create_leaderboard_entry({ username, score });
 
@@ -338,7 +336,6 @@ export default function Page() {
 		} else {
 			alert(response.message);
 		}
-
 	};
 
 	const handleExit = () => {
@@ -350,16 +347,14 @@ export default function Page() {
 
 		window.addEventListener("keydown", handleKeyDown);
 
-		window.addEventListener('load', () => {
-			document.body.style.paddingTop = '1px';
-		  });
-		  
+		window.addEventListener("load", () => {
+			document.body.style.paddingTop = "1px";
+		});
+
 		initializeGame();
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown);
 		};
-
-
 	}, []);
 
 	return (
