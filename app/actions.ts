@@ -54,7 +54,15 @@ export async function get_leaderboard() {
 	return data.map((entry) => entry as LeaderboardEntry);
 }
 
-export async function create_leaderboard_entry({ username, score }: { username: string; score: number }) {
+export async function create_leaderboard_entry({
+	username,
+	score,
+	boardState,
+}: {
+	username: string;
+	score: number;
+	boardState: number[][];
+}) {
 	const profanity = new Profanity({
 		wholeWord: false,
 		languages: ["en", "de", "es", "fr"],
@@ -66,7 +74,27 @@ export async function create_leaderboard_entry({ username, score }: { username: 
 		return { status: 401, message: "Usernames must be alphanumeric and less than 20 characters." };
 	}
 
-	if (score < 0 || score > 200000 || isNaN(score) || score % 4 !== 0) {
+	const scoreUpperBounds: { [key: number]: number } = {
+		64: 2000,
+		128: 4000,
+		256: 10000,
+		512: 30000,
+		1024: 60000,
+		2048: 100000,
+		4096: 150000,
+		8192: 200000,
+	};
+
+	const maxTile = Math.max(...boardState.map((row) => Math.max(...row)));
+
+	if (
+		score < 0 ||
+		score > 200000 ||
+		isNaN(score) ||
+		score % 4 !== 0 ||
+		(score % 10 === 0 && score % 20 !== 0) ||
+		score > scoreUpperBounds[maxTile]
+	) {
 		return { status: 401, message: "Invalid score." };
 	}
 

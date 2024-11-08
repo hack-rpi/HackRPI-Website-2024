@@ -329,7 +329,7 @@ export default function Page() {
 	};
 
 	const handleSubmit = async (username: string) => {
-		const response = await create_leaderboard_entry({ username, score });
+		const response = await create_leaderboard_entry({ username, score, boardState: grid });
 
 		if (response.status === 200) {
 			handleCloseGameOver();
