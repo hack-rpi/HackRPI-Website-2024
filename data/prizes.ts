@@ -8,6 +8,9 @@ import startup_prize from "@/public/prizes/startup.png";
 import data_science_prize from "@/public/prizes/data_science.jpg";
 import beginner_prize from "@/public/prizes/coding.webp";
 import ugly_code_prize from "@/public/prizes/ugly_code.png";
+import thin_air from "@/public/sponsors/sponsor_logos/ThinAir.png";
+import palantir from "@/public/sponsors/sponsor_logos/Palantir.png";
+import accessibility_prize from "@/public/prizes/Accessibility.webp";
 
 import { StaticImageData } from "next/image";
 
@@ -32,6 +35,35 @@ export const podiumPrizes: Prize[] = [
 ];
 
 export const majorPrizes: Prize[] = [
+	{
+		name: "Best Use of Anthropic Claude's Computer Use API",
+		amount: "$800 Cash Prize",
+		description: `Presented by ThinAir: Think you can build the next-gen
+		automation tools? Join this track to create powerful browser automation
+		systems using Claude’s Computer Use API! Imagine you’re an SMB looking
+		to streamline operations, or maybe you just want to create a cool
+		project to impress your friends—this is your chance to bring those 
+		ideas to life. Use the API to automate complex workflows, pull data
+		from multiple sources, and build systems that interact seamlessly
+		across tabs and browsers. The possibilities are endless, and the
+		best projects will score exclusive cash prizes, swag and ultimate
+		bragging rights!`,
+		imagePath: thin_air,
+	},
+	{
+		name: " Best Public Health Innovation",
+		amount: "$500 Cash Prize",
+		description:
+			"Presented by Palantir: This prize recognizes outstanding efforts in addressing critical public health challenges, improving patient outcomes, and/or enhancing community well-being. Award recipients will have demonstrated exceptional creativity, technical skill, and a dedication to making a meaningful impact on global health through thoughtful analysis and implementation of data-driven solutions.",
+		imagePath: palantir,
+	},
+	{
+		name: "Most Accessible Hack",
+		amount: "$500 Cash Prize",
+		description:
+			"Accessibility matters! This prize goes to the project that best improves urban living for people with disabilities, making city life more inclusive and accessible to all.",
+		imagePath: accessibility_prize,
+	},
 	{
 		name: "Best AI Hack",
 		amount: "$400 Cash Prize",

@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import HackRPILink from "../themed-components/hackrpi-link";
 import { Director, team } from "../../data/members";
-// import { teamColors } from "../../data/members";
+import { teamColors } from "../../data/members";
 import { executive } from "../../data/members";
 import Image from "next/image";
 
@@ -13,14 +13,14 @@ export default function TeamComponent() {
 		offset: 0,
 		hover: false,
 	});
-	// const [organizersAnim, setOrganizersAnim] = useState({
-	// 	organizers: team.organizers,
-	// 	offset: 0,
-	// 	hover: false,
-	// });
+	const [organizersAnim, setOrganizersAnim] = useState({
+		organizers: team.organizers,
+		offset: 0,
+		hover: false,
+	});
 
 	const DIRECTOR_DX_PERCENT = 0.5;
-	// const ORGANIZER_DX_PERCENT = 1.25;
+	const ORGANIZER_DX_PERCENT = 1.25;
 
 	const animate_directors = useCallback(() => {
 		setDirectorsAnim((prev) => {
@@ -33,29 +33,26 @@ export default function TeamComponent() {
 		requestAnimationFrame(animate_directors);
 	}, []);
 
-	// const animate_organizers = useCallback(() => {
-	// 	setOrganizersAnim((prev) => {
-	// 		if (prev.hover) return prev;
-	// 		if (prev.offset <= -105) {
-	// 			return { organizers: [...prev.organizers.slice(1), prev.organizers[0]], offset: 11.5, hover: prev.hover };
-	// 		}
-	// 		return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
-	// 	});
-	// 	requestAnimationFrame(animate_organizers);
-	// }, []);
+	const animate_organizers = useCallback(() => {
+		setOrganizersAnim((prev) => {
+			if (prev.hover) return prev;
+			if (prev.offset <= -111.5) {
+				return { organizers: [...prev.organizers.slice(1), prev.organizers[0]], offset: 11.5, hover: prev.hover };
+			}
+			return { organizers: prev.organizers, offset: prev.offset - ORGANIZER_DX_PERCENT, hover: prev.hover };
+		});
+		requestAnimationFrame(animate_organizers);
+	}, []);
 
 	useEffect(() => {
 		const animID = requestAnimationFrame(animate_directors);
-		// const animID2 = requestAnimationFrame(animate_organizers);
+		const animID2 = requestAnimationFrame(animate_organizers);
 
 		return () => {
 			cancelAnimationFrame(animID);
-			// cancelAnimationFrame(animID2);
+			cancelAnimationFrame(animID2);
 		};
-	}, [
-		animate_directors,
-		//animate_organizers
-	]);
+	}, [animate_directors, animate_organizers]);
 
 	return (
 		<div className="w-full flex items-center justify-center mb-4  desktop:pl-0">
@@ -107,7 +104,7 @@ export default function TeamComponent() {
 						return DirectorCard(director, directorsAnim.offset);
 					})}
 				</div>
-				{/*<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
+				<h2 className="text-2xl font-bold text-white">Thank You to All of our Organizers</h2>
 				<div
 					className="w-full h-fit overflow-hidden flex text-nowrap py-4"
 					onMouseEnter={() => {
@@ -129,7 +126,7 @@ export default function TeamComponent() {
 								style={{ transform: `translate(${organizersAnim.offset}%, 0%)` }}
 							>
 								<div
-									className="w-fit h-fit rounded-full flex items-center justify-center px-8 "
+									className="w-32 aspect-square rounded-full flex items-center justify-center px-8 "
 									style={{ backgroundColor: teamColors[organizer.team].bg }}
 								>
 									<div className="my-2 w-full rounded-full flex items-center justify-center flex-col text-white text-center">
@@ -140,7 +137,7 @@ export default function TeamComponent() {
 							</div>
 						);
 					})}
-				</div>*/}
+				</div>
 			</div>
 		</div>
 	);
