@@ -11,6 +11,11 @@ import ugly_code_prize from "@/public/prizes/ugly_code.png";
 import thin_air from "@/public/sponsors/sponsor_logos/ThinAir.png";
 import palantir from "@/public/sponsors/sponsor_logos/Palantir.png";
 import accessibility_prize from "@/public/prizes/Accessibility.webp";
+import midnight from "@/public/prizes/midnight.webp";
+import cloudflare from "@/public/prizes/cloudflare.webp";
+import tech from "@/public/prizes/tech.webp";
+import hashicorp from "@/public/prizes/hashicorp.webp";
+import databricks from "@/public/prizes/databricks.webp";
 
 import { StaticImageData } from "next/image";
 
@@ -36,18 +41,11 @@ export const podiumPrizes: Prize[] = [
 
 export const majorPrizes: Prize[] = [
 	{
-		name: "Best Use of Anthropic Claude's Computer Use API",
+		name: "Ship Fast, Ship Often - Build a Payworthy MVP in a Weekend",
 		amount: "$800 Cash Prize",
-		description: `Presented by ThinAir: Think you can build the next-gen
-		automation tools? Join this track to create powerful browser automation
-		systems using Claude’s Computer Use API! Imagine you’re an SMB looking
-		to streamline operations, or maybe you just want to create a cool
-		project to impress your friends—this is your chance to bring those 
-		ideas to life. Use the API to automate complex workflows, pull data
-		from multiple sources, and build systems that interact seamlessly
-		across tabs and browsers. The possibilities are endless, and the
-		best projects will score exclusive cash prizes, swag and ultimate
-		bragging rights!`,
+		description: `Can you create a product people would pay for in just one weekend? Join this track to build a minimum viable product (MVP) with real market potential. 
+
+Whether it's an app, Chrome extension, or web app, your goal is to solve a real problem quickly and effectively. Focus on creating something simple, valuable, and marketable. Top projects win cash prizes, swag, and bragging rights!`,
 		imagePath: thin_air,
 	},
 	{
@@ -136,5 +134,44 @@ export const minorPrizes: Prize[] = [
 		description:
 			"Embrace the spaghetti! A fun award for the participant with the most convoluted code in our ugliest code competition, reminding us all why clean coding matters, especially in urban tech.",
 		imagePath: ugly_code_prize,
+	},
+	{
+		name: "Best Use of Midnight",
+		amount: "JBL 510BT Headphones ($100 Value)",
+		description: `Midnight is a data protection blockchain that offers programmable data protection capabilities powered by zero-knowledge technology to address the delicate balance between data protection, ownership, and utilization. This ensures that developers can leverage blockchain technology without exposing confidential information or losing control over their data.
+
+To build on Midnight, all you need is familiarity with TypeScript or a similar JavaScript based library. The service is free to use and their developer documentation has all the information you need to get started. Build a DApp using Midnight this weekend for a chance to win wireless headphones for you and each of your team mates!`,
+		imagePath: midnight,
+	},
+	{
+		name: "Best .TECH Domain Name",
+		amount: "Blue Snowball Microphone & Free .Tech Domain",
+		description:
+			"Make your Team's Achievements timeless: Win a .Tech Domain Name for up to 10 years to Showcase and Expand Your Project, Plus 4 Blue Snowball Mics for Effortless Collaboration on Zoom, empowering you to build even more cool things together!",
+		imagePath: tech,
+	},
+	{
+		name: "Best AI Application Built with Cloudflare",
+		amount: "Arudino Starter Kit ($100 Value)",
+		description:
+			"Cloudflare is one of the world’s largest networks enabling hackers like you to build, deploy, and deliver trusted applications, no matter where you are! With Cloudflare, you’ll have all the building blocks to create a full-stack application; from C3 (create Cloudflare command line) instance deployment to object storage. You can even run GenAI (LLMs, text to image, Voice to text etc..) in the cloud and leverage your AI functionality via API requests using Cloudlfare’s Workers AI! Enjoy Cloudflare’s generous free tier to get started at no cost! This weekend, we want you to build an AI Application utilizing Cloudflare’s numerous services for a chance to win Arduino Kits for you and your team!",
+		imagePath: cloudflare,
+	},
+	{
+		name: "Best Use of Terraform",
+		amount: "Keychron K8 Keyboard ($100 Value)",
+		description: `HashiCorp Terraform is a source available infrastructure as code (IaC) tool that makes building, deploying, and managing your projects even easier! Whether you’re working in the cloud or using local resources, Terraform can make managing and configuring your application simple and organized. From deploying Machine Learning models to spinning up virtual containers for your web applications, Terraform supports a wide array of cloud providers and services, taking the guesswork out of your next hackathon project. Dive into the documentation and discover all the ways Terraform can take the way you hack to the next level!
+
+Terraform’s community edition is free to use with no credit card required! Utilize Terraform in your hackathon project this weekend for a chance to win some awesome Hashicorp prizes for you and each of your teammates! `,
+		imagePath: hashicorp,
+	},
+	{
+		name: "Best AI Project with Databricks Open Source",
+		amount: "Assorted Lego Sets ($100 Value)",
+		description: `Databricks is an open analytics platform that helps you build, deploy, and maintain large scale data & AI solutions! Whether you’re working with large language models using Mosaic AI, storing data with Databricks Data Lakes, or deploying GenAI powered applications using MLflow, Databricks Open Source software has the tools you need to make your hackathon project state of the art. 
+
+
+Build an AI powered project utilizing Databricks Open Source projects like the ones mentioned, or Databricks friendly Open Source projects like LanceDB and Llama Index, for a chance to win some amazing prizes for you and your teammates! Check out the following link to see all qualifying Databricks' Open Source technologies. `,
+		imagePath: databricks,
 	},
 ];
