@@ -36,18 +36,11 @@ export const podiumPrizes: Prize[] = [
 
 export const majorPrizes: Prize[] = [
 	{
-		name: "Best Use of Anthropic Claude's Computer Use API",
+		name: "Ship Fast, Ship Often - Build a Payworthy MVP in a Weekend",
 		amount: "$800 Cash Prize",
-		description: `Presented by ThinAir: Think you can build the next-gen
-		automation tools? Join this track to create powerful browser automation
-		systems using Claude’s Computer Use API! Imagine you’re an SMB looking
-		to streamline operations, or maybe you just want to create a cool
-		project to impress your friends—this is your chance to bring those 
-		ideas to life. Use the API to automate complex workflows, pull data
-		from multiple sources, and build systems that interact seamlessly
-		across tabs and browsers. The possibilities are endless, and the
-		best projects will score exclusive cash prizes, swag and ultimate
-		bragging rights!`,
+		description: `Can you create a product people would pay for in just one weekend? Join this track to build a minimum viable product (MVP) with real market potential. 
+
+Whether it’s an app, Chrome extension, or web app, your goal is to solve a real problem quickly and effectively. Focus on creating something simple, valuable, and marketable. Top projects win cash prizes, swag, and bragging rights!`,
 		imagePath: thin_air,
 	},
 	{
