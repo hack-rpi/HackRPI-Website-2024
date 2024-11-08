@@ -34,7 +34,7 @@ export default function Page() {
 			console.error(e);
 			groups = undefined;
 		}
-	
+
 		return groups !== undefined;
 	}
 
@@ -96,7 +96,6 @@ export default function Page() {
 }
 
 async function deleteLeaderboardEntry(id: string) {
-	
 	if (!confirm("Are you sure???")) {
 		return;
 	}
@@ -106,5 +105,4 @@ async function deleteLeaderboardEntry(id: string) {
 	if (response.errors) {
 		alert("Error deleting leaderboard entry");
 	}
-	
 }
