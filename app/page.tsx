@@ -58,7 +58,9 @@ export default function Home() {
 				<Footer />
 
 				<div
-					className={`${showHighlightDot ? "fixed top-32 right-3.5 block" : "opacity-0"} w-12 h-12 z-[5] bg-white border-[6px] border-hackrpi-primary-blue rounded-full transition-opacity duration-500`}
+					className={`${
+						showHighlightDot ? "fixed top-32 right-3.5 block" : "opacity-0"
+					} w-12 h-12 z-[5] bg-white border-[6px] border-hackrpi-primary-blue rounded-full transition-opacity duration-500`}
 				></div>
 
 				<div

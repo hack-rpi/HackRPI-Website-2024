@@ -195,56 +195,52 @@ export const team: Team = {
 	],
 	organizers: [
 		{
-			name: "Test Organizer",
+			name: "Iain",
+			team: "Sponsorship",
+		},
+		{
+			name: "Brian Witanowski",
+			team: "Sponsorship",
+		},
+		{
+			name: "Jackson Baimel",
+			team: "Sponsorship",
+		},
+		{
+			name: "Christian Marinkovich",
 			team: "Technology",
 		},
 		{
-			name: "Test Organizer",
-			team: "Logistics",
+			name: "Peter Ermishkin",
+			team: "Sponsorship",
 		},
 		{
-			name: "Test Organizer",
-			team: "Marketing",
+			name: "Anthony Smith",
+			team: "Technology",
 		},
 		{
-			name: "Test Organizer",
-			team: "Outreach",
-		},
-		{
-			name: "Test Organizer",
+			name: "Devan Patel",
 			team: "Finance",
 		},
 		{
-			name: "Test Organizer",
+			name: "Tobias Manayath",
+			team: "Logistics",
+		},
+		{
+			name: "Matthew Treanor",
+			team: "Technology",
+		},
+		{
+			name: "Olivia Lee",
+			team: "Marketing",
+		},
+		{
+			name: "Mrunal Athaley",
 			team: "Sponsorship",
 		},
 		{
-			name: "Test Organizer",
-			team: "Sponsorship",
-		},
-		{
-			name: "Test Organizer",
-			team: "Sponsorship",
-		},
-		{
-			name: "Test Organizer",
-			team: "Sponsorship",
-		},
-		{
-			name: "Test Organizer",
-			team: "Sponsorship",
-		},
-		{
-			name: "Test Organizer",
-			team: "Sponsorship",
-		},
-		{
-			name: "Test Organizer",
-			team: "Sponsorship",
-		},
-		{
-			name: "Test Organizer",
-			team: "Sponsorship",
+			name: "Evan Chen",
+			team: "Logistics",
 		},
 	],
 };

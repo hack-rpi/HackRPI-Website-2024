@@ -94,8 +94,8 @@ export default function page() {
 					</HackRPILink>
 					<p>
 						This URL will take you to a sign-in page and prompt you to log in using your Wolfram ID. If you don&apos;t
-						already have a Wolfram ID, you&apos;ll be prompted to create one using an active email address. Once logged in,
-						you will see in the Downloads section which platforms of the software you have access to, with their
+						already have a Wolfram ID, you&apos;ll be prompted to create one using an active email address. Once logged
+						in, you will see in the Downloads section which platforms of the software you have access to, with their
 						accompanying activation keys. Please download the desktop version to your machine, boot up the application
 						and use the associated activation key when prompted. This will grant you full access for 30 days from your
 						activation date.
