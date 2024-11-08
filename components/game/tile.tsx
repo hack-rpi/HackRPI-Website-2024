@@ -57,7 +57,7 @@ function Tile({ value }: { value: number }) {
 
 	return (
 		<div
-			className={`tile flex justify-center items-center rounded-lg shadow-lg h-20 w-20 md:h-36 md:w-36 ${bgColor} ${textColor} ${
+			className={`tile flex justify-center items-center rounded-lg shadow-lg w-full h-full ${bgColor} ${textColor} ${
 				value ? "" : "empty"
 			} text-4xl font-bold`}
 		>

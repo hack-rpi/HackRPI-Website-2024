@@ -6,18 +6,8 @@ import NavBar from "@/components/nav-bar/nav-bar";
 import Board from "@/components/game/board";
 import GameOver from "@/components/game/game-over";
 import HackRPIButton from "@/components/themed-components/hackrpi-button";
-import { Amplify } from "aws-amplify";
-import * as Auth from "@aws-amplify/auth";
-import { generateClient } from "aws-amplify/api";
-import type { Schema } from "@/amplify/data/resource";
-// eslint-disable-next-line
-// @ts-ignore
-import amplify_outputs from "@/amplify_outputs.json";
 
-import { Profanity } from "@2toad/profanity";
-
-Amplify.configure(amplify_outputs);
-const client = generateClient<Schema>({ authMode: "userPool" });
+import { create_leaderboard_entry } from "@/app/actions";
 
 import "@/app/globals.css";
 
@@ -338,49 +328,17 @@ export default function Page() {
 		setGrid(resetGame());
 	};
 
-	const isAlphanumeric = (username: string) => {
-		return /^[a-z0-9]+$/i.test(username);
-	};
+	
 
 	const handleSubmit = async (username: string) => {
-		// TODO: POST to DB
-		const profanity = new Profanity({
-			wholeWord: false,
-			languages: ["en", "de", "es", "fr"],
-		});
+		const response = await create_leaderboard_entry({ username, score });
 
-		profanity.addWords(["fvck", "shjt", "bjtch", "njgga", "njgger", "f4ck"]);
-
-		if (profanity.exists(username) || username.length > 20 || !isAlphanumeric(username)) {
-			alert("Sorry, that username is not allowed!");
-			return;
+		if (response.status === 200) {
+			handleCloseGameOver();
+		} else {
+			alert(response.message);
 		}
 
-		let groups = undefined;
-		try {
-			const session = await Auth.fetchAuthSession();
-			groups = session.tokens?.accessToken.payload["cognito:groups"];
-		} catch (e) {
-			console.error(e);
-			groups = undefined;
-		}
-
-		const { errors } = await client.models.Leaderboard.create(
-			{
-				username,
-				score,
-				year: new Date().getFullYear(),
-			},
-			{
-				authMode: groups ? "userPool" : "identityPool",
-			},
-		);
-
-		if (errors) {
-			alert("We failed to put your score in the DB. Please try again later. :(");
-		}
-
-		handleCloseGameOver();
 	};
 
 	const handleExit = () => {
@@ -391,10 +349,17 @@ export default function Page() {
 		const handleKeyDown = (e: KeyboardEvent) => handleKeyPress(e, grid, setGrid);
 
 		window.addEventListener("keydown", handleKeyDown);
+
+		window.addEventListener('load', () => {
+			document.body.style.paddingTop = '1px';
+		  });
+		  
 		initializeGame();
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown);
 		};
+
+
 	}, []);
 
 	return (
@@ -408,8 +373,9 @@ export default function Page() {
 
 			<div className="flex-grow mt-30"></div>
 			<div className="flex-grow flex-shrink basis-auto flex flex-col w-full items-center justify-center">
-				<div className="flex-grow items-center justify-center basis-auto">
-					<div className="flex items-center justify-around mt-24">
+				<div className="flex-grow items-center justify-center basis-auto flex flex-col">
+					<p className="text-white mt-24">Use arrow keys or swipe to move blocks.</p>
+					<div className="flex items-center justify-around">
 						<HackRPIButton className="flex-1 w-100" onClick={handleReset}>
 							Reset Game
 						</HackRPIButton>

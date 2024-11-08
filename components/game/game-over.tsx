@@ -24,7 +24,7 @@ const GameOver = ({
 				</p>
 				<label className="my-4 w-full">Username: </label>
 				<input id="username" className="input input-primary w-full mb-4" placeholder="Username"></input>
-				<HackRPIButton onClick={onSubmit}>Try Again</HackRPIButton>
+				<HackRPIButton onClick={onSubmit}>Submit and Try Again</HackRPIButton>
 			</div>
 		</div>
 	);
