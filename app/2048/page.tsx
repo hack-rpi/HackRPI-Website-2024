@@ -339,7 +339,7 @@ export default function Page() {
 		const response = await create_leaderboard_entry({
 			username,
 			score,
-			boardState: grid
+			boardState: grid,
 		});
 
 		if (response.status === 200) {
