@@ -6,21 +6,13 @@ import Footer from "@/components/footer/footer";
 import { useEffect, useState } from "react";
 import type { Event } from "@/data/schedule";
 import { SATURDAY_END, SATURDAY_START, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
-
-import { Amplify } from "aws-amplify";
-// eslint-disable-next-line
-// @ts-ignore
-import awsconfig from "@/amplify_outputs.json";
-import * as Auth from "aws-amplify/auth";
+import { fetchEvents } from "@/app/actions";
 
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import HappeningNow from "@/components/schedule/happening-now";
 import Schedule from "@/components/schedule/schedule";
 import HackRPILink from "@/components/themed-components/hackrpi-link";
-
-Amplify.configure(awsconfig);
-const client = generateClient<Schema>({});
 
 export default function Page() {
 	const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -31,37 +23,14 @@ export default function Page() {
 	const [happeningNow, setHappeningNow] = useState<Event[]>([]);
 	const [modalEvent, setModalEvent] = useState<Event | null>(null);
 
-	async function fetchEvents(): Promise<Event[]> {
-		let groups = undefined;
-		try {
-			const session = await Auth.fetchAuthSession();
-			groups = session.tokens?.accessToken.payload["cognito:groups"];
-		} catch (e) {
-			console.error(e);
-			groups = undefined;
-		}
-
-		const { data, errors } = await client.models.event.list({
-			authMode: groups ? "userPool" : "identityPool",
-			limit: 200,
-			filter: {
-				visible: { eq: true },
-			},
-		});
-
-		if (errors) {
-			setState("error");
-			console.error(errors);
-			return [];
-		}
-
-		setState("loaded");
-		return data.map((event) => event as Event);
-	}
-
 	useEffect(() => {
-		fetchEvents().then((events) => {
-			const saturdayEvents = events
+		fetchEvents().then((resp) => {
+			if (resp.status !== 200) {
+				setState("error");
+				return;
+			}
+
+			const saturdayEvents = resp.events
 				.slice()
 				.map((event) => {
 					if (event.startTime >= SATURDAY_START && event.startTime < SATURDAY_END) {
@@ -77,7 +46,7 @@ export default function Page() {
 				.filter((event) => event !== null && event.endTime > event.startTime)
 				.sort((a, b) => a!.startTime - b!.startTime) as Event[];
 
-			const sundayEvents = events
+			const sundayEvents = resp.events
 				.slice()
 				.map((event) => {
 					if (
@@ -101,9 +70,10 @@ export default function Page() {
 
 			setSaturdayEvents(saturdayEvents);
 			setSundayEvents(sundayEvents);
-			setAllEvents(events);
+			setAllEvents(resp.events);
 
-			setHappeningNow(determineHappeningNow(events));
+			setHappeningNow(determineHappeningNow(resp.events));
+			setState("loaded");
 		});
 
 		const interval = setInterval(() => {
