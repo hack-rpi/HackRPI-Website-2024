@@ -8,8 +8,6 @@ import type { Event } from "@/data/schedule";
 import { SATURDAY_END, SATURDAY_START, SUNDAY_END, SUNDAY_START, saturdayTimes, sundayTimes } from "@/data/schedule";
 import { fetchEvents } from "@/app/actions";
 
-import { generateClient } from "aws-amplify/data";
-import type { Schema } from "@/amplify/data/resource";
 import HappeningNow from "@/components/schedule/happening-now";
 import Schedule from "@/components/schedule/schedule";
 import HackRPILink from "@/components/themed-components/hackrpi-link";
