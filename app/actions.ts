@@ -99,9 +99,7 @@ export async function create_leaderboard_entry({
 		score < 0 ||
 		score > 200000 ||
 		isNaN(score) ||
-		score % 4 !== 0 ||
-		(score % 10 === 0 && score % 20 !== 0) ||
-		score > scoreUpperBounds[maxTile]
+		score % 2 !== 0 ||
 	) {
 		return { status: 401, message: "Invalid score." };
 	}
