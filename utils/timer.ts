@@ -36,7 +36,7 @@ export function calculateDeltaTime(currentTime: Date, endTime: Date): DeltaTime 
 	let days = endTime.getDate() - currentTime.getDate();
 	// We want the days to count down from the number of days in the month to 0
 	// So we add the number of days in the month to the days
-	if (days <= 0) {
+	if (days <= 0 && currentTime.getMonth() !== endTime.getMonth()) {
 		days += daysInMonths[currentTime.getMonth()];
 	}
 
