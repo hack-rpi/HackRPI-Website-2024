@@ -27,7 +27,7 @@ function HappeningNowCard(props: { event: Event }) {
 	}
 
 	return (
-		<div className="w-full h-20 overflow-hidden flex items-center justify-between border-b border-gray-400">
+		<div className="w-full h-28 overflow-hidden flex items-center justify-between border-b border-gray-400">
 			<div className="min-w-20 flex items-center justify-center">
 				<div className="w-16 h-16 rounded-full bg-hackrpi-primary-dark-green text-white font-bold text-4xl flex items-center justify-center">
 					{extractLettersFromTitle(props.event.title)}
@@ -35,7 +35,7 @@ function HappeningNowCard(props: { event: Event }) {
 			</div>
 			<div className="w-fit  mx-4 min-w-64 flex flex-col items-center justify-center px-4 ">
 				<h3 className="description-box font-bold text-white text-xl">{props.event.title}</h3>
-				<p className="text-nowrap">
+				<p className="text-wrap">
 					{props.event.location} {props.event.speaker != "" ? `• ${props.event.speaker}` : ""}{" "}
 				</p>
 			</div>
