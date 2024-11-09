@@ -381,7 +381,7 @@ export default function Page() {
 				<div className="flex-grow flex-shrink basis-auto flex flex-col w-full items-center justify-center">
 					<div className="flex-grow items-center justify-center basis-auto flex flex-col">
 						<p className="text-white mt-24 text-2xl w-11/12 text-center">
-							2048 Will be available to play at 10:00 AM November 9th to 11:00 AM November 11th.
+							2048 Will be available to play at 9:00 AM November 9th to 11:00 AM November 11th.
 						</p>
 						<div className="flex items-center justify-around">
 							<h1 className="flex-1 items-center justify-center text-center basis-auto text-6xl font-bold mt-4 p-0">
