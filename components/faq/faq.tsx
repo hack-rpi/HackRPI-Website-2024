@@ -82,7 +82,7 @@ const faqs: FAQ[] = [
 	{
 		title: "When are submissions due?",
 		content:
-			"All projects must be submitted to Devpost by 11 AM on Sunday. You will be able to modify your submission until noon. After noon, no coding or changes to your project are allowed.",
+			"All projects must be submitted to Devpost by 10 AM on Sunday. You will be able to modify your submission until 11am. After 11an, no coding or changes to your project are allowed.",
 	},
 	{
 		title: "How do I submit my project?",
