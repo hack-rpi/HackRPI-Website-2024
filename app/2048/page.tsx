@@ -8,7 +8,7 @@ import GameOver from "@/components/game/game-over";
 import HackRPIButton from "@/components/themed-components/hackrpi-button";
 import * as Auth from "@aws-amplify/auth";
 
-import { create_leaderboard_entry } from "@/app/actions";
+import { create_leaderboard_entry, is_game_ready } from "@/app/actions";
 
 import "@/app/globals.css";
 
@@ -339,7 +339,7 @@ export default function Page() {
 		const response = await create_leaderboard_entry({
 			username,
 			score,
-			boardState: grid
+			boardState: grid,
 		});
 
 		if (response.status === 200) {
@@ -352,8 +352,14 @@ export default function Page() {
 	const handleExit = () => {
 		setIsGameOver(false);
 	};
-
+	const [gameReady, setGameReady] = useState(false);
+	
 	useEffect(() => {
+		const checkGameReady = async () => {
+			const response = await is_game_ready();
+			setGameReady(response);
+		};
+
 		const handleKeyDown = (e: KeyboardEvent) => handleKeyPress(e, grid, setGrid);
 
 		window.addEventListener("keydown", handleKeyDown);
@@ -362,11 +368,38 @@ export default function Page() {
 			document.body.style.paddingTop = "1px";
 		});
 
+		checkGameReady();
 		initializeGame();
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
+
+
+	if (gameReady === false) {
+		return (
+			<div
+				className="flex flex-col items-start desktop:items-center justify-start w-full h-screen"
+				onTouchStart={handleTouchStart}
+				onTouchMove={handleTouchMove}
+				onTouchEnd={handleTouchEnd}
+			>
+				<NavBar showOnScroll={false}></NavBar>
+
+				<div className="flex-grow flex-shrink basis-auto flex flex-col w-full items-center justify-center">
+					<div className="flex-grow items-center justify-center basis-auto flex flex-col">
+						<p className="text-white mt-24 text-2xl w-11/12 text-center">2048 Will be available to play at 10:00 AM November 9th to 11:00 AM November 11th.</p>
+						<div className="flex items-center justify-around">
+							<h1 className="flex-1 items-center justify-center text-center basis-auto text-6xl font-bold mt-4 p-0">
+								2048
+							</h1>
+						</div>
+					</div>
+					<div className="flex-grow mt-24"></div>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div

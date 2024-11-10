@@ -25,6 +25,14 @@ export type LeaderboardEntry = {
 	year: number;
 };
 
+export async function is_game_ready() {
+	const now = new Date();
+	const start = new Date(1731160800000); // November 9, 2024 10:00:00 AM
+	const end = new Date(1731254400000); // November 10, 2024 11:00:00 AM
+
+	return now >= start && now <= end;
+}
+
 export async function get_leaderboard() {
 	let groups = undefined;
 	try {
