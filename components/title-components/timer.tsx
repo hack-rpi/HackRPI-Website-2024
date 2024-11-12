@@ -3,7 +3,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { type DeltaTime } from "@/utils/timer";
 import { calculateDeltaTime } from "@/utils/timer";
-import HackRPILink from "../themed-components/hackrpi-link";
 
 export default function Timer() {
 	const hackathonStart = useMemo(() => new Date(1731168000000), []); // November 9, 2024 11:00:00 AM
