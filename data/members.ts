@@ -242,5 +242,6 @@ export const team: Team = {
 			name: "Evan Chen",
 			team: "Logistics",
 		},
+		{ name: "Amanda Ruan", team: "Marketing" },
 	],
 };
