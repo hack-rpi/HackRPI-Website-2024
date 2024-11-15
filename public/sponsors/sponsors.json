@@ -87,6 +87,11 @@
 			"url": "https://www.oreilly.com/"
 		},
 		{
+			"name": "Saily",
+			"logoPath": "/Saily.png",
+			"url": "https://saily.com/"
+		},
+		{
 			"name": "Severino Center for Technological Entrepreneurship",
 			"logoPath": "/Severino.jpg",
 			"url": "https://severinocenter.rpi.edu/"
